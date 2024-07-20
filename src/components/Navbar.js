@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import data from "./data.json";
+import data from "../data.json";
 
 function Navbar() {
   const navItems = data.navbar;
