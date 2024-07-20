@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import data from "./data.json";
 
@@ -9,7 +11,7 @@ function Navbar() {
       <ul>
         {navItems.slice(0, 3).map((item) => (
           <li key={item.id} className="items">
-            <a href={item.url}>{item.title}</a>
+            <Link to={item.url}>{item.title}</Link>
           </li>
         ))}
       </ul>
@@ -21,7 +23,7 @@ function Navbar() {
       <ul>
         {navItems.slice(3, 6).map((item) => (
           <li key={item.id}>
-            <a href={item.url}>{item.title}</a>
+            <Link to={item.url}>{item.title}</Link>
           </li>
         ))}
       </ul>
