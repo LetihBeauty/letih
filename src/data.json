@@ -1,0 +1,34 @@
+{
+  "navbar": [
+    {
+      "id": 1,
+      "title": "HOME",
+      "url": "/"
+    },
+    {
+      "id": 2,
+      "title": "ABOUT",
+      "url": "/about"
+    },
+    {
+      "id": 3,
+      "title": "SERVICE",
+      "url": "/service"
+    },
+    {
+      "id": 4,
+      "title": "REVIEW",
+      "url": "/review"
+    },
+    {
+      "id": 5,
+      "title": "CONTACT",
+      "url": "/contact"
+    },
+    {
+      "id": 6,
+      "title": "GALLERY",
+      "url": "/gallery"
+    }
+  ]
+}
