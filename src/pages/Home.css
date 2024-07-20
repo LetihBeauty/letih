@@ -1,0 +1,46 @@
+@import "../style.css";
+
+.banner {
+  /* background-image: url("../../public/images/hero-women-leaf.webp"); */
+  height: 841px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--white-200);
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 841px;
+    clip-path: polygon(0% 0, 430% 0, 50% 100%, 0 85%);
+  }
+
+  .content {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    margin: -210px 362px 0 0;
+    flex-direction: column;
+  }
+
+  h1 {
+    color: var(--green-dark);
+    font-size: 3rem;
+    margin: 0;
+    width: 499px;
+    text-align: left;
+    margin: 10px 0;
+  }
+
+  p {
+    color: var(--green-dark);
+    font-size: 1.5rem;
+    text-align: left;
+    margin: 10px 0 20px 0;
+  }
+}
