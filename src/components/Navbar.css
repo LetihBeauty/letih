@@ -6,13 +6,17 @@
   height: 80px;
   justify-content: center;
   align-items: center;
-  border-bottom: 10px solid var(--green-dark);
+  border-bottom: 10px solid var(--green-100);
 
   ul {
     display: flex;
+    justify-content: space-between;
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 327px;
+    height: 27px;
+    flex-shrink: 0;
   }
 
   a {
@@ -21,11 +25,43 @@
     font-size: 16px;
     font-weight: 400;
     margin: 0 10px;
+    position: relative;
+  }
+
+  a.active::after {
+    content: "";
+    display: block; /* Assegure que o display seja block */
+    width: 30px; /* Ajuste conforme necessário */
+    height: 5px; /* Ajuste conforme necessário */
+    background: url("../../public/images/Linemenu.svg") no-repeat center;
+    background-size: contain;
+    position: absolute;
+    bottom: -5px; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   img {
     width: 254px;
     height: 21px;
     margin-right: 10px;
+  }
+
+  .center-logo {
+    width: 410px;
+
+    h4 {
+      color: var(--green-100);
+      text-align: center;
+      font-family: "SVN-Aire Pro";
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 40px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin: 0px 60px;
+      padding: 0;
+    }
   }
 }

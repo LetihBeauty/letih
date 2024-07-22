@@ -1,29 +1,38 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import data from "../data.json";
 
 function Navbar() {
   const navItems = data.navbar;
+  const location = useLocation();
 
   return (
     <div className="navbar-container">
       <ul>
         {navItems.slice(0, 3).map((item) => (
           <li key={item.id} className="items">
-            <Link to={item.url}>{item.title}</Link>
+            <Link
+              className={location.pathname === item.url ? "active" : ""}
+              to={item.url}
+            >
+              {item.title}
+            </Link>
           </li>
         ))}
       </ul>
       <div className="center-logo">
-        <a href="/">
-          <img src="https://via.placeholder.com/21" alt="logo" />
-        </a>
+        <h4>LETIH BEAUTY</h4>
       </div>
       <ul>
         {navItems.slice(3, 6).map((item) => (
           <li key={item.id}>
-            <Link to={item.url}>{item.title}</Link>
+            <Link
+              className={location.pathname === item.url ? "active" : ""}
+              to={item.url}
+            >
+              {item.title}
+            </Link>
           </li>
         ))}
       </ul>
