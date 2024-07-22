@@ -177,6 +177,48 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* Our Advantages */}
+      <div className="advantages">
+        <h2>Our Advantages</h2>
+        <div className="advantages-icons">
+          {/* Flexibility */}
+          <div className="icon-content">
+            <img src="images/icon_history.svg" alt="" />
+            <h6>Flexibility</h6>
+            <p>
+              Our commitment is to provide an unparalleled quality of service to
+              our clients, setting new industry standards.
+            </p>
+          </div>
+          {/* Transparency */}
+          <div className="icon-content">
+            <img src="images/icon_page_search.svg" alt="" />
+            <h6>Flexibility</h6>
+            <p>
+              Our commitment is to provide an unparalleled quality of service to
+              our clients, setting new industry standards.
+            </p>
+          </div>
+          {/* Quality */}
+          <div className="icon-content">
+            <img src="images/icon_data_quality.svg" alt="" />
+            <h6>Flexibility</h6>
+            <p>
+              Our commitment is to provide an unparalleled quality of service to
+              our clients, setting new industry standards.
+            </p>
+          </div>
+          {/* Promoting Wlliness */}
+          <div className="icon-content">
+            <img src="images/icon_spa.svg" alt="" />
+            <h6>Flexibility</h6>
+            <p>
+              Our commitment is to provide an unparalleled quality of service to
+              our clients, setting new industry standards.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

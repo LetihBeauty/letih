@@ -68,6 +68,17 @@ h5 {
   margin: 0;
 }
 
+h6 {
+  color: var(--Black-100, #000);
+  font-family: "Roboto Serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  margin: 0;
+}
+
 p {
   color: var(--Black-100, #000);
   font-family: Raleway;
