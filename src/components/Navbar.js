@@ -22,7 +22,7 @@ function Navbar() {
         ))}
       </ul>
       <div className="center-logo">
-        <h4>LETIH BEAUTY</h4>
+        <h3>LETIH BEAUTY</h3>
       </div>
       <ul>
         {navItems.slice(3, 6).map((item) => (

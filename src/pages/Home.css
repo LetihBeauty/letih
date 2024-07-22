@@ -30,6 +30,7 @@
 
   h1 {
     width: 499px;
+    color: var(--green-100);
     position: static;
     top: 257px;
     left: 128px;
@@ -37,10 +38,13 @@
     margin: 0;
   }
 
-  h3 {
+  h4 {
     text-align: left;
+    color: var(--green-100);
+
     top: 452px;
     left: 128px;
+    margin: 20px 0;
   }
 }
 

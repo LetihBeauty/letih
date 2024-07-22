@@ -37,16 +37,6 @@ h2 {
 
 h3 {
   color: var(--green-100);
-  font-family: Raleway;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: 4.8px;
-}
-
-h4 {
-  color: var(--green-100);
   text-align: center;
   font-family: "SVN-Aire Pro";
   font-size: 30px;
@@ -55,6 +45,16 @@ h4 {
   line-height: 40px;
   letter-spacing: 6px;
   text-transform: uppercase;
+}
+
+h4 {
+  color: var(--green-100);
+  font-family: Raleway;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 4.8px;
 }
 
 h5 {

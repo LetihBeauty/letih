@@ -1,6 +1,7 @@
 import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
 import BtnWhite from "../components/BtnWhite";
+import CarouselComponent from "../components/Carousel";
 console.log(BtnWhite);
 
 function Home() {
@@ -10,7 +11,7 @@ function Home() {
       <div className="banner">
         <div class="content">
           <h1>ELEVATE YOUR ELEGANCE</h1>
-          <h3>Unveil Your Beauty with Us</h3>
+          <h4>Unveil Your Beauty with Us</h4>
           <BtnGreen>Our Services</BtnGreen>
         </div>
         <img src="images/hero-women-leaf.webp" alt="Women with leaf"></img>
@@ -219,6 +220,8 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* Testimonials */}
+      <CarouselComponent />
     </div>
   );
 }
