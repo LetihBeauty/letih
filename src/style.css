@@ -1,6 +1,6 @@
 :root {
   --green-light: #446953;
-  --green-dark: #164734;
+  --green-100: #164734;
 
   --black-300: #000000;
   --black-200: #222222;
@@ -13,4 +13,24 @@
 
   --white-200: #ffffff;
   --white-170: #f7f7f7;
+}
+
+h1 {
+  font-family: "Roboto Serif";
+  color: var(--green-100);
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 74px;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: var(--green-100);
+  font-family: Raleway;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 4.8px;
 }
