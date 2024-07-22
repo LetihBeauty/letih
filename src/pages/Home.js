@@ -6,7 +6,7 @@ function Home() {
     <div className="banner">
       <div class="content">
         <h1>ELEVATE YOUR ELEGANCE</h1>
-        <p>Unveil Your Beauty with Us</p>
+        <h3>Unveil Your Beauty with Us</h3>
         <BtnGreen>Our Services</BtnGreen>
       </div>
       <img src="images/hero-women-leaf.webp" alt="Women with leaf"></img>

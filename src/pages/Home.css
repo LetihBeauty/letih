@@ -30,18 +30,17 @@
   }
 
   h1 {
-    color: var(--green-dark);
-    font-size: 3rem;
-    margin: 0;
     width: 499px;
+    position: static;
+    top: 257px;
+    left: 128px;
     text-align: left;
-    margin: 10px 0;
+    margin: 0;
   }
 
-  p {
-    color: var(--green-dark);
-    font-size: 1.5rem;
+  h3 {
     text-align: left;
-    margin: 10px 0 20px 0;
+    top: 452px;
+    left: 128px;
   }
 }
