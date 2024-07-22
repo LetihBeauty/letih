@@ -99,11 +99,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 80px;
 
   img {
     width: 500px;
     height: 332px;
     flex-shrink: 0;
+  }
+
+  h2 {
+    margin-bottom: 80px;
   }
 
   .green-services {
