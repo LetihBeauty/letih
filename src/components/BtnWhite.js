@@ -3,7 +3,7 @@ import "./Btn.css";
 
 const BtnGreen = ({ children, onClick }) => {
   return (
-    <button className="custom-button green" onClick={onClick}>
+    <button className="custom-button white" onClick={onClick}>
       {children}
     </button>
   );

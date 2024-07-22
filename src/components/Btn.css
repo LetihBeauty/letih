@@ -3,23 +3,31 @@
 .custom-button {
   display: flex;
   font-family: "Poppins";
-  background-color: var(--green-100);
-  color: white;
+
   border: none;
   border-radius: 6px;
   width: 232px;
   height: 56px;
-  padding: 12px;
   justify-content: center;
   align-items: center;
-  gap: 8px;
   flex-shrink: 0;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px;
+  cursor: pointer;
 }
 
-.custom-button:hover {
+.green {
+  background-color: var(--green-100);
+  color: var(--white-200);
+}
+
+.white {
+  background-color: var(--white-200);
+  color: var(--green-100);
+}
+
+.green:hover {
   background-color: var(--green-100);
 }
