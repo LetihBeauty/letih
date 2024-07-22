@@ -1,6 +1,6 @@
 :root {
-  --green-light: #446953;
   --green-100: #164734;
+  --green-50: #446953;
 
   --black-300: #000000;
   --black-200: #222222;
@@ -25,6 +25,16 @@ h1 {
   text-transform: uppercase;
 }
 
+h2 {
+  color: var(--Black-100, #000);
+  font-family: "Roboto Serif";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 125% */
+  letter-spacing: 8px;
+}
+
 h3 {
   color: var(--green-100);
   font-family: Raleway;
@@ -33,4 +43,36 @@ h3 {
   font-weight: 500;
   line-height: normal;
   letter-spacing: 4.8px;
+}
+
+h4 {
+  color: var(--green-100);
+  text-align: center;
+  font-family: "SVN-Aire Pro";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+h5 {
+  color: var(--Black-100, #000);
+  font-family: "Roboto Serif";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 4.8px;
+  margin: 0;
+}
+
+p {
+  color: var(--Black-100, #000);
+  font-family: Raleway;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
 }
