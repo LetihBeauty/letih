@@ -1,6 +1,4 @@
-@import "../style.css";
-
-.navbar-container {
+.navbar-desktop {
   display: flex;
   width: 100vw;
   height: 80px;
@@ -58,62 +56,73 @@
   }
 }
 
-@media screen and (min-width: var(--media-mobile)) {
-  .navbar-container {
-    display: flex;
-    width: 100vw;
-    height: 80px;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 10px solid var(--green-100);
+.navbar-mobile {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 16px;
 
-    ul {
-      display: flex;
-      justify-content: space-between;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      width: 327px;
-      height: 27px;
-      flex-shrink: 0;
-    }
-
-    a {
-      text-decoration: none;
-      color: var(--green-100);
-      font-size: 16px;
-      font-weight: 400;
-      margin: 0 10px;
-      position: relative;
-    }
-
-    a.active::after {
-      content: "";
-      display: block; /* Assegure que o display seja block */
-      width: 30px; /* Ajuste conforme necessário */
-      height: 5px; /* Ajuste conforme necessário */
-      background: url("../../public/images/Linemenu.svg") no-repeat center;
-      background-size: contain;
-      position: absolute;
-      bottom: -5px; /* Ajuste conforme necessário */
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    img {
-      width: 254px;
-      height: 21px;
-      margin-right: 10px;
-    }
-
-    .center-logo {
-      width: 410px;
-
-      h3 {
-        color: var(--green-100);
-        margin: 0px 60px;
-        padding: 0;
-      }
-    }
+  h3 {
+    font-family: "SVN-Aire Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 250% */
+    letter-spacing: 3.2px;
+    text-transform: uppercase;
+    margin-left: 16px;
   }
+
+  .hamburger-icon {
+    cursor: pointer;
+  }
+
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--grey-500);
+  }
+  /*
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  } */
+  /*
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  } */
+
+  /* .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+  }
+
+  .mobile-navbar ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-navbar ul li {
+    display: block;
+    margin: 0.5em 0;
+  } */
 }

@@ -1,4 +1,7 @@
 {
+  "mobile": "490",
+  "desktop": "992",
+  "tablet": "768",
   "navbar": [
     {
       "id": 1,
