@@ -234,6 +234,38 @@ function Home() {
           <img src="images/our-gallery-06.webp" alt="" id="img6" />
         </div>
       </div>
+      {/* Contact Us */}
+
+      <div className="contact">
+        <h2>Contact us</h2>
+        <p>Fill out the form and we will contact you as soon as possible!</p>
+        <form>
+          <div className="name-email">
+            <div className="form-group">
+              <label for="name">Name</label>
+              <input type="text" placeholder="Name" />
+            </div>
+
+            <div className="form-group">
+              <label for="name">Email</label>
+              <input type="email" placeholder="Email" />
+            </div>
+          </div>
+
+          <div className="form-group-phone">
+            <label for="name">Phone</label>
+            <input type="phones" placeholder="Phone" />
+          </div>
+
+          <div className="form-group">
+            <label for="name">Message</label>
+            <textarea placeholder="How can we help you today?"></textarea>
+          </div>
+          <div className="btn-send">
+            <BtnWhite>Send</BtnWhite>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
