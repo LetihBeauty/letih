@@ -51,6 +51,7 @@
     width: 410px;
 
     h3 {
+      color: var(--green-100);
       margin: 0px 60px;
       padding: 0;
     }
