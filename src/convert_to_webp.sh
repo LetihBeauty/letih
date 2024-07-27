@@ -23,4 +23,4 @@ fi
 chmod +x convert_to_webp.sh
 
 # Executar o script
-# ./src/convert_to_webp.sh\n
+# ./src/convert_to_webp.sh
