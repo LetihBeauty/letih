@@ -339,3 +339,62 @@
   height: 80px;
   background-color: var(--white-200);
 }
+
+@media only screen and (max-width: 430px) {
+  .banner {
+    .content {
+      top: 330px;
+      left: 180px;
+      display: flex;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 40px;
+    }
+
+    img {
+      width: 100vw;
+      height: 463px;
+      object-fit: cover;
+      object-position: -290px;
+    }
+  }
+
+  .about-us {
+    padding-top: 0;
+
+    h2 {
+      font-size: 28px;
+      line-height: 42px;
+      letter-spacing: 6.4px;
+    }
+    img {
+      width: 312px;
+      height: 210px;
+    }
+
+    .mobile-none {
+      display: none;
+    }
+
+    .about-us-button {
+      margin-top: -50px;
+      flex-direction: column;
+
+      img {
+        margin-left: 46px;
+      }
+    }
+
+    .about-us-button-left {
+      margin: 20px 0 0 0;
+      width: 358px;
+
+      h5 {
+        margin-bottom: 32px;
+      }
+    }
+  }
+}

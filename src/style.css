@@ -13,7 +13,8 @@
 
   --white-200: #ffffff;
   --white-170: #f7f7f7;
-  --media-mobile: 480px;
+
+  --media-mobile: 430px;
   --media-tablet: 768px;
 }
 
@@ -90,18 +91,18 @@ p {
   line-height: 26px; /* 162.5% */
 }
 
-@media screen and (min-width: var(--media-mobile)) {
+@media only screen and (min-width: 430px) {
   h1 {
     color: var(--green-100);
     font-size: 40px;
     line-height: 50px; /* 125% */
   }
 
-  h2 {
+  /* h2 {
     font-size: 32px;
     line-height: 42px;
     letter-spacing: 6.4px;
-  }
+  } */
 
   h3 {
     font-size: 16px;

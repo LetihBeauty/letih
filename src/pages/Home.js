@@ -2,7 +2,6 @@ import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
 import BtnWhite from "../components/BtnWhite";
 import CarouselComponent from "../components/Carousel";
-console.log(BtnWhite);
 
 function Home() {
   return (
@@ -25,8 +24,8 @@ function Home() {
             alt="women with leaf in her hair"
           />
           <div className="about-us-top-right">
-            <h5>You deserve it!</h5>
-            <p>
+            <h5 className="mobile-none">You deserve it!</h5>
+            <p className="mobile-none">
               Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
               ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae
               eget tempor non eu sed massa velit. Et potenti nulla tellus
