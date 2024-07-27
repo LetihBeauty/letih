@@ -266,6 +266,7 @@ function Home() {
           </div>
         </form>
       </div>
+      <div className="blank"></div>
     </div>
   );
 }

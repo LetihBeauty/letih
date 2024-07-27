@@ -334,3 +334,8 @@
     }
   }
 }
+
+.blank {
+  height: 80px;
+  background-color: var(--white-200);
+}
