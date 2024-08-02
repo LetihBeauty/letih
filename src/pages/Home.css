@@ -402,7 +402,7 @@
   .white-services {
     flex-direction: column !important;
     padding: 32px 16px !important;
-    height: 537px;
+    height: auto !important;
     justify-content: center !important;
     align-items: center !important;
 
@@ -413,6 +413,7 @@
     img {
       width: 346px;
       height: 216px;
+      margin: 31px 0px;
     }
 
     .green-right {
