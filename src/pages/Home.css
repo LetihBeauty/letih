@@ -400,12 +400,15 @@
 
   .green-services,
   .white-services {
-    display: flex;
     flex-direction: column !important;
     padding: 32px 16px !important;
     height: 537px;
-    justify-content: center;
-    align-items: center;
+    justify-content: center !important;
+    align-items: center !important;
+
+    .service-number {
+      display: none;
+    }
 
     img {
       width: 346px;
@@ -416,11 +419,15 @@
       margin: 0px !important;
     }
 
-    /* p {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 200px;
-    } */
+    .white-right {
+      align-items: flex-end;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+
+      p {
+        text-align: right;
+      }
+    }
   }
 }
