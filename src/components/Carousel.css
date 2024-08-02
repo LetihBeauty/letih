@@ -9,6 +9,14 @@
   height: 757px;
 }
 
+h1 {
+  font-family: "Angelia Devitson" !important;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 70px;
+}
+
 .testimonial-image {
   width: 744px;
   height: 544px;
@@ -67,4 +75,51 @@
 }
 .carousel-indicators {
   display: none;
+}
+
+@media only screen and (max-width: 431px) {
+  .testimonial-container {
+    width: 100%;
+    height: 425px !important;
+    padding: 0px;
+
+    img {
+      display: none;
+    }
+
+    .testimonial-content {
+      h1 {
+        font-family: "Angelia Devitson";
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 70px;
+        margin-top: 32px;
+      }
+
+      h4 {
+        font-family: "Roboto Serif";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 34px;
+        margin-top: 40px;
+      }
+
+      .carousel-caption {
+        margin: 0 15px 56px 15px;
+
+        .customer-testimonial {
+          margin: 0px 40px;
+        }
+
+        .customer-name {
+          display: flex;
+          justify-content: flex-end;
+          margin-right: 40px;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
 }

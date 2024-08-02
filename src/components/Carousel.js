@@ -14,13 +14,13 @@ function CarouselComponent() {
             <Carousel.Caption>
               <h1 id="title">Testimonials</h1>
               <h4>Briefly title about the customer review</h4>
-              <p>
+              <p className="customer-testimonial">
                 "Lorem ipsum dolor sit amet consectetur. Nibh adipiscing a sit
                 libero proin. Nec enim ornare elementum nulla in. Nec vulputate
                 Lorem ipsum dolor sit amet consectetur. Nibh adipiscing a sit
                 libero proin. Nec enim ornare elementum nulla in. Nec vulputate"
               </p>
-              <p>- Customer Name</p>
+              <p className="customer-name">- Customer Name</p>
             </Carousel.Caption>
           </div>
         </div>
@@ -33,13 +33,13 @@ function CarouselComponent() {
             <Carousel.Caption>
               <h1 id="title">Testimonials</h1>
               <h4>Briefly title about the customer review</h4>
-              <p>
+              <p className="customer-testimonial">
                 "Lorem ipsum dolor sit amet consectetur. Nibh adipiscing a sit
                 libero proin. Nec enim ornare elementum nulla in. Nec vulputate
                 Lorem ipsum dolor sit amet consectetur. Nibh adipiscing a sit
                 libero proin. Nec enim ornare elementum nulla in. Nec vulputate"
               </p>
-              <p>- Customer Name</p>
+              <p className="customer-name">- Customer Name</p>
             </Carousel.Caption>
           </div>
         </div>
@@ -52,13 +52,13 @@ function CarouselComponent() {
             <Carousel.Caption>
               <h1 id="title">Testimonials</h1>
               <h4>Briefly title about the customer review</h4>
-              <p>
+              <p className="customer-testimonial">
                 "Lorem ipsum dolor sit amet consectetur. Nibh adipiscing a sit
                 libero proin. Nec enim ornare elementum nulla in. Nec vulputate
                 Lorem ipsum dolor sit amet consectetur. Nibh adipiscing a sit
                 libero proin. Nec enim ornare elementum nulla in. Nec vulputate"
               </p>
-              <p>- Customer Name</p>
+              <p className="customer-name">- Customer Name</p>
             </Carousel.Caption>
           </div>
         </div>
