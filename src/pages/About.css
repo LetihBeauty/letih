@@ -1,5 +1,56 @@
 @import "../style.css";
 
+h1 {
+  font-family: "Roboto Serif";
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: normal;
+  display: flex;
+  margin-bottom: 40px;
+  text-transform: math-auto;
+}
+
+h3 {
+  color: var(--green-100);
+
+  font-family: "Roboto Serif";
+  font-size: 24px;
+  /* font-style: italic; */
+  font-weight: 300;
+  line-height: normal;
+  text-transform: math-auto;
+}
+
+h4 {
+  color: var(--green-100);
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  /* font-weight: 500; */
+  font-weight: bold;
+
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+h5 {
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+p {
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+}
+
 .container {
   margin: 0px;
   padding: 0px;
@@ -7,61 +58,18 @@
   flex-direction: column;
   width: 100vw;
 
-  .h2-title {
-    font-family: "Roboto Serif";
-    font-size: 40px;
-    font-style: italic;
-    font-weight: 300;
-    line-height: normal;
-    display: flex;
-    margin-bottom: 40px;
-  }
-
-  .h3-sub-title {
-    color: var(--green-100);
-
-    font-family: "Roboto Serif";
-    font-size: 24px;
-    /* font-style: italic; */
-    font-weight: 300;
-    line-height: normal;
-    text-transform: math-auto;
-  }
-
-  .h4-title {
-    color: var(--green-100);
-    font-family: Poppins !important;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
-
-  .h5-sub-title {
-    font-family: Poppins;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
-
-  .h5-space-sub-title {
+  .sub-title {
     margin-top: 24px;
   }
 
-  .h3-left-title {
+  .left-title {
     text-align: left;
-  }
-
-  .p-text-content {
-    font-family: Raleway !important;
-    font-size: 18px !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
-    line-height: 28px !important; /* 155.556% */
+    font-weight: bold;
+    text-transform: math-auto !important;
   }
 
   .hero {
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -123,5 +131,58 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 431px) {
+  .container {
+    .h2-title {
+      font-size: 28px;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        width: 358px;
+        height: 395px;
+      }
+
+      .we-are-letih-beauty {
+        width: 100vw;
+        margin: auto 16px;
+      }
+    }
+    .behind-scenes {
+      margin: auto 16px;
+
+      .image-letih {
+        width: 358px;
+        height: 362px;
+      }
+
+      .behind-scenes-content {
+        margin: auto 16px;
+      }
+    }
+
+    .our-values {
+      display: flex;
+      flex-direction: column;
+
+      .our-values-content {
+        margin: auto 16px;
+      }
+
+      img {
+        width: 358px;
+        height: 395px;
+      }
+    }
+
+    .bottom-images {
+      display: none;
+    }
   }
 }

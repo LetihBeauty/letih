@@ -8,20 +8,20 @@ const About = () => {
       <div className="hero">
         <img src="/images/about-us-2.webp" alt="women" />
         <div className="we-are-letih-beauty">
-          <h2 className="h2-title">We’re LETIH BEAUTY</h2>
-          <h3 className="h3-sub-title">Awaken Your Tropical Glow ✨</h3>
+          <h1>We’re LETIH BEAUTY</h1>
+          <h3>Awaken Your Tropical Glow ✨</h3>
           <div className="mission-vision">
             <div className="mission">
-              <h4 className="h4-title">Our Mission</h4>
-              <p className="p-text-content">
+              <h4>Our Mission</h4>
+              <p>
                 Providing personalized esthetics services that focus on
                 detoxifying the skin and body to promote overall health and
                 wellbeing.
               </p>
             </div>
             <div className="vision">
-              <h4 className="h4-title">Our Vision</h4>
-              <p className="p-text-content">
+              <h4>Our Vision</h4>
+              <p>
                 To be the leading provider of esthetics services that promote
                 detoxification, rejuvenation, and overall wellness.
               </p>
@@ -32,25 +32,21 @@ const About = () => {
       <div className="our-values">
         <img src="/images/about-us-1.webp" alt="women" />
         <div className="our-values-content">
-          <h4 className="h4-title">Our Values</h4>
-          <h5 className="h5-sub-title h5-space-sub-title">Warmer Approach </h5>
-          <p className="p-text-content">
+          <h4>Our Values</h4>
+          <h5 className="sub-title">Warmer Approach </h5>
+          <p>
             We believe in treating the whole person, focusing on mental and
             bodily well-being with a lot of attention and affection.
           </p>
-          <h5 className="h5-sub-title h5-space-sub-title">
-            Personalized and quality Service{" "}
-          </h5>
-          <p className="p-text-content">
+          <h5 className="sub-title">Personalized and quality Service </h5>
+          <p>
             We provide individualized treatments that address each client's
             unique needs and concerns, ensuring that they leave feeling
             refreshed, revitalized, and rejuvenated. Our brand offers quality
             services.
           </p>
-          <h5 className="h5-sub-title h5-space-sub-title">
-            Education, Transparency and honesty
-          </h5>
-          <p className="p-text-content">
+          <h5 className="sub-title">Education, Transparency and honesty</h5>
+          <p>
             We prioritize education transparency and honesty: empowering our
             clients to make informed decisions about what services and how it
             works, based on the science of the techniques of each service with
@@ -65,8 +61,8 @@ const About = () => {
           alt="women"
         />
         <div className="behind-scenes-content">
-          <h3 className="h3-sub-title h3-left-title">Behind the scenes </h3>
-          <p className="p-text-content">
+          <h3 className="left-title">Behind the scenes </h3>
+          <p>
             My name is Leticia Martins. I was born in Brazil in 1993, in a small
             town in the south of the country. I come from the countryside and
             was raised with a simple life full of love and innocence. In Brazil
