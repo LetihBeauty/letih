@@ -1,38 +1,127 @@
 @import "../style.css";
 
-.hero {
+.container {
+  margin: 0px;
+  padding: 0px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 115px 0;
+  flex-direction: column;
+  width: 100vw;
 
-  .we-are-letih-beauty {
+  .h2-title {
+    font-family: "Roboto Serif";
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  .h3-sub-title {
+    color: var(--green-100);
+
+    font-family: "Roboto Serif";
+    font-size: 24px;
+    /* font-style: italic; */
+    font-weight: 300;
+    line-height: normal;
+    text-transform: math-auto;
+  }
+
+  .h4-title {
+    color: var(--green-100);
+    font-family: Poppins !important;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .h5-sub-title {
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .h5-space-sub-title {
+    margin-top: 24px;
+  }
+
+  .h3-left-title {
+    text-align: left;
+  }
+
+  .p-text-content {
+    font-family: Raleway !important;
+    font-size: 18px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 28px !important; /* 155.556% */
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 115px 0;
+
+    .we-are-letih-beauty {
+      display: flex;
+      flex-direction: column;
+      margin: calc(115px / 2);
+      width: 550px;
+
+      .mission-vision {
+        margin-top: 63px;
+      }
+    }
+  }
+
+  .our-values {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .our-values-content {
+      margin-right: 140px;
+      margin-left: 128px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .behind-scenes {
     display: flex;
     flex-direction: column;
-    margin: calc(115px / 2);
-    width: 550px;
+    align-items: center;
+    margin-top: 120px;
+    margin-left: 128px;
 
-    h2 {
-      font-family: "Roboto Serif";
-      font-size: 40px;
-      font-style: italic;
-      font-weight: 300;
-      line-height: normal;
+    .image-letih {
+      width: 982px;
+      height: 833px;
+    }
+
+    .behind-scenes-content {
       display: flex;
-      margin-bottom: 40px;
+      flex-direction: column;
+      margin: 120px 129px;
     }
 
-    h3 {
-      font-family: "Roboto Serif";
-      font-size: 24px;
-      font-style: italic;
-      font-weight: 300;
-      line-height: normal;
+    .btn-book {
+      align-self: center;
+      margin-top: 60px;
     }
+  }
 
-    .mission-vision {
-      margin-top: 63px;
-    }
+  .bottom-images {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
