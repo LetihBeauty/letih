@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
                 </li>
               ))}
             </ul>
-            <img src="images/Linefooter.svg" alt="" />
+            <img id="line-footer" src="images/Linefooter.svg" alt="" />
           </div>
           <div className="footer-contact">
             <div className="email-phone">

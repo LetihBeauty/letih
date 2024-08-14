@@ -59,6 +59,7 @@ footer {
         transform: translateX(-50%);
       }
     }
+
     .footer-contact {
       display: flex;
       flex-direction: row;
@@ -107,5 +108,15 @@ footer {
       font-weight: 400;
       position: relative;
     }
+  }
+}
+
+@media only screen and (max-width: 432px) {
+  a {
+    font-size: 12px;
+    margin: 0 4px;
+  }
+  #line-footer {
+    width: 300px;
   }
 }
