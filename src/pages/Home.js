@@ -2,7 +2,7 @@ import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
 import BtnWhite from "../components/BtnWhite";
 import CarouselComponent from "../components/Carousel";
-import { bellyReducing, bodyDetox, deepFacial, glowFacial, microneedling, skinCareRoutine, ultraformer, youDeserveItLeft, youDeserveItRight } from "../components/constants";
+import { advantages, bellyReducing, bodyDetox, deepFacial, glowFacial, microneedling, skinCareRoutine, ultraformer, youDeserveItLeft, youDeserveItRight } from "../components/constants";
 
 function Home() {
   return (
@@ -137,42 +137,14 @@ function Home() {
       <div className="advantages">
         <h2>Our Advantages</h2>
         <div className="advantages-icons">
-          {/* Flexibility */}
-          <div className="icon-content">
-            <img src="images/icon_history.svg" alt="" />
-            <h6>Flexibility</h6>
-            <p>
-
-            </p>
-          </div>
-          {/* Transparency */}
-          <div className="icon-content">
-            <img src="images/icon_page_search.svg" alt="" />
-            <h6>Transparency</h6>
-            <p>
-              Our commitment is to provide an unparalleled quality of service to
-              our clients, setting new industry standards.
-            </p>
-          </div>
-          {/* Quality */}
-          <div className="icon-content">
-            <img src="images/icon_data_quality.svg" alt="" />
-            <h6>Quality</h6>
-            <p>
-              Our commitment is to provide an unparalleled quality of service to
-              our clients, setting new industry standards.
-            </p>
-          </div>
-          {/* Promoting Wlliness */}
-          <div className="icon-content">
-            <img src="images/icon_spa.svg" alt="" />
-            <h6>Promoting Wellness</h6>
-            <p>
-              Our commitment is to provide an unparalleled quality of service to
-              our clients, setting new industry standards.
-            </p>
-          </div>
-        </div>
+          {advantages.map((advantage, index) => (
+            <div className="icon-content" key={index}>
+              <img src={advantage.imgSrc} alt={advantage.altText} />
+              <h6>{advantage.title}</h6>
+              <p>{advantage.description}</p>
+            </div>
+          ))}
+  </div>
       </div>
       {/* Testimonials */}
       <CarouselComponent />
