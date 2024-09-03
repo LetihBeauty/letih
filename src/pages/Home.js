@@ -2,6 +2,7 @@ import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
 import BtnWhite from "../components/BtnWhite";
 import CarouselComponent from "../components/Carousel";
+import { bellyReducing, bodyDetox, deepFacial, glowFacial, microneedling, skinCareRoutine, ultraformer, youDeserveItLeft, youDeserveItRight } from "../components/constants";
 
 function Home() {
   return (
@@ -26,13 +27,7 @@ function Home() {
           <div className="about-us-top-right">
             <h5 className="mobile-none">You deserve it!</h5>
             <p className="mobile-none">
-              Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
-              ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae
-              eget tempor non eu sed massa velit. Et potenti nulla tellus
-              praesent euismod commodo pretium. Et potenti nulla tellus praesent
-              euismod commodo pretium. Et potenti nulla tellus praesent euismod
-              commodo pretium. Et potenti nulla tellus praesent euismod commodo
-              pretium. Et potenti nulla tellus praesent euismod commodo pretium.
+              {youDeserveItRight}
             </p>
           </div>
         </div>
@@ -44,11 +39,7 @@ function Home() {
           <div className="about-us-button-left">
             <h5>You deserve it!</h5>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
-              ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae
-              eget tempor non eu sed massa velit. Et potenti nulla tellus
-              praesent euismod commodo pretium. Et potenti nulla tellus praesent
-              euismod commodo pretium.
+              {youDeserveItLeft}
             </p>
             <BtnGreen>Learn More</BtnGreen>
           </div>
@@ -64,12 +55,7 @@ function Home() {
             <h5 className="service-number">01</h5>
             <h5>Deep Facial</h5>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
-              ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae
-              eget tempor non eu sed massa velit. Et potenti nulla tellus
-              praesent euismod commodo pretium. Vivamus vitae eget tempor non eu
-              sed massa velit. Et potenti nulla tellus praesent euismod commodo
-              pretium.
+              {deepFacial}
             </p>
             <BtnWhite>Learn More</BtnWhite>
           </div>
@@ -81,12 +67,7 @@ function Home() {
             <h5 className="service-number">02</h5>
             <h5>Body Detox</h5>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
-              ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae
-              eget tempor non eu sed massa velit. Et potenti nulla tellus
-              praesent euismod commodo pretium. Vivamus vitae eget tempor non eu
-              sed massa velit. Et potenti nulla tellus praesent euismod commodo
-              pretium.
+              {bodyDetox}
             </p>
             <BtnGreen>Learn More</BtnGreen>
           </div>
@@ -98,12 +79,7 @@ function Home() {
             <h5 className="service-number">03</h5>
             <h5>Ultraformer III</h5>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
-              ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae
-              eget tempor non eu sed massa velit. Et potenti nulla tellus
-              praesent euismod commodo pretium. Vivamus vitae eget tempor non eu
-              sed massa velit. Et potenti nulla tellus praesent euismod commodo
-              pretium.
+              {ultraformer}
             </p>
             <BtnWhite>Learn More</BtnWhite>
           </div>
@@ -115,12 +91,7 @@ function Home() {
             <h5 className="service-number">04</h5>
             <h5>Belly Reducing</h5>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
-              ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae
-              eget tempor non eu sed massa velit. Et potenti nulla tellus
-              praesent euismod commodo pretium. Vivamus vitae eget tempor non eu
-              sed massa velit. Et potenti nulla tellus praesent euismod commodo
-              pretium.
+              {bellyReducing}
             </p>
             <BtnGreen>Learn More</BtnGreen>
           </div>
@@ -132,12 +103,7 @@ function Home() {
             <h5 className="service-number">05</h5>
             <h5>RF Microneedling</h5>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
-              ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae
-              eget tempor non eu sed massa velit. Et potenti nulla tellus
-              praesent euismod commodo pretium. Vivamus vitae eget tempor non eu
-              sed massa velit. Et potenti nulla tellus praesent euismod commodo
-              pretium.
+              {microneedling}
             </p>
             <BtnWhite>Learn More</BtnWhite>
           </div>
@@ -149,12 +115,7 @@ function Home() {
             <h5 className="service-number">06</h5>
             <h5>Skin Care Routine</h5>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
-              ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae
-              eget tempor non eu sed massa velit. Et potenti nulla tellus
-              praesent euismod commodo pretium. Vivamus vitae eget tempor non eu
-              sed massa velit. Et potenti nulla tellus praesent euismod commodo
-              pretium.
+              {skinCareRoutine}
             </p>
             <BtnGreen>Learn More</BtnGreen>
           </div>
@@ -166,12 +127,7 @@ function Home() {
             <h5 className="service-number">07</h5>
             <h5>Glow Facial</h5>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
-              ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae
-              eget tempor non eu sed massa velit. Et potenti nulla tellus
-              praesent euismod commodo pretium. Vivamus vitae eget tempor non eu
-              sed massa velit. Et potenti nulla tellus praesent euismod commodo
-              pretium.
+              {glowFacial}
             </p>
             <BtnWhite>Learn More</BtnWhite>
           </div>
@@ -186,14 +142,13 @@ function Home() {
             <img src="images/icon_history.svg" alt="" />
             <h6>Flexibility</h6>
             <p>
-              Our commitment is to provide an unparalleled quality of service to
-              our clients, setting new industry standards.
+
             </p>
           </div>
           {/* Transparency */}
           <div className="icon-content">
             <img src="images/icon_page_search.svg" alt="" />
-            <h6>Flexibility</h6>
+            <h6>Transparency</h6>
             <p>
               Our commitment is to provide an unparalleled quality of service to
               our clients, setting new industry standards.
@@ -202,7 +157,7 @@ function Home() {
           {/* Quality */}
           <div className="icon-content">
             <img src="images/icon_data_quality.svg" alt="" />
-            <h6>Flexibility</h6>
+            <h6>Quality</h6>
             <p>
               Our commitment is to provide an unparalleled quality of service to
               our clients, setting new industry standards.
@@ -211,7 +166,7 @@ function Home() {
           {/* Promoting Wlliness */}
           <div className="icon-content">
             <img src="images/icon_spa.svg" alt="" />
-            <h6>Flexibility</h6>
+            <h6>Promoting Wellness</h6>
             <p>
               Our commitment is to provide an unparalleled quality of service to
               our clients, setting new industry standards.
