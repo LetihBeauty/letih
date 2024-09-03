@@ -1,3 +1,6 @@
+import BtnGreen from "/home/victor/code/victorfonsecass/letih/src/components/BtnGreen.js";
+import BtnWhite from "/home/victor/code/victorfonsecass/letih/src/components/BtnWhite.js";
+
 export const ourMission =
   "Providing personalized esthetics services that focus on detoxifying the skin and body to promote overall health and wellbeing.";
 
@@ -22,27 +25,72 @@ export const youDeserveItRight =
 export const youDeserveItLeft =
   "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium."
 
-export const deepFacial =
-  "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium."
-
-export const bodyDetox =
-  "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium."
-
-export const ultraformer =
-  "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium."
-
-export const bellyReducing =
-  "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium."
-
-export const microneedling =
-  "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium."
-
-export const skinCareRoutine =
-  "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium."
-
-export const glowFacial =
-  "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodon pretium."
-
+  // Array de objetos de serviço
+export const services = [
+  {
+    imgSrc: "images/service-01.webp",
+    number: "01",
+    title: "Deep Facial",
+    description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
+    btnComponent: <BtnWhite>Learn More</BtnWhite>,
+    containerClass: "green-services",
+    contentClass: "green-right",
+  },
+  {
+    imgSrc: "images/service-02.webp",
+    number: "02",
+    title: "Body Detox",
+    description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
+    btnComponent: <BtnGreen>Learn More</BtnGreen>,
+    containerClass: "white-services",
+    contentClass: "white-right",
+  },
+  {
+    imgSrc: "images/service-03.webp",
+    number: "03",
+    title: "Ultraformer III",
+    description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
+    btnComponent: <BtnWhite>Learn More</BtnWhite>,
+    containerClass: "green-services",
+    contentClass: "green-right",
+  },
+  {
+    imgSrc: "images/service-04.webp",
+    number: "04",
+    title: "Belly Reducing",
+    description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
+    btnComponent: <BtnGreen>Learn More</BtnGreen>,
+    containerClass: "white-services",
+    contentClass: "white-right",
+  },
+  {
+    imgSrc: "images/service-05.webp",
+    number: "05",
+    title: "RF Microneedling",
+    description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
+    btnComponent: <BtnWhite>Learn More</BtnWhite>,
+    containerClass: "green-services",
+    contentClass: "green-right",
+  },
+  {
+    imgSrc: "images/service-06.webp",
+    number: "06",
+    title: "Skin Care Routine",
+    description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
+    btnComponent: <BtnGreen>Learn More</BtnGreen>,
+    containerClass: "white-services",
+    contentClass: "white-right",
+  },
+  {
+    imgSrc: "images/service-07.webp",
+    number: "07",
+    title: "Glow Facial",
+    description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodon pretium.",
+    btnComponent: <BtnWhite>Learn More</BtnWhite>,
+    containerClass: "green-services",
+    contentClass: "green-right",
+  },
+];
 export const advantages = [
   {
     imgSrc: "images/icon_history.svg",
