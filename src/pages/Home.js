@@ -26,7 +26,7 @@ function Home() {
           >
             <img src={section.imgSrc} alt={section.altText} />
             <div className={`about-us-text ${section.textClass}`}>
-              <h5 className={section.isButtonVisible ? '' : 'mobile-none'}>
+              <h5 className={`${section.h5Style} ${section.isButtonVisible ? '' : 'mobile-none'}`}>
                 {section.title}
               </h5>
               <p className={section.isButtonVisible ? '' : 'mobile-none'}>
@@ -44,8 +44,7 @@ function Home() {
           <div className={service.containerClass} key={index}>
             <img src={service.imgSrc} alt="" />
             <div className={service.contentClass}>
-              <h5 className="service-number">{service.number}</h5>
-              <h5>{service.title}</h5>
+              <h5 className={`${service.h5Style}`}>{service.title}</h5>
               <p>{service.description}</p>
               {service.btnComponent}
             </div>

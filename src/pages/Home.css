@@ -52,6 +52,16 @@ h5 {
   letter-spacing: 4.8px;
   margin: 0;
 }
+.special-style {
+  color: var(--Black-100,);
+  font-family: "Roboto Serif";
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  /* 125% */
+  letter-spacing: 2px;
+}
 
 h6 {
   color: var(--Black-100, #000);
@@ -133,7 +143,7 @@ p {
   margin: 20px 128px;
   position: relative;
 }
-img {
+.about-us img {
   width: 650px;
   height: 420px;
   flex-shrink: 0;
@@ -149,37 +159,37 @@ img {
 
 }
 
-  .about-us-top-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-left: 50px;
-    margin-top: -100px;
-    /* Adjust this value to move the text up */
-    margin-top: -40px;
-    /* Increase or decrease as needed */
-    position: relative;
-    /* Ensure relative positioning */
-    top: -50px;
-    /* Fine-tune vertical positioning */
-  }
-  .about-us-button {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-top: -90px;
-    z-index: 0;
-  }
+.about-us-top-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 50px;
+  margin-top: -100px;
+  /* Adjust this value to move the text up */
+  margin-top: -30px;
+  /* Increase or decrease as needed */
+  position: relative;
+  /* Ensure relative positioning */
+  top: -50px;
+  /* Fine-tune vertical positioning */
+}
+.about-us-button {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: -90px;
+  z-index: 0;
+}
 
-  .about-us-button-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    margin-right: 50px;
-    position: relative;
-    top: -50px;
-  }
+.about-us-button-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-right: 50px;
+  position: relative;
+  top: -30px;
+}
 
 
 .our-services {
@@ -204,7 +214,7 @@ img {
     display: flex;
     flex-direction: row;
     padding: 60px 170px;
-    align-items: flex-start;
+    align-items: center;
 
     .green-right {
       display: flex;
@@ -226,7 +236,7 @@ img {
     display: flex;
     flex-direction: row-reverse;
     padding: 60px 170px;
-    align-items: flex-start;
+    align-items: center;
   }
 }
 

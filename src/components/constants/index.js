@@ -29,6 +29,7 @@ export const aboutUsSections = [
     isButtonVisible: false,
     containerClass: 'about-us-top',
     textClass: 'about-us-top-right',
+    h5Style: 'special-style',
   },
   {
     imgSrc: 'images/home-about-us-bed.webp',
@@ -38,6 +39,7 @@ export const aboutUsSections = [
     isButtonVisible: true,
     containerClass: 'about-us-button',
     textClass: 'about-us-button-left',
+    h5Style: 'special-style',
   },
 ];
 
@@ -45,16 +47,15 @@ export const aboutUsSections = [
 export const services = [
   {
     imgSrc: "images/service-01.webp",
-    number: "01",
     title: "Deep Facial",
     description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
     btnComponent: <BtnWhite>Learn More</BtnWhite>,
     containerClass: "green-services",
     contentClass: "green-right",
+    h5Style: "special-style",
   },
   {
     imgSrc: "images/service-02.webp",
-    number: "02",
     title: "Body Detox",
     description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
     btnComponent: <BtnGreen>Learn More</BtnGreen>,
@@ -63,7 +64,6 @@ export const services = [
   },
   {
     imgSrc: "images/service-03.webp",
-    number: "03",
     title: "Ultraformer III",
     description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
     btnComponent: <BtnWhite>Learn More</BtnWhite>,
@@ -72,7 +72,6 @@ export const services = [
   },
   {
     imgSrc: "images/service-04.webp",
-    number: "04",
     title: "Belly Reducing",
     description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
     btnComponent: <BtnGreen>Learn More</BtnGreen>,
@@ -81,7 +80,6 @@ export const services = [
   },
   {
     imgSrc: "images/service-05.webp",
-    number: "05",
     title: "RF Microneedling",
     description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
     btnComponent: <BtnWhite>Learn More</BtnWhite>,
@@ -90,7 +88,6 @@ export const services = [
   },
   {
     imgSrc: "images/service-06.webp",
-    number: "06",
     title: "Skin Care Routine",
     description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
     btnComponent: <BtnGreen>Learn More</BtnGreen>,
@@ -99,7 +96,6 @@ export const services = [
   },
   {
     imgSrc: "images/service-07.webp",
-    number: "07",
     title: "Glow Facial",
     description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodon pretium.",
     btnComponent: <BtnWhite>Learn More</BtnWhite>,
