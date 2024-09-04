@@ -57,7 +57,27 @@ h5 {
   font-family: "Roboto Serif";
   font-size: 25px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
+  line-height: 50px;
+  /* 125% */
+  letter-spacing: 2px;
+}
+.special-title-green {
+  color: var(--green-100 );
+  font-family: "Roboto Serif";
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px;
+  /* 125% */
+  letter-spacing: 2px;
+}
+.special-title-white {
+  color: var(--white-200);
+  font-family: "Roboto Serif";
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
   line-height: 50px;
   /* 125% */
   letter-spacing: 2px;
@@ -165,14 +185,10 @@ p {
   justify-content: flex-start;
   align-items: flex-start;
   margin-left: 50px;
-  margin-top: -100px;
-  /* Adjust this value to move the text up */
-  margin-top: -30px;
-  /* Increase or decrease as needed */
-  position: relative;
-  /* Ensure relative positioning */
-  top: -50px;
-  /* Fine-tune vertical positioning */
+  margin-top: -100px;/* Adjust this value to move the text up */
+  margin-top: -30px; /* Increase or decrease as needed */
+  position: relative; /* Ensure relative positioning */
+  top: -50px; /* Fine-tune vertical positioning */
 }
 .about-us-button {
   display: flex;
@@ -188,7 +204,7 @@ p {
   align-items: flex-start;
   margin-right: 50px;
   position: relative;
-  top: -30px;
+  top: -50px;
 }
 
 
@@ -209,22 +225,34 @@ p {
     margin-bottom: 80px;
   }
 
+  .green-services,
+  .white-services {
+      width: 100%;
+        /* Garante que o background cubra toda a tela */
+        padding: 60px;
+        /* Ajuste o padding conforme necessário */
+        display: flex;
+        justify-content: center;
+        /* Centraliza o conteúdo horizontalmente */
+        align-items: center;
+        /* Alinha verticalmente */
+  }
+
   .green-services {
     background-color: var(--green-50);
-    display: flex;
     flex-direction: row;
-    padding: 60px 170px;
-    align-items: center;
+    /* Imagem à direita */
 
     .green-right {
+      max-width: 500px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-left: 50px;
       align-items: flex-start;
+      margin-left: 120px;
+      /* Ajuste o espaçamento entre a imagem e o texto */
+      padding: 0;
+      /* Remove padding interno se necessário */
 
-      h5,
       p {
         color: var(--white-200);
       }
@@ -233,13 +261,25 @@ p {
 
   .white-services {
     background-color: var(--white-200);
-    display: flex;
     flex-direction: row-reverse;
-    padding: 60px 170px;
-    align-items: center;
+    /* Imagem à esquerda */
+
+    .white-left {
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: 120px;
+      /* Ajuste o espaçamento entre a imagem e o texto */
+      padding: 0;
+      /* Remove padding interno se necessário */
+
+      p {
+        color: var(--green-50);
+      }
+    }
   }
 }
-
 .advantages {
   padding: 80px 0;
   display: flex;
@@ -302,8 +342,7 @@ p {
   font-style: normal;
   font-weight: 400;
   line-height: 26px;
-  margin: 0;
-  /* Remove margens padrão para o parágrafo */
+  margin: 0; /* Remove margens padrão para o parágrafo */
 }
 
 

@@ -44,7 +44,7 @@ function Home() {
           <div className={service.containerClass} key={index}>
             <img src={service.imgSrc} alt="" />
             <div className={service.contentClass}>
-              <h5 className={`${service.h5Style}`}>{service.title}</h5>
+              <h5 className={service.h5Style}>{service.title}</h5>
               <p>{service.description}</p>
               {service.btnComponent}
             </div>

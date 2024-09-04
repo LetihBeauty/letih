@@ -52,7 +52,7 @@ export const services = [
     btnComponent: <BtnWhite>Learn More</BtnWhite>,
     containerClass: "green-services",
     contentClass: "green-right",
-    h5Style: "special-style",
+    h5Style: "special-title-white"
   },
   {
     imgSrc: "images/service-02.webp",
@@ -60,7 +60,8 @@ export const services = [
     description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
     btnComponent: <BtnGreen>Learn More</BtnGreen>,
     containerClass: "white-services",
-    contentClass: "white-right",
+    contentClass: "white-left",
+    h5Style: "special-title-green",
   },
   {
     imgSrc: "images/service-03.webp",
@@ -69,6 +70,7 @@ export const services = [
     btnComponent: <BtnWhite>Learn More</BtnWhite>,
     containerClass: "green-services",
     contentClass: "green-right",
+    h5Style: "special-title-white"
   },
   {
     imgSrc: "images/service-04.webp",
@@ -76,7 +78,8 @@ export const services = [
     description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
     btnComponent: <BtnGreen>Learn More</BtnGreen>,
     containerClass: "white-services",
-    contentClass: "white-right",
+    contentClass: "white-left",
+    h5Style: "special-title-green",
   },
   {
     imgSrc: "images/service-05.webp",
@@ -85,6 +88,7 @@ export const services = [
     btnComponent: <BtnWhite>Learn More</BtnWhite>,
     containerClass: "green-services",
     contentClass: "green-right",
+    h5Style: "special-title-white"
   },
   {
     imgSrc: "images/service-06.webp",
@@ -92,7 +96,8 @@ export const services = [
     description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium.",
     btnComponent: <BtnGreen>Learn More</BtnGreen>,
     containerClass: "white-services",
-    contentClass: "white-right",
+    contentClass: "white-left",
+    h5Style: "special-title-green",
   },
   {
     imgSrc: "images/service-07.webp",
@@ -101,6 +106,7 @@ export const services = [
     btnComponent: <BtnWhite>Learn More</BtnWhite>,
     containerClass: "green-services",
     contentClass: "green-right",
+    h5Style: "special-title-white"
   },
 ];
 export const advantages = [
