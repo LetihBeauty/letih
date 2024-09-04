@@ -2,7 +2,7 @@ import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
 import BtnWhite from "../components/BtnWhite";
 import CarouselComponent from "../components/Carousel";
-import { advantages, services, youDeserveItLeft, youDeserveItRight } from "../components/constants";
+import { aboutUsSections, advantages, services} from "/home/victor/code/victorfonsecass/letih/src/components/constants/index.js";
 
 function Home() {
   return (
@@ -19,31 +19,23 @@ function Home() {
       {/* About US */}
       <div className="about-us">
         <h2>About Us</h2>
-        <div className="about-us-top about-us-content">
-          <img
-            src="images/home-about-us-women.webp"
-            alt="women with leaf in her hair"
-          />
-          <div className="about-us-top-right">
-            <h5 className="mobile-none">You deserve it!</h5>
-            <p className="mobile-none">
-              {youDeserveItRight}
-            </p>
+        {aboutUsSections.map((section, index) => (
+          <div
+            key={index}
+            className={`about-us-content ${section.containerClass}`}
+          >
+            <img src={section.imgSrc} alt={section.altText} />
+            <div className={`about-us-text ${section.textClass}`}>
+              <h5 className={section.isButtonVisible ? '' : 'mobile-none'}>
+                {section.title}
+              </h5>
+              <p className={section.isButtonVisible ? '' : 'mobile-none'}>
+                {section.description}
+              </p>
+              {section.isButtonVisible && <BtnGreen>Learn More</BtnGreen>}
+            </div>
           </div>
-        </div>
-        <div className="about-us-button about-us-content">
-          <img
-            src="images/home-about-us-bed.webp"
-            alt="women with leaf in her hair"
-          />
-          <div className="about-us-button-left">
-            <h5>You deserve it!</h5>
-            <p>
-              {youDeserveItLeft}
-            </p>
-            <BtnGreen>Learn More</BtnGreen>
-          </div>
-        </div>
+        ))}
       </div>
       {/* Our Services */}
       <div className="our-services">
@@ -71,7 +63,7 @@ function Home() {
               <p>{advantage.description}</p>
             </div>
           ))}
-  </div>
+        </div>
       </div>
       {/* Testimonials */}
       <CarouselComponent />

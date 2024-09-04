@@ -19,13 +19,29 @@ export const transparencyAndHonesty =
 export const behindTheScenes =
   "My name is Leticia Martins. I was born in Brazil in 1993, in a small town in the south of the country. I come from the countryside and was raised with a simple life full of love and innocence. In Brazil in the year 2011 my journey as an Esthetician started, over 10 years of experience and studies in the field of beauty. In the United States of America, also certified and licensed as Master Esthetician and completed several other professional master’s courses in the field. My goal in this career is always seeking new techniques, equipment and advancements for my clients, so everyone can leave my space extremely satisfied. Working as an Master Esthetician is one of my dreams that came true and I live it everyday. Are you ready to elevate your natural beauty? Make you appointment today."
 
-export const youDeserveItRight =
-  "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium."
+// Array contendo os dados para cada seção "About Us"
+export const aboutUsSections = [
+  {
+    imgSrc: 'images/home-about-us-women.webp',
+    altText: 'women with leaf in her hair',
+    title: 'You deserve it!',
+    description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium.",
+    isButtonVisible: false,
+    containerClass: 'about-us-top',
+    textClass: 'about-us-top-right',
+  },
+  {
+    imgSrc: 'images/home-about-us-bed.webp',
+    altText: 'women with leaf in her hair',
+    title: 'You deserve it!',
+    description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium.",
+    isButtonVisible: true,
+    containerClass: 'about-us-button',
+    textClass: 'about-us-button-left',
+  },
+];
 
-export const youDeserveItLeft =
-  "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium."
-
-  // Array de objetos de serviço
+// Array de objetos de serviço
 export const services = [
   {
     imgSrc: "images/service-01.webp",
@@ -96,7 +112,7 @@ export const advantages = [
     imgSrc: "images/icon_history.svg",
     altText: "Icon of history",
     title: "Flexibility",
-    description: "Description for flexibility",
+    description: "Our commitment is to provide an unparalleled quality of service to our clients, setting new industry standards.",
   },
   {
     imgSrc: "images/icon_page_search.svg",
