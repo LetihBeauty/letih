@@ -59,7 +59,6 @@ h5 {
   font-style: normal;
   font-weight: 500;
   line-height: 50px;
-  /* 125% */
   letter-spacing: 2px;
 }
 .special-title-green {
@@ -150,7 +149,6 @@ p {
     margin: 20px 0;
   }
 }
-
 .about-us {
   display: flex;
   justify-content: center;
@@ -158,25 +156,38 @@ p {
   flex-direction: column;
   background-color: var(--white-200);
   padding-top: 80px;
+  margin-bottom: -50px;
 }
+
 .about-us-content {
-  margin: 20px 128px;
+  margin: 80px 300px 0px;
   position: relative;
 }
-.about-us img {
-  width: 650px;
+
+.about-us-img-custom {
+  width: 720px;
   height: 420px;
   flex-shrink: 0;
   border-radius: 15px;
 }
+
+.about-us-img-left {
+  z-index: 2;
+}
+
+.about-us-img-right {
+  z-index: 1;
+  margin-left: -80px;/* Ajuste para a sobreposição */
+}
+
 .about-us-top {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   position: relative;
-  z-index: 2;
 
+    /* Ajuste o padding superior para mover o texto mais para cima */
 }
 
 .about-us-top-right {
@@ -185,26 +196,32 @@ p {
   justify-content: flex-start;
   align-items: flex-start;
   margin-left: 50px;
-  margin-top: -100px;/* Adjust this value to move the text up */
-  margin-top: -30px; /* Increase or decrease as needed */
-  position: relative; /* Ensure relative positioning */
-  top: -50px; /* Fine-tune vertical positioning */
-}
-.about-us-button {
-  display: flex;
-  flex-direction: row-reverse;
-  margin-top: -90px;
-  z-index: 0;
+  /* Ajuste conforme necessário */
+  transform: translateY(-50px);
+  /* Move o texto para cima sem usar margem negativa */
+  position: relative;
 }
 
-.about-us-button-left {
+.about-us-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-top: 0;
+}
+
+.about-us-bottom img {
+  transform: translateY(-50px);
+  /* Ajuste conforme necessário */
+}
+
+.about-us-bottom-left {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
   margin-right: 50px;
   position: relative;
-  top: -50px;
 }
 
 
@@ -227,31 +244,24 @@ p {
 
   .green-services,
   .white-services {
-      width: 100%;
-        /* Garante que o background cubra toda a tela */
-        padding: 60px;
-        /* Ajuste o padding conforme necessário */
-        display: flex;
-        justify-content: center;
-        /* Centraliza o conteúdo horizontalmente */
-        align-items: center;
-        /* Alinha verticalmente */
+    width: 100%;/* Garante que o background cubra toda a tela */
+    padding: 60px;/* Ajuste o padding conforme necessário */
+    display: flex;
+    justify-content: center;/* Centraliza o conteúdo horizontalmente */
+    align-items: center;/* Alinha verticalmente */
   }
 
   .green-services {
     background-color: var(--green-50);
-    flex-direction: row;
-    /* Imagem à direita */
+    flex-direction: row;/* Imagem à direita */
 
     .green-right {
-      max-width: 500px;
+      max-width: 600px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin-left: 120px;
-      /* Ajuste o espaçamento entre a imagem e o texto */
-      padding: 0;
-      /* Remove padding interno se necessário */
+      margin-left: 120px;/* Ajuste o espaçamento entre a imagem e o texto */
+      padding: 0;/* Remove padding interno se necessário */
 
       p {
         color: var(--white-200);
@@ -261,18 +271,15 @@ p {
 
   .white-services {
     background-color: var(--white-200);
-    flex-direction: row-reverse;
-    /* Imagem à esquerda */
+    flex-direction: row-reverse;/* Imagem à esquerda */
 
     .white-left {
-      max-width: 500px;
+      max-width: 600px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin-right: 120px;
-      /* Ajuste o espaçamento entre a imagem e o texto */
-      padding: 0;
-      /* Remove padding interno se necessário */
+      margin-right: 120px;/* Ajuste o espaçamento entre a imagem e o texto */
+      padding: 0;/* Remove padding interno se necessário */
 
       p {
         color: var(--green-50);
@@ -283,56 +290,40 @@ p {
 .advantages {
   padding: 80px 0;
   display: flex;
-  flex-direction: column;
-  /* Mantém o título no topo centralizado */
-  align-items: center;
-  /* Centraliza o conteúdo horizontalmente */
+  flex-direction: column;/* Mantém o título no topo centralizado */
+  align-items: center;/* Centraliza o conteúdo horizontalmente */
 }
 
 .advantages h2 {
   text-align: center;
-  margin-bottom: 40px;
-  /* Espaçamento entre o título e os ícones */
 }
 
 .advantages .advantages-icons {
+  padding: 80px 0;
   display: flex;
-  flex-direction: row;
-  /* Alinha os ícones horizontalmente */
-  justify-content: center;
-  /* Centraliza os ícones horizontalmente dentro do container */
-  align-items: flex-start;
-  /* Alinha os ícones e textos no topo do container */
-  gap: 60px;
-  /* Espaçamento entre os ícones */
-  flex-wrap: wrap;
-  /* Permite que os ícones quebrem linha se necessário */
-  max-width: 1200px;
-  /* Limita a largura máxima do contêiner */
+  flex-direction: row;/* Alinha os ícones horizontalmente */
+  justify-content: center;/* Centraliza os ícones horizontalmente dentro do container */
+  align-items: flex-start;/* Alinha os ícones e textos no topo do container */
+  gap: 80px;/* Espaçamento entre os ícones */
+  flex-wrap: wrap;/* Permite que os ícones quebrem linha se necessário */
+  max-width: 1200px;/* Limita a largura máxima do contêiner */
 }
 
 .advantages .icon-content {
   display: flex;
-  flex-direction: column;
-  /* Empilha a imagem e o texto verticalmente */
-  align-items: center;
-  /* Centraliza a imagem e o texto horizontalmente */
-  text-align: center;
-  /* Centraliza o texto dentro do bloco */
-  max-width: 200px;
-  /* Limita a largura do bloco de ícones */
+  flex-direction: column;/* Empilha a imagem e o texto verticalmente */
+  align-items: center; /* Centraliza a imagem e o texto horizontalmente */
+  text-align: center; /* Centraliza o texto dentro do bloco */
+  max-width: 220px; /* Limita a largura do bloco de ícones */
 }
 
 .advantages .icon-content img {
-  margin-bottom: 24px;
-  /* Espaçamento aumentado entre a imagem e o texto */
-  max-width: 100px;
-  /* Limita o tamanho da imagem */
+  margin-bottom: 24px;/* Espaçamento aumentado entre a imagem e o texto */
+  max-width: 100px;/* Limita o tamanho da imagem */
 }
 
 .advantages .icon-content h6 {
-  margin: 8px 0;
-  /* Espaçamento adicional acima e abaixo do título */
+  margin: 8px 0;/* Espaçamento adicional acima e abaixo do título */
 }
 
 .advantages .icon-content p {

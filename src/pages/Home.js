@@ -24,7 +24,11 @@ function Home() {
             key={index}
             className={`about-us-content ${section.containerClass}`}
           >
-            <img src={section.imgSrc} alt={section.altText} />
+            <img
+              src={section.imgSrc}
+              alt={section.altText}
+              className={`about-us-img-custom ${section.imgClass}`}
+            />
             <div className={`about-us-text ${section.textClass}`}>
               <h5 className={`${section.h5Style} ${section.isButtonVisible ? '' : 'mobile-none'}`}>
                 {section.title}

@@ -28,7 +28,8 @@ export const aboutUsSections = [
     description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium.",
     isButtonVisible: false,
     containerClass: 'about-us-top',
-    textClass: 'about-us-top-right',
+    imgClass: 'about-us-img-left', // Classe para a imagem
+    textClass: 'about-us-top-right', // Classe para o texto
     h5Style: 'special-style',
   },
   {
@@ -37,8 +38,8 @@ export const aboutUsSections = [
     title: 'You deserve it!',
     description: "Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae eget tempor non eu sed massa velit. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium. Et potenti nulla tellus praesent euismod commodo pretium.",
     isButtonVisible: true,
-    containerClass: 'about-us-button',
-    textClass: 'about-us-button-left',
+    containerClass: 'about-us-bottom',
+    textClass: 'about-us-bottom-left',
     h5Style: 'special-style',
   },
 ];
