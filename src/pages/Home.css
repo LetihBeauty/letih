@@ -156,7 +156,7 @@ p {
   flex-direction: column;
   background-color: var(--white-200);
   padding-top: 80px;
-  margin-bottom: -50px;
+  margin-bottom: 20px;
 }
 
 .about-us-content {
@@ -493,129 +493,156 @@ p {
   background-color: var(--white-200);
 }
 
-@media only screen and (max-width: 432px) {
-  h1 {
-    color: var(--green-100);
-    font-size: 40px;
-    line-height: 50px; /* 125% */
+@media (max-width: 431px) {
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    /* Remove scroll horizontal */
   }
 
-  /* h2 {
-    font-size: 32px;
-    line-height: 42px;
-    letter-spacing: 6.4px;
-  } */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-family: "Roboto Serif";
+    color: var(--green-100);
+    font-size: 4.8vw;
+    /* Ajuste relativo à largura da tela */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 5.6vw;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    color: var(--green-100);
+    font-family: "Roboto Serif";
+    font-size: 3.2vw;
+    /* Ajuste relativo à largura da tela */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 4.4vw;
+    letter-spacing: 0.8vw;
+  }
 
   h3 {
-    font-size: 16px;
-    line-height: 40px;
-    letter-spacing: 3.2px;
+    color: var(--green-100);
+    text-align: center;
+    font-family: "SVN-Aire Pro";
+    font-size: 2.4vw;
+    /* Ajuste relativo à largura da tela */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.2vw;
+    letter-spacing: 0.6vw;
+    text-transform: uppercase;
   }
 
   h4 {
-    font-size: 16px;
+    color: var(--green-100);
+    font-family: Raleway;
+    font-size: 2vw;
+    /* Ajuste relativo à largura da tela */
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.5vw;
+  }
+
+  h5 {
+    color: var(--Black-100, #000);
+    font-family: "Roboto Serif";
+    font-size: 2vw;
+    /* Ajuste relativo à largura da tela */
+    font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: 3.2px;
-  }
-  .banner {
-    .content {
-      top: 330px;
-      left: 180px;
-      display: flex;
-      align-items: center;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 40px;
-    }
-
-    img {
-      width: 100vw;
-      height: 463px;
-      object-fit: cover;
-      object-position: -290px;
-    }
+    letter-spacing: 0.5vw;
   }
 
-  .about-us {
-    padding-top: 0;
-
-    h2 {
-      font-size: 28px;
-      line-height: 42px;
-      letter-spacing: 6.4px;
-    }
-    img {
-      width: 312px;
-      height: 210px;
-    }
-
-    .mobile-none {
-      display: none;
-    }
-
-    .about-us-button {
-      margin-top: -50px;
-      flex-direction: column;
-
-      img {
-        margin-left: 46px;
-      }
-    }
-
-    .about-us-button-left {
-      margin: 20px 0 0 0;
-      width: 358px;
-
-      h5 {
-        margin-bottom: 32px;
-      }
-    }
+  .special-style,
+  .special-title-green,
+  .special-title-white {
+    font-family: "Roboto Serif";
+    font-size: 2vw;
+    /* Ajuste relativo à largura da tela */
+    font-style: normal;
+    font-weight: 500;
+    line-height: 3.2vw;
+    letter-spacing: 0.4vw;
   }
 
-  .green-services,
-  .white-services {
-    flex-direction: column !important;
-    padding: 32px 16px !important;
-    height: auto !important;
-    justify-content: center !important;
-    align-items: center !important;
-
-    .service-number {
-      display: none;
-    }
-
-    img {
-      width: 346px;
-      height: 216px;
-      margin: 31px 0px;
-    }
-
-    .green-right {
-      margin: 0px !important;
-    }
-
-    .white-right {
-      align-items: flex-end;
-      display: flex;
-      justify-content: flex-end;
-      flex-direction: column;
-
-      p {
-        text-align: right;
-      }
-    }
+  h6 {
+    color: var(--Black-100, #000);
+    font-family: "Roboto Serif";
+    font-size: 1.6vw;
+    /* Ajuste relativo à largura da tela */
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
   }
 
-  .advantages {
-    .advantages-icons {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 1fr;
-      gap: 10px;
-      margin: 0 !important;
-    }
+  p {
+    color: var(--Black-100, #000);
+    font-family: Raleway;
+    font-size: 1.6vw;
+    /* Ajuste relativo à largura da tela */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.6vw;
   }
+.banner {
+  height: 700px;
+  width: 100vw;
+  display: block;/* Empilha o conteúdo e a imagem */
+  position: relative;
+  padding: 0 20px;/*vitar ultrapassar os limites */
+  box-sizing: border-box;/* Garante que o padding seja incluído na largura total */
+}
+
+.banner img {
+  padding-top: 10px;
+  background: linear-gradient(to bottom, #164734 20px, #164734 20px);
+  height: 410px;
+  width: 100%;
+  object-fit: cover;/* Faz a imagem cobrir o espaço disponível sem distorção */
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
+  object-position: 80% center;/* Centraliza a parte visível da imagem */
+  z-index: 0;/* Mantém a imagem no fundo */
+}
+.banner .content {
+  position: relative;
+  z-index: 1;
+  margin-top: 420px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;/* Adiciona espaçamento interno */
+  box-sizing: border-box; /* Inclui o padding dentro da largura total */
+}
+
+.banner h1 {
+  width: 350px;
+  text-align: center;
+  margin: 10px 0;
+  word-wrap: break-word;
+  font-size: 30px;
+}
+.banner h4 {
+  margin: 10px 10px 20px 10px;
+  word-wrap: break-word;
+  font-size: 20px;
+}
 }

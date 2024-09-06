@@ -9,12 +9,12 @@ function Home() {
     <div>
       {/* Banner hero */}
       <div className="banner">
-        <div class="content">
+        <div className="content">
           <h1>ELEVATE YOUR ELEGANCE</h1>
           <h4>Unveil Your Beauty with Us</h4>
           <BtnGreen>Our Services</BtnGreen>
         </div>
-        <img src="images/hero-women-leaf.webp" alt="Women with leaf"></img>
+        <img src="images/hero-women-leaf.webp" alt="Women with leaf"/>
       </div>
       {/* About US */}
       <div className="about-us">
