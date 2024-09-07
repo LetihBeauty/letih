@@ -527,7 +527,7 @@ body {
   h2 {
     color: var(--green-100);
     font-family: "Roboto Serif";
-    font-size: 3.2vw;
+    font-size: 8vw;
     /* Ajuste relativo à largura da tela */
     font-style: normal;
     font-weight: 400;
@@ -574,8 +574,7 @@ body {
   .special-title-green,
   .special-title-white {
     font-family: "Roboto Serif";
-    font-size: 2vw;
-    /* Ajuste relativo à largura da tela */
+    font-size: 6vw;
     font-style: normal;
     font-weight: 500;
     line-height: 3.2vw;
@@ -603,7 +602,7 @@ body {
     line-height: 2.6vw;
   }
 .banner {
-  height: 700px;
+  height: 600px;
   width: 100vw;
   display: block;/* Empilha o conteúdo e a imagem */
   position: relative;
@@ -644,5 +643,151 @@ body {
   margin: 10px 10px 20px 10px;
   word-wrap: break-word;
   font-size: 20px;
+}
+
+.about-us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--white-200);
+  padding-top: 50px;
+  margin-bottom: 20px;
+}
+
+.about-us-content {
+  margin: 40px 0px 0px;
+  position: relative;
+  overflow: visible;
+}
+
+.about-us-img-custom {
+  width: 300px;
+  height: 250px;
+  flex-shrink: 0;
+  border-radius: 15px;
+}
+
+.about-us-img-left {
+  z-index: 2;
+  margin-left: -80px;
+}
+
+.about-us-img-right {
+  position: relative;
+  z-index: 1;
+  margin-right: -290px;
+  /* Ajuste para a sobreposição */
+}
+
+.about-us-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+
+  /* Ajuste o padding superior para mover o texto mais para cima */
+}
+
+.about-us-top-right {
+  display: none;
+}
+
+.about-us-bottom {
+  flex-direction: column;
+}
+
+.about-us-bottom img {
+  transform: translateY(-80px) translateX(40px);
+  /* Ajuste conforme necessário */
+}
+
+.about-us-bottom-left {
+  width: 100%;
+  text-align: left;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  top: -50px;
+
+    p {
+        margin: 0;
+        padding: 20px 0px 20px 0px;
+      }
+}
+.our-services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+
+  img {
+    width: 400px;
+    height: 250px;
+    flex-shrink: 0;
+  }
+
+  h2 {
+    margin-bottom: 80px;
+  }
+
+  .green-services,
+  .white-services {
+    width: 100%;
+    /* Garante que o background cubra toda a tela */
+    padding: 30px;
+    /* Ajuste o padding conforme necessário */
+    display: flex;
+    justify-content: center;
+    /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
+    /* Alinha verticalmente */
+        p {
+            margin: 0;
+            padding: 20px 0px 20px 0px;
+          }
+  }
+
+  .green-services {
+    background-color: var(--green-50);
+    flex-direction: column;
+
+
+    .green-right {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 30px 0px 10px 0px;
+      padding: 0;
+      /* Remove padding interno se necessário */
+
+      p {
+        color: var(--white-200);
+      }
+    }
+  }
+
+  .white-services {
+    background-color: var(--white-200);
+    flex-direction: column;
+
+    .white-left {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      /* Remove padding interno se necessário */
+
+      p {
+        color: var(--green-50);
+      }
+    }
+  }
 }
 }
