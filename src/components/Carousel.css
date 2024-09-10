@@ -5,12 +5,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px;
   height: 757px;
+  gap: 50px;
 }
 
 h1 {
-  font-family: "Angelia Devitson" !important;
+  font-family: "Angelia Devitson" ;
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
@@ -43,6 +43,7 @@ h1 {
   font-style: normal;
   font-weight: 400;
   line-height: 34px; /* 141.667% */
+  text-align: right;
 }
 
 .testimonial-content p {
@@ -52,12 +53,25 @@ h1 {
   font-style: normal;
   font-weight: 400;
   line-height: 26px;
-}
+  text-align: right;
+  width: 365px;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  overflow: hidden;
+  box-sizing: border-box;
 
+
+  .customer-name {
+    margin-top: -50px;
+    padding: 0;
+  }
+}
 .carousel-caption {
   position: static;
   padding: 0;
   color: #ffffff;
+
 }
 .carousel-control-prev,
 .carousel-control-next {
@@ -67,33 +81,21 @@ h1 {
 /* Ajusta a seta da esquerda do carrossel */
 .carousel-control-prev {
   width: 60px;
-  /* Ajuste o tamanho da seta */
   height: 60px;
-  /* Ajuste o tamanho da seta */
   top: 70%;
-  /* Posiciona verticalmente no meio */
-  transform: translateY(-50%);
-  /* Centraliza verticalmente */
-  left: 1440px;
-  /* Ajuste a distância da borda esquerda */
+  transform: translateY(-10%);
+  left: 1420px;
   background-color: transparent;
-  /* Remove o fundo padrão */
 }
 
 /* Ajusta a seta da direita do carrossel */
 .carousel-control-next {
   width: 60px;
-  /* Ajuste o tamanho da seta */
   height: 60px;
-  /* Ajuste o tamanho da seta */
   top: 70%;
-  /* Posiciona verticalmente no meio */
-  transform: translateY(-50%);
-  /* Centraliza verticalmente */
-  right: 330px;
-  /* Ajuste a distância da borda direita */
+  transform: translateY(-10%);
+  right: 360px;
   background-color: transparent;
-  /* Remove o fundo padrão */
 }
 
 /* Define o fundo comum para ambas as setas */
@@ -101,73 +103,133 @@ h1 {
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml,%3csvg width='31' height='8' viewBox='0 0 31 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.646444 3.64645C0.451183 3.84171 0.451183 4.15829 0.646444 4.35355L3.82842 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.73079 7.34027 4.73079 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.73079 0.976311 4.73079 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82842 0.464466L0.646444 3.64645ZM31 3.5L0.999998 3.5V4.5L31 4.5V3.5Z' fill='%23F7F7F7'/%3e%3c/svg%3e");
   background-size: 45px 45px;
-  /* Ajuste o tamanho do fundo */
   background-size: contain;
   background-repeat: no-repeat;
-  /* Evita repetição do fundo */
   background-position: center;
-  /* Centraliza o fundo */
 
 }
 
 /* Ajuste a posição específica para cada seta se necessário */
 .carousel-control-prev-icon {
   background-position: left center;
-  /* Posiciona o ícone da seta esquerda */
 }
 
 .carousel-control-next-icon {
   background-position: right center;
-  /* Posiciona o ícone da seta direita */
   transform: rotate(180deg);
 }
 .carousel-indicators {
   display: none;
 }
 
-@media only screen and (max-width: 431px) {
+@media (max-width: 430px) {
+  * {
+      box-sizing: border-box;
+    }
   .testimonial-container {
+    display: flex;
     width: 100%;
     height: 425px !important;
     padding: 0px;
-
-    img {
-      display: none;
-    }
-
-    .testimonial-content {
-      h1 {
-        font-family: "Angelia Devitson";
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 70px;
-        margin-top: 32px;
-      }
-
-      h4 {
-        font-family: "Roboto Serif";
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 34px;
-        margin-top: 40px;
-      }
-
-      .carousel-caption {
-        margin: 0 15px 56px 15px;
-
-        .customer-testimonial {
-          margin: 0px 40px;
-        }
-
-        .customer-name {
-          display: flex;
-          justify-content: flex-end;
-          margin-right: 40px;
-          margin-top: 20px;
-        }
-      }
-    }
+    text-align: center;
+    position: relative;
   }
+  .testimonial-container img {
+    display: none;
+  }
+  .testimonial-container .testimonial-content {
+    text-align: center;
+    width: 100%;
+  }
+  .testimonial-content h1 {
+
+    font-family: "Angelia Devitson" ;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 70px;
+    margin-top: 32px;
+    margin: auto;
+    padding: 0;
+    text-align: center !important;
+    display: block;
+  }
+
+  .testimonial-container .testimonial-content h4 {
+    font-family: "Roboto Serif";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    margin-top: 40px;
+    text-align: left;
+  }
+  .testimonial-container .testimonial-content p {
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .testimonial-container .testimonial-content .carousel-caption {
+    margin: 0 15px 56px 15px;
+  }
+  .testimonial-container .testimonial-content .carousel-caption .customer-testimonial {
+    margin: 0px 0px 0px 0px;
+    text-align: flex-start;
+  }
+
+  .testimonial-container .testimonial-content .carousel-caption .customer-name {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+    margin-top: 20px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    visibility: visible;
+    opacity: 1;
+    top: auto;
+    bottom: 10px;
+    transform: none;
+    right: 10px;
+    left: auto;
+    right: 10px;
+  }
+  .carousel-control-prev {
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    left: auto;
+    right: 80px;
+  }
+
+  .carousel-control-next {
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg width='31' height='8' viewBox='0 0 31 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.646444 3.64645C0.451183 3.84171 0.451183 4.15829 0.646444 4.35355L3.82842 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.73079 7.34027 4.73079 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.73079 0.976311 4.73079 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82842 0.464466L0.646444 3.64645ZM31 3.5L0.999998 3.5V4.5L31 4.5V3.5Z' fill='%23F7F7F7'/%3e%3c/svg%3e");
+    background-size: 45px 45px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .carousel-control-prev-icon {
+    background-position: left center;
+  }
+
+  .carousel-control-next-icon {
+    background-position: right center;
+    transform: rotate(180deg);
+  }
+
 }
