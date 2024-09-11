@@ -1024,3 +1024,32 @@ body, html {
   background-color: var(--white-200);
 }
 }
+@media (min-width: 1300px) and (max-width: 1900px) {
+.about-us-content {
+    margin: 80px 200px 0px;
+    /* Ajuste a margem para um valor adequado */
+  }
+
+  .about-us-img-custom {
+    width: 600px;
+    /* Ajuste a largura para melhor encaixe */
+    height: 450px;
+    /* Ajuste a altura conforme necessário */
+  }
+
+  .about-us-img-right {
+    margin-left: -60px;
+    /* Ajuste para a sobreposição */
+  }
+
+  .about-us-top-right {
+    transform: translateY(-30px);
+  }
+  .about-us-bottom-left {
+    transform: translateY(-110px);
+  }
+
+  .about-us-bottom img {
+    transform: translateY(-150px);
+  }
+}

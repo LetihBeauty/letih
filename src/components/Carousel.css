@@ -54,7 +54,7 @@ h1 {
   font-weight: 400;
   line-height: 26px;
   text-align: right;
-  width: 365px;
+  margin-left: 100px;
   display: flex;
   justify-content: right;
   align-items: right;
@@ -84,7 +84,7 @@ h1 {
   height: 60px;
   top: 70%;
   transform: translateY(-10%);
-  left: 1420px;
+  left: 1490px;
   background-color: transparent;
 }
 
@@ -94,7 +94,7 @@ h1 {
   height: 60px;
   top: 70%;
   transform: translateY(-10%);
-  right: 360px;
+  right: 290px;
   background-color: transparent;
 }
 
@@ -232,4 +232,40 @@ h1 {
     transform: rotate(180deg);
   }
 
+}
+@media (min-width: 1300px) and (max-width: 1900px) {
+.carousel-control-prev,
+.carousel-control-next {
+  visibility: visible;
+  opacity: 1;
+  top: auto;
+  bottom: 10px;
+  transform: none;
+  transform: translateY(-290%);
+}
+
+.carousel-control-prev {
+  left: 1290px;
+}
+.carousel-control-next {
+  right: 100px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg width='31' height='8' viewBox='0 0 31 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.646444 3.64645C0.451183 3.84171 0.451183 4.15829 0.646444 4.35355L3.82842 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.73079 7.34027 4.73079 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.73079 0.976311 4.73079 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82842 0.464466L0.646444 3.64645ZM31 3.5L0.999998 3.5V4.5L31 4.5V3.5Z' fill='%23F7F7F7'/%3e%3c/svg%3e");
+  background-size: 45px 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.carousel-control-prev-icon {
+  background-position: left center;
+}
+
+.carousel-control-next-icon {
+  background-position: right center;
+  transform: rotate(180deg);
+}
 }
