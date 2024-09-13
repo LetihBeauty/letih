@@ -117,6 +117,7 @@ p {
   background-color: var(--white-200);
 
   .content {
+    max-width: 1200px;
     display: flex;
     position: relative;
     z-index: 1;
@@ -168,6 +169,7 @@ p {
 }
 
 .about-us-content {
+  max-width: 1200px;
   margin: 80px 300px 0px;
   position: relative;
 }
@@ -417,6 +419,7 @@ p {
   }
 
   form {
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     width: 70%;

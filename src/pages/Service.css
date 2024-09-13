@@ -1,0 +1,237 @@
+@import "../style.css";
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+h1 {
+  font-family: "Roboto Serif";
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: normal;
+  display: flex;
+  margin-bottom: 40px;
+  text-transform: math-auto;
+}
+h2 {
+  color: var(--green-100);
+  font-family: "Roboto Serif";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 8px;
+}
+
+h3 {
+  color: var(--green-100);
+  font-family: "Roboto Serif";
+  font-size: 24px;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: math-auto;
+}
+
+h4 {
+  color: var(--green-100);
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+h5 {
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+p {
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+.containerService {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+.bannerService {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+.bannerService .banner-top {
+  background-color: #446953;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 299px;
+  text-align: center;
+  width: 100%;
+  padding: 80px 0;
+
+    h1,
+    p {
+      color: #F7F7F7;
+    }
+}
+
+.banner-middle{
+  display: flex;
+  height: 621px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  background-color: var(--white-200);
+  z-index: 1;
+
+}
+.banner-middle-content {
+  width: 503px;
+  margin: 89px 128px 32px 101px;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box; /* Inclui padding e bordas na largura total */
+  h2 {
+    font-size: 32px;
+    letter-spacing: 4px;
+    padding-bottom: 35px;
+    margin: 0;
+  }
+  h5{
+    font-family: Raleway;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  p.banner-middle-recommendation {
+    padding-bottom: 0px;
+    margin: 0px;
+  }
+}
+.banner-middle-content-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 5px;
+}
+
+.banner-middle-content-details > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  h5 {
+    margin: 0;
+    padding-bottom: 14px;
+  }
+  p{
+    padding-bottom: 0px;
+  }
+}
+
+.banner-middle-photo img{
+  background-color: black;
+  height: 630px;
+  width: 708px;
+  object-fit: cover;
+  margin-top: 65px;
+  border-radius: 6px;
+  position: relative;
+}
+.banner-button{
+  padding-top: 30px;
+  padding-bottom: 32px;
+}
+
+.banner-bottom {
+  background-color: #446953;
+  height: 130px;
+  width: 100%;
+  position: relative;
+}
+.serviceIncluded{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  background-color: var(--white-200);
+}
+
+.serviceIncluded-content {
+  width: 1490px;
+
+  h2 {
+    font-size: 32px;
+    letter-spacing: 4px;
+    padding-bottom: 35px;
+    margin: 0;
+  }
+
+  h5 {
+    font-family: Raleway;
+    margin: 0;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+
+  p {
+    padding-bottom: 0px;
+    margin: 0px;
+  }
+}
+.serviceSteps {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding-top: 5px;
+  margin: 89px 90px 32px 128px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 503px;
+  flex: 1 1 auto;/* Permite que os itens se ajustem conforme necessário */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.detail-item h5{
+  margin-right: 10px;
+  white-space: nowrap;
+}
+.detail-item p {
+    flex: 1;
+  margin: 0;
+  align-items: center;/* Remove margens padrão do parágrafo */
+
+}
+.serviceIncluded-warning {
+  margin: 120px 128px 120px 128px;
+  justify-content: center;
+  border: 1px solid black;
+}
+@media (min-width: 1000px) and (max-width: 1900px) {
+  .banner-middle .containerService {
+    width: 503px;
+  }
+}

@@ -2,7 +2,7 @@ import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
 import BtnWhite from "../components/BtnWhite";
 import CarouselComponent from "../components/Carousel";
-import { aboutUsSections, advantages, services} from "/home/victor/code/victorfonsecass/letih/src/components/constants/index.js";
+import { aboutUsSections, advantages, services} from "../components/constants/index.js";
 
 function Home() {
   return (

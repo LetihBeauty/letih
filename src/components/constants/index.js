@@ -136,3 +136,32 @@ export const advantages = [
     description: "Our commitment is to provide an unparalleled quality of service to our clients, setting new industry standards.",
   },
 ];
+export const facialDeepCleasing = [
+  {
+    title:  "1 - Deep Cleasing Facial",
+    whatIs: "What is a Deep Cleansing Facial?",
+    whatIsDescription: "Our Deep Cleansing Facial is designed to thoroughly cleanse the skin and help issues like clogged pores, blackheads, and impurities.",
+    benefits: "What are the benefits?",
+    benefitsDescription: "The benefits are preventing acne breakouts, improving overall skin texture, appearance and maintaining healthy skin. " ,
+    benefitsRecommendations: "Typically recommended every 8-10 weeks, depending on your skin's needs and concerns.",
+    timeDescription: "1 hour and 30 minutes.",
+    priceDescription: "$145",
+    btnComponent: <BtnGreen>Book Now</BtnGreen>,
+    imgSrc:'images/home-about-us-bed.webp',
+  },
+];
+export const facialDeepCleasingSupplementary = [
+  {title:"Cleansing", description:"The skin is cleansed to remove makeup, dirt, and of it."},
+  {title:"Exfoliation", description:"An exfoliant is used to slough off dead skin cells, promoting a smoother complexion."},
+  {title:"Steam", description:"Steam is applied to the face to open pores and soften the skin, making it easier to extract impurities."},
+  {title:"Extraction", description:"The esthetician manually extracts blackheads, whiteheads, and other debris from the pores using specialized tools."},
+  {title:"Hydra Face Machine", description:"Helps to remove dead skin, Blackhead and Improves Blood circulation."},
+  {title:"High frequency face machine", description:"It works by generating a high frequency current that is applied to the skin via a glass electrode. The current has antibacterial properties that can help kill acne-causing bacteria on the skin. It also helps reduce inflammation."},
+  {title:"Mask", description:"A mask suited to your skin type (such as clay for oily skin or hydrating for dry skin) is applied to further draw out impurities and nourish the skin."},
+  {title:"LED light Therapy ", description:"It works by emitting light energy onto the skin cells, which then converts it into cellular energy. "},
+];
+export const treatmentContraindications = [
+  {
+    warning: "Contraindication to the FACIAL treatments : in case of use of steroids or anticoagulants in the last 3 months, skin wounds, signs of skin infection or cancer"
+  },
+];
