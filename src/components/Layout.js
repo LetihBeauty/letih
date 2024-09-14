@@ -50,7 +50,7 @@ const Layout = ({ children }) => {
           COPYRIGHT © <span>{year}</span> {copyright}
           <br></br>
           <span>{developedBy.title}</span>{" "}
-          <a href={developedBy.url} target="_blank">
+          <a href={developedBy.url} target="_blank" rel="noreferrer">
             {developedBy.name}
           </a>
         </p>
