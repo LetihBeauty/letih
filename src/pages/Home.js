@@ -6,10 +6,27 @@ import BtnGreen from "../components/BtnGreen";
 import BtnWhite from "../components/BtnWhite";
 import CarouselComponent from "../components/Carousel";
 
-function Home({ data }) {
+function Home() {
+  const [data, setData] = useState(null);
+  const getData = async () => {
+    try {
+      setData(await fetchPageData("home"));
+      console.log("foi feita a requisição");
+    } catch (error) {
+      console.error(`Error fetching data:`, error.response || error.message);
+    }
+  };
+  useEffect(() => {
+    console.log("useEffect");
+    // TODO: descobrir porque o useEffect está sendo chamado duas vezes ao invés de uma vez
+    getData();
+  }, []);
+
   if (!data) {
     return <p>Loading...</p>;
   }
+
+  console.log("linha 25", data.homepageCollection.items);
 
   // Supondo que o formato do `data` siga o mesmo padrão do Contentful
   const homeData = data[0]; // Pegando o primeiro item da coleção de dados (ajuste conforme necessário)
