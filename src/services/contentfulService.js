@@ -1,7 +1,7 @@
 import { GraphQLClient, gql } from "graphql-request";
 
 const client = new GraphQLClient(
-  `https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}`,
+  `https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}/environments/master`, // Ajuste conforme a URL correta
   {
     headers: {
       Authorization: `Bearer ${process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN}`,
@@ -53,10 +53,10 @@ export const fetchPageData = async (page) => {
   }
 
   try {
-    const data = await client.request(query);
+    const data = await client.request(query); // Aqui a query é enviada
     return data;
   } catch (error) {
     console.error(`Error fetching ${page} data:`, error);
-    throw error; // Lança o erro para que possa ser tratado em outros lugares, se necessário
+    throw error;
   }
 };

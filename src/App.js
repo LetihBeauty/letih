@@ -15,18 +15,42 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    const path = window.location.pathname;
+    const page = path === "/" ? "home" : path.replace("/", "");
+
     const getData = async () => {
       try {
-        const response = await fetchPageData(); // Chama a função de busca
-        console.log("Entries fetched:", response.items); // Loga os itens retornados
-        setData(response.items); // Armazena os dados no estado
+        const response = await fetchPageData(page);
+
+        // Dependendo da página, acessar a coleção correta
+        let pageData;
+        switch (page) {
+          case "home":
+            pageData = response.homepageCollection?.items;
+            break;
+          case "about":
+            pageData = response.aboutPageCollection?.items;
+            break;
+          // Adicione mais casos para outras páginas
+          case "services":
+            pageData = response.servicePageCollection?.items;
+            break;
+          default:
+            console.error(`No data found for page: ${page}`);
+        }
+
+        console.log(`Entries fetched for ${page}:`, pageData);
+        setData(pageData);
       } catch (error) {
-        console.error("Error fetching entries:", error);
+        console.error(
+          `Error fetching ${page} data:`,
+          error.response || error.message
+        );
       }
     };
 
-    getData(); // Executa a função para buscar os dados
-  }, []);
+    getData();
+  }, [window.location.pathname]);
 
   console.log("Space ID:", process.env.REACT_APP_CONTENTFUL_SPACE_ID);
   console.log("Access Token:", process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN);

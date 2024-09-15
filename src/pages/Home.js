@@ -6,26 +6,15 @@ import BtnGreen from "../components/BtnGreen";
 import BtnWhite from "../components/BtnWhite";
 import CarouselComponent from "../components/Carousel";
 
-function Home() {
-  const [homeData, setHomeData] = useState(null);
-  console.log("homeData", homeData);
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await fetchPageData("home"); // Passa "home" para buscar os dados da página Home
-        setHomeData(response.homepageCollection.items);
-      } catch (error) {
-        console.error("Error fetching home data:", error);
-      }
-    };
-
-    getData();
-  }, []);
-
-  if (!homeData) {
+function Home({ data }) {
+  if (!data) {
     return <p>Loading...</p>;
   }
+
+  // Supondo que o formato do `data` siga o mesmo padrão do Contentful
+  const homeData = data[0]; // Pegando o primeiro item da coleção de dados (ajuste conforme necessário)
+
+  console.log("homeData", homeData);
 
   return (
     // example
