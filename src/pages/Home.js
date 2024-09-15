@@ -1,10 +1,39 @@
+import React, { useEffect, useState } from "react";
+import { fetchPageData } from "../services/contentfulService.js"; // Importa o serviço
+
 import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
 import BtnWhite from "../components/BtnWhite";
 import CarouselComponent from "../components/Carousel";
 
 function Home() {
+  const [homeData, setHomeData] = useState(null);
+  console.log("homeData", homeData);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await fetchPageData("home"); // Passa "home" para buscar os dados da página Home
+        setHomeData(response.homepageCollection.items);
+      } catch (error) {
+        console.error("Error fetching home data:", error);
+      }
+    };
+
+    getData();
+  }, []);
+
+  if (!homeData) {
+    return <p>Loading...</p>;
+  }
+
   return (
+    // example
+    // <div>
+    //   <h1>{homeData[0].title}</h1>
+    //   <h2>{homeData[0].subtitle}</h2>
+    //   <img src={homeData[0].heroImage.url} alt="Hero" />
+    // </div>
     <div>
       {/* Banner hero */}
       <div className="banner">
