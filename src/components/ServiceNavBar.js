@@ -12,7 +12,7 @@ function DesktopServiceNavbar() {
 
   return (
     <div className="service-navbar-desktop">
-      <div className="lala">
+      <div className="service-navbar-container">
         <div className="center-logo">
           <h1>FACIALS</h1>
         </div>
@@ -28,7 +28,7 @@ function DesktopServiceNavbar() {
             </li>
           ))}
         </ul>
-        <ul className="okok">
+        <ul className="main-nav-items">
           {navItems.slice(0, 3).map((item) => (
             <li key={item.id} className="items">
               <Link
