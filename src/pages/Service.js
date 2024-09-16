@@ -1,6 +1,7 @@
 import React from "react";
 import "./Service.css";
 import { facialDeepCleasing, facialDeepCleasingSupplementary,treatmentContraindications} from "../components/constants/index.js"
+import MobileNavbar from "../components/ServiceNavBar.js";
 
 const Service = () => {
   const primaryService = facialDeepCleasing[0];
@@ -11,11 +12,7 @@ const Service = () => {
 
     <div className="containerService">
       <div className="bannerService">
-        <div className="banner-top">
-          <h1>Service Page</h1>
-          <p>Learn more Service us on this page.</p>
-        </div>
-
+        <MobileNavbar></MobileNavbar>
         <div className="banner-middle">
           <div className="banner-middle-content">
             {/* Exibindo diretamente os detalhes do serviço */}

@@ -60,5 +60,22 @@
       "name": "Karen Honorio",
       "url": "https://karenhb.com/"
     }
-  }
+  },
+"service":[
+    {
+      "id": 1,
+      "title": "DEEP CLEASING",
+      "url": "/"
+    },
+    {
+      "id": 2,
+      "title": "DERMAPLANING",
+      "url": ""
+    },
+    {
+      "id": 3,
+      "title": "GLOW FACIAL",
+      "url": "/service"
+    }
+  ]
 }
