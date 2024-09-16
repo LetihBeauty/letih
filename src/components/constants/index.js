@@ -158,7 +158,7 @@ export const facialDeepCleasingSupplementary = [
   {title:"Hydra Face Machine", description:"Helps to remove dead skin, Blackhead and Improves Blood circulation."},
   {title:"High frequency face machine", description:"It works by generating a high frequency current that is applied to the skin via a glass electrode. The current has antibacterial properties that can help kill acne-causing bacteria on the skin. It also helps reduce inflammation."},
   {title:"Mask", description:"A mask suited to your skin type (such as clay for oily skin or hydrating for dry skin) is applied to further draw out impurities and nourish the skin."},
-  {title:"LED light Therapy ", description:"It works by emitting light energy onto the skin cells, which then converts it into cellular energy. "},
+  {title:"LED light Therapy ", description:"It works by emitting light energy onto the skin cells, which then converts it into cellular energy."},
 ];
 export const treatmentContraindications = [
   {

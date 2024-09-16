@@ -8,6 +8,7 @@ const Service = () => {
   const facialTreatmentPrecautions =  treatmentContraindications[0];
 
   return (
+
     <div className="containerService">
       <div className="bannerService">
         <div className="banner-top">
@@ -45,17 +46,21 @@ const Service = () => {
         <div className="banner-bottom"></div>
         <div className="serviceIncluded">
           <div className="serviceIncluded-content">
-            <h5>What is included in this service?</h5>
+            <h4 className="service-title">What is included in this service?</h4>
                 <div className="serviceSteps">
                   {supplementaryServiceInfo.map((item, index) => (
                     <div key={index} className="detail-item">
-                      <h5>{item.title}:</h5>
-                      <p>{item.description}</p>
+                      <h5>{item.title}:
+                        <span class="description-style">{item.description}</span>
+                      </h5>
                     </div>
                   ))}
                 </div>
             <div className="serviceIncluded-warning">
-            {facialTreatmentPrecautions.warning}
+              <div>
+                <span class="material-symbols-outlined">info</span>
+                <h6>{facialTreatmentPrecautions.warning}</h6>
+              </div>
             </div>
           </div>
         </div>
