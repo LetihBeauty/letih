@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import "./Navbar.css";
@@ -33,19 +33,10 @@ function DesktopServiceNavbar() {
   );
 }
 
-// Componente para Navbar em Mobile
+// Componente para Service ServiceNavbar em Mobile
 const MobileServiceNavbar = () => {
   const navItems = data.service;
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
 
   return (
     <>
@@ -60,7 +51,6 @@ const MobileServiceNavbar = () => {
               <Link
                 className={location.pathname === item.url ? "active" : ""}
                 to={item.url}
-                onClick={closeMenu}
               >
               {item.title}
               </Link>
