@@ -64,7 +64,7 @@ const MobileServiceNavbar = () => {
 };
 
 // Componente principal que alterna entre Desktop e Mobile
-const MobileNavbar = () => {
+const ServiceMobileNavbar = () => {
   const desktopView = data.desktop;
   const mobileView = data.mobile;
 
@@ -79,4 +79,4 @@ const MobileNavbar = () => {
   );
 };
 
-export default MobileNavbar; // Corrigido para exportar o componente correto
+export default ServiceMobileNavbar;

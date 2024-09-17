@@ -1,7 +1,7 @@
 import React from "react";
 import "./Service.css";
 import { facialDeepCleasing, facialDeepCleasingSupplementary,treatmentContraindications} from "../components/constants/index.js"
-import MobileNavbar from "../components/ServiceNavBar.js";
+import ServiceMobileNavbar from "../components/ServiceNavBar.js";
 
 const Service = () => {
   const primaryService = facialDeepCleasing[0];
@@ -12,7 +12,9 @@ const Service = () => {
 
     <div className="containerService">
       <div className="bannerService">
-        <MobileNavbar></MobileNavbar>
+        <div className="mobile-navbar-wrapper">
+          <ServiceMobileNavbar></ServiceMobileNavbar>
+        </div>
         <div className="banner-middle">
           <div className="banner-middle-content">
             {/* Exibindo diretamente os detalhes do serviço */}
@@ -46,7 +48,7 @@ const Service = () => {
             <h4 className="service-title">What is included in this service?</h4>
                 <div className="serviceSteps">
                   {supplementaryServiceInfo.map((item, index) => (
-                    <div key={index} className="detail-item">
+                    <div key={index}>
                       <h5>{item.title}:
                         <span class="description-style">{item.description}</span>
                       </h5>

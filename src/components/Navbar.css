@@ -62,6 +62,7 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 0;
+  border-bottom: 10px solid var(--green-100);
 
   h3 {
     font-family: "SVN-Aire Pro";
