@@ -18,28 +18,32 @@ const Service = () => {
         <div className="banner-middle">
           <div className="banner-middle-content">
             {/* Exibindo diretamente os detalhes do serviço */}
-            <h2>{primaryService.title}</h2>
-            <h5>{primaryService.whatIs}</h5>
-            <p>{primaryService.whatIsDescription}</p>
-            <h5>{primaryService.benefits}</h5>
-            <p>{primaryService.benefitsDescription}</p>
-            <p className="banner-middle-recommendation">{primaryService.benefitsRecommendations}</p>
-            <div className="banner-middle-content-details">
-              <div>
-                <h5>Time:</h5>
-                <p>{primaryService.timeDescription}</p>
+            <div className="title">
+              <h2>{primaryService.title}</h2>
+            </div>
+            <div className="title-description">{/*aqui*/}
+              <h5>{primaryService.whatIs}</h5>
+              <p>{primaryService.whatIsDescription}</p>
+              <h5>{primaryService.benefits}</h5>
+              <p>{primaryService.benefitsDescription}</p>
+              <p className="banner-middle-recommendation">{primaryService.benefitsRecommendations}</p>
+              <div className="banner-middle-content-details">
+                <div>
+                  <h5>Time:</h5>
+                  <p>{primaryService.timeDescription}</p>
+                </div>
+                <div>
+                  <h5>Price:</h5>
+                  <p>{primaryService.priceDescription}</p>
+                </div>
               </div>
-              <div>
-                <h5>Price:</h5>
-                <p>{primaryService.priceDescription}</p>
+              <div className="banner-button">
+                {primaryService.btnComponent}
               </div>
             </div>
-            <div className="banner-button">
-              {primaryService.btnComponent}
+            <div className="banner-middle-photo">
+              <img src={primaryService.imgSrc} alt="" />
             </div>
-          </div>
-          <div className="banner-middle-photo">
-            <img src={primaryService.imgSrc} alt="" />
           </div>
         </div>
         <div className="banner-bottom"></div>

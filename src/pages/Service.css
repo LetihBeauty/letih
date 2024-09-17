@@ -91,8 +91,11 @@ p {
   padding-left: 101px;
 }
 .banner-middle-content {
-  width: 503px;
-  margin: 89px 128px 32px 101px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0px auto;
+  width: 100%;
+  margin: 0px 0px 32px 101px;
   h2 {
     font-size: 32px;
     letter-spacing: 4px;
@@ -109,6 +112,14 @@ p {
     padding-bottom: 0px;
     margin: 0px;
   }
+}
+.title{
+  grid-column: 1 / 2;
+  margin: 89px 128px 32px 0px;
+}
+.title-description{
+  grid-column: 1 / 2;
+  margin: 172px 128px 32px 0px;
 }
 .banner-middle-content-details {
   display: flex;
@@ -136,6 +147,7 @@ p {
   width: 708px;
   object-fit: cover;
   margin-top: 65px;
+  padding-right: 0px;/* aqui  */
   border-radius: 6px;
   position: relative;
 }
@@ -217,6 +229,7 @@ p {
 }
 
 @media (min-width: 1000px) and (max-width: 1900px) {
+
   .banner-middle .containerService {
     width: 503px;
   }
@@ -229,65 +242,48 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 920px;
-    justify-content: initial;
+    height: auto;
+    justify-content: flex-start;
     padding-left: 0;
+    h2{
+      font-size: 28px;
+      letter-spacing: 2px;
+      padding-bottom: 40px;
+    }
   }
 
   .banner-middle-content {
-    position: relative;
-    max-width: 358px;
-    margin: 0px 0px 0px 0px;
-    box-sizing: border-box;
-
-    /* Inclui padding e bordas na largura total */
-    h2 {
-      font-size: 32px;
-      letter-spacing: 4px;
-      padding-bottom: 35px;
-      margin: 0;
-    }
-
-    h5 {
-      font-family: Raleway;
-      margin: 0;
-      padding-bottom: 10px;
-    }
-
-    p.banner-middle-recommendation {
-      padding-bottom: 0px;
-      margin: 0px;
-    }
-  }
-  .banner-middle-content-details {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 5px;
+    position: relative;
+    width: 358px;
+    margin: 0px;
   }
 
-  .banner-middle-content-details>div {
+  .title {
+    order: 1;
+    margin: 0;
+    padding-bottom: 32px;
+  }
+  .title-description {
+    order: 3 !important;
+    margin: 32px 0px 0px 0px;
+  }
+
+  .banner-middle-photo {
+    order: 2 !important;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-
-    h5 {
-      margin: 0;
-      padding-bottom: 14px;
-    }
-
-    p {
-      padding-bottom: 0px;
-    }
-    }
+    justify-content: center;
+    width: 100%;
+    margin: 0px;
+  }
 
   .banner-middle-photo img {
+    display: flex;
     height: 275px;
     width: 358px;
     object-fit: cover;
-    margin: 120px 16px 32px 16px;
+    margin-top: 0;
     border-radius: 6px;
     position: relative;
   }
@@ -303,7 +299,6 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* height: 920px; */
     justify-content: initial;
     padding: 0;
   }
@@ -327,6 +322,20 @@ p {
   }
   .serviceIncluded-warning {
     margin: 40px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      display: inline-block;
+
+      .material-symbols-outlined{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 16px;
+      }
     }
+  }
   }
 }
