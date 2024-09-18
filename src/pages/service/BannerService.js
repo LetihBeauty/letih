@@ -1,4 +1,5 @@
 import React from "react";
+import './Service.css';
 import ServiceMobileNavbar from "../../components/ServiceNavBar.js";
 
 const BannerService = ({
@@ -12,8 +13,6 @@ const BannerService = ({
   priceDescription,
   btnComponent,
   imgSrc,
-  supplementaryServiceInfo,
-  warningMessage,
 }) => {
   return (
     <div className="containerService">
