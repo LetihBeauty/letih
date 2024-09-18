@@ -1,12 +1,22 @@
 import React from "react";
-import "./Service.css";
-import { facialDeepCleasing, facialDeepCleasingSupplementary,treatmentContraindications} from "../components/constants/index.js"
-import ServiceMobileNavbar from "../components/ServiceNavBar.js";
+import './Service.css';
+import {facialDeepCleasing} from "../../components/constants/index.js"
+import ServiceMobileNavbar from "../../components/ServiceNavBar.js";
 
-const Service = () => {
+const Service = ({title,
+  whatIs,
+  whatIsDescription,
+  benefits,
+  benefitsDescription,
+  benefitsRecommendations,
+  timeDescription,
+  priceDescription,
+  btnComponent,
+  imgSrc,
+  warningMessage }) => {
+
   const primaryService = facialDeepCleasing[0];
-  const supplementaryServiceInfo = facialDeepCleasingSupplementary;
-  const facialTreatmentPrecautions =  treatmentContraindications[0];
+  const supplementaryServiceInfo = primaryService.facialDeepCleasingSupplementary;
 
   return (
 
@@ -17,32 +27,31 @@ const Service = () => {
         </div>
         <div className="banner-middle">
           <div className="banner-middle-content">
-            {/* Exibindo diretamente os detalhes do serviço */}
             <div className="title">
-              <h2>{primaryService.title}</h2>
+              <h2>{title}</h2>
             </div>
             <div className="title-description">{/*aqui*/}
-              <h5>{primaryService.whatIs}</h5>
-              <p>{primaryService.whatIsDescription}</p>
-              <h5>{primaryService.benefits}</h5>
-              <p>{primaryService.benefitsDescription}</p>
-              <p className="banner-middle-recommendation">{primaryService.benefitsRecommendations}</p>
+              <h5>{whatIs}</h5>
+              <p>{whatIsDescription}</p>
+              <h5>{benefits}</h5>
+              <p>{benefitsDescription}</p>
+              <p className="banner-middle-recommendation">{benefitsRecommendations}</p>
               <div className="banner-middle-content-details">
                 <div>
                   <h5>Time:</h5>
-                  <p>{primaryService.timeDescription}</p>
+                  <p>{timeDescription}</p>
                 </div>
                 <div>
                   <h5>Price:</h5>
-                  <p>{primaryService.priceDescription}</p>
+                  <p>{priceDescription}</p>
                 </div>
               </div>
               <div className="banner-button">
-                {primaryService.btnComponent}
+                {btnComponent}
               </div>
             </div>
             <div className="banner-middle-photo">
-              <img src={primaryService.imgSrc} alt="" />
+              <img src={imgSrc} alt="" />
             </div>
           </div>
         </div>
@@ -53,16 +62,17 @@ const Service = () => {
                 <div className="serviceSteps">
                   {supplementaryServiceInfo.map((item, index) => (
                     <div key={index}>
-                      <h5>{item.title}:
-                        <span class="description-style">{item.description}</span>
+                      <h5>{title}:
+                        <span class="description-style">{item.descriptions}</span>
                       </h5>
                     </div>
-                  ))}
+                  ))
+                  }
                 </div>
             <div className="serviceIncluded-warning">
               <div>
                 <span class="material-symbols-outlined">info</span>
-                <h6>{facialTreatmentPrecautions.warning}</h6>
+                <h6>{warningMessage}</h6>
               </div>
             </div>
           </div>
