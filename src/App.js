@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { fetchPageData } from "./services/contentfulService"; // Importa o serviço
+import React from "react";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -12,10 +11,8 @@ import Gallery from "./pages/Gallery";
 import Layout from "./components/Layout";
 
 function App() {
-  const [data, setData] = useState(null);
-
-  console.log("Space ID:", process.env.REACT_APP_CONTENTFUL_SPACE_ID);
-  console.log("Access Token:", process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN);
+  // console.log("Space ID:", process.env.REACT_APP_CONTENTFUL_SPACE_ID);
+  // console.log("Access Token:", process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN);
 
   return (
     <Router>
@@ -23,11 +20,11 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About data={data} />} />
-          <Route path="/service" element={<Service data={data} />} />
-          <Route path="/review" element={<Review data={data} />} />
-          <Route path="/contact" element={<Contact data={data} />} />
-          <Route path="/gallery" element={<Gallery data={data} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/review" element={<Review />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
       </Layout>
     </Router>

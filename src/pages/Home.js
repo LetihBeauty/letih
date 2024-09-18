@@ -8,17 +8,18 @@ import CarouselComponent from "../components/Carousel";
 
 function Home() {
   const [data, setData] = useState(null);
+
   const getData = async () => {
     try {
-      setData(await fetchPageData("home"));
-      console.log("foi feita a requisição");
+      const result = await fetchPageData("home");
+      console.log("dados retornados", result);
+      setData(result);
     } catch (error) {
       console.error(`Error fetching data:`, error.response || error.message);
     }
   };
+
   useEffect(() => {
-    console.log("useEffect");
-    // TODO: descobrir porque o useEffect está sendo chamado duas vezes ao invés de uma vez
     getData();
   }, []);
 
@@ -26,29 +27,20 @@ function Home() {
     return <p>Loading...</p>;
   }
 
-  console.log("linha 25", data.homepageCollection.items);
-
   // Supondo que o formato do `data` siga o mesmo padrão do Contentful
-  const homeData = data[0]; // Pegando o primeiro item da coleção de dados (ajuste conforme necessário)
-
+  const homeData = data?.homepageCollection?.items[0];
   console.log("homeData", homeData);
 
   return (
-    // example
-    // <div>
-    //   <h1>{homeData[0].title}</h1>
-    //   <h2>{homeData[0].subtitle}</h2>
-    //   <img src={homeData[0].heroImage.url} alt="Hero" />
-    // </div>
     <div>
       {/* Banner hero */}
       <div className="banner">
         <div class="content">
-          <h1>ELEVATE YOUR ELEGANCE</h1>
-          <h4>Unveil Your Beauty with Us</h4>
+          <h1>{homeData.title}</h1>
+          <h4>{homeData.subtitle}</h4>
           <BtnGreen>Our Services</BtnGreen>
         </div>
-        <img src="images/hero-women-leaf.webp" alt="Women with leaf"></img>
+        <img src={homeData.heroImage.url} alt={homeData.heroImage.title}></img>
       </div>
       {/* About US */}
       <div className="about-us">
@@ -59,7 +51,7 @@ function Home() {
             alt="women with leaf in her hair"
           />
           <div className="about-us-top-right">
-            <h5 className="mobile-none">You deserve it!</h5>
+            <h5 className="mobile-none">{homeData.aboutUsTitleOne}</h5>
             <p className="mobile-none">
               Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
               ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae
@@ -77,7 +69,7 @@ function Home() {
             alt="women with leaf in her hair"
           />
           <div className="about-us-button-left">
-            <h5>You deserve it!</h5>
+            <h5>{homeData.aboutUsTitleTwo}</h5>
             <p>
               Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
               ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae

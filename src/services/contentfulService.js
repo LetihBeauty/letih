@@ -11,6 +11,7 @@ const client = new GraphQLClient(
 
 // Função genérica para buscar dados de qualquer página
 export const fetchPageData = async (page) => {
+  console.log("importando os dados");
   let query = "";
 
   switch (page) {
@@ -19,11 +20,30 @@ export const fetchPageData = async (page) => {
         {
           homepageCollection {
             items {
-              title
-              subtitle
+              aboutUsImageOne {
+                url
+                title
+              }
+              aboutUsImageTwo {
+                url
+                title
+              }
+              aboutUsParagraphOne {
+                json
+              }
+              aboutUsParagraphTwo {
+                json
+              }
+              aboutUsTitleOne
+              aboutUsTitleTwo
               heroImage {
                 url
+                title
               }
+              subtitle
+              title
+              urlAboutUs
+              urlHero
             }
           }
         }
