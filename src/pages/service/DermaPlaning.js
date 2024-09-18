@@ -1,13 +1,13 @@
 import React from 'react';
 import BannerService from "../service/BannerService.js";
 import  ServiceIncluded from  "../service/ServiceIncluded.js";
-import "./Service.css";
-import {facialDeepCleasing} from "../../components/constants/index.js"
+import "./DermaPlanning.css";
+import {FacialDermaplaning, warnings} from "../../components/constants/index.js"
 
 const DermaPlanning = () => {
-  const primaryService = facialDeepCleasing[0];
-  const supplementaryServiceInfo = primaryService.facialDeepCleasingSupplementary;
-  // const warningMessage = supplementaryServiceInfo[supplementaryServiceInfo.length - 1].warning;
+  const primaryService = FacialDermaplaning[0];
+  const supplementaryServiceInfo = primaryService.facialDermaplaningSupplementary;
+  const alertMessage = warnings[0].warningDeepCleasing;
 
   return (
 
@@ -26,8 +26,7 @@ const DermaPlanning = () => {
       />
       <ServiceIncluded
         supplementaryServiceInfo={supplementaryServiceInfo}
-        // warningMessage={warningMessage}
-
+        warningMessage={alertMessage}
       />
     </div>
   );

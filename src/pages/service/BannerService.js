@@ -1,5 +1,5 @@
 import React from "react";
-import './Service.css';
+import styles from './BannerService.module.css';
 import ServiceMobileNavbar from "../../components/ServiceNavBar.js";
 
 const BannerService = ({
@@ -15,22 +15,22 @@ const BannerService = ({
   imgSrc,
 }) => {
   return (
-    <div className="containerService">
-      <div className="mobile-navbar-wrapper">
+    <div className={styles.containerService}>
+      <div className={styles.mobileNavbarWrapper}>
         <ServiceMobileNavbar />
       </div>
-      <div className="banner-middle">
-        <div className="banner-middle-content">
-          <div className="title">
+      <div className={styles.bannerMiddle}>
+        <div className={styles.bannerMiddleContent}>
+          <div className={styles.title}>
             <h2>{title}</h2>
           </div>
-          <div className="title-description">
+          <div className={styles.titleDescription}>
             <h5>{whatIs}</h5>
             <p>{whatIsDescription}</p>
             <h5>{benefits}</h5>
             <p>{benefitsDescription}</p>
-            <p className="banner-middle-recommendation">{benefitsRecommendations}</p>
-            <div className="banner-middle-content-details">
+            <p className={styles.bannerMiddleRecommendation}>{benefitsRecommendations}</p>
+            <div className={styles.bannerMiddleContentDetails}>
               <div>
                 <h5>Time:</h5>
                 <p>{timeDescription}</p>
@@ -40,11 +40,11 @@ const BannerService = ({
                 <p>{priceDescription}</p>
               </div>
             </div>
-            <div className="banner-button">
+            <div className={styles.bannerButton}>
               {btnComponent}
             </div>
           </div>
-          <div className="banner-middle-photo">
+          <div className={styles.bannerMiddlePhoto}>
             <img src={imgSrc} alt="" />
           </div>
         </div>

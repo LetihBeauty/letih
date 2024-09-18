@@ -157,7 +157,32 @@ export const facialDeepCleasing = [
       { title: "High frequency face machine:", description: "It works by generating a high frequency current that is applied to the skin via a glass electrode. The current has antibacterial properties that can help kill acne-causing bacteria on the skin. It also helps reduce inflammation." },
       { title: "Mask:", description: "A mask suited to your skin type (such as clay for oily skin or hydrating for dry skin) is applied to further draw out impurities and nourish the skin." },
       { title: "LED light Therapy:", description: "It works by emitting light energy onto the skin cells, which then converts it into cellular energy." },
-      { warning: "Contraindication to the FACIAL treatments : in case of use of steroids or anticoagulants in the last 3 months, skin wounds, signs of skin infection or cancer."},
+    ]
+  },
+];
+
+export const FacialDermaplaning = [
+  {
+    title:  "2- Deep Cleansing Facial + Dermaplaning",
+    whatIs: "What is a Deep Cleansing Facial + Dermaplaning ?",
+    whatIsDescription: "Combining a Deep Cleansing Facial with Dermaplaning offers comprehensive skincare, targeting surface issues like dullness and texture, as well as deeper concerns like clogged pores and aging. It's ideal for immediate and long-term skin improvement.",
+    benefits: "What are the benefits?",
+    benefitsDescription: "Combining deep cleansing with dermaplaning removes dead skin cells, dirt, oil, and peach fuzz, resulting in smoother, brighter skin and unclogged pores. This process also enhances product absorption, allowing skincare treatments to penetrate more effectively. The smooth surface left by dermaplaning ensures flawless makeup application and provides an immediate boost in skin texture and radiance." ,
+    benefitsRecommendations: "Typically recommended every 8-10 weeks, depending on your skin's needs and concerns.",
+    timeDescription: "1 hour and 30 minutes.",
+    priceDescription: "$145",
+    btnComponent: <BtnGreen>Book Now</BtnGreen>,
+    imgSrc:'images/home-about-us-bed.webp',
+    facialDermaplaningSupplementary: [
+      { title: "Cleansing:", description: "The skin is cleansed to remove makeup, dirt, and oil." },
+      { title: "Exfoliation:", description: "An exfoliant is used to slough off dead skin cells, promoting a smoother complexion." },
+      { title: "Steam:", description: "Steam is applied to the face to open pores and soften the skin, making it easier to extract impurities." },
+      { title: "Extraction:", description: " The esthetician manually extracts blackheads, whiteheads, and other debris from the pores using specialized tools." },
+      { title: "Hydra Face Machine:", description: "Helps to remove dead skin, Blackhead and Improves Blood circulation." },
+      { title: "Dermaplaning:", description: "Uses a sterile scalpel to gently shave away dead skin cells and peach fuzz." },
+      { title: "High frequency face machine:", description: ": Applies a high-frequency current via a glass electrode to kill acne-causing bacteria and reduce inflammation." },
+      { title: "Mask:", description: "A mask tailored to your skin type is applied to remove impurities and nourish the skin." },
+      { title: "LED light Therapy:", description: ": Emits light energy that converts into cellular energy for skin benefits." },
     ]
   },
 ];
