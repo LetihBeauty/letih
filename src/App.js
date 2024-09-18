@@ -8,7 +8,8 @@ import Review from "./pages/Review";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Layout from "./components/Layout";
-import Dermaplaning from "/home/victor/code/victorfonsecass/letih/src/pages/service/Dermaplaning.js";
+import DeepCleasing from "./pages/service/DeepCleasing.js";
+import Dermaplaning from "./pages/service/DermaPlaning.js";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/service" element={<Service />} />
+          <Route path="/service/DeepCleasing" element={<DeepCleasing />} />
           <Route path="/service/Dermaplaning" element={<Dermaplaning />} />
           <Route path="/review" element={<Review />} />
           <Route path="/contact" element={<Contact />} />

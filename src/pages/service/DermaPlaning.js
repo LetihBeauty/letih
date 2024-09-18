@@ -1,13 +1,13 @@
 import React from 'react';
-import BannerService from "/home/victor/code/victorfonsecass/letih/src/pages/service/BannerService.js";
-import  ServiceIncluded from  "/home/victor/code/victorfonsecass/letih/src/pages/service/ServiceIncluded.js";
+import BannerService from "../service/BannerService.js";
+import  ServiceIncluded from  "../service/ServiceIncluded.js";
 import "./Service.css";
-import {facialDeepCleasing,treatmentContraindications } from "../../components/constants/index.js"
+import {facialDeepCleasing} from "../../components/constants/index.js"
 
-const Dermaplaning = () => {
+const DermaPlanning = () => {
   const primaryService = facialDeepCleasing[0];
   const supplementaryServiceInfo = primaryService.facialDeepCleasingSupplementary;
-  const facialTreatmentPrecautions =  treatmentContraindications[0];
+  // const warningMessage = supplementaryServiceInfo[supplementaryServiceInfo.length - 1].warning;
 
   return (
 
@@ -26,10 +26,11 @@ const Dermaplaning = () => {
       />
       <ServiceIncluded
         supplementaryServiceInfo={supplementaryServiceInfo}
-        warningMessage={facialTreatmentPrecautions.warning}
+        // warningMessage={warningMessage}
+
       />
     </div>
   );
 };
 
-export default  Dermaplaning;
+export default DermaPlanning;
