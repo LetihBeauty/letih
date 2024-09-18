@@ -13,18 +13,22 @@ const BannerService = ({
   priceDescription,
   btnComponent,
   imgSrc,
+  customClass,
+  customDescriptionClass,
+  customBottomClass,
+  customPhotoClass
 }) => {
   return (
     <div className={styles.containerService}>
       <div className={styles.mobileNavbarWrapper}>
         <ServiceMobileNavbar />
       </div>
-      <div className={styles.bannerMiddle}>
+      <div className={`${styles.bannerMiddle} ${customClass}`}>
         <div className={styles.bannerMiddleContent}>
           <div className={styles.title}>
             <h2>{title}</h2>
           </div>
-          <div className={styles.titleDescription}>
+          <div className={`${styles.titleDescription} ${customDescriptionClass}`}>
             <h5>{whatIs}</h5>
             <p>{whatIsDescription}</p>
             <h5>{benefits}</h5>
@@ -44,11 +48,12 @@ const BannerService = ({
               {btnComponent}
             </div>
           </div>
-          <div className={styles.bannerMiddlePhoto}>
+          <div className={`${styles.bannerMiddlePhoto}  ${customPhotoClass}`}>
             <img src={imgSrc} alt="" />
           </div>
         </div>
       </div>
+      <div className={`${styles.bannerBottom} ${customBottomClass}`}></div>
     </div>
   );
 };

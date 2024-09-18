@@ -1,7 +1,9 @@
 import React from 'react';
-import BannerService from "/home/victor/code/victorfonsecass/letih/src/pages/service/BannerService.js";
-import  ServiceIncluded from  "/home/victor/code/victorfonsecass/letih/src/pages/service/ServiceIncluded.js";
-import "./Service.css";
+import BannerService from "../service/BannerService.js";
+import ServiceIncluded from  "../service/ServiceIncluded.js";
+import DeepCleasingStyles from "../service/DeepCleasing.module.css";
+import styles from "./DermaPlanning.module.css";
+import "../service/ServiceIncluded.module.css";
 import {facialDeepCleasing, warnings} from "../../components/constants/index.js"
 
 const DeepCleasing = () => {
@@ -22,6 +24,10 @@ const DeepCleasing = () => {
         priceDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
         imgSrc={primaryService.imgSrc}
+        customClass={styles.bannerWrapper}
+        customDescriptionClass={styles.titleDescription}
+        customBottomClass={styles.bannerBottom}
+
       />
       <ServiceIncluded
         supplementaryServiceInfo={supplementaryServiceInfo}

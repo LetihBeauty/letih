@@ -1,5 +1,5 @@
 import React from "react";
-import './Service.css';
+import styles from'./ServiceIncluded.module.css';
 
 const ServiceIncluded = ({
   supplementaryServiceInfo,
@@ -7,25 +7,24 @@ const ServiceIncluded = ({
 }) => {
   return (
     <div className="bannerService">
-      <div className="banner-bottom"></div>
-        <div className="serviceIncluded">
-          <div className="serviceIncluded-content">
-            <h4 className="service-title">What is included in this service?</h4>
-                <div className="serviceSteps">
-                  {supplementaryServiceInfo.map((item, index) => (
-                    <div key={index}>
-                      <h5>{item.title}
-                        <span class="description-style">{item.description}</span>
-                      </h5>
-                    </div>
-                  ))
-                  }
-                </div>
-            <div className="serviceIncluded-warning">
-              <div>
-                <span class="material-symbols-outlined">info</span>
-                <h6>{warningMessage}</h6>
+      <div className={styles.serviceIncluded}>
+        <div className={styles.serviceIncludedContent}>
+          <h4 className={styles.serviceTitle}>What is included in this service?</h4>
+          <div className={styles.serviceSteps}>
+            {supplementaryServiceInfo.map((item, index) => (
+              <div key={index}>
+                <h5>{item.title}
+                  <span class={styles.descriptionStyle}>{item.description}</span>
+                </h5>
               </div>
+            ))
+            }
+          </div>
+          <div className={styles.serviceIncludedWarning}>
+            <div>
+              <span class="material-symbols-outlined">info</span>
+              <h6>{warningMessage}</h6>
+            </div>
           </div>
         </div>
       </div>

@@ -73,13 +73,15 @@
     padding-bottom: 0px;
   }
 }
+.bannerMiddlePhoto{
+  background-color: black;
+  margin-top: 80px;
 
+}
 .bannerMiddlePhoto img {
   height: 630px;
   width: 708px;
   object-fit: cover;
-  margin-top: 65px;
-  padding-right: 0px;
   border-radius: 6px;
   position: relative;
 }
