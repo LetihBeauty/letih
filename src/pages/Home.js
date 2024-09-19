@@ -27,14 +27,24 @@ function Home() {
     return <p>Loading...</p>;
   }
 
-  // Supondo que o formato do `data` siga o mesmo padrão do Contentful
-  const homeData = data?.homepageCollection?.items[0];
-  console.log("homeData", homeData);
+  // Verificando se os dados existem antes de acessar
+  const homeData =
+    data &&
+    data.homepageCollection &&
+    data.homepageCollection.items &&
+    data.homepageCollection.items.length > 0
+      ? data.homepageCollection.items[0]
+      : null;
 
-  console.log(
-    "textos",
-    homeData.aboutUsParagraphOne.json.content[0].content[0].value
-  );
+  if (homeData) {
+    console.log("homeData", homeData);
+  } else {
+    console.error("homeData não encontrado ou está vazio.");
+  }
+
+  // // Supondo que o formato do `data` siga o mesmo padrão do Contentful
+  // const homeData = data?.homepageCollection?.items[0];
+  // console.log("homeData", homeData);
 
   return (
     <div>
