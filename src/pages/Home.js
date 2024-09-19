@@ -83,7 +83,6 @@ function Home() {
         <div className="green-services">
           <img src="images/service-01.webp" alt="" />
           <div className="green-right">
-            <h5 className="service-number">01</h5>
             <h5>Deep Facial</h5>
             <p>
               Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
@@ -100,7 +99,6 @@ function Home() {
         <div className="white-services">
           <img src="images/service-02.webp" alt="" />
           <div className="white-right">
-            <h5 className="service-number">02</h5>
             <h5>Body Detox</h5>
             <p>
               Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
@@ -117,7 +115,6 @@ function Home() {
         <div className="green-services">
           <img src="images/service-03.webp" alt="" />
           <div className="green-right">
-            <h5 className="service-number">03</h5>
             <h5>Ultraformer III</h5>
             <p>
               Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
@@ -134,7 +131,6 @@ function Home() {
         <div className="white-services">
           <img src="images/service-04.webp" alt="" />
           <div className="white-right">
-            <h5 className="service-number">04</h5>
             <h5>Belly Reducing</h5>
             <p>
               Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
@@ -151,7 +147,6 @@ function Home() {
         <div className="green-services">
           <img src="images/service-05.webp" alt="" />
           <div className="green-right">
-            <h5 className="service-number">05</h5>
             <h5>RF Microneedling</h5>
             <p>
               Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
@@ -168,7 +163,6 @@ function Home() {
         <div className="white-services">
           <img src="images/service-06.webp" alt="" />
           <div className="white-right">
-            <h5 className="service-number">06</h5>
             <h5>Skin Care Routine</h5>
             <p>
               Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
@@ -185,7 +179,6 @@ function Home() {
         <div className="green-services">
           <img src="images/service-07.webp" alt="" />
           <div className="green-right">
-            <h5 className="service-number">07</h5>
             <h5>Glow Facial</h5>
             <p>
               Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
