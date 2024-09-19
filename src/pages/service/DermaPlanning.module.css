@@ -7,9 +7,7 @@
   align-items: center;
   width: 100vw;
 }
-.titleDescription {
-  padding-top: 60px;
-}
+
 .bannerBottom {
   margin-top: 32px;
   background-color: #446953;
@@ -19,4 +17,39 @@
 .bannerMiddlePhoto img {
   height: 809px;
   width: 708px;
+}
+.id1 {
+  grid-area: id1;
+  height: min-content;
+}
+
+.id2 {
+  grid-area: id2;
+}
+
+.id3 {
+  grid-area: id3;
+}
+
+.id4 {
+  grid-area: id4;
+}
+
+.id5 {
+  grid-area: id5;
+}
+
+.id6 {
+  grid-area: id6;
+}
+
+.id7 {
+  grid-area: id7;
+}
+
+.id8 {
+  grid-area: id8;
+}
+.id9 {
+  grid-area: id9;
 }

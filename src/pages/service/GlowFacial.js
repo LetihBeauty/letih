@@ -1,24 +1,25 @@
 import React from 'react';
 import BannerService from "../service/BannerService.js";
 import ServiceIncluded from  "../service/ServiceIncluded.js";
-import DeepCleasingStyles from "../service/DeepCleasing.module.css";
+import GlowFacialStyles from "../service/GlowFacial.module.css";
 import "../service/ServiceIncluded.module.css";
-import {facialDeepCleasing, warnings} from "../../components/constants/index.js"
+import {facialGlowFacial, warnings} from "../../components/constants/index.js"
 
-const DeepCleasing = () => {
-  const primaryService = facialDeepCleasing[0];
-  const supplementaryServiceInfo = primaryService.facialDeepCleasingSupplementary;
+const GlowFacial = () => {
+  const primaryService = facialGlowFacial[0];
+  const supplementaryServiceInfo = primaryService.facialGlowSupplementary;
   const alertMessage = warnings[0].warningDeepCleasing;
 
-  const classMapping = {
-    1: DeepCleasingStyles.id1,
-    2: DeepCleasingStyles.id2,
-    3: DeepCleasingStyles.id3,
-    4: DeepCleasingStyles.id4,
-    5: DeepCleasingStyles.id5,
-    6: DeepCleasingStyles.id6,
-    7: DeepCleasingStyles.id7,
-    8: DeepCleasingStyles.id8,
+    const classMapping = {
+    1: GlowFacialStyles.id1,
+    2: GlowFacialStyles.id2,
+    3: GlowFacialStyles.id3,
+    4: GlowFacialStyles.id4,
+    5: GlowFacialStyles.id5,
+    6: GlowFacialStyles.id6,
+    7: GlowFacialStyles.id7,
+    8: GlowFacialStyles.id8,
+    9: GlowFacialStyles.id9,
   };
   return (
 
@@ -34,8 +35,9 @@ const DeepCleasing = () => {
         priceDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
         imgSrc={primaryService.imgSrc}
-        customClass={DeepCleasingStyles.bannerWrapper}
-        customBottomClass={DeepCleasingStyles.bannerBottom}
+        customClass={GlowFacialStyles.bannerWrapper}
+        customPhotoClass= {GlowFacialStyles.bannerMiddlePhoto}
+        customBottomClass={GlowFacialStyles.bannerBottom}
 
       />
       <ServiceIncluded
@@ -47,4 +49,4 @@ const DeepCleasing = () => {
   );
 };
 
-export default DeepCleasing;
+export default GlowFacial;

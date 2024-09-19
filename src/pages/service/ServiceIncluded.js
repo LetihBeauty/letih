@@ -4,6 +4,7 @@ import styles from'./ServiceIncluded.module.css';
 const ServiceIncluded = ({
   supplementaryServiceInfo,
   warningMessage,
+  classMapping
 }) => {
   return (
     <div className="bannerService">
@@ -11,12 +12,11 @@ const ServiceIncluded = ({
         <div className={styles.serviceIncludedContent}>
           <h4 className={styles.serviceTitle}>What is included in this service?</h4>
           <div className={styles.serviceSteps}>
-            {supplementaryServiceInfo.map((item, index) => (
-              <div key={index}>
-                <h5>{item.title}
-                  <span class={styles.descriptionStyle}>{item.description}</span>
-                </h5>
-              </div>
+            {supplementaryServiceInfo.map((item) => (
+              <h5 key={item.id} className={`${classMapping[item.id]}`}>
+                {item.title}
+                <span class={styles.descriptionStyle}>{item.description}</span>
+              </h5>
             ))
             }
           </div>

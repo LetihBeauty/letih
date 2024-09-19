@@ -149,19 +149,19 @@ export const facialDeepCleasing = [
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',
     facialDeepCleasingSupplementary: [
-      { title: "Cleansing:", description: "The skin is cleansed to remove makeup, dirt, and impurities." },
-      { title: "Exfoliation:", description: "An exfoliant is used to slough off dead skin cells, promoting a smoother complexion." },
-      { title: "Steam:", description: "Steam is applied to the face to open pores and soften the skin, making it easier to extract impurities." },
-      { title: "Extraction:", description: "The esthetician manually extracts blackheads, whiteheads, and other debris from the pores using specialized tools." },
-      { title: "Hydra Face Machine:", description: "Helps to remove dead skin, blackheads, and improves blood circulation." },
-      { title: "High frequency face machine:", description: "It works by generating a high frequency current that is applied to the skin via a glass electrode. The current has antibacterial properties that can help kill acne-causing bacteria on the skin. It also helps reduce inflammation." },
-      { title: "Mask:", description: "A mask suited to your skin type (such as clay for oily skin or hydrating for dry skin) is applied to further draw out impurities and nourish the skin." },
-      { title: "LED light Therapy:", description: "It works by emitting light energy onto the skin cells, which then converts it into cellular energy." },
+      {id:"1", title: "Cleansing:", description: "The skin is cleansed to remove makeup, dirt, and oil." },
+      {id:"2", title: "Exfoliation:", description: "An exfoliant is used to slough off dead skin cells, promoting a smoother complexion" },
+      {id:"3", title: "Steam:", description: "Steam is applied to the face to open pores and soften the skin, making it easier to extract impurities." },
+      {id:"4", title: "Extraction:", description: "The esthetician manually extracts blackheads, whiteheads, and other debris from the pores using specialized tools." },
+      {id:"5", title: "Hydra Face Machine:", description: "Helps to remove dead skin, blackheads, and improves blood circulation." },
+      {id:"6", title: "High frequency face machine:", description: "It works by generating a high frequency current that is applied to the skin via a glass electrode. The current has antibacterial properties that can help kill acne-causing bacteria on the skin. It also helps reduce inflammation." },
+      {id:"7", title: "Mask:", description: "A mask suited to your skin type (such as clay for oily skin or hydrating for dry skin) is applied to further draw out impurities and nourish the skin." },
+      {id:"8", title: "LED light Therapy:", description: "It works by emitting light energy onto the skin cells, which then converts it into cellular energy." },
     ]
   },
 ];
 
-export const FacialDermaplaning = [
+export const facialDermaplaning = [
   {
     title:  "2- Deep Cleansing Facial + Dermaplaning",
     whatIs: "What is a Deep Cleansing Facial + Dermaplaning ?",
@@ -174,15 +174,40 @@ export const FacialDermaplaning = [
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',
     facialDermaplaningSupplementary: [
-      { title: "Cleansing:", description: "The skin is cleansed to remove makeup, dirt, and oil." },
-      { title: "Exfoliation:", description: "An exfoliant is used to slough off dead skin cells, promoting a smoother complexion." },
-      { title: "Steam:", description: "Steam is applied to the face to open pores and soften the skin, making it easier to extract impurities." },
-      { title: "Extraction:", description: " The esthetician manually extracts blackheads, whiteheads, and other debris from the pores using specialized tools." },
-      { title: "Hydra Face Machine:", description: "Helps to remove dead skin, Blackhead and Improves Blood circulation." },
-      { title: "Dermaplaning:", description: "Uses a sterile scalpel to gently shave away dead skin cells and peach fuzz." },
-      { title: "High frequency face machine:", description: ": Applies a high-frequency current via a glass electrode to kill acne-causing bacteria and reduce inflammation." },
-      { title: "Mask:", description: "A mask tailored to your skin type is applied to remove impurities and nourish the skin." },
-      { title: "LED light Therapy:", description: ": Emits light energy that converts into cellular energy for skin benefits." },
+      {id:"1", title: "Cleansing:", description: "The skin is cleansed to remove makeup, dirt, and oil." },
+      {id:"2", title: "Exfoliation:", description: "An exfoliant is used to slough off dead skin cells, promoting a smoother complexion." },
+      {id:"3", title: "Steam:", description: "Steam is applied to the face to open pores and soften the skin, making it easier to extract impurities." },
+      {id:"4", title: "Extraction:", description: "The esthetician manually extracts blackheads, whiteheads, and other debris from the pores using specialized tools." },
+      {id:"5", title: "Hydra Face Machine:", description: "Helps to remove dead skin, Blackhead and Improves Blood circulation." },
+      {id:"6", title: "Dermaplaning:", description: "Uses a sterile scalpel to gently shave away dead skin cells and peach fuzz." },
+      {id:"7", title: "High frequency face machine:", description: "Applies a high-frequency current via a glass electrode to kill acne-causing bacteria and reduce inflammation." },
+      {id:"8", title: "Mask:", description: "A mask tailored to your skin type is applied to remove impurities and nourish the skin." },
+      {id:"9", title: "LED light Therapy:", description: "Emits light energy that converts into cellular energy for skin benefits." },
+    ]
+  },
+];
+export const facialGlowFacial = [
+  {
+    title:  "3 - Glow Facial",
+    whatIs: "What is a Deep Cleansing Facial?",
+    whatIsDescription: "Combining a Facial, Dermaplaning, and vitamin C microneedling rejuvenates the skin, addressing dullness, uneven texture, pigmentation, and aging for a brighter, youthful complexion.",
+    benefits: "What are the benefits for the skin?",
+    benefitsDescription: "This treatment enhances vitamin C absorption through Dermaplaning and microneedling, allowing deeper penetration for brighter, more even skin tone. The combination boosts collagen production, reduces fine lines, and improves skin texture, leaving the complexion smoother and rejuvenated.Vitamin C also provides powerful antioxidant protection, guarding against environmental damage and premature aging. It hydrates the skin, enhances moisture retention, and refines the skin's texture, resulting in a radiant and youthful appearance." ,
+    benefitsRecommendations: "Typically recommended every 8-10 weeks, depending on your skin's needs and concerns.",
+    timeDescription: "2 hours.",
+    priceDescription: "$180",
+    btnComponent: <BtnGreen>Book Now</BtnGreen>,
+    imgSrc:'images/home-about-us-bed.webp',
+    facialGlowSupplementary: [
+      {id:"1", title: "Cleansing:", description: "The skin is cleansed to remove makeup, dirt, and oil." },
+      {id:"2", title: "Exfoliation:", description: "An exfoliant is used to slough off dead skin cells, promoting a smoother complexion." },
+      {id:"3", title: "Steam:", description: "Steam is applied to the face to open pores and soften the skin, making it easier to extract impurities." },
+      {id:"4", title: "Hydra Face Machine:", description: " Helps to remove dead skin, Blackhead and Improves Blood circulation." },
+      {id:"5", title: "Dermaplaning:", description: "Uses a sterile scalpel to gently shave away dead skin cells and peach fuzz." },
+      {id:"6", title: "Vitamin C Infusion with Dr Pen Device:", description: " Microneedling with Dr. Pen creates micro channels that allow vitamin C serum to penetrate deeply, boosting its absorption and effectiveness." },
+      {id:"7", title: "Mask:", description: "A mask suited to your skin type (such as clay for oily skin or hydrating for dry skin) is applied to further draw out impurities and nourish the skin." },
+      {id:"8", title: "High frequency face machine:", description: "Applies a high-frequency current via a glass electrode to kill acne-causing bacteria and reduce inflammation." },
+      {id:"9", title: "LED light Therapy:", description: "It works by emitting light energy onto the skin cells, which then converts it into cellular energy. " },
     ]
   },
 ];

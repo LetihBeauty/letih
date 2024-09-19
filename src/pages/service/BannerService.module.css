@@ -40,14 +40,14 @@
   }
 }
 
-.title {
+/* .title {
   grid-column: 1 / 2;
   margin: 89px 128px 32px 0px;
-}
+} */
 
 .titleDescription {
   grid-column: 1 / 2;
-  margin: 172px 128px 32px 0px;
+  margin: 80px 128px 32px 0px;
 
 }
 
@@ -74,9 +74,7 @@
   }
 }
 .bannerMiddlePhoto{
-  background-color: black;
   margin-top: 80px;
-
 }
 .bannerMiddlePhoto img {
   height: 630px;
@@ -87,6 +85,9 @@
 }
 
 .bannerButton {
+  padding-top: 30px;
+}
+.bannerBottom{
   padding-top: 30px;
 }
 @media (max-width: 430px) {

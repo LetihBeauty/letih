@@ -1,12 +1,24 @@
 .bannerWrapper {
-  height: 621px;
+  height: 830px;
 }
 
+.bannerService {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.bannerMiddlePhoto img {
+  height: 813px;
+  width: 708px;
+}
 .bannerBottom {
-  margin-top: 32px;
+  margin-top: 60px;
   background-color: #446953;
   height: 130px;
   width: 100%;
+
 }
 .id1 {
   grid-area: id1;
@@ -39,4 +51,8 @@
 
 .id8 {
   grid-area: id8;
+}
+
+.id9 {
+  grid-area: id9;
 }
