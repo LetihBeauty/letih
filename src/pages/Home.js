@@ -31,6 +31,11 @@ function Home() {
   const homeData = data?.homepageCollection?.items[0];
   console.log("homeData", homeData);
 
+  console.log(
+    "textos",
+    homeData.aboutUsParagraphOne.json.content[0].content[0].value
+  );
+
   return (
     <div>
       {/* Banner hero */}
@@ -47,35 +52,25 @@ function Home() {
         <h2>About Us</h2>
         <div className="about-us-top about-us-content">
           <img
-            src="images/home-about-us-women.webp"
-            alt="women with leaf in her hair"
+            src={homeData.aboutUsImageOne.url}
+            alt={homeData.aboutUsImageOne.title}
           />
           <div className="about-us-top-right">
             <h5 className="mobile-none">{homeData.aboutUsTitleOne}</h5>
             <p className="mobile-none">
-              Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
-              ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae
-              eget tempor non eu sed massa velit. Et potenti nulla tellus
-              praesent euismod commodo pretium. Et potenti nulla tellus praesent
-              euismod commodo pretium. Et potenti nulla tellus praesent euismod
-              commodo pretium. Et potenti nulla tellus praesent euismod commodo
-              pretium. Et potenti nulla tellus praesent euismod commodo pretium.
+              {homeData.aboutUsParagraphOne.json.content[0].content[0].value}
             </p>
           </div>
         </div>
         <div className="about-us-button about-us-content">
           <img
-            src="images/home-about-us-bed.webp"
-            alt="women with leaf in her hair"
+            src={homeData.aboutUsImageTwo.url}
+            alt={homeData.aboutUsImageTwo.title}
           />
           <div className="about-us-button-left">
             <h5>{homeData.aboutUsTitleTwo}</h5>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Sed nulla aliquet posuere
-              ut. Turpis in malesuada tempus dignissim venenatis. Vivamus vitae
-              eget tempor non eu sed massa velit. Et potenti nulla tellus
-              praesent euismod commodo pretium. Et potenti nulla tellus praesent
-              euismod commodo pretium.
+              {homeData.aboutUsParagraphTwo.json.content[0].content[0].value}
             </p>
             <BtnGreen>Learn More</BtnGreen>
           </div>
