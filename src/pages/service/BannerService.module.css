@@ -40,15 +40,14 @@
   }
 }
 
-/* .title {
+.title {
   grid-column: 1 / 2;
-  margin: 89px 128px 32px 0px;
-} */
+  margin: 89px 128px 0px 0px;
+}
 
 .titleDescription {
   grid-column: 1 / 2;
-  margin: 80px 128px 32px 0px;
-
+  margin: 180px 128px 0px 0px;
 }
 
 .bannerMiddleContentDetails{
@@ -94,7 +93,9 @@
   .mobileNavbarWrapper {
     padding-bottom: 50px;
   }
-
+  .bannerWrapper {
+    height: auto;
+  }
   .bannerMiddle {
     display: flex;
     flex-direction: column;
@@ -108,6 +109,7 @@
       letter-spacing: 2px;
       padding-bottom: 40px;
     }
+
   }
 
   .bannerMiddleContent {
@@ -116,6 +118,7 @@
     position: relative;
     width: 358px;
     margin: 0px;
+
   }
 
   .title {

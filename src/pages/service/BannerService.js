@@ -25,12 +25,12 @@ const BannerService = ({
       </div>
       <div className={`${styles.bannerMiddle} ${customClass}`}>
         <div className={styles.bannerMiddleContent}>
-          {/* <div className={styles.title}>
+          <div className={styles.title}>
             <h2>{title}</h2>
-          </div> */}
+          </div>
           <div className={`${styles.titleDescription} ${customDescriptionClass}`}>
             {/* <div className={styles.title}> */}
-              <h2>{title}</h2>
+              {/* <h2>{title}</h2> */}
             {/* </div> */}
             <h5>{whatIs}</h5>
             <p>{whatIsDescription}</p>
