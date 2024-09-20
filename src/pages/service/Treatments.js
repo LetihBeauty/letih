@@ -1,8 +1,8 @@
 import React from "react";
-import styles from './BannerService.module.css';
+import styles from './Treatments.module.css';
 import ServiceMobileNavbar from "../../components/ServiceNavBar.js";
 
-const BannerService = ({
+const Treatments = ({
   title,
   whatIs,
   whatIsDescription,
@@ -14,6 +14,7 @@ const BannerService = ({
   btnComponent,
   imgSrc,
   customClass,
+  customTitleClass,
   customDescriptionClass,
   customBottomClass,
   customPhotoClass,
@@ -26,7 +27,7 @@ const BannerService = ({
       </div>
       <div className={`${styles.bannerMiddle} ${customClass}`}>
         <div className={styles.bannerMiddleContent}>
-          <div className={styles.title}>
+          <div className={`${styles.title} ${customTitleClass}`}>
             <h2>{title}</h2>
           </div>
           <div className={`${styles.titleDescription} ${customDescriptionClass}`}>
@@ -53,4 +54,4 @@ const BannerService = ({
   );
 };
 
-export default BannerService;
+export default Treatments;

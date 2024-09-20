@@ -1,6 +1,6 @@
 import React from 'react';
-import BannerService from "../service/BannerService.js";
-import ServiceIncluded from  "../service/ServiceIncluded.js";
+import Treatments from "./Treatments.js";
+import FacialTreatmentGuide from  "../service/FacialTreatmentGuide.js";
 import styles from "./DermaPlanning.module.css";
 import {facialDermaplaning, warnings} from "../../components/constants/index.js"
 
@@ -23,7 +23,7 @@ const DermaPlanning = () => {
   return (
 
     <div className="containerService">
-      <BannerService
+      <Treatments
         title={primaryService.title}
         whatIs={primaryService.whatIs}
         whatIsDescription={primaryService.whatIsDescription}
@@ -39,7 +39,7 @@ const DermaPlanning = () => {
         customBottomClass={styles.bannerBottom}
         customPhotoClass= {styles.bannerMiddlePhoto}
       />
-      <ServiceIncluded
+      <FacialTreatmentGuide
         supplementaryServiceInfo={supplementaryServiceInfo}
         warningMessage={alertMessage}
         classMapping={classMapping}

@@ -1,6 +1,6 @@
 import React from 'react';
-import BannerService from "../service/BannerService.js";
-import ServiceIncluded from  "../service/ServiceIncluded.js";
+import Treatments from "./Treatments.js";
+import FacialTreatmentGuide from  "./FacialTreatmentGuide.js";
 import UltraformerStyles from "../service/Ultraformer.module.css";
 import "../service/ServiceIncluded.module.css";
 import {serviceUltraformer, warnings} from "../../components/constants/index.js"
@@ -20,7 +20,7 @@ const Ultraformer = () => {
   return (
 
     <div className="containerService">
-      <BannerService
+      <Treatments
         title={primaryService.title}
         whatIsDescription={primaryService.whatIsDescription}
         benefits={primaryService.benefits}
@@ -28,11 +28,13 @@ const Ultraformer = () => {
         benefitsRecommendations={primaryService.benefitsRecommendations}
         btnComponent={primaryService.btnComponent}
         imgSrc={primaryService.imgSrc}
+        // customTitleClass={UltraformerStyles.title}
         customClass={UltraformerStyles.bannerWrapper}
         customBottomClass={UltraformerStyles.bannerBottom}
         customBannerMiddleContentDetailsClass = {UltraformerStyles.timeAndPrice}
+        customDescriptionClass = {UltraformerStyles.titleDescription}
       />
-      <ServiceIncluded
+      <FacialTreatmentGuide
         supplementaryServiceInfo={supplementaryServiceInfo}
         warningMessage={alertMessage}
         classMapping={classMapping}

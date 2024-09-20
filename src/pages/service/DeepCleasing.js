@@ -1,6 +1,6 @@
 import React from 'react';
-import BannerService from "../service/BannerService.js";
-import ServiceIncluded from  "../service/ServiceIncluded.js";
+import Treatments from "./Treatments.js";
+import FacialTreatmentGuide from  "../service/FacialTreatmentGuide.js";
 import DeepCleasingStyles from "../service/DeepCleasing.module.css";
 import "../service/ServiceIncluded.module.css";
 import {facialDeepCleasing, warnings} from "../../components/constants/index.js"
@@ -23,7 +23,7 @@ const DeepCleasing = () => {
   return (
 
     <div className="containerService">
-      <BannerService
+      <Treatments
         title={primaryService.title}
         whatIs={primaryService.whatIs}
         whatIsDescription={primaryService.whatIsDescription}
@@ -38,7 +38,7 @@ const DeepCleasing = () => {
         customBottomClass={DeepCleasingStyles.bannerBottom}
 
       />
-      <ServiceIncluded
+      <FacialTreatmentGuide
         supplementaryServiceInfo={supplementaryServiceInfo}
         warningMessage={alertMessage}
         classMapping={classMapping}

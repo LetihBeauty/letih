@@ -1,7 +1,7 @@
 import React from "react";
 import styles from'./ServiceIncluded.module.css';
 
-const ServiceIncluded = ({
+const FacialTreatmentGuide = ({
   supplementaryServiceInfo,
   warningMessage,
   classMapping
@@ -32,4 +32,4 @@ const ServiceIncluded = ({
   );
 };
 
-export default ServiceIncluded;
+export default FacialTreatmentGuide;

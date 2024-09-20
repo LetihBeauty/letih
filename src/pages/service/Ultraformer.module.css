@@ -1,5 +1,5 @@
 .bannerWrapper {
-  height: 830px;
+  height: 697px;
 }
 .bannerService {
   display: flex;
@@ -7,11 +7,15 @@
   align-items: center;
   width: 100vw;
 }
+
 .bannerBottom {
-  margin-top: 60px;
   background-color: #446953;
   height: 130px;
   width: 100%;
+}
+.titleDescription {
+  grid-column: 1 / 2;
+  margin: 225px 128px 0px 0px;
 }
 .timeAndPrice{
   display: none;
@@ -33,11 +37,11 @@
 }
 
 .id4 {
-  grid-area: id4;
+  grid-area: id6;
 }
 
 .id5 {
-  grid-area: id5;
+  grid-area: id7;
 }
 @media (max-width: 430px) {
   .bannerWrapper {

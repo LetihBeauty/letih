@@ -1,6 +1,6 @@
 import React from 'react';
-import BannerService from "../service/BannerService.js";
-import ServiceIncluded from  "../service/ServiceIncluded.js";
+import Treatments from "./Treatments.js";
+import FacialTreatmentGuide from  "../service/FacialTreatmentGuide.js";
 import GlowFacialStyles from "../service/GlowFacial.module.css";
 import "../service/ServiceIncluded.module.css";
 import {facialGlowFacial, warnings} from "../../components/constants/index.js"
@@ -24,7 +24,7 @@ const GlowFacial = () => {
   return (
 
     <div className="containerService">
-      <BannerService
+      <Treatments
         title={primaryService.title}
         whatIs={primaryService.whatIs}
         whatIsDescription={primaryService.whatIsDescription}
@@ -40,7 +40,7 @@ const GlowFacial = () => {
         customBottomClass={GlowFacialStyles.bannerBottom}
 
       />
-      <ServiceIncluded
+      <FacialTreatmentGuide
         supplementaryServiceInfo={supplementaryServiceInfo}
         warningMessage={alertMessage}
         classMapping={classMapping}
