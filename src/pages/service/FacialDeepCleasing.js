@@ -1,8 +1,8 @@
 import React from 'react';
 import Treatments from "./Treatments.js";
-import FacialTreatmentGuide from  "../service/FacialTreatmentGuide.js";
-import DeepCleasingStyles from "../service/DeepCleasing.module.css";
-import "../service/ServiceIncluded.module.css";
+import FacialTreatmentGuide from  "./FacialTreatmentGuide.js";
+import DeepCleasingStyles from "../service/FacialDeepCleasing.module.css";
+import "../service/FacialTreatmentGuide.module.css";
 import {facialDeepCleasing, warnings} from "../../components/constants/index.js"
 
 const DeepCleasing = () => {

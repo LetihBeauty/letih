@@ -1,8 +1,8 @@
 import React from 'react';
 import Treatments from "./Treatments.js";
-import FacialTreatmentGuide from  "../service/FacialTreatmentGuide.js";
-import GlowFacialStyles from "../service/GlowFacial.module.css";
-import "../service/ServiceIncluded.module.css";
+import FacialTreatmentGuide from  "./FacialTreatmentGuide.js";
+import GlowFacialStyles from "../service/FacialGlowFacial.module.css";
+import "../service/FacialTreatmentGuide.module.css";
 import {facialGlowFacial, warnings} from "../../components/constants/index.js"
 
 const GlowFacial = () => {

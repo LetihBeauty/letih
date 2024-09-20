@@ -1,7 +1,7 @@
 import React from 'react';
 import Treatments from "./Treatments.js";
-import FacialTreatmentGuide from  "../service/FacialTreatmentGuide.js";
-import styles from "./DermaPlanning.module.css";
+import FacialTreatmentGuide from  "./FacialTreatmentGuide.js";
+import styles from "./FacialDermaPlanning.module.css";
 import {facialDermaplaning, warnings} from "../../components/constants/index.js"
 
 const DermaPlanning = () => {

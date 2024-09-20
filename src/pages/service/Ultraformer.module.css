@@ -1,50 +1,139 @@
-.bannerWrapper {
-  height: 697px;
-}
-.bannerService {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
+.serviceIncluded {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding-left: 101px;
 }
 
+.serviceIncludedContent {
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  margin: 90px 0px 32px 0px;
+
+  h2 {
+    font-size: 32px;
+    letter-spacing: 4px;
+    padding-bottom: 35px;
+    margin: 0;
+  }
+
+  h5 {
+    font-family: Raleway;
+    margin: 0;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+
+  p {
+    padding-bottom: 0px;
+    margin: 0px;
+
+  }
+
+
+}
+
+.serviceTitle {
+  padding: 10px;
+  padding-left: 101px;
+}
+
+.serviceSteps {
+  display: grid;
+  grid-template-areas:
+    "id1 id4"
+    "id2 id5"
+    "id3 ";
+  grid-template-columns: 503px 537px;
+  grid-auto-rows: min-content;
+  column-gap: 100px;
+  row-gap: 50px;
+  padding: 32px 0px 120px 101px;
+  width: 1184px;
+
+  .descriptionStyle {
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    margin-left: 10px;
+  }
+}
 .bannerBottom {
+  margin-top: 32px;
   background-color: #446953;
   height: 130px;
   width: 100%;
 }
-.titleDescription {
-  grid-column: 1 / 2;
-  margin: 225px 128px 0px 0px;
-}
-.timeAndPrice{
-  display: none;
-}
-.bannerMiddlePhoto img {
-  height: 708px;
-  width: 705px;
-}
-.id1 {
-  grid-area: id1;
+.serviceIncludedWarning {
+  width: 1184px;
+  border: 1px solid black;
+  margin: 0px 32px 120px 101px;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 28px;
+  }
 }
 
-.id2 {
-  grid-area: id2;
-}
-
-.id3 {
-  grid-area: id3;
-}
-
-.id4 {
-  grid-area: id6;
-}
-
-.id5 {
-  grid-area: id7;
-}
 @media (max-width: 430px) {
-  .bannerWrapper {
-    height: auto;
+  .serviceIncluded {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: initial;
+    padding: 0;
+  }
+
+  .serviceIncludedContent {
+    max-width: 358px;
+    margin: 60px 16px 120px 16px;
+
+
+    .serviceIncludedWarning {
+      margin: 40px 0px 0px 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        .material-symbols-outlined {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  .serviceSteps {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 358px;
+    padding: 0;
+
+    .detail-item {
+      width: 358px;
+    }
+  }
+
+  .serviceTitle {
+    margin-bottom: 32px;
+    padding-left: 0px;
+  }
+    .serviceIncludedWarning {
+      width: 358px;
   }
 }

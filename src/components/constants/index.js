@@ -214,7 +214,6 @@ export const facialGlowFacial = [
 export const serviceUltraformer = [
   {
     title:  "HIFU – High Intensity Focused Ultrasound (Ultraformer III)",
-
     whatIsDescription: "HIFU (High-Intensity Focused Ultrasound) lifts the skin by targeting the deep muscle layer, crucial for preventing sagging. It's effective for skin lifting, tightening, and improving lines, wrinkles, pores, and skin tone.",
     benefits: "What does the treatment do?",
     benefitsDescription: "The HIFU uses dermal micro-heating for a multi-layered lifting, tightening and rejuvenation effect. It promotes maximum collagen production meaning smoother, plumper, more youthful skin!" ,
@@ -232,6 +231,25 @@ export const serviceUltraformer = [
 ];
 export const warnings = [
   { warningDeepCleasing: "Contraindication to the FACIAL treatments : in case of use of steroids or anticoagulants in the last 3 months, skin wounds, signs of skin infection or cancer."},
-  { warningUltraformer: "Contraindication to the FACIAL treatments : in case of use of steroids or anticoagulants in the last 3 months, skin wounds, signs of skin infection or cancer."},
-
+  { warningUltraformer: [
+    {
+      title:"Contraindication to the FACIAL treatments:",
+      items:[
+        "ACUTE INFECTIONS",
+        "HEART FAILURE",
+        "HYPERTENSION",
+        "DECOMPENSATED DIABETES",
+        "PHLEBITIS",
+        "THROMBOSIS",
+        "THROMBOPHLEBITIS",
+        "UNTREATED SKIN CONDITIONS",
+        "CANCER",
+        "BRONCHIAL ASTHMA AND ASTHMATIC BRONCHITIS",
+        "HYPERTHYROIDISM",
+        "IMMUNOSUPPRESSION",
+        "RENAL FAILURE DEPENDENT ON DIURETICS OR DIALYSIS.",
+      ],
+    }
+    ]
+  },
 ];

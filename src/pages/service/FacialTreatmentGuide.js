@@ -1,5 +1,5 @@
 import React from "react";
-import styles from'./ServiceIncluded.module.css';
+import styles from'./FacialTreatmentGuide.module.css';
 
 const FacialTreatmentGuide = ({
   supplementaryServiceInfo,

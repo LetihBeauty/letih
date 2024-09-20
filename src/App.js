@@ -8,9 +8,9 @@ import Review from "./pages/Review";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Layout from "./components/Layout";
-import DeepCleasing from "./pages/service/DeepCleasing.js";
-import Dermaplaning from "./pages/service/DermaPlaning.js";
-import Glowfacial from "./pages/service/GlowFacial.js";
+import DeepCleasing from "./pages/service/FacialDeepCleasing.js";
+import Dermaplaning from "./pages/service/FacialDermaPlaning.js";
+import Glowfacial from "./pages/service/FacialGlowFacial.js";
 import Ultraformer from "./pages/service/Ultraformer.js";
 
 function App() {
