@@ -11,6 +11,8 @@ import Layout from "./components/Layout";
 import DeepCleasing from "./pages/service/DeepCleasing.js";
 import Dermaplaning from "./pages/service/DermaPlaning.js";
 import Glowfacial from "./pages/service/GlowFacial.js";
+import Ultraformer from "./pages/service/Ultraformer.js";
+
 function App() {
   return (
     <Router>
@@ -23,6 +25,7 @@ function App() {
           <Route path="/service/DeepCleasing" element={<DeepCleasing />} />
           <Route path="/service/Dermaplaning" element={<Dermaplaning />} />
           <Route path="/service/Glowfacial" element={<Glowfacial />} />
+          <Route path="/service/Ultraformer" element={<Ultraformer />} />
           <Route path="/review" element={<Review />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />

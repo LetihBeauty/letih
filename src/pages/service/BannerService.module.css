@@ -1,10 +1,15 @@
 .mobileNavbarWrapper {
   width: 100vw;
 }
-
+.bannerService {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
 .bannerMiddle {
   display: flex;
-  height: 621px;
+  /* height: 621px; */
   justify-content: center;
   align-items: flex-start;
   flex-direction: row;
@@ -50,13 +55,13 @@
   margin: 180px 128px 0px 0px;
 }
 
-.bannerMiddleContentDetails{
+/* .bannerMiddleContentDetails{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding-top: 5px;
-}
+} */
 
 .bannerMiddleContentDetails>div {
   display: flex;

@@ -211,6 +211,25 @@ export const facialGlowFacial = [
     ]
   },
 ];
+export const serviceUltraformer = [
+  {
+    title:  "HIFU – High Intensity Focused Ultrasound (Ultraformer III)",
+
+    whatIsDescription: "Combining a Facial, Dermaplaning, and vitamin C microneedling rejuvenates the skin, addressing dullness, uneven texture, pigmentation, and aging for a brighter, youthful complexion.",
+    benefits: "What does the treatment do?",
+    benefitsDescription: "The HIFU uses dermal micro-heating for a multi-layered lifting, tightening and rejuvenation effect. It promotes maximum collagen production meaning smoother, plumper, more youthful skin!" ,
+    benefitsRecommendations: "Typically recommended every 8-10 weeks, depending on your skin's needs and concerns.",
+    btnComponent: <BtnGreen>Book Now</BtnGreen>,
+    imgSrc:'images/home-about-us-bed.webp',
+    serviceUltraformerSupplementary: [
+      {id:"1", title: "Improves skin texture and tone:", description: "Stimulates the production of collagen and elastin, which helps to improve the texture and tone of the skin, giving it a younger and healthier appearance." },
+      {id:"2", title: "Reduction of fine lines and wrinkles:", description: "The treatment can help reduce the appearance of fine lines and wrinkles. especially around the eyes, mouth and forehead." },
+      {id:"3", title: "Decreased skin sagging:", description: "The treatment can help improve skin firmness especially in areas such as the face and neck." },
+      {id:"4", title: "No Significant Recovery Time:", description: "As the treatment is non-invasive. there is no significant recovery time allowing patients to resume their daily activities immediately after treatment." },
+      {id:"5", title: "Gradual and lasting results:", description: "Treatment results usually appear gradually over time and can last for several months." },
+    ]
+  },
+];
 export const warnings = [
   { warningDeepCleasing: "Contraindication to the FACIAL treatments : in case of use of steroids or anticoagulants in the last 3 months, skin wounds, signs of skin infection or cancer."},
 ];

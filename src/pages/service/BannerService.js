@@ -16,7 +16,8 @@ const BannerService = ({
   customClass,
   customDescriptionClass,
   customBottomClass,
-  customPhotoClass
+  customPhotoClass,
+  customBannerMiddleContentDetailsClass
 }) => {
   return (
     <div className={styles.containerService}>
@@ -29,23 +30,14 @@ const BannerService = ({
             <h2>{title}</h2>
           </div>
           <div className={`${styles.titleDescription} ${customDescriptionClass}`}>
-            {/* <div className={styles.title}> */}
-              {/* <h2>{title}</h2> */}
-            {/* </div> */}
             <h5>{whatIs}</h5>
             <p>{whatIsDescription}</p>
             <h5>{benefits}</h5>
             <p>{benefitsDescription}</p>
             <p className={styles.bannerMiddleRecommendation}>{benefitsRecommendations}</p>
-            <div className={styles.bannerMiddleContentDetails}>
-              <div>
-                <h5>Time:</h5>
-                <p>{timeDescription}</p>
-              </div>
-              <div>
-                <h5>Price:</h5>
-                <p>{priceDescription}</p>
-              </div>
+            <div className={`${styles.bannerMiddleContentDetails}  ${customBannerMiddleContentDetailsClass}`}>
+              <h5>Time:<span>{timeDescription}</span></h5>
+              <h5>Price:<span>{priceDescription}</span></h5>
             </div>
             <div className={styles.bannerButton}>
               {btnComponent}
