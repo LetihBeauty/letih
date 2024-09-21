@@ -8,18 +8,23 @@
   padding-left: 0px;
   background-color: #446953;
 }
+.containerService {
+
+  align-items: center;
+  justify-content: space-between;
+}
 .centerLogo {
   width: 410px;
 
   h1 {
+    display: inline-block;
     color: #F7F7F7;
     height: 50px;
     justify-content: center;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     letter-spacing: 4px;
-    font-weight: 50 !important;
-
+    font-weight: 50px;
   }
 }
 .serviceIncluded {
@@ -28,11 +33,20 @@
   margin: 0 auto;
   padding-left: 101px;
 }
-.excluir{ display: none; }
+.navbarWrapper{ display: none; }
 
 .hifuTreatment{
-  padding: 32px 0px 0px 101px;
+  width: 1244px;
+  padding: 0px 0px 0px 101px;
+  margin-top: 80px;
 }
+.hifuTitle{
+  margin-bottom: 32px
+}
+.hifuDescrDescription {
+  margin-bottom: 60px;
+}
+
 .serviceIncludedContent {
   width: 100%;
   box-sizing: border-box;
@@ -53,13 +67,6 @@
     display: inline-block;
   }
 
-  p {
-    padding-bottom: 0px;
-    margin: 0px;
-
-  }
-
-
 }
 
 .serviceTitle {
@@ -77,7 +84,7 @@
   grid-auto-rows: min-content;
   column-gap: 100px;
   row-gap: 50px;
-  padding: 32px 0px 120px 101px;
+  padding: 0px 0px 120px 101px;
   width: 1184px;
 
   .descriptionStyle {
@@ -180,7 +187,24 @@
     margin-bottom: 32px;
     padding-left: 0px;
   }
-    .serviceIncludedWarning {
-      width: 358px;
+  .hifuItem{
+    width: 358px;
+  }
+  .hifuTitle {
+    margin-bottom: 24px
+  }
+
+  .hifuDescrDescription {
+    margin-bottom: 24px;
+  }
+  .hifuTreatment {
+    width: 1244px;
+    padding: 0px ;
+    margin-top: 0px;
+  }
+  .serviceIncludedWarning {
+    width: 358px;
+    justify-content: center;
+    align-items: center;
   }
 }

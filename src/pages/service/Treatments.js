@@ -19,11 +19,11 @@ const Treatments = ({
   customBottomClass,
   customPhotoClass,
   customBannerMiddleContentDetailsClass,
-  excluir
+  customNavWrapperClass
 }) => {
   return (
     <div className={styles.containerService}>
-      <div className={`${styles.mobileNavbarWrapper} ${excluir}`}>
+      <div className={`${styles.mobileNavbarWrapper} ${customNavWrapperClass}`}>
         <ServiceMobileNavbar />
       </div>
       <div className={`${styles.bannerMiddle} ${customClass}`}>

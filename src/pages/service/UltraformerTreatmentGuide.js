@@ -7,15 +7,16 @@ const UltraformerTreatmentGuide = ({
   customBottomClass,
   HIFUTreatmentAreasDescription,
   alertMessage,
+  title
 }) => {
 
   return (
-    <div className="bannerService">
+    <div className="containerService">
       <div className={Ultraformerstyles.serviceIncluded}>
         <div className={Ultraformerstyles.serviceIncludedContent}>
           <div className={Ultraformerstyles.hifuTreatment}>
             {HIFUTreatmentAreasDescription.map((item) => (
-              <div key={item.id}>
+              <div key={item.id} className={Ultraformerstyles.hifuItem}>
                 <h4 className={Ultraformerstyles.hifuTitle}>
                   {item.title}
                 </h4>

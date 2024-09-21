@@ -28,7 +28,7 @@ const Ultraformer = () => {
         </div>
       </div>
       <Treatments
-        excluir={UltraformerStyles.excluir}
+        customNavWrapperClass={UltraformerStyles.navbarWrapper}
         title={primaryService.title}
         whatIsDescription={primaryService.whatIsDescription}
         benefits={primaryService.benefits}
