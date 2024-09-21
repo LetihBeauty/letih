@@ -5,6 +5,7 @@ const UltraformerTreatmentGuide = ({
   supplementaryServiceInfo,
   classMapping,
   customBottomClass,
+  HIFUTreatmentAreasDescription,
   alertMessage,
 }) => {
 
@@ -12,7 +13,19 @@ const UltraformerTreatmentGuide = ({
     <div className="bannerService">
       <div className={Ultraformerstyles.serviceIncluded}>
         <div className={Ultraformerstyles.serviceIncludedContent}>
-          <h4 className={Ultraformerstyles.serviceTitle}>What are the benefits of HIFU?</h4>
+          <div className={Ultraformerstyles.hifuTreatment}>
+            {HIFUTreatmentAreasDescription.map((item) => (
+              <div key={item.id}>
+                <h4 className={Ultraformerstyles.hifuTitle}>
+                  {item.title}
+                </h4>
+                <p className={Ultraformerstyles.hifuDescrDescription}>
+                  {item.description}
+                </p>
+              </div>
+            ))
+            }
+          </div>
           <div className={Ultraformerstyles.serviceSteps}>
             {supplementaryServiceInfo.map((item) => (
               <h5 key={item.id} className={`${classMapping[item.id]}`}>
@@ -25,17 +38,19 @@ const UltraformerTreatmentGuide = ({
         </div>
       </div>
       <div className={`${Ultraformerstyles.bannerBottom} ${customBottomClass}`}></div>
-          <div className={Ultraformerstyles.serviceIncludedWarning}>
-            <div>
-              <span className="material-symbols-outlined">info</span>
-              {alertMessage.title}
-            </div>
-            <ul>
-              {alertMessage.items?.map((item, itemIndex) => (
-                <li key={itemIndex}>{item}</li>
-              ))}
-            </ul>
-          </div>
+      <div className={Ultraformerstyles.serviceIncludedWarning}>
+        <div>
+          <span className="material-symbols-outlined">
+            info
+          </span>
+          {alertMessage.title}
+        </div>
+        <ul>
+          {alertMessage.items?.map((item, itemIndex) => (
+            <li key={itemIndex}>{item}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

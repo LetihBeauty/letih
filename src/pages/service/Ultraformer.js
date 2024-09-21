@@ -7,12 +7,11 @@ import {serviceUltraformer, warnings} from "../../components/constants/index.js"
 
 const Ultraformer = () => {
   const primaryService = serviceUltraformer[0];
+  const hifuTreatmentDetails = primaryService.HIFUTreatmentInfo;
+  console.log('HIFU Treatment Details:', hifuTreatmentDetails);
   const supplementaryServiceInfo = primaryService.serviceUltraformerSupplementary;
   const alertMessage = warnings[1]?.warningUltraformer[0]|| {};
 
-  console.log("Primary Service:", primaryService);
-  console.log("Supplementary Info:", supplementaryServiceInfo);
-  console.log("Alert Message:", alertMessage);
   const classMapping = {
     1: UltraformerStyles.id1,
     2: UltraformerStyles.id2,
@@ -23,7 +22,13 @@ const Ultraformer = () => {
   return (
 
     <div className="containerService">
+      <div className={UltraformerStyles.ultraformerBanner}>
+        <div className={UltraformerStyles.centerLogo}>
+          <h1>Ultraformer III (HIFU)</h1>
+        </div>
+      </div>
       <Treatments
+        excluir={UltraformerStyles.excluir}
         title={primaryService.title}
         whatIsDescription={primaryService.whatIsDescription}
         benefits={primaryService.benefits}
@@ -39,6 +44,7 @@ const Ultraformer = () => {
       <UltraformerTreatmentGuide
         supplementaryServiceInfo={supplementaryServiceInfo}
         customBottomClass={UltraformerStyles.bannerBottom}
+        HIFUTreatmentAreasDescription = {hifuTreatmentDetails}
         alertMessage={alertMessage}
         classMapping={classMapping}
       />

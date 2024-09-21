@@ -220,6 +220,11 @@ export const serviceUltraformer = [
     benefitsRecommendations: "Typically recommended every 8-10 weeks, depending on your skin's needs and concerns.",
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',
+    HIFUTreatmentInfo: [
+      {id:"1", title:"How many sessions of treatments is recommended?", description: "One treatment a year is often enough for most people between 30 to 40 years old. However, you may require a second one to achieve your dream results. Follow up treatments usually require an interval of 6 months in between treatment times. The results can last up to a year to six months so you may decide to have a follow up treatment when the results start to wear off." },
+      {id:"2", title:"Which areas does HIFU treat?", description: "Full Face, necks, eyelids, chins, jawlines, brows, and regions experiencing wrinkling or sagging. HIFU  provides lifting, skin tightening, wrinkle reduction, pore improvement, V-line forming. Jowl line enhancement, cheek lifting, skin tone improvement, and overall laxity improvement." },
+      {id:"3", title:"What are the benefits of HIFU?"}
+    ],
     serviceUltraformerSupplementary: [
       {id:"1", title: "Improves skin texture and tone:", description: "Stimulates the production of collagen and elastin, which helps to improve the texture and tone of the skin, giving it a younger and healthier appearance." },
       {id:"2", title: "Reduction of fine lines and wrinkles:", description: "The treatment can help reduce the appearance of fine lines and wrinkles. especially around the eyes, mouth and forehead." },
