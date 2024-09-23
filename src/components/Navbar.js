@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import "./Navbar.css";
@@ -8,17 +8,51 @@ function DesktopNavbar() {
   const navItems = data.navbar;
   const location = useLocation();
 
+  const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false);
+  const [facialDropdownOpen, setFacialDropdownOpen] = useState(false);
+
+  const toggleServiceDropdown = () => setServiceDropdownOpen(!serviceDropdownOpen);
+  const toggleFacialDropdown = () => setFacialDropdownOpen(!facialDropdownOpen);
+
   return (
     <div className="navbar-desktop">
       <ul>
         {navItems.slice(0, 3).map((item) => (
           <li key={item.id} className="items">
-            <Link
-              className={location.pathname === item.url ? "active" : ""}
-              to={item.url}
-            >
-              {item.title}
-            </Link>
+            {item.title === "SERVICE" ? (
+              <>
+                <button onClick={toggleServiceDropdown}>
+                  {item.title}
+                </button>
+                {serviceDropdownOpen && (
+                  <div className="dropdown">
+                    {item.submenu.map(subItem => (
+                      <div key={subItem.id}>
+                        <button onClick={subItem.submenu ? toggleFacialDropdown : null}>
+                          {subItem.title}
+                        </button>
+                        {subItem.submenu && facialDropdownOpen && (
+                          <div className="submenu">
+                            {subItem.submenu.map(subSubItem => (
+                              <Link key={subSubItem.id} to={subSubItem.url}>
+                                {subSubItem.title}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </>
+            ) : (
+              <Link
+                className={location.pathname === item.url ? "active" : ""}
+                to={item.url}
+              >
+                {item.title}
+              </Link>
+            )}
           </li>
         ))}
       </ul>
