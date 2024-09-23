@@ -8,7 +8,9 @@ function DesktopNavbar() {
   const navItems = data.navbar;
   const singInItem = data.singIn;
   const location = useLocation();
+  // State to manage the visibility of the service dropdown
   const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false);
+  // State to manage the visibility of the facial dropdown
   const [facialDropdownOpen, setFacialDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
