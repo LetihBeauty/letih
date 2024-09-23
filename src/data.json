@@ -74,11 +74,6 @@
       "id": 5,
       "title": "CONTACT",
       "url": "/contact"
-    },
-    {
-      "id": 6,
-      "title": "SING IN",
-      "url": "/singIn"
     }
   ],
   "footer": {
@@ -108,7 +103,7 @@
       "url": "https://karenhb.com/"
     }
   },
-"service":[
+  "service":[
     {
       "id": 1,
       "title": "DEEP CLEASING",
@@ -124,5 +119,11 @@
       "title": "GLOW FACIAL",
       "url": "/service/facial/glowfacial"
     }
-  ]
+  ],
+  "singIn":
+  {
+      "id": 1,
+      "title": "SING IN",
+      "url": "/singIn"
+    }
 }

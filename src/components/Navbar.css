@@ -1,14 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+
+}
+.navbar-wrapper {
+  width: 100%;
+  border-bottom: 10px solid var(--green-100);
+}
 .navbar-desktop {
   display: flex;
   width: 100%;
+  max-width: 1500px;
   height: 80px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  border-bottom: 10px solid var(--green-100);
-  z-index: 1;
-  position: relative;
 
+  z-index: 1000;
+  position: relative;
+  margin: 0 auto;
 }
+
 .navbar-desktop a {
   text-decoration: none;
   color: var(--green-100);
@@ -31,20 +42,16 @@ button {
   display: flex;
   justify-content: space-between;
   list-style: none;
-  /* margin-left: 388px; */
   margin: 0;
   padding: 0;
-  /* width: 327px; */
   width: 448px;
   height: 27px;
   flex-shrink: 0;
-  gap: 40px;
 }
 
 .navbar-desktop .items {
   position: relative;
 }
-
 .navbar-desktop .service-toggle {
   cursor: pointer;
 }
@@ -54,7 +61,7 @@ button {
   position: absolute;
   background: white;
   border: 1px solid #ccc;
-  z-index: 1000;
+
   width: 200px;
   margin-top: 5px;
 }
@@ -68,7 +75,6 @@ button {
   position: absolute;
   background: white;
   border: 1px solid #ccc;
-  z-index: 1000;
   width: 200px;
   top: 0;
   left: 100%;
@@ -126,13 +132,11 @@ button {
 }
 
 .navbar-desktop .center-logo {
-  /* margin-left: -128px; */
-  width: 170px;
+  padding-left: 150px;
 }
 
 .navbar-desktop .center-logo h3 {
   color: var(--green-100);
-  margin: 0 60px;
   padding: 0;
 }
 
@@ -142,7 +146,7 @@ button {
   margin-right: 10px;
 }
 
-.navbar-desktop a.active::after {
+.navbar-desktop  a.active::after {
   content: "";
   display: block;
   width: 30px;
@@ -154,11 +158,15 @@ button {
   left: 50%;
   transform: translateX(-50%);
 }
-.okok{
-  display: inline-block;
-
-  margin-left: 261px
+.login-signup-buttons{
+  width: 239px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-right: 127px;
 }
+
+
 .navbar-mobile {
   width: 100vw;
   display: flex;

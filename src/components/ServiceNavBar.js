@@ -17,7 +17,7 @@ function DesktopServiceNavbar() {
           <h1>FACIALS</h1>
         </div>
         <ul className="main-nav-items">
-          {navItems.slice(0, 3).map((item) => (
+          {navItems.map((item) => (
             <li key={item.id} className="items">
               <Link
                 className={location.pathname === item.url ? "active" : ""}
