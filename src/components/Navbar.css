@@ -5,57 +5,119 @@
   justify-content: center;
   align-items: center;
   border-bottom: 10px solid var(--green-100);
-
-  ul {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 327px;
-    height: 27px;
-    flex-shrink: 0;
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--green-100);
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0 10px;
-    position: relative;
-  }
-
-  a.active::after {
-    content: "";
-    display: block; /* Assegure que o display seja block */
-    width: 30px; /* Ajuste conforme necessário */
-    height: 5px; /* Ajuste conforme necessário */
-    background: url("../../public/images/Linemenu.svg") no-repeat center;
-    background-size: contain;
-    position: absolute;
-    bottom: -5px; /* Ajuste conforme necessário */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  img {
-    width: 254px;
-    height: 21px;
-    margin-right: 10px;
-  }
-
-  .center-logo {
-    width: 410px;
-
-    h3 {
-      color: var(--green-100);
-      margin: 0px 60px;
-      padding: 0;
-    }
-  }
+  z-index: 1;
+  position: relative;
 }
 
+.navbar-desktop ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 327px;
+  height: 27px;
+  flex-shrink: 0;
+}
+
+.navbar-desktop .items {
+  position: relative;
+}
+
+.navbar-desktop .service-toggle {
+  cursor: pointer;
+}
+
+.navbar-desktop .dropdown {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  width: 200px;
+  margin-top: 5px;
+}
+
+.navbar-desktop .submenu {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  width: 200px;
+}
+
+.navbar-desktop .dropdown.show {
+  display: block;
+}
+.navbar-desktop .submenu {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  width: 200px;
+  top: 0; /* Mantenha o submenu na mesma linha */
+  left: 100%; /* Posicione à direita do item pai */
+  margin-left: 5px; /* Espaço entre o item pai e o submenu */
+}
+.navbar-desktop .submenu.show {
+  display: block;
+}
+
+.navbar-desktop .submenu-item {
+  position: relative;
+}
+
+.navbar-desktop .submenu-item a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar-desktop .submenu-item a:hover {
+  background-color: #154734;
+  color: white;
+}
+
+.navbar-desktop a {
+  text-decoration: none;
+  color: var(--green-100);
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 10px;
+  position: relative;
+}
+
+.navbar-desktop .center-logo {
+  width: 410px;
+}
+
+.navbar-desktop .center-logo h3 {
+  color: var(--green-100);
+  margin: 0 60px;
+  padding: 0;
+}
+
+.navbar-desktop img {
+  width: 254px;
+  height: 21px;
+  margin-right: 10px;
+}
+
+.navbar-desktop a.active::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 5px;
+  background: url("../../public/images/Linemenu.svg") no-repeat center;
+  background-size: contain;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .navbar-mobile {
   width: 100vw;
   display: flex;

@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "title": "ABOUT",
+      "title": "ABOUT US",
       "url": "/about"
     },
     {
@@ -69,20 +69,11 @@
         }
       ]
     },
-    {
-      "id": 4,
-      "title": "REVIEW",
-      "url": "/review"
-    },
+
     {
       "id": 5,
       "title": "CONTACT",
       "url": "/contact"
-    },
-    {
-      "id": 6,
-      "title": "GALLERY",
-      "url": "/gallery"
     }
   ],
   "footer": {
