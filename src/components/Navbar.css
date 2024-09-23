@@ -1,16 +1,24 @@
 .navbar-desktop {
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 80px;
   justify-content: center;
   align-items: center;
   border-bottom: 10px solid var(--green-100);
   z-index: 1;
   position: relative;
+
+}
+.navbar-desktop a {
+  text-decoration: none;
+  color: var(--green-100);
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  position: relative;
 }
 button {
   background: none;
-  /* Remove o fundo padrão */
   border: none;
   padding: 0;
   margin: 0;
@@ -18,15 +26,19 @@ button {
   color: inherit;
   font: inherit;
 }
+
 .navbar-desktop ul {
   display: flex;
   justify-content: space-between;
   list-style: none;
+  /* margin-left: 388px; */
   margin: 0;
   padding: 0;
-  width: 327px;
+  /* width: 327px; */
+  width: 448px;
   height: 27px;
   flex-shrink: 0;
+  gap: 40px;
 }
 
 .navbar-desktop .items {
@@ -49,8 +61,8 @@ button {
 
 .navbar-desktop .dropdown.show {
   display: block;
-
 }
+
 .navbar-desktop .submenu {
   display: none;
   position: absolute;
@@ -58,20 +70,17 @@ button {
   border: 1px solid #ccc;
   z-index: 1000;
   width: 200px;
-  top: 0; /* Mantenha o submenu na mesma linha */
-  left: 100%; /* Posicione à direita do item pai */
-  margin-left: 5px; /* Espaço entre o item pai e o submenu */
+  top: 0;
+  left: 100%;
+  margin-left: 5px;
 }
+
 .navbar-desktop .submenu.show {
   display: block;
 }
 
 .navbar-desktop .submenu-item {
   position: relative;
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: black;
 }
 
 .navbar-desktop .submenu-item a {
@@ -79,25 +88,46 @@ button {
   padding: 10px;
   text-decoration: none;
   color: black;
-
+}
+.navbar-desktop .submenu-item button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  background: transparent;
+  border: none;
+  text-align: left;
 }
 
-.navbar-desktop .submenu-item a:hover {
+.navbar-desktop .submenu-item button:hover,
+.navbar-desktop .submenu-item .submenu-link:hover {
   background-color: #154734;
   color: white;
 }
 
-.navbar-desktop a {
-  text-decoration: none;
-  color: var(--green-100);
-  font-size: 16px;
-  font-weight: 400;
+.navbar-desktop .dropdown .submenu-item {
+  display: block;
 
-  position: relative;
+  .submenu-link {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  .submenu-link:hover {
+    background-color: #154734;
+    color: white;
+  }
+  a:hover {
+    background-color: #154734;
+    color: white;
+  }
 }
 
 .navbar-desktop .center-logo {
-  width: 410px;
+  /* margin-left: -128px; */
+  width: 170px;
 }
 
 .navbar-desktop .center-logo h3 {
@@ -123,6 +153,11 @@ button {
   bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
+}
+.okok{
+  display: inline-block;
+
+  margin-left: 261px
 }
 .navbar-mobile {
   width: 100vw;

@@ -6,11 +6,13 @@ import About from "./pages/About";
 import Review from "./pages/Review";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
+import SingIn from "./pages/SingIn.js";
 import Layout from "./components/Layout";
 import DeepCleasing from "./pages/service/FacialDeepCleasing.js";
 import Dermaplaning from "./pages/service/FacialDermaPlaning.js";
 import Glowfacial from "./pages/service/FacialGlowFacial.js";
 import Ultraformer from "./pages/service/Ultraformer.js";
+
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           <Route path="/review" element={<Review />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/singIn" element={<SingIn />} />
         </Routes>
       </Layout>
     </Router>

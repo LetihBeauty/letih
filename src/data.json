@@ -40,32 +40,32 @@
         {
           "id": 2,
           "title": "ULTRAFORMER",
-          "url": "/service/ultraformer"
+          "url": "/service/Ultraformer"
         },
         {
           "id": 3,
           "title": "MICRONEEDLING",
-          "url": "/service/facial/microneedling"
+          "url": "/service/microneedling"
         },
         {
           "id": 4,
           "title": "SKIN CARE ROUTINE",
-          "url": "/service/facial/skinCareRoutine"
+          "url": "/service/skinCareRoutine"
         },
         {
           "id": 5,
           "title": "ROSE DE MER",
-          "url": "/service/facial/roseDeMer"
+          "url": "/service/roseDeMer"
         },
         {
           "id": 6,
           "title": "BODY DETOX",
-          "url": "/service/facial/bodyDetox"
+          "url": "/service/bodyDetox"
         },
         {
           "id": 7,
           "title": "BELLY REDUCING",
-          "url": "/service/facial/bellyReducing"
+          "url": "/service/bellyReducing"
         }
       ]
     },
@@ -74,6 +74,11 @@
       "id": 5,
       "title": "CONTACT",
       "url": "/contact"
+    },
+    {
+      "id": 6,
+      "title": "SING IN",
+      "url": "/singIn"
     }
   ],
   "footer": {
@@ -107,17 +112,17 @@
     {
       "id": 1,
       "title": "DEEP CLEASING",
-      "url": "/service/deepcleasing"
+      "url": "/service/facial/deepcleasing"
     },
     {
       "id": 2,
       "title": "DERMA PLANING",
-      "url": "/service/dermaplaning"
+      "url": "/service/facial/dermaplaning"
     },
     {
       "id": 3,
       "title": "GLOW FACIAL",
-      "url": "/service/glowfacial"
+      "url": "/service/facial/glowfacial"
     }
   ]
 }
