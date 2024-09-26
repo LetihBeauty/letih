@@ -12,7 +12,7 @@ import DeepCleasing from "./pages/service/FacialDeepCleasing.js";
 import Dermaplaning from "./pages/service/FacialDermaPlaning.js";
 import Glowfacial from "./pages/service/FacialGlowFacial.js";
 import Ultraformer from "./pages/service/Ultraformer.js";
-
+import Microneedling from "./pages/service/Microneedling.js";
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
           <Route path="/service/facial/Dermaplaning" element={<Dermaplaning />} />
           <Route path="/service/facial/Glowfacial" element={<Glowfacial />} />
           <Route path="/service/Ultraformer" element={<Ultraformer />} />
+          <Route path="/service/Microneedling" element={<Microneedling />} />
           <Route path="/review" element={<Review />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />

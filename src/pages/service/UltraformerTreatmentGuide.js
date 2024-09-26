@@ -43,7 +43,7 @@ const UltraformerTreatmentGuide = ({
                 {Array.isArray(tariffs) && tariffs.slice(0,2).map((item) => (
                   <div key={item.id}>
                     <div className={Ultraformerstyles.pricesDescription}>
-                      <h4>{item.title}</h4>
+                      <h5>{item.title}</h5>
                       <p>{item.time}</p>
                       <div className={Ultraformerstyles.priceInfo}>
                         <p>{item.includes}</p>
@@ -58,7 +58,7 @@ const UltraformerTreatmentGuide = ({
                 {Array.isArray(tariffs) && tariffs.slice(2,5).map((item) => (
                   <div key={item.id}>
                     <div className={Ultraformerstyles.pricesDescription}>
-                      <h4>{item.title}</h4>
+                      <h5>{item.title}</h5>
                       <div className={Ultraformerstyles.priceInfo}>
                         <p>{item.time}</p>
                         <hr className={Ultraformerstyles.myLine}/>
