@@ -7,7 +7,7 @@ const UltraformerTreatmentGuide = ({
   customBottomClass,
   HIFUTreatmentAreasDescription,
   alertMessage,
-  title
+  tariffs
 }) => {
 
   return (
@@ -36,10 +36,44 @@ const UltraformerTreatmentGuide = ({
             ))
             }
           </div>
+          <div className={`${Ultraformerstyles.prices}`}>
+            <div className={Ultraformerstyles.pricesContainer}>
+              <h2>Prices</h2>
+              <div>
+                {Array.isArray(tariffs) && tariffs.slice(0,2).map((item) => (
+                  <div key={item.id}>
+                    <div className={Ultraformerstyles.pricesDescription}>
+                      <h4>{item.title}</h4>
+                      <p>{item.time}</p>
+                      <div className={Ultraformerstyles.priceInfo}>
+                        <p>{item.includes}</p>
+                        <hr className={Ultraformerstyles.myLine}/>
+                        <p className={Ultraformerstyles.serviceRates}>{item.price}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div>
+                {Array.isArray(tariffs) && tariffs.slice(2,5).map((item) => (
+                  <div key={item.id}>
+                    <div className={Ultraformerstyles.pricesDescription}>
+                      <h4>{item.title}</h4>
+                      <div className={Ultraformerstyles.priceInfo}>
+                        <p>{item.time}</p>
+                        <hr className={Ultraformerstyles.myLine}/>
+                        <p className={Ultraformerstyles.serviceRates}>{item.price}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className={`${Ultraformerstyles.bannerBottom} ${customBottomClass}`}></div>
-      <div className={ `${Ultraformerstyles.okok}`}>
+      <div className={ `${Ultraformerstyles.warningWrap}`}>
         <div className={Ultraformerstyles.serviceIncludedWarning}>
           <div>
             <span className="material-symbols-outlined">
@@ -55,7 +89,6 @@ const UltraformerTreatmentGuide = ({
         </div>
       </div>
     </div>
-
   );
 };
 

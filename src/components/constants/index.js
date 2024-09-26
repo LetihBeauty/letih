@@ -234,6 +234,13 @@ export const serviceUltraformer = [
     ]
   },
 ];
+export const prices = [
+  {id:"1", title:"I - Upper Eye", time:"Time: 45min", includes:"Includes: Eyes area + Fox Eye + Glabella", price: "$180" },
+  {id:"2", title:"II - Full Face", time:"Time: 2h", includes:"Includes:  Eyes area + FoxEye + Glabella + Cheeks + Double Chin", price: "$450" },
+  {id:"3", title:"III - Cheeks + Double Chin", time:"Time: 1h", price: "$320" },
+  {id:"4", title:"IV - Decollete", time:"Time: 45min", price: "$180" },
+  {id:"5", title:"V - Full face + Neck + Decollete", time:"Time: 2h 15min", price: "$600" },
+];
 export const warnings = [
   { warningDeepCleasing: "Contraindication to the FACIAL treatments : in case of use of steroids or anticoagulants in the last 3 months, skin wounds, signs of skin infection or cancer."},
   { warningUltraformer: [

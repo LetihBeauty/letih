@@ -3,7 +3,7 @@ import Treatments from "./Treatments.js";
 import UltraformerTreatmentGuide from "./UltraformerTreatmentGuide.js";
 import UltraformerStyles from "../service/Ultraformer.module.css";
 import "../service/FacialTreatmentGuide.module.css";
-import {serviceUltraformer, warnings} from "../../components/constants/index.js"
+import {serviceUltraformer, warnings, prices} from "../../components/constants/index.js"
 
 const Ultraformer = () => {
   const primaryService = serviceUltraformer[0];
@@ -11,6 +11,7 @@ const Ultraformer = () => {
   console.log('HIFU Treatment Details:', hifuTreatmentDetails);
   const supplementaryServiceInfo = primaryService.serviceUltraformerSupplementary;
   const alertMessage = warnings[1]?.warningUltraformer[0]|| {};
+  const tariffs = prices;
 
   const classMapping = {
     1: UltraformerStyles.id1,
@@ -45,6 +46,7 @@ const Ultraformer = () => {
         supplementaryServiceInfo={supplementaryServiceInfo}
         customBottomClass={UltraformerStyles.bannerBottom}
         HIFUTreatmentAreasDescription = {hifuTreatmentDetails}
+        tariffs={tariffs}
         alertMessage={alertMessage}
         classMapping={classMapping}
       />
