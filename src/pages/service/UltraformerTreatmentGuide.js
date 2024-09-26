@@ -31,7 +31,7 @@ const UltraformerTreatmentGuide = ({
             {supplementaryServiceInfo.map((item) => (
               <h5 key={item.id} className={`${classMapping[item.id]}`}>
                 {item.title}
-                <span class={Ultraformerstyles.descriptionStyle}>{item.description}</span>
+                <span className={Ultraformerstyles.descriptionStyle}>{item.description}</span>
               </h5>
             ))
             }
@@ -39,20 +39,23 @@ const UltraformerTreatmentGuide = ({
         </div>
       </div>
       <div className={`${Ultraformerstyles.bannerBottom} ${customBottomClass}`}></div>
-      <div className={Ultraformerstyles.serviceIncludedWarning}>
-        <div>
-          <span className="material-symbols-outlined">
-            info
-          </span>
-          {alertMessage.title}
+      <div className={ `${Ultraformerstyles.okok}`}>
+        <div className={Ultraformerstyles.serviceIncludedWarning}>
+          <div>
+            <span className="material-symbols-outlined">
+              info
+            </span>
+            {alertMessage.title}
+          </div>
+          <ul>
+            {alertMessage.items?.map((item, itemIndex) => (
+              <li key={itemIndex}>{item}</li>
+            ))}
+          </ul>
         </div>
-        <ul>
-          {alertMessage.items?.map((item, itemIndex) => (
-            <li key={itemIndex}>{item}</li>
-          ))}
-        </ul>
       </div>
     </div>
+
   );
 };
 

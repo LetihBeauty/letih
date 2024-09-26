@@ -238,7 +238,8 @@ export const warnings = [
   { warningDeepCleasing: "Contraindication to the FACIAL treatments : in case of use of steroids or anticoagulants in the last 3 months, skin wounds, signs of skin infection or cancer."},
   { warningUltraformer: [
     {
-      title:"Contraindication to the FACIAL treatments:",
+      id:"1",
+      title:"CONTRAINDICATION TO THE FACIAL TREATMENTS:",
       items:[
         "ACUTE INFECTIONS",
         "HEART FAILURE",
