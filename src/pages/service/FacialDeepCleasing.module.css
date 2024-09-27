@@ -1,7 +1,10 @@
 .bannerWrapper {
   height: 621px;
 }
-
+.titleDescription {
+  grid-column: 1 / 2;
+  margin: 163px 128px 0px 0px !important;
+}
 .bannerBottom {
   margin-top: 32px;
   background-color: #446953;

@@ -36,6 +36,7 @@ const DeepCleasing = () => {
         imgSrc={primaryService.imgSrc}
         customClass={DeepCleasingStyles.bannerWrapper}
         customBottomClass={DeepCleasingStyles.bannerBottom}
+        customDescriptionClass={DeepCleasingStyles.titleDescription}
 
       />
       <FacialTreatmentGuide

@@ -14,7 +14,7 @@ const Microneedling = () => {
     <div className="containerService">
       <div className={MicroneedlingStyles.ultraformerBanner}>
         <div className={MicroneedlingStyles.centerLogo}>
-          <h1>RF microneedling</h1>
+          <h1>RF MICRONEEDLING</h1>
         </div>
       </div>
       <Treatments

@@ -1,6 +1,10 @@
 .bannerWrapper {
   height: 830px;
 }
+.titleDescription {
+  grid-column: 1 / 2;
+  margin: 163px 128px 0px 0px !important;
+}
 .bannerService {
   display: flex;
   flex-direction: column;

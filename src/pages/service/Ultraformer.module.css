@@ -15,18 +15,17 @@
   justify-content: space-between;
 }
 .centerLogo {
-  width: 410px;
-
   h1 {
     display: inline-block;
-    color: #F7F7F7;
-    height: 50px;
-    justify-content: center;
-    font-family: 'Roboto', sans-serif;
+    white-space: nowrap;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 50px;
+    font-stretch: ultra-condensed;
+    color: white;
+    font-family: "Roboto Serif", serif;
     font-style: normal;
     letter-spacing: 4px;
-    font-weight: 50px;
-    white-space: nowrap;
   }
 }
 .serviceIncluded {

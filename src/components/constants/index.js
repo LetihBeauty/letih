@@ -249,7 +249,7 @@ export const serviceMicroneedling = [
     ],
     benefitsRecommendations: "The frequency of the procedure can be every 30 days or every 3 months, depending on the client's concerns and the overall health of their skin.",
     timeDescription: "$250 - Single Session",
-    priceDescription: "  $585 - Package with 3 session, every 30 days",
+    priceDescription: "$585 - Package with 3 session, every 30 days",
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',
     microneedlingInfo: [

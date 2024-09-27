@@ -9,7 +9,7 @@
 }
 .titleDescription {
   grid-column: 1 / 2;
-  margin: 225px 128px 0px 0px;
+  margin: 225px 128px 0px 0px !important;
 }
 .bannerBottom {
   margin-top: 32px;

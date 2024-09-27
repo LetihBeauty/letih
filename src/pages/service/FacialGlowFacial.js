@@ -38,6 +38,7 @@ const GlowFacial = () => {
         customClass={GlowFacialStyles.bannerWrapper}
         customPhotoClass= {GlowFacialStyles.bannerMiddlePhoto}
         customBottomClass={GlowFacialStyles.bannerBottom}
+        customDescriptionClass={GlowFacialStyles.titleDescription}
 
       />
       <FacialTreatmentGuide

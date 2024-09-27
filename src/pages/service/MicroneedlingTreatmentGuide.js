@@ -19,7 +19,6 @@ const MicroneedlingTreatmentGuide = ({
               </div>
             ))}
           </div>
-
           <div className={`${MicroneedlingStyles.warningWrap}`}>
             <div className={MicroneedlingStyles.serviceIncludedWarning}>
               <div>
