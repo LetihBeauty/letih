@@ -71,7 +71,9 @@
   }
 
 }
-
+.timeAndPrice{
+  display: none;
+}
 .serviceTitle {
   padding: 10px;
   padding-left: 101px;

@@ -214,9 +214,9 @@ export const facialGlowFacial = [
 export const serviceUltraformer = [
   {
     title:  "HIFU – High Intensity Focused Ultrasound (Ultraformer III)",
-    whatIsDescription: "Radiofrequency microneedling (commonly called RF microneedling) is a noninvasive skin rejuvenation treatment that enhances the collagen-boosting benefits of microneedling with the heat of radiofrequency energy.",
+    whatIsDescription: " HIFU (High-Intensity Focused Ultrasound) lifts the skin by targeting the deep muscle layer, crucial for preventing sagging. It's effective for skin lifting, tightening, and improving lines, wrinkles, pores, and skin tone.",
     benefits: "What does the treatment do?",
-    benefitsDescription: "In experienced hands, this potent combination can effectively treat a range of concerns, including:" ,
+    benefitsDescription: "The HIFU uses dermal micro-heating for a multi-layered lifting, tightening and rejuvenation effect. It promotes maximum collagen production meaning smoother, plumper, more youthful skin!" ,
     benefitsRecommendations: "Typically recommended every 8-10 weeks, depending on your skin's needs and concerns.",
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',
@@ -237,9 +237,9 @@ export const serviceUltraformer = [
 export const serviceMicroneedling = [
   {
     title:  "RF Microneedling ",
-    whatIsDescription: "HIFU (High-Intensity Focused Ultrasound) lifts the skin by targeting the deep muscle layer, crucial for preventing sagging. It's effective for skin lifting, tightening, and improving lines, wrinkles, pores, and skin tone.",
+    whatIsDescription: "Radiofrequency microneedling (commonly called RF microneedling) is a noninvasive skin rejuvenation treatment that enhances the collagen-boosting benefits of microneedling with the heat of radiofrequency energy.",
     benefits: "What does the treatment do?",
-    benefitsDescription: "The HIFU uses dermal micro-heating for a multi-layered lifting, tightening and rejuvenation effect. It promotes maximum collagen production meaning smoother, plumper, more youthful skin!" ,
+    benefitsDescription: "In experienced hands, this potent combination can effectively treat a range of concerns, including:" ,
     benefitsItems: [
         "Uneven skin texture",
         "Large pores",
@@ -248,9 +248,11 @@ export const serviceMicroneedling = [
         "Acne scars ( depending on level of the damage on the skin).",
     ],
     benefitsRecommendations: "The frequency of the procedure can be every 30 days or every 3 months, depending on the client's concerns and the overall health of their skin.",
+    timeDescription: "$250 - Single Session",
+    priceDescription: "  $585 - Package with 3 session, every 30 days",
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',
-    MicroneedlingInfo: [
+    microneedlingInfo: [
       {id:"1", includes:"The most common treatment areas include the face, neck, and decolletage.", howItWorks: "RF microneedling works by creating controlled microdamage from both the ultra-fine needles and heat. This stimulates the body's natural wound-healing response, kick-starting the biological processes that create new collagen and elastin.", observation:"Aging and environmental damage (particularly sun damage) break down these essential structural proteins, and the rate of replacement slows over time. Procedures like RF microneedling can slow and even temporarily reverse this process, helping skin look and even act younger. However, this isn't a risk-free procedure."},
     ]
   },

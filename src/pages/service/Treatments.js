@@ -19,7 +19,8 @@ const Treatments = ({
   customBottomClass,
   customPhotoClass,
   customBannerMiddleContentDetailsClass,
-  customNavWrapperClass
+  customNavWrapperClass,
+  children
 }) => {
   return (
     <div className={styles.containerService}>
@@ -36,6 +37,7 @@ const Treatments = ({
             <p>{whatIsDescription}</p>
             <h5>{benefits}</h5>
             <p>{benefitsDescription}</p>
+            {children}
             <p className={styles.bannerMiddleRecommendation}>{benefitsRecommendations}</p>
             <div className={`${styles.bannerMiddleContentDetails}  ${customBannerMiddleContentDetailsClass}`}>
               <h5>Time:<span>{timeDescription}</span></h5>

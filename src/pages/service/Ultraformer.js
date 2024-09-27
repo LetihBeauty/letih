@@ -8,7 +8,6 @@ import {serviceUltraformer, warnings, prices} from "../../components/constants/i
 const Ultraformer = () => {
   const primaryService = serviceUltraformer[0];
   const hifuTreatmentDetails = primaryService.HIFUTreatmentInfo;
-  console.log('HIFU Treatment Details:', hifuTreatmentDetails);
   const supplementaryServiceInfo = primaryService.serviceUltraformerSupplementary;
   const alertMessage = warnings[1]?.warningUltraformer[0]|| {};
   const tariffs = prices;
