@@ -257,6 +257,19 @@ export const serviceMicroneedling = [
     ]
   },
 ];
+export const serviceSkinCareRoutine = [
+  {
+    title:  "Skin Care Routine",
+    whatIsDescription: "HIFU (High-Intensity Focused Ultrasound) lifts the skin by targeting the deep muscle layer, crucial for preventing sagging. It's effective for skin lifting, tightening, and improving lines, wrinkles, pores, and skin tone.",
+    benefits: "What does the treatment do?",
+    benefitsDescription: "The HIFU uses dermal micro-heating for a multi-layered lifting, tightening and rejuvenation effect. It promotes maximum collagen production meaning smoother, plumper, more youthful skin!" ,
+    benefitsRecommendations: "Typically recommended every 8-10 weeks, depending on your skin's needs and concerns",
+    timeDescription: "1 hour and 30 minutes.",
+    priceDescription: " $145",
+    btnComponent: <BtnGreen>Book Now</BtnGreen>,
+    imgSrc:'images/home-about-us-bed.webp',
+  },
+];
 export const prices = [
   {id:"1", title:"I - Upper Eye", time:"Time: 45min", includes:"Includes: Eyes area + Fox Eye + Glabella", price: "$180" },
   {id:"2", title:"II - Full Face", time:"Time: 2h", includes:"Includes:  Eyes area + FoxEye + Glabella + Cheeks + Double Chin", price: "$450" },
