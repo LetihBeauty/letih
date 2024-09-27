@@ -1,4 +1,4 @@
-.ultraformerBanner {
+.roseDeMerBanner {
   display: flex;
   width: 100%;
   height: 299px;
@@ -8,15 +8,8 @@
   padding-left: 0px;
   background-color: #446953;
 }
-
-.containerService {
-  display: flex;
-  flex: column;
-  justify-content: center;
-  justify-content: space-between;
-}
-
 .centerLogo {
+
   h1 {
     display: inline-block;
     white-space: nowrap;
@@ -29,20 +22,4 @@
     font-style: normal;
     letter-spacing: 4px;
   }
-}
-.navbarWrapper {
-  display: none;
-}
-.titleDescription {
-  grid-column: 1 / 2;
-  margin: 163px 128px 0px 0px !important;
-}
-.bannerBottom {
-  margin-top: 32px;
-  background-color: #446953;
-  height: 130px;
-  width: 100%;
-}
-.emptySpace{
-  height: 120px;
 }

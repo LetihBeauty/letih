@@ -257,6 +257,62 @@ export const serviceMicroneedling = [
     ]
   },
 ];
+export const serviceRoseDeMer = [
+  {
+    title: "ROSE DE MER PEEL",
+    whatIs: "What is ROSE DE MER PEEL?",
+    whatIsDescription: "It is a 100% natural professional Peel for skin renewal and healing with 5-7 days.",
+    whatContains: "What contains in it?",
+    whatContainsItems: [
+        "Coral powde",
+        "Bio Stimulating plants",
+        "Dead Sea Salt",
+        "Ascorbic Acid (Vit C)",
+        "Arnica Extract ",
+        "Giant Kelp Extract",
+        "Resveratrol",
+        "Bio plasma FA"
+    ],
+    firstSession: "Includes Rose de Mer Protocol Peel ",
+    firstSessionTime: "1 hour",
+    secondSession: "7 days after the first session",
+    secondSessionItem: [
+      "Include: Exfoliation, Microdermabrasion, High Frequency, LED Therapy"
+    ],
+    secondSessionTime: "1h 30min",
+    price: "$350",
+    btnComponent: <BtnGreen>Book Now</BtnGreen>,
+    imgSrc:'images/home-about-us-bed.webp',
+    notToDoBefore:"What NOT to do before ROSEDEMER PEEL",
+    notToDoBeforeItems: [
+      "Coral powde",
+      "Bio Stimulating plants",
+      "Dead Sea Salt",
+      "Ascorbic Acid (Vit C)",
+      "Arnica Extract ",
+      "Giant Kelp Extract",
+      "Resveratrol",
+      "Bio plasma FA"
+    ],
+    notToDoAfter: "What NOT to do after ROSEDEMER PEEL",
+    notToDoAfterItems: [
+      "Not sun expose for 30 days after the first section - Beach/ Hiking/ outside activity",
+      "That will expose you to high UVB-UVA rays. Not exposed in the windy or cold weather.",
+      "Not apply sunscreen in the first 2 days after the section. Not wear mask on the face.",
+      "Not go outside the house if your skin is peeling. Not using hair dryer close to the face.",
+      "Not pulling on or rubbing the peeling skin, it may become raised or flaky in the exfoliation process. It will peel off nature.",
+      "Do not go to the gym or do exercise in the first 5 days of the treatment.",
+      "Not apply anything different on your face, just what your Esthetician recommended to you.",
+    ],
+    mustDoAfter:  "What you MUST do after ROSEDEMER PEEL",
+    mustDoAfterItems: [
+      "Trying to stay inside the house in the first 2-3 days.",
+      "Follow the skin care protocol that your Esthetician will provide you. Below is the POST KIT PEEL that you will use at home."
+    ],
+    secondPhotoimg:'images/home-about-us-bed.webp'
+  },
+
+];
 export const serviceSkinCareRoutine = [
   {
     title:  "Skin Care Routine",
@@ -298,6 +354,22 @@ export const warnings = [
         "IMMUNOSUPPRESSION",
         "RENAL FAILURE DEPENDENT ON DIURETICS OR DIALYSIS.",
       ],
-    }]
+    }],
+    warningRoseDeMer: [
+      {
+        id:"1",
+        title:"CONTRAINDICATION TO ROSE DE MER PEEL:",
+        items:[
+          "IF YOU ARE ALLERGIC TO SEA FOOD. ACUTE ACNE.",
+          "SKIN CLOGGED WITH BACKHEADS.",
+          "MELASMA DIAGNOSED BY A DERMATOLOGIST DOCTOR. PREGNANT/ PRETEND TO BECOME/ BREASTFEEDING. TAKING DEPRESSION/ PANICK ATTACK MEDICINE.",
+          "TAKING ORAL OR TOPIC ACCUTANE (AFTER 6 MONTHS IS ALLOWED). TAKING ORAL OR TOPIC RETINOL-A OR OTHER ACID.",
+          "ANY SKIN INFLAMMATION: ECZEMA/ DERMATITIS/ PSORIASIS/ ROSACEA (ACTIVE)/ ALOPECIA AND MORE. ",
+          "EXPECTED EXPOSURE TO THE SUN IN THE NEXT DAYS. HERPES (ACTIVE)",
+          "HAVE CANCER OR TUMOR DIABETIC NOT CONTROLLED.",
+          "ALLERGIC TO SUNCREEN INGREDIENTS.",
+        ]
+      }
+    ],
   },
 ];
