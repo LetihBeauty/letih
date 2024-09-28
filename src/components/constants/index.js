@@ -1,5 +1,5 @@
-import BtnGreen from "/home/victor/code/victorfonsecass/letih/src/components/BtnGreen.js";
-import BtnWhite from "/home/victor/code/victorfonsecass/letih/src/components/BtnWhite.js";
+import BtnGreen from "../BtnGreen.js";
+import BtnWhite from "../BtnWhite.js";
 
 export const ourMission =
   "Providing personalized esthetics services that focus on detoxifying the skin and body to promote overall health and wellbeing.";
