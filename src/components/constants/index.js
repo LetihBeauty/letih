@@ -327,11 +327,8 @@ export const serviceRoseDeMer = [
           "Follow the skin care protocol that your Esthetician will provide you. Below is the POST KIT PEEL that you will use at home."
         ],
       },
-      {
-        id: "5",
-        secondPhotoimg:'images/home-about-us-bed.webp'
-      },
-    ]
+    ],
+    secondPhotoimg:'images/home-about-us-bed.webp'
   },
 ];
 export const serviceSkinCareRoutine = [

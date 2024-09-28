@@ -19,10 +19,10 @@ const RoseDeMer = () => {
       </div>
       <div className={styles.bannerMiddle}>
         <div className={styles.bannerMiddleContent}>
-          <div className={styles.title}>
+          <div className={RoseDeMerStyles.title}>
             <h2>{primaryService.title}</h2>
           </div>
-          <div className={styles.titleDescription}>
+          <div className={RoseDeMerStyles.titleDescription}>
             <h5>{primaryService.whatIs}</h5>
             <p>{primaryService.whatIsDescription}</p>
             <h5>{primaryService.whatContains}</h5>
@@ -48,34 +48,37 @@ const RoseDeMer = () => {
               {primaryService.btnComponent}
             </div>
           </div>
-          <div className={styles.bannerMiddlePhoto}>
+          <div className={RoseDeMerStyles.bannerMiddlePhoto}>
             <img src={primaryService.imgSrc} alt="" />
           </div>
         </div>
       </div>
       <div className={RoseDeMerStyles.bannerBottom}></div>
-        <div className={RoseDeMerStyles.serviceIncluded}>
-            <div className={RoseDeMerStyles.serviceSteps}>
-              {roseDemerPeelGuidelines.map((item) => (
-                <div key={item.id}>
-                  <h5 className={RoseDeMerStyles.serviceTitle}>
-                    {typeof item.title === 'string'? item.title.split(/(NOT|MUST)/gi).map((part, index) => (
-                      <span key={index} style={part.toUpperCase() === 'NOT' || part.toUpperCase() === 'MUST' ? { color: 'red' } : {}}>
-                        {part}
-                      </span>
-                    )) : null
-                    }
-                  </h5>
-                  <ul>
-                    {(item.description || []).map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+      <div className={RoseDeMerStyles.serviceIncluded}>
+        <div className={RoseDeMerStyles.serviceSteps}>
+          {roseDemerPeelGuidelines.map((item) => (
+            <div key={item.id}>
+              <h5 className={RoseDeMerStyles.serviceTitle}>
+                {typeof item.title === 'string'? item.title.split(/(NOT|MUST)/gi).map((part, index) => (
+                  <span key={index} style={part.toUpperCase() === 'NOT' || part.toUpperCase() === 'MUST' ? { color: 'red' } : {}}>
+                    {part}
+                  </span>
+                )) : null
+                }
+              </h5>
+              <ul>
+                {(item.description || []).map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
             </div>
-            <div className={RoseDeMerStyles.warningWrap}>
-            <div className={RoseDeMerStyles.serviceIncludedWarning}>
+          ))}
+          <div className={RoseDeMerStyles.servicePhoto}>
+            <img src={primaryService.secondPhotoimg} alt="" />
+          </div>
+        </div>
+        <div className={RoseDeMerStyles.warningWrap}>
+          <div className={RoseDeMerStyles.serviceIncludedWarning}>
             <div>
               <span className="material-symbols-outlined">
                 info
