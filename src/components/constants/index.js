@@ -331,6 +331,37 @@ export const serviceRoseDeMer = [
     secondPhotoimg:'images/home-about-us-bed.webp'
   },
 ];
+export const serviceBodyDetox = [
+  {
+    title:  "BodyDetox Contouring?",
+    whatIsDescription: "Body Detox Contouring is a non-invasive cosmetic treatment designed to improve the body's appearance by targeting cellulite, firming the skin, and contouring specific areas. The procedure typically involves a combination of techniques such as:",
+    theGoal: "The goal of Body Detox Contouring is to achieve a more toned and sculpted appearance, often with a focus on problem areas like the abdomen, thighs, and buttocks. It is usually marketed as a way to enhance body aesthetics without the need for surgical procedures.",
+    timeDescription: " 1 hour and 45 minutes.",
+    priceDescription: "150",
+    packagePrice:"4 Session $560",
+    btnComponent: <BtnGreen>Book Now</BtnGreen>,
+    imgSrc:'images/home-about-us-bed.webp',
+    treatmentBenefits:{
+      mainTitle:"What are the benefits of this treatment?",
+      mainDescription: [
+        {id:"1", title: "Detoxification:", description: "The skin is cleansed to remove makeup, dirt, and oil." },
+        {id:"2", title: "Lymphatic Drainage: ", description: "An exfoliant is used to slough off dead skin cells, promoting a smoother complexion." },
+        {id:"3", title: "Skin Firming and Tightening:", description: "Steam is applied to the face to open pores and soften the skin, making it easier to extract impurities." },
+        {id:"4", title: "Cellulite Reduction:", description: " Helps to remove dead skin, Blackhead and Improves Blood circulation." },
+        {id:"5", title: "Improvement in Skin Texture:", description: "Uses a sterile scalpel to gently shave away dead skin cells and peach fuzz." },
+      ]
+    },
+    includesInBodyDetox:{
+      mainTitle:"What is included in the Body Detox Contouring?",
+      mainDescription: [
+        {id:"1", description: "Body Contouring movements: Firm/ fast/ strong movements throughout the body. Helps active and enhance the blood circulation system, contributing to a firm skin texture" },
+        {id:"2", description: "Lymphatic Drainage: Pumping movements in the lymph glands and throughout the body. It helps to speed up the lymphatic system, reducing edema and removing the accumulation of fluid in the body." },
+        {id:"3", title: "EMS (Electrical Muscle Stimulation) machine:", description: "Designed to help the belly muscles with electrical currents to stimulate the abdominal muscles. This help for toning, strengthening, and potentially tightening the muscles in the abdominal area." },
+        {id:"4", title: "INFRARED SAUNA BLANKET:", description: " It helps to dilate the blood vessels and increase circulation all throughout the body, increased blood flow and helping to relax the muscles and nerves of the body." },
+      ]
+    }
+  },
+];
 export const serviceSkinCareRoutine = [
   {
     title:  "Skin Care Routine",
