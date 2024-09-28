@@ -283,35 +283,56 @@ export const serviceRoseDeMer = [
     price: "$350",
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',
-    notToDoBefore:"What NOT to do before ROSEDEMER PEEL",
-    notToDoBeforeItems: [
-      "Coral powde",
-      "Bio Stimulating plants",
-      "Dead Sea Salt",
-      "Ascorbic Acid (Vit C)",
-      "Arnica Extract ",
-      "Giant Kelp Extract",
-      "Resveratrol",
-      "Bio plasma FA"
-    ],
-    notToDoAfter: "What NOT to do after ROSEDEMER PEEL",
-    notToDoAfterItems: [
-      "Not sun expose for 30 days after the first section - Beach/ Hiking/ outside activity",
-      "That will expose you to high UVB-UVA rays. Not exposed in the windy or cold weather.",
-      "Not apply sunscreen in the first 2 days after the section. Not wear mask on the face.",
-      "Not go outside the house if your skin is peeling. Not using hair dryer close to the face.",
-      "Not pulling on or rubbing the peeling skin, it may become raised or flaky in the exfoliation process. It will peel off nature.",
-      "Do not go to the gym or do exercise in the first 5 days of the treatment.",
-      "Not apply anything different on your face, just what your Esthetician recommended to you.",
-    ],
-    mustDoAfter:  "What you MUST do after ROSEDEMER PEEL",
-    mustDoAfterItems: [
-      "Trying to stay inside the house in the first 2-3 days.",
-      "Follow the skin care protocol that your Esthetician will provide you. Below is the POST KIT PEEL that you will use at home."
-    ],
-    secondPhotoimg:'images/home-about-us-bed.webp'
+    roseDemerPeelGuidelines: [
+      {
+        id: "1",
+        title:"What is this treatment for?",
+        description: [
+          "Minimizes Scars in general. Helps with Rejuvenation.",
+          "Minimizes large pores. Rehabilitation of mature skin.",
+          "Rehabilitation of problematic oily skin. Minimizes hyperpigmentation.",
+          "Minimizes hyperpigmentation post acne inflammation. Better Skin Texture.",
+        ]
+      },
+      {
+        id: "2",
+        title:"What NOT to do before ROSEDEMER PEEL",
+        description: [
+          "Chemical peels.",
+          "Not being in use of any skin care at home, just what the Esthetician allowed to you - 7 days before the procedure.",
+          "No exfoliation for 5 days before the section.",
+          "No hair removal by: Laser, waxing, cream, threading, dermaplaning. No IPL/ RF or other facial treatment before 7 days.",
+          "No expose to the sun (3 days before the section treatment).",
+          "No expose to the cold and windy weather (3 days before the section treatment).",
+        ],
+      },
+      {
+        id: "3",
+        title: "What NOT to do after ROSEDEMER PEEL",
+        description: [
+          "Not sun expose for 30 days after the first section - Beach/ Hiking/ outside activity",
+          "That will expose you to high UVB-UVA rays. Not exposed in the windy or cold weather.",
+          "Not apply sunscreen in the first 2 days after the section. Not wear mask on the face.",
+          "Not go outside the house if your skin is peeling. Not using hair dryer close to the face.",
+          "Not pulling on or rubbing the peeling skin, it may become raised or flaky in the exfoliation process. It will peel off nature.",
+          "Do not go to the gym or do exercise in the first 5 days of the treatment.",
+          "Not apply anything different on your face, just what your Esthetician recommended to you.",
+        ],
+      },
+      {
+        id: "4",
+        title:  "What you MUST do after ROSEDEMER PEEL",
+        description: [
+          "Trying to stay inside the house in the first 2-3 days.",
+          "Follow the skin care protocol that your Esthetician will provide you. Below is the POST KIT PEEL that you will use at home."
+        ],
+      },
+      {
+        id: "5",
+        secondPhotoimg:'images/home-about-us-bed.webp'
+      },
+    ]
   },
-
 ];
 export const serviceSkinCareRoutine = [
   {
@@ -355,21 +376,21 @@ export const warnings = [
         "RENAL FAILURE DEPENDENT ON DIURETICS OR DIALYSIS.",
       ],
     }],
-    warningRoseDeMer: [
-      {
-        id:"1",
-        title:"CONTRAINDICATION TO ROSE DE MER PEEL:",
-        items:[
-          "IF YOU ARE ALLERGIC TO SEA FOOD. ACUTE ACNE.",
-          "SKIN CLOGGED WITH BACKHEADS.",
-          "MELASMA DIAGNOSED BY A DERMATOLOGIST DOCTOR. PREGNANT/ PRETEND TO BECOME/ BREASTFEEDING. TAKING DEPRESSION/ PANICK ATTACK MEDICINE.",
-          "TAKING ORAL OR TOPIC ACCUTANE (AFTER 6 MONTHS IS ALLOWED). TAKING ORAL OR TOPIC RETINOL-A OR OTHER ACID.",
-          "ANY SKIN INFLAMMATION: ECZEMA/ DERMATITIS/ PSORIASIS/ ROSACEA (ACTIVE)/ ALOPECIA AND MORE. ",
-          "EXPECTED EXPOSURE TO THE SUN IN THE NEXT DAYS. HERPES (ACTIVE)",
-          "HAVE CANCER OR TUMOR DIABETIC NOT CONTROLLED.",
-          "ALLERGIC TO SUNCREEN INGREDIENTS.",
-        ]
-      }
-    ],
   },
+  { warningRoseDeMer: [
+    {
+      id:"2",
+      title:"CONTRAINDICATION TO ROSE DE MER PEEL:",
+      items:[
+        "IF YOU ARE ALLERGIC TO SEA FOOD. ACUTE ACNE.",
+        "SKIN CLOGGED WITH BACKHEADS.",
+        "MELASMA DIAGNOSED BY A DERMATOLOGIST DOCTOR. PREGNANT/ PRETEND TO BECOME/ BREASTFEEDING. TAKING DEPRESSION/ PANICK ATTACK MEDICINE.",
+        "TAKING ORAL OR TOPIC ACCUTANE (AFTER 6 MONTHS IS ALLOWED). TAKING ORAL OR TOPIC RETINOL-A OR OTHER ACID.",
+        "ANY SKIN INFLAMMATION: ECZEMA/ DERMATITIS/ PSORIASIS/ ROSACEA (ACTIVE)/ ALOPECIA AND MORE. ",
+        "EXPECTED EXPOSURE TO THE SUN IN THE NEXT DAYS. HERPES (ACTIVE)",
+        "HAVE CANCER OR TUMOR DIABETIC NOT CONTROLLED.",
+        "ALLERGIC TO SUNCREEN INGREDIENTS.",
+      ]
+    }
+  ]},
 ];
