@@ -6,11 +6,11 @@ const Treatments = ({
   title,
   whatIs,
   whatIsDescription,
-  benefits,
-  benefitsDescription,
   benefitsRecommendations,
-  timeDescription,
-  priceDescription,
+  firstTitle,
+  firstTitleDescription,
+  secondTitle,
+  secondTitleDescription,
   btnComponent,
   imgSrc,
   customClass,
@@ -20,7 +20,9 @@ const Treatments = ({
   customPhotoClass,
   customBannerMiddleContentDetailsClass,
   customNavWrapperClass,
-  children
+  additionalWhatIsDescriptionProp,
+  children,
+  packagePriceProp
 }) => {
   return (
     <div className={styles.containerService}>
@@ -35,13 +37,13 @@ const Treatments = ({
           <div className={`${styles.titleDescription} ${customDescriptionClass}`}>
             <h5>{whatIs}</h5>
             <p>{whatIsDescription}</p>
-            <h5>{benefits}</h5>
-            <p>{benefitsDescription}</p>
+            {additionalWhatIsDescriptionProp}
             {children}
             <p className={styles.bannerMiddleRecommendation}>{benefitsRecommendations}</p>
             <div className={`${styles.bannerMiddleContentDetails}  ${customBannerMiddleContentDetailsClass}`}>
-              <h5>Time:<span>{timeDescription}</span></h5>
-              <h5>Price:<span>{priceDescription}</span></h5>
+              <h5>{firstTitle}<span>{firstTitleDescription}</span></h5>
+              <h5>{secondTitle}<span>{secondTitleDescription}</span></h5>
+              {packagePriceProp}
             </div>
             <div className={styles.bannerButton}>
               {btnComponent}

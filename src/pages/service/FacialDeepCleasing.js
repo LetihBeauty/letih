@@ -4,6 +4,7 @@ import FacialTreatmentGuide from  "./FacialTreatmentGuide.js";
 import DeepCleasingStyles from "../service/FacialDeepCleasing.module.css";
 import "../service/FacialTreatmentGuide.module.css";
 import {facialDeepCleasing, warnings} from "../../components/constants/index.js"
+import "../../shared/common.css";
 
 const DeepCleasing = () => {
   const primaryService = facialDeepCleasing[0];
@@ -30,12 +31,14 @@ const DeepCleasing = () => {
         benefits={primaryService.benefits}
         benefitsDescription={primaryService.benefitsDescription}
         benefitsRecommendations={primaryService.benefitsRecommendations}
-        timeDescription={primaryService.timeDescription}
-        priceDescription={primaryService.priceDescription}
+        firstTitle ={primaryService.timeTitle}
+        firstTitleDescription={primaryService.timeDescription}
+        secondTitle={primaryService.PriceTitle}
+        secondTitleDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
         imgSrc={primaryService.imgSrc}
         customClass={DeepCleasingStyles.bannerWrapper}
-        customBottomClass={DeepCleasingStyles.bannerBottom}
+        customBottomClass="globalBannerBottom"
         customDescriptionClass={DeepCleasingStyles.titleDescription}
 
       />

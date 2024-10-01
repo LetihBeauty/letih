@@ -1,28 +1,4 @@
-.roseDeMerBanner {
-  display: flex;
-  width: 100%;
-  height: 299px;
-  justify-content: center;
-  align-items: center;
-  margin: 0px;
-  padding-left: 0px;
-  background-color: #446953;
-}
-.centerLogo {
 
-  h1 {
-    display: inline-block;
-    white-space: nowrap;
-    font-size: 48px;
-    font-weight: 300;
-    line-height: 50px;
-    font-stretch: ultra-condensed;
-    color: white;
-    font-family: "Roboto Serif", serif;
-    font-style: normal;
-    letter-spacing: 4px;
-  }
-}
 .title  {
   margin-top: 60px;
 }
@@ -41,21 +17,7 @@
   border-radius: 6px;
   position: relative;
 }
-.bannerBottom {
-  margin-top: 32px;
-  background-color: #446953;
-  height: 130px;
-  width: 100%;
-}
 
-.serviceIncluded {
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  padding-left: 101px;
-
-
-}
 .serviceSteps{
   margin: 60px 0px 32px 101px;
 
@@ -85,38 +47,5 @@
     position: relative;
     background-color: black;
     margin-left: 323px;
-  }
-}
-
-.warningWrap {
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.serviceIncludedWarning {
-  max-width: 1500px;
-  width: 1134px;
-  border: 1px solid black;
-  align-items: center;
-  margin: 60px 32px 120px 101px;
-
-
-  div {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin: 28px;
-    margin-left: 26px;
-  }
-
-  ul {
-    padding-left: 95px;
-
-    li {
-      width: 900px;
-    }
   }
 }

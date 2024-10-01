@@ -3,6 +3,7 @@ import Treatments from "./Treatments.js";
 import FacialTreatmentGuide from  "./FacialTreatmentGuide.js";
 import styles from "./FacialDermaPlanning.module.css";
 import {facialDermaplaning, warnings} from "../../components/constants/index.js"
+import "../../shared/common.css";
 
 const DermaPlanning = () => {
   const primaryService = facialDermaplaning[0];
@@ -30,13 +31,15 @@ const DermaPlanning = () => {
         benefits={primaryService.benefits}
         benefitsDescription={primaryService.benefitsDescription}
         benefitsRecommendations={primaryService.benefitsRecommendations}
-        timeDescription={primaryService.timeDescription}
-        priceDescription={primaryService.priceDescription}
+        firstTitle ={primaryService.timeTitle}
+        firstTitleDescription={primaryService.timeDescription}
+        secondTitle={primaryService.PriceTitle}
+        secondTitleDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
         imgSrc={primaryService.imgSrc}
         customClass={styles.bannerWrapper}
         customDescriptionClass={styles.titleDescription}
-        customBottomClass={styles.bannerBottom}
+        customBottomClass="globalBannerBottom"
         customPhotoClass= {styles.bannerMiddlePhoto}
       />
       <FacialTreatmentGuide

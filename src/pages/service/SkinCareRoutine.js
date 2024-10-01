@@ -2,37 +2,34 @@ import React from "react";
 import Treatments from "./Treatments.js";
 import SkinCareRoutineStyles from "../service/SkinCareRoutine.module.css"
 import {serviceSkinCareRoutine} from "../../components/constants/index.js"
+import "../../shared/common.css";
+import Banner from "../../components/Banner.js";
 
 const SkinCareRoutine = () => {
   const primaryService = serviceSkinCareRoutine[0];
 
   return (
-    <div className="containerService">
-      <div className={SkinCareRoutineStyles.ultraformerBanner}>
-        <div className={SkinCareRoutineStyles.centerLogo}>
-          <h1>SKIN CARE ROUTINE</h1>
-        </div>
-      </div>
+    <div>
+      <Banner
+        bannerTitle = "SKIN CARE ROUTINE"
+      />
       <Treatments
-        customNavWrapperClass={SkinCareRoutineStyles.navbarWrapper}
-        customTitleClass={SkinCareRoutineStyles.title}
+        customNavWrapperClass="globalNavbarWrapper"
         title={primaryService.title}
         customDescriptionClass = {SkinCareRoutineStyles.titleDescription}
         whatIsDescription={primaryService.whatIsDescription}
         benefits={primaryService.benefits}
         benefitsDescription={primaryService.benefitsDescription}
         benefitsRecommendations={primaryService.benefitsRecommendations}
-        timeDescription={primaryService.timeDescription}
-        priceDescription={primaryService.priceDescription}
+        firstTitle ={primaryService.timeTitle}
+        firstTitleDescription={primaryService.timeDescription}
+        secondTitle={primaryService.PriceTitle}
+        secondTitleDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
         imgSrc={primaryService.imgSrc}
-        customClass={SkinCareRoutineStyles.bannerWrapper}
-        customBottomClass={SkinCareRoutineStyles.bannerBottom}
-        customBannerMiddleContentDetailsClass = {SkinCareRoutineStyles.timeAndPrice}
+        customBottomClass="globalBannerBottom"
       />
-      <div  className={SkinCareRoutineStyles.emptySpace}>
-
-      </div>
+      <div className={SkinCareRoutineStyles.emptySpace}></div>
     </div>
   );
 };

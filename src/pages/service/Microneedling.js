@@ -3,7 +3,9 @@ import Treatments from "./Treatments.js";
 import {serviceMicroneedling, warnings} from "../../components/constants/index.js"
 import MicroneedlingStyles from "../service/Microneedling.module.css";
 import MicroneedlingTreatmentGuide from "./MicroneedlingTreatmentGuide.js";
-
+import "../../shared/common.css";
+import Warning from "../../components/Warning.js";
+import Banner from "../../components/Banner.js";
 const Microneedling = () => {
 
   const primaryService = serviceMicroneedling[0];
@@ -11,27 +13,26 @@ const Microneedling = () => {
   const alertMessage = warnings[1]?.warningUltraformer[0]|| {};
 
   return (
-    <div className="containerService">
-      <div className={MicroneedlingStyles.microneedlingBanner}>
-        <div className={MicroneedlingStyles.centerLogo}>
-          <h1>RF MICRONEEDLING</h1>
-        </div>
-      </div>
+    <div>
+      <Banner
+        bannerTitle = "RF MICRONEEDLING"
+      />
       <Treatments
-        customNavWrapperClass={MicroneedlingStyles.navbarWrapper}
+        customNavWrapperClass="globalNavbarWrapper"
         title={primaryService.title}
         customDescriptionClass = {MicroneedlingStyles.titleDescription}
         whatIsDescription={primaryService.whatIsDescription}
         benefits={primaryService.benefits}
         benefitsDescription={primaryService.benefitsDescription}
         benefitsRecommendations={primaryService.benefitsRecommendations}
-        timeDescription={primaryService.timeDescription}
+        firstTitle ={primaryService.fullFace}
+        firstTitleDescription={primaryService.fullFaceDescription}
+        secondTitle={primaryService.fullFaceSecondOption}
+        secondTitleDescription={primaryService.fullFaceSecondOptionDescription}
         priceDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
         imgSrc={primaryService.imgSrc}
-        customClass={MicroneedlingStyles.bannerWrapper}
-        customBottomClass={MicroneedlingStyles.bannerBottom}
-        customBannerMiddleContentDetailsClass = {MicroneedlingStyles.timeAndPrice}
+        customBottomClass="globalBannerBottom"
       >
         <ul>
           {(primaryService.benefitsItems || []).map((benefit, index) => (
@@ -40,8 +41,9 @@ const Microneedling = () => {
         </ul>
       </Treatments>
       <MicroneedlingTreatmentGuide
-        customBottomClass={MicroneedlingStyles.bannerBottom}
         microneedlingDetails = {microneedlingDetails}
+      />
+      <Warning
         alertMessage={alertMessage}
       />
     </div>

@@ -2,8 +2,6 @@
   grid-column: 1 / 2;
   margin: 163px 128px 0px 0px !important;
 }
-
-.emptySpace {
-  height: 120px;
+.bannerMiddleContentDetails{
+  margin-top: 32px  !important;
 }
-

@@ -4,6 +4,7 @@ import FacialTreatmentGuide from  "./FacialTreatmentGuide.js";
 import GlowFacialStyles from "../service/FacialGlowFacial.module.css";
 import "../service/FacialTreatmentGuide.module.css";
 import {facialGlowFacial, warnings} from "../../components/constants/index.js"
+import "../../shared/common.css";
 
 const GlowFacial = () => {
   const primaryService = facialGlowFacial[0];
@@ -31,13 +32,15 @@ const GlowFacial = () => {
         benefits={primaryService.benefits}
         benefitsDescription={primaryService.benefitsDescription}
         benefitsRecommendations={primaryService.benefitsRecommendations}
-        timeDescription={primaryService.timeDescription}
-        priceDescription={primaryService.priceDescription}
+        firstTitle ={primaryService.timeTitle}
+        firstTitleDescription={primaryService.timeDescription}
+        secondTitle={primaryService.PriceTitle}
+        secondTitleDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
         imgSrc={primaryService.imgSrc}
         customClass={GlowFacialStyles.bannerWrapper}
         customPhotoClass= {GlowFacialStyles.bannerMiddlePhoto}
-        customBottomClass={GlowFacialStyles.bannerBottom}
+        customBottomClass="globalBannerBottom"
         customDescriptionClass={GlowFacialStyles.titleDescription}
 
       />

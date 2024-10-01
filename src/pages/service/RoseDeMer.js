@@ -1,8 +1,10 @@
 import React from "react";
-import ServiceMobileNavbar from "../../components/ServiceNavBar.js";
 import {serviceRoseDeMer, warnings} from "../../components/constants/index.js"
-import RoseDeMerStyles from "/home/victor/code/victorfonsecass/letih/src/pages/service/RoseDeMer.module.css";
+import RoseDeMerStyles from "../service/RoseDeMer.module.css";
 import styles from './Treatments.module.css';
+import "../../shared/common.css";
+import Warning from "../../components/Warning.js";
+import Banner from "../../components/Banner.js";
 
 const RoseDeMer = () => {
   const primaryService = serviceRoseDeMer[0];
@@ -11,12 +13,10 @@ const RoseDeMer = () => {
   items: [],};
 
   return (
-    <div className={RoseDeMerStyles.containerService}>
-      <div className={RoseDeMerStyles.roseDeMerBanner}>
-        <div className={RoseDeMerStyles.centerLogo}>
-          <h1>Rose de Mer</h1>
-        </div>
-      </div>
+    <div>
+      <Banner
+        bannerTitle = "Rose de Mer"
+      />
       <div className={styles.bannerMiddle}>
         <div className={styles.bannerMiddleContent}>
           <div className={RoseDeMerStyles.title}>
@@ -53,8 +53,8 @@ const RoseDeMer = () => {
           </div>
         </div>
       </div>
-      <div className={RoseDeMerStyles.bannerBottom}></div>
-      <div className={RoseDeMerStyles.serviceIncluded}>
+      <div className="globalBannerBottom"></div>
+      <div className="globalServiceIncluded">
         <div className={RoseDeMerStyles.serviceSteps}>
           {roseDemerPeelGuidelines.map((item) => (
             <div key={item.id}>
@@ -77,25 +77,9 @@ const RoseDeMer = () => {
             <img src={primaryService.secondPhotoimg} alt="" />
           </div>
         </div>
-        <div className={RoseDeMerStyles.warningWrap}>
-          <div className={RoseDeMerStyles.serviceIncludedWarning}>
-            <div>
-              <span className="material-symbols-outlined">
-                info
-              </span>
-              {alertMessage.title}
-            </div>
-            <ul>
-              {Array.isArray(alertMessage.items) && alertMessage.items.length > 0 ? (
-                alertMessage.items.map((item, itemIndex) => (
-                <li key={itemIndex}>{item}</li>
-                ))
-              ) : (
-                <li>No warnings available.</li>
-              )}
-            </ul>
-          </div>
-        </div>
+        <Warning
+          alertMessage={alertMessage}
+        />
       </div>
     </div>
   );

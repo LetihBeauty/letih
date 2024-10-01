@@ -1,22 +1,21 @@
 import React from "react";
 import Ultraformerstyles from'./Ultraformer.module.css';
+import "../../shared/common.css";
 
 const UltraformerTreatmentGuide = ({
   supplementaryServiceInfo,
   classMapping,
-  customBottomClass,
   HIFUTreatmentAreasDescription,
-  alertMessage,
   tariffs
 }) => {
 
   return (
-    <div className="containerService">
-      <div className={Ultraformerstyles.serviceIncluded}>
+    <div>
+      <div className="globalServiceIncluded">
         <div className={Ultraformerstyles.serviceIncludedContent}>
           <div className={Ultraformerstyles.hifuTreatment}>
             {HIFUTreatmentAreasDescription.map((item) => (
-              <div key={item.id} className={Ultraformerstyles.hifuItem}>
+              <div key={item.id}>
                 <h4 className={Ultraformerstyles.hifuTitle}>
                   {item.title}
                 </h4>
@@ -72,22 +71,7 @@ const UltraformerTreatmentGuide = ({
           </div>
         </div>
       </div>
-      <div className={`${Ultraformerstyles.bannerBottom} ${customBottomClass}`}></div>
-      <div className={ `${Ultraformerstyles.warningWrap}`}>
-        <div className={Ultraformerstyles.serviceIncludedWarning}>
-          <div>
-            <span className="material-symbols-outlined">
-              info
-            </span>
-            {alertMessage.title}
-          </div>
-          <ul>
-            {alertMessage.items?.map((item, itemIndex) => (
-              <li key={itemIndex}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <div className="globalBannerBottom"></div>
     </div>
   );
 };

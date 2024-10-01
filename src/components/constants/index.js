@@ -144,7 +144,9 @@ export const facialDeepCleasing = [
     benefits: "What are the benefits?",
     benefitsDescription: "The benefits are preventing acne breakouts, improving overall skin texture, appearance and maintaining healthy skin. " ,
     benefitsRecommendations: "Typically recommended every 8-10 weeks, depending on your skin's needs and concerns.",
+    timeTitle:"Time:",
     timeDescription: "1 hour and 30 minutes.",
+    PriceTitle:"Price:",
     priceDescription: "$145",
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',
@@ -169,7 +171,9 @@ export const facialDermaplaning = [
     benefits: "What are the benefits?",
     benefitsDescription: "Combining deep cleansing with dermaplaning removes dead skin cells, dirt, oil, and peach fuzz, resulting in smoother, brighter skin and unclogged pores. This process also enhances product absorption, allowing skincare treatments to penetrate more effectively. The smooth surface left by dermaplaning ensures flawless makeup application and provides an immediate boost in skin texture and radiance." ,
     benefitsRecommendations: "Typically recommended every 8-10 weeks, depending on your skin's needs and concerns.",
+    timeTitle:"Time:",
     timeDescription: "1 hour and 30 minutes.",
+    PriceTitle:"Price:",
     priceDescription: "$145",
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',
@@ -194,7 +198,9 @@ export const facialGlowFacial = [
     benefits: "What are the benefits for the skin?",
     benefitsDescription: "This treatment enhances vitamin C absorption through Dermaplaning and microneedling, allowing deeper penetration for brighter, more even skin tone. The combination boosts collagen production, reduces fine lines, and improves skin texture, leaving the complexion smoother and rejuvenated.Vitamin C also provides powerful antioxidant protection, guarding against environmental damage and premature aging. It hydrates the skin, enhances moisture retention, and refines the skin's texture, resulting in a radiant and youthful appearance." ,
     benefitsRecommendations: "Typically recommended every 8-10 weeks, depending on your skin's needs and concerns.",
+    timeTitle:"Time:",
     timeDescription: "2 hours.",
+    PriceTitle:"Price:",
     priceDescription: "$180",
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',
@@ -248,8 +254,10 @@ export const serviceMicroneedling = [
         "Acne scars ( depending on level of the damage on the skin).",
     ],
     benefitsRecommendations: "The frequency of the procedure can be every 30 days or every 3 months, depending on the client's concerns and the overall health of their skin.",
-    timeDescription: "$250 - Single Session",
-    priceDescription: "$585 - Package with 3 session, every 30 days",
+    fullFace: "Price Full Face:",
+    fullFaceDescription: "$250 - Single Session",
+    fullFaceSecondOption: "Price Full Face:",
+    fullFaceSecondOptionDescription: "$585 - Package with 3 session, every 30 days",
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',
     microneedlingInfo: [
@@ -335,33 +343,39 @@ export const serviceBodyDetox = [
   {
     title:  "BodyDetox Contouring?",
     whatIsDescription: "Body Detox Contouring is a non-invasive cosmetic treatment designed to improve the body's appearance by targeting cellulite, firming the skin, and contouring specific areas. The procedure typically involves a combination of techniques such as:",
-    theGoal: "The goal of Body Detox Contouring is to achieve a more toned and sculpted appearance, often with a focus on problem areas like the abdomen, thighs, and buttocks. It is usually marketed as a way to enhance body aesthetics without the need for surgical procedures.",
-    timeDescription: " 1 hour and 45 minutes.",
-    priceDescription: "150",
+    additionalWhatIsDescription:"  The goal of Body Detox Contouring is to achieve a more toned and sculpted appearance, often with a focus on problem areas like the abdomen, thighs, and buttocks. It is usually marketed as a way to enhance body aesthetics without the need for surgical procedures.",
+    timeTitle:"Time:",
+    timeDescription: "1 hour and 45 minutes.",
+    PriceTitle:"Single Session Price:",
+    priceDescription: "$150",
+    packagePriceTitle:"Package Price",
     packagePrice:"4 Session $560",
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',
-    treatmentBenefits:{
-      mainTitle:"What are the benefits of this treatment?",
-      mainDescription: [
-        {id:"1", title: "Detoxification:", description: "The skin is cleansed to remove makeup, dirt, and oil." },
-        {id:"2", title: "Lymphatic Drainage: ", description: "An exfoliant is used to slough off dead skin cells, promoting a smoother complexion." },
-        {id:"3", title: "Skin Firming and Tightening:", description: "Steam is applied to the face to open pores and soften the skin, making it easier to extract impurities." },
-        {id:"4", title: "Cellulite Reduction:", description: " Helps to remove dead skin, Blackhead and Improves Blood circulation." },
-        {id:"5", title: "Improvement in Skin Texture:", description: "Uses a sterile scalpel to gently shave away dead skin cells and peach fuzz." },
-      ]
-    },
-    includesInBodyDetox:{
-      mainTitle:"What is included in the Body Detox Contouring?",
-      mainDescription: [
-        {id:"1", description: "Body Contouring movements: Firm/ fast/ strong movements throughout the body. Helps active and enhance the blood circulation system, contributing to a firm skin texture" },
-        {id:"2", description: "Lymphatic Drainage: Pumping movements in the lymph glands and throughout the body. It helps to speed up the lymphatic system, reducing edema and removing the accumulation of fluid in the body." },
-        {id:"3", title: "EMS (Electrical Muscle Stimulation) machine:", description: "Designed to help the belly muscles with electrical currents to stimulate the abdominal muscles. This help for toning, strengthening, and potentially tightening the muscles in the abdominal area." },
-        {id:"4", title: "INFRARED SAUNA BLANKET:", description: " It helps to dilate the blood vessels and increase circulation all throughout the body, increased blood flow and helping to relax the muscles and nerves of the body." },
-      ]
+    benefits: {
+      treatmentBenefits: {
+        mainTitle:"What are the benefits of this treatment?",
+        mainDescription: [
+          {id:"1", title: "Detoxification:", description: "The treatment aims to eliminate toxins from the body through various methods, such as wraps, masks, or detoxifying creams applied to the skin. This can help improve overall skin health and reduce fluid retention." },
+          {id:"2", title: "Lymphatic Drainage: ", description: "This helps to remove excess fluid and waste products from tissues, reducing swelling and improving the appearance of cellulite." },
+          {id:"3", title: "Skin Firming and Tightening:", description: " Ingredients like caffeine, collagen, elastin, and herbal extracts are included in products used during Body Detox Contouring. These ingredients can help to tighten and firm the skin, giving it a smoother and more toned appearance." },
+          {id:"4", title: "Cellulite Reduction:", description: " Cellulite is often targeted in Body Detox Contouring. Techniques such as massage, radiofrequency, or ultrasound is used to break down fat deposits and improve the appearance of dimpled skin." },
+          {id:"5", title: "Improvement in Skin Texture:", description: "It help to improve skin texture by exfoliating dead skin cells and promoting cell turnover. This results in softer, smoother skin." },
+        ]
+      },
+      includesInBodyDetox:  {
+        mainTitle:"What is included in the Body Detox Contouring?",
+        mainDescription: [
+          {id:"1", description: "Body Contouring movements: Firm/ fast/ strong movements throughout the body. Helps active and enhance the blood circulation system, contributing to a firm skin texture" },
+          {id:"2", description: "Lymphatic Drainage: Pumping movements in the lymph glands and throughout the body. It helps to speed up the lymphatic system, reducing edema and removing the accumulation of fluid in the body." },
+          {id:"3", title: "EMS (Electrical Muscle Stimulation) machine:", description: "Designed to help the belly muscles with electrical currents to stimulate the abdominal muscles. This help for toning, strengthening, and potentially tightening the muscles in the abdominal area." },
+          {id:"4", title: "INFRARED SAUNA BLANKET:", description: " It helps to dilate the blood vessels and increase circulation all throughout the body, increased blood flow and helping to relax the muscles and nerves of the body." },
+        ]
+      }
     }
   },
 ];
+
 export const serviceSkinCareRoutine = [
   {
     title:  "Skin Care Routine",
@@ -369,10 +383,50 @@ export const serviceSkinCareRoutine = [
     benefits: "What does the treatment do?",
     benefitsDescription: "The HIFU uses dermal micro-heating for a multi-layered lifting, tightening and rejuvenation effect. It promotes maximum collagen production meaning smoother, plumper, more youthful skin!" ,
     benefitsRecommendations: "Typically recommended every 8-10 weeks, depending on your skin's needs and concerns",
+    timeTitle:"Time:",
     timeDescription: "1 hour and 30 minutes.",
-    priceDescription: " $145",
+    PriceTitle:"Price:",
+    priceDescription: "$145",
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',
+  },
+];
+export const serviceBellyReducing = [
+  {
+    title:  "Belly Reducing",
+    whatIsDescription: "HIFU (High-Intensity Focused Ultrasound) lifts the skin by targeting the deep muscle layer, crucial for preventing sagging. It's effective for skin lifting, tightening, and improving lines, wrinkles, pores, and skin tone.",
+    benefits: "What does the treatment do?",
+    benefitsDescription: "The HIFU uses dermal micro-heating for a multi-layered lifting, tightening and rejuvenation effect. It promotes maximum collagen production meaning smoother, plumper, more youthful skin!" ,
+    benefitsRecommendations: "Typically recommended every 8-10 weeks, depending on your skin's needs and concerns.",
+    timeTitle:"Time:",
+    timeDescription: "1 hour and 30 minutes.",
+    PriceTitle:"Price:",
+    priceDescription: "$145",
+    btnComponent: <BtnGreen>Book Now</BtnGreen>,
+    imgSrc:'images/home-about-us-bed.webp',
+    treatmentsRecommended: {
+      sessionsRecomended: {
+        mainTitle:"How many sessions of treatments is recommended?",
+        mainDescription: [
+          {id:"1", description: "One treatment a year is often enough for most people between 30 to 40 years old. However, you may require a second one to achieve your dream results. Follow up treatments usually require an interval of 6 months in between treatment times. The results can last up to a year to six months so you may decide to have a follow up treatment when the results start to wear off." },
+        ]
+      },
+      hifuTreats: {
+        mainTitle:"Which areas does HIFU treat?",
+        mainDescription: [
+          {id:"1", description: "Full Face, necks, eyelids, chins, jawlines, brows, and regions experiencing wrinkling or sagging." },
+          {id:"2", description: "HIFU  provides lifting, skin tightening, wrinkle reduction, pore improvement, V-line forming. Jowl line enhancement, cheek lifting, skin tone improvement, and overall laxity improvement" },
+        ]
+      },
+    },
+    beneditsOfHifuTitle: "What are the benefits of HIFU?",
+    beneditsOfHifu: [
+      {id:"1", title: "Improves skin texture and tone:", description: "stimulates the production of collagen and elastin, which helps to improve the texture and tone of the skin, giving it a younger and healthier appearance." },
+      {id:"2", title: "Reduction of fine lines and wrinkles: ", description: "The treatment can help reduce the appearance of fine lines and wrinkles. especially around the eyes, mouth and forehead." },
+      {id:"3", title: "Decreased skin sagging:", description: "The treatment can help improve skin firmness especially in areas such as the face and neck." },
+      {id:"4", title: "No Significant Recovery Time:", description: "As the treatment is non-invasive. there is no significant recovery time allowing patients to resume their daily activities immediately after treatment." },
+      {id:"5", title: "Gradual and lasting results: ", description: "Treatment results usually appear gradually over time and can last for several months" },
+    ]
   },
 ];
 export const prices = [

@@ -1,5 +1,6 @@
 import React from "react";
 import MicroneedlingStyles from'./Microneedling.module.css';
+import "../../shared/common.css";
 
 const MicroneedlingTreatmentGuide = ({
   microneedlingDetails,
@@ -7,32 +8,17 @@ const MicroneedlingTreatmentGuide = ({
 }) => {
 
   return (
-    <div className="containerService">
+    <div>
       <div className={MicroneedlingStyles.serviceIncluded}>
         <div className={MicroneedlingStyles.serviceIncludedContent}>
           <div className={MicroneedlingStyles.treatment}>
             {microneedlingDetails.map((item) => (
-              <div key={item.id} className={MicroneedlingStyles.item}>
+              <div key={item.id}>
                 <p>{item.includes}</p>
                 <p>{item.howItWorks}</p>
                 <p>{item.observation}</p>
               </div>
             ))}
-          </div>
-          <div className={`${MicroneedlingStyles.warningWrap}`}>
-            <div className={MicroneedlingStyles.serviceIncludedWarning}>
-              <div>
-                <span className="material-symbols-outlined">
-                  info
-                </span>
-                {alertMessage.title}
-              </div>
-              <ul>
-                {alertMessage.items?.map((item, itemIndex) => (
-                  <li key={itemIndex}>{item}</li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
       </div>

@@ -4,6 +4,8 @@ import UltraformerTreatmentGuide from "./UltraformerTreatmentGuide.js";
 import UltraformerStyles from "../service/Ultraformer.module.css";
 import "../service/FacialTreatmentGuide.module.css";
 import {serviceUltraformer, warnings, prices} from "../../components/constants/index.js"
+import Warning from "../../components/Warning.js";
+import Banner from "../../components/Banner.js";
 
 const Ultraformer = () => {
   const primaryService = serviceUltraformer[0];
@@ -21,12 +23,10 @@ const Ultraformer = () => {
   };
   return (
 
-    <div className="containerService">
-      <div className={UltraformerStyles.ultraformerBanner}>
-        <div className={UltraformerStyles.centerLogo}>
-          <h1>Ultraformer III (HIFU)</h1>
-        </div>
-      </div>
+    <div>
+      <Banner
+        bannerTitle = "Ultraformer III (HIFU)"
+      />
       <Treatments
         customNavWrapperClass={UltraformerStyles.navbarWrapper}
         title={primaryService.title}
@@ -46,8 +46,11 @@ const Ultraformer = () => {
         customBottomClass={UltraformerStyles.bannerBottom}
         HIFUTreatmentAreasDescription = {hifuTreatmentDetails}
         tariffs={tariffs}
-        alertMessage={alertMessage}
+
         classMapping={classMapping}
+      />
+      <Warning
+        alertMessage={alertMessage}
       />
     </div>
   );
