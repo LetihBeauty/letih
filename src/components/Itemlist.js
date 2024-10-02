@@ -1,32 +1,58 @@
 import React from "react";
 import "../../src/shared/common.css";
 
-
-const ItemList = ({ items }) => {
-  /**
-* Checks if the provided `bodyDetoxBenefitsDescription` is an array
-* and whether it contains any elements. If not, it returns a message
-* indicating that no benefits are available.
-*/
+const ItemList = ({ items, titleComponent: TitleComponent, descriptionComponent: DescriptionComponent, containerClass, isList }) => {
   if (!Array.isArray(items) || items.length === 0) {
-    return <p>No benefits available.</p>;  // Handles the undefined case
+    return <p>No benefits available.</p>;
   }
 
   return (
-    <div>
-      {items.map((item) => {
-        // Checks if the item is valid and has a title or description
-        if (!item || (!item.title && !item.description)) {
-          return null; // Ignores the item if it is not valid
-        }
-        return (
-          <div key={item.id}>
-            {item.title && <h4 className="">{item.title}</h4>}
-            {item.description && <p className="">{item.description}</p>}
-          </div>
-        );
-      })}
+    <div className={containerClass}>
+      {isList ? (
+        <ul>
+          {items.map((item) => {
+            if (!item || (!item.title && !item.description)) {
+              return null;
+            }
+            return (
+              <li key={item.id}>
+                {TitleComponent ? (
+                  <TitleComponent item={item}>{item.title}</TitleComponent>
+                ) : (
+                  <h4>{item.title}</h4>
+                )}
+                {DescriptionComponent ? (
+                  <DescriptionComponent>{item.description}</DescriptionComponent>
+                ) : (
+                  <p>{item.description}</p>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        items.map((item) => {
+          if (!item || (!item.title && !item.description)) {
+            return null;
+          }
+          return (
+            <div key={item.id}>
+              {TitleComponent ? (
+                <TitleComponent item={item}>{item.title}</TitleComponent>
+              ) : (
+                <h4>{item.title}</h4>
+              )}
+              {DescriptionComponent ? (
+                <DescriptionComponent>{item.description}</DescriptionComponent>
+              ) : (
+                <p>{item.description}</p>
+              )}
+            </div>
+          );
+        })
+      )}
     </div>
   );
 };
+
 export default ItemList;

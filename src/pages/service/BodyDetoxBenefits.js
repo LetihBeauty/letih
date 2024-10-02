@@ -1,26 +1,24 @@
 import React from "react";
-import Ultraformerstyles from './Ultraformer.module.css';
 import "../../shared/common.css";
 import ItemList from "../../components/Itemlist";
 
 const BodyDetoxBenefits = ({
-  bodyDetoxBenefitsTitle,
-  bodyDetoxBenefitsDescription,
-  okokTitle,
-  okok
+  title,
+  subtitle,
+  items,
+  includesItems,
+  containerClass
+
 }) => {
 
-
   return (
-    <div>
-      <div className="globalServiceIncluded">
-        <div className={Ultraformerstyles.serviceIncludedContent}>
-          <div className={Ultraformerstyles.hifuTreatment}>
-            {bodyDetoxBenefitsTitle}
-              <ItemList items={bodyDetoxBenefitsDescription} />
-            {okokTitle}
-              <ItemList items={okok} />
-          </div>
+    <div className="globalServiceIncluded">
+      <div className="globalServiceIncludedContent">
+        <div className="globalTreatment">
+          {title && <h2 className="globalMainBottomTitle">{title}</h2>}
+          <ItemList items={items} />
+          {subtitle && <p className="globalMainBottomTitleDescription">{subtitle}</p>}
+          <ItemList items={includesItems} />
         </div>
       </div>
     </div>

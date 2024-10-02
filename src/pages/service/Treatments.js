@@ -6,6 +6,8 @@ const Treatments = ({
   title,
   whatIs,
   whatIsDescription,
+  benefits,
+  benefitsDescription,
   benefitsRecommendations,
   firstTitle,
   firstTitleDescription,
@@ -37,6 +39,8 @@ const Treatments = ({
           <div className={`${styles.titleDescription} ${customDescriptionClass}`}>
             <h5>{whatIs}</h5>
             <p>{whatIsDescription}</p>
+            <p>{benefits}</p>
+            <p>{benefitsDescription}</p>
             {additionalWhatIsDescriptionProp}
             {children}
             <p className={styles.bannerMiddleRecommendation}>{benefitsRecommendations}</p>

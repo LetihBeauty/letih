@@ -15,11 +15,11 @@ const Ultraformer = () => {
   const tariffs = prices;
 
   const classMapping = {
-    1: UltraformerStyles.id1,
-    2: UltraformerStyles.id2,
-    3: UltraformerStyles.id3,
-    4: UltraformerStyles.id4,
-    5: UltraformerStyles.id5,
+    1: 'globalServiceSteps',
+    2: 'globalServiceSteps',
+    3: 'globalServiceSteps',
+    4: 'globalServiceSteps',
+    5: 'globalServiceSteps',
   };
   return (
 
@@ -37,16 +37,16 @@ const Ultraformer = () => {
         btnComponent={primaryService.btnComponent}
         imgSrc={primaryService.imgSrc}
         customClass={UltraformerStyles.bannerWrapper}
-        customBottomClass={UltraformerStyles.bannerBottom}
+        customBottomClass="globalBannerBottom"
         customBannerMiddleContentDetailsClass = {UltraformerStyles.timeAndPrice}
         customDescriptionClass = {UltraformerStyles.titleDescription}
       />
+
       <UltraformerTreatmentGuide
         supplementaryServiceInfo={supplementaryServiceInfo}
-        customBottomClass={UltraformerStyles.bannerBottom}
+        customBottomClass="globalBannerBottom"
         HIFUTreatmentAreasDescription = {hifuTreatmentDetails}
         tariffs={tariffs}
-
         classMapping={classMapping}
       />
       <Warning

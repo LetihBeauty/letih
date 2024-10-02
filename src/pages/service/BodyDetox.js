@@ -16,7 +16,7 @@ const BodyDetox = () => {
   * Maps over the mainDescription array to create a list of benefit items, displaying the title and description if they
   * exist, and defaults to an empty array if mainDescription is undefined.
   */
-  const benefitsArray = bodyDetoxDetails?.treatmentBenefits?.mainDescription?.map(item => (
+  const benefitsArray = bodyDetoxDetails?.treatmentBenefits?.includesInBodyDetox?.map(item => (
     <div key={item.id}>
       {item.title && <h5>{item.title}</h5>}
       {item.description && <p>{item.description}</p>}
@@ -48,11 +48,10 @@ const BodyDetox = () => {
         customBottomClass="globalBannerBottom"
       />
       <BodyDetoxBenefits
-        bodyDetoxBenefitsTitle = {bodyDetoxDetails?.treatmentBenefits?.mainTitle|| []}
-        bodyDetoxBenefitsDescription={bodyDetoxDetails?.treatmentBenefits?.mainDescription || []}
-        okokTitle = {bodyDetoxDetails?.includesInBodyDetox?.mainTitle || []}
-        okok = {bodyDetoxDetails?.includesInBodyDetox?.mainDescription || []}
-
+        title={bodyDetoxDetails?.treatmentBenefits?.mainTitle || ""}
+        items={bodyDetoxDetails?.treatmentBenefits?.mainDescription || []}
+        subtitle={bodyDetoxDetails?.includesInBodyDetox?.mainTitle || ""}
+        includesItems={bodyDetoxDetails?.includesInBodyDetox?.mainDescription || []}
       />
       <Warning
         alertMessage={alertMessage}

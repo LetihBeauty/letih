@@ -16,7 +16,7 @@ import Microneedling from "./pages/service/Microneedling.js";
 import SkinCareRoutine from "./pages/service/SkinCareRoutine.js";
 import RoseDeMer from "./pages/service/RoseDeMer.js";
 import BodyDetox from "./pages/service/BodyDetox.js";
-
+import BellyReducing from "./pages/service/BellyReducing.js";
 function App() {
   return (
     <Router>
@@ -33,6 +33,7 @@ function App() {
           <Route path="/service/SkinCareRoutine" element={<SkinCareRoutine />} />
           <Route path="/service/RoseDeMer" element={<RoseDeMer />} />
           <Route path="/service/BodyDetox" element={<BodyDetox />} />
+          <Route path="/service/BellyReducing" element={<BellyReducing />} />
           <Route path="/review" element={<Review />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />

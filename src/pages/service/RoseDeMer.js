@@ -55,26 +55,28 @@ const RoseDeMer = () => {
       </div>
       <div className="globalBannerBottom"></div>
       <div className="globalServiceIncluded">
-        <div className={RoseDeMerStyles.serviceSteps}>
-          {roseDemerPeelGuidelines.map((item) => (
-            <div key={item.id}>
-              <h5 className={RoseDeMerStyles.serviceTitle}>
-                {typeof item.title === 'string'? item.title.split(/(NOT|MUST)/gi).map((part, index) => (
-                  <span key={index} style={part.toUpperCase() === 'NOT' || part.toUpperCase() === 'MUST' ? { color: 'red' } : {}}>
-                    {part}
-                  </span>
-                )) : null
-                }
-              </h5>
-              <ul>
-                {(item.description || []).map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
+        <div className="globalServiceIncludedContent">
+          <div className={RoseDeMerStyles.serviceSteps}>
+            {roseDemerPeelGuidelines.map((item) => (
+              <div key={item.id}>
+                <h5 className={RoseDeMerStyles.serviceTitle}>
+                  {typeof item.title === 'string'? item.title.split(/(NOT|MUST)/gi).map((part, index) => (
+                    <span key={index} style={part.toUpperCase() === 'NOT' || part.toUpperCase() === 'MUST' ? { color: 'red' } : {}}>
+                      {part}
+                    </span>
+                  )) : null
+                  }
+                </h5>
+                <ul>
+                  {(item.description || []).map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            <div className={RoseDeMerStyles.servicePhoto}>
+              <img src={primaryService.secondPhotoimg} alt="" />
             </div>
-          ))}
-          <div className={RoseDeMerStyles.servicePhoto}>
-            <img src={primaryService.secondPhotoimg} alt="" />
           </div>
         </div>
         <Warning

@@ -1,6 +1,7 @@
 import React from "react";
 import Ultraformerstyles from'./Ultraformer.module.css';
 import "../../shared/common.css";
+import ItemList from "/home/victor/code/victorfonsecass/letih/src/components/Itemlist.js";
 
 const UltraformerTreatmentGuide = ({
   supplementaryServiceInfo,
@@ -12,28 +13,30 @@ const UltraformerTreatmentGuide = ({
   return (
     <div>
       <div className="globalServiceIncluded">
-        <div className={Ultraformerstyles.serviceIncludedContent}>
-          <div className={Ultraformerstyles.hifuTreatment}>
-            {HIFUTreatmentAreasDescription.map((item) => (
-              <div key={item.id}>
-                <h4 className={Ultraformerstyles.hifuTitle}>
-                  {item.title}
-                </h4>
-                <p className={Ultraformerstyles.hifuDescrDescription}>
-                  {item.description}
-                </p>
-              </div>
-            ))
-            }
-          </div>
-          <div className={Ultraformerstyles.serviceSteps}>
-            {supplementaryServiceInfo.map((item) => (
-              <h5 key={item.id} className={`${classMapping[item.id]}`}>
-                {item.title}
-                <span className={Ultraformerstyles.descriptionStyle}>{item.description}</span>
-              </h5>
-            ))
-            }
+        <div className="globalServiceIncludedContent">
+          <div className="globalTreatment">
+            <ItemList
+              items={HIFUTreatmentAreasDescription}
+              titleComponent={({ children }) => (
+                <h4 className="globalMainBottomTitle">{children}</h4>
+              )}
+              descriptionComponent={({ children }) => (
+                <p className="globalMainBottomTitleDescription">{children}</p>
+              )}
+              containerClass="globalMainBottomTreatment"
+              isList={false}
+            />
+            <ItemList
+              items={supplementaryServiceInfo}
+              titleComponent={({ item, children }) => (
+                <h5 className={classMapping[item.id]}>{children}</h5>
+              )}
+              descriptionComponent={({ children }) => (
+                <span>{children}</span>
+              )}
+              containerClass="globalServiceSteps"
+              isList={false}
+            />
           </div>
           <div className={`${Ultraformerstyles.prices}`}>
             <div className={Ultraformerstyles.pricesContainer}>
