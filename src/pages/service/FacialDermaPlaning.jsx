@@ -1,25 +1,25 @@
 import React from 'react';
-import Treatments from "./Treatments.js";
-import FacialTreatmentGuide from  "./FacialTreatmentGuide.js";
-import DeepCleasingStyles from "../service/FacialDeepCleasing.module.css";
-import "../service/FacialTreatmentGuide.module.css";
-import {facialDeepCleasing, warnings} from "../../components/constants/index.js"
+import Treatments from "./Treatments.jsx";
+import FacialTreatmentGuide from  "./FacialTreatmentGuide.jsx";
+import styles from "./FacialDermaPlanning.module.css";
+import {facialDermaplaning, warnings} from "../../components/constants/index.js"
 import "../../shared/common.css";
 
-const DeepCleasing = () => {
-  const primaryService = facialDeepCleasing[0];
-  const supplementaryServiceInfo = primaryService.facialDeepCleasingSupplementary;
+const DermaPlanning = () => {
+  const primaryService = facialDermaplaning[0];
+  const supplementaryServiceInfo = primaryService.facialDermaplaningSupplementary;
   const alertMessage = warnings[0].warningDeepCleasing;
 
-  const classMapping = {
-    1: DeepCleasingStyles.id1,
-    2: DeepCleasingStyles.id2,
-    3: DeepCleasingStyles.id3,
-    4: DeepCleasingStyles.id4,
-    5: DeepCleasingStyles.id5,
-    6: DeepCleasingStyles.id6,
-    7: DeepCleasingStyles.id7,
-    8: DeepCleasingStyles.id8,
+    const classMapping = {
+    1: styles.id1,
+    2: styles.id2,
+    3: styles.id3,
+    4: styles.id4,
+    5: styles.id5,
+    6: styles.id6,
+    7: styles.id7,
+    8: styles.id8,
+    9: styles.id9,
   };
   return (
 
@@ -37,10 +37,10 @@ const DeepCleasing = () => {
         secondTitleDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
         imgSrc={primaryService.imgSrc}
-        customClass={DeepCleasingStyles.bannerWrapper}
+        customClass={styles.bannerWrapper}
+        customDescriptionClass={styles.titleDescription}
         customBottomClass="globalBannerBottom"
-        customDescriptionClass={DeepCleasingStyles.titleDescription}
-
+        customPhotoClass= {styles.bannerMiddlePhoto}
       />
       <FacialTreatmentGuide
         supplementaryServiceInfo={supplementaryServiceInfo}
@@ -51,4 +51,4 @@ const DeepCleasing = () => {
   );
 };
 
-export default DeepCleasing;
+export default DermaPlanning;

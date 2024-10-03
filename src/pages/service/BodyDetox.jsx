@@ -1,10 +1,10 @@
 import React from "react";
-import Treatments from "./Treatments.js";
+import Treatments from "./Treatments.jsx";
 import {serviceBodyDetox, warnings} from "../../components/constants/index.js"
 import BodyDetoxStyles from "../service/BodyDetox.module.css";
 import "../../shared/common.css";
-import DetoxAndReducingBenefits from "../service/DetoxAndReducingBenefits.js"
-import Warning from "../../components/Warning.js";
+import DetoxAndReducingBenefits from "./DetoxAndReducingBenefits.jsx"
+import Warning from "../../components/Warning.jsx";
 import Banner from "../../components/Banner.js";
 
 const BodyDetox = () => {

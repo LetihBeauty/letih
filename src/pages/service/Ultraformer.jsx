@@ -1,10 +1,10 @@
 import React from 'react';
-import Treatments from "./Treatments.js";
-import UltraformerTreatmentGuide from "./UltraformerTreatmentGuide.js";
+import Treatments from "./Treatments.jsx";
+import UltraformerTreatmentGuide from "./UltraformerTreatmentGuide.jsx";
 import UltraformerStyles from "../service/Ultraformer.module.css";
 import "../service/FacialTreatmentGuide.module.css";
 import {serviceUltraformer, warnings, prices} from "../../components/constants/index.js"
-import Warning from "../../components/Warning.js";
+import Warning from "../../components/Warning.jsx";
 import Banner from "../../components/Banner.js";
 
 const Ultraformer = () => {
@@ -22,7 +22,6 @@ const Ultraformer = () => {
     5: 'globalServiceSteps',
   };
   return (
-
     <div>
       <Banner
         bannerTitle = "Ultraformer III (HIFU)"
@@ -35,9 +34,9 @@ const Ultraformer = () => {
         benefitsDescription={primaryService.benefitsDescription}
         benefitsRecommendations={primaryService.benefitsRecommendations}
         btnComponent={primaryService.btnComponent}
-        imgSrc={primaryService.imgSrc}
+        imgSrc='/images/ultraformer.jpg'
         customClass={UltraformerStyles.bannerWrapper}
-        customBottomClass="globalBannerBottom"
+        customBottomClass={UltraformerStyles.bannerBottom}
         customBannerMiddleContentDetailsClass = {UltraformerStyles.timeAndPrice}
         customDescriptionClass = {UltraformerStyles.titleDescription}
         customButtonClass = {UltraformerStyles.button}

@@ -1,9 +1,9 @@
 import React from "react";
-import Treatments from "./Treatments.js";
+import Treatments from "./Treatments.jsx";
 import {serviceBellyReducing, warnings} from "../../components/constants/index.js"
 import "../../shared/common.css";
-import DetoxAndReducingBenefits from "./DetoxAndReducingBenefits.js"
-import Warning from "../../components/Warning.js";
+import DetoxAndReducingBenefits from "./DetoxAndReducingBenefits.jsx"
+import Warning from "../../components/Warning.jsx";
 import Banner from "../../components/Banner.js";
 import ItemList from "/home/victor/code/victorfonsecass/letih/src/components/Itemlist.js";
 import BellyReducingStyles from "../service//BellyReducing.module.css";

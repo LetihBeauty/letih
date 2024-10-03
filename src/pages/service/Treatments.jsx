@@ -27,6 +27,28 @@
  * - children (ReactNode): Any child components passed to be rendered within the component.
  * - packagePriceProp (ReactNode): Details about the price of the treatment package.
  *
+ * Rendering Logic:
+ * The component uses conditional rendering to dynamically display content based on the presence of props.
+ * For example, the expression `title && <h2>{title}</h2>` checks if the `title` prop has a truthy value.
+ * If it does, the `<h2>` element containing the title is rendered; otherwise, nothing is rendered.
+ * This approach helps prevent rendering empty elements and keeps the UI clean.
+ *
+ * This pattern is applied consistently throughout the component for other props, such as:
+ * - whatIs
+ * - whatIsDescription
+ * - benefits
+ * - benefitsDescription
+ * - benefitsRecommendations
+ * - firstTitle
+ * - secondTitle
+ *
+ * By using this method, the component remains flexible and can be easily adapted to display various
+ * combinations of treatment details without cluttering the rendered output with unnecessary elements.
+ *
+ * Example of Conditional Rendering:
+ * {title && <h2>{title}</h2>} // Renders the title only if it exists
+ * {whatIs && <h5>{whatIs}</h5>} // Renders the "what is" description only if it exists
+ *
  * Usage:
  * This component can be utilized in various parts of the application where treatment information
  * needs to be displayed. By passing the appropriate props, the component dynamically adjusts

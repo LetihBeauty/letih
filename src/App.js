@@ -8,15 +8,16 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import SingIn from "./pages/SingIn.js";
 import Layout from "./components/Layout";
-import DeepCleasing from "./pages/service/FacialDeepCleasing.js";
-import Dermaplaning from "./pages/service/FacialDermaPlaning.js";
-import Glowfacial from "./pages/service/FacialGlowFacial.js";
-import Ultraformer from "./pages/service/Ultraformer.js";
-import Microneedling from "./pages/service/Microneedling.js";
-import SkinCareRoutine from "./pages/service/SkinCareRoutine.js";
-import RoseDeMer from "./pages/service/RoseDeMer.js";
-import BodyDetox from "./pages/service/BodyDetox.js";
-import BellyReducing from "./pages/service/BellyReducing.js";
+import DeepCleasing from "./pages/service/FacialDeepCleasing.jsx";
+import Dermaplaning from "./pages/service/FacialDermaPlaning.jsx";
+import Glowfacial from "./pages/service/FacialGlowFacial.jsx";
+import Ultraformer from "./pages/service/Ultraformer.jsx";
+import Microneedling from "./pages/service/Microneedling.jsx";
+import SkinCareRoutine from "./pages/service/SkinCareRoutine.jsx";
+import RoseDeMer from "./pages/service/RoseDeMer.jsx";
+import BodyDetox from "./pages/service/BodyDetox.jsx";
+import BellyReducing from "./pages/service/BellyReducing.jsx";
+
 function App() {
   return (
     <Router>

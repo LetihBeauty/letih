@@ -1,6 +1,6 @@
 import React from 'react';
-import Treatments from "./Treatments.js";
-import FacialTreatmentGuide from  "./FacialTreatmentGuide.js";
+import Treatments from "./Treatments.jsx";
+import FacialTreatmentGuide from  "./FacialTreatmentGuide.jsx";
 import GlowFacialStyles from "../service/FacialGlowFacial.module.css";
 import "../service/FacialTreatmentGuide.module.css";
 import {facialGlowFacial, warnings} from "../../components/constants/index.js"

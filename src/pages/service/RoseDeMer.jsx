@@ -3,7 +3,7 @@ import {serviceRoseDeMer, warnings} from "../../components/constants/index.js"
 import RoseDeMerStyles from "../service/RoseDeMer.module.css";
 import styles from './Treatments.module.css';
 import "../../shared/common.css";
-import Warning from "../../components/Warning.js";
+import Warning from "../../components/Warning.jsx";
 import Banner from "../../components/Banner.js";
 
 const RoseDeMer = () => {

@@ -31,38 +31,29 @@
     letter-spacing: 4px;
     padding-bottom: 35px;
     margin: 0;
+    letter-spacing: 1px;
+    color: var(--green-100);
   }
 
   h5 {
-    font-family: Raleway;
-    font-weight: 600;
     margin: 0;
+    font-size: 18px;
     padding-bottom: 24px;
   }
 
   p.bannerMiddleRecommendation {
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
     margin: 0px;
   }
   .title {
     grid-column: 1 / 2;
     margin: 89px 0px 0px 0px;
-    h2 {
-      letter-spacing: 1px;
-    }
   }
 
   .titleDescription {
     grid-column: 1 / 2;
     margin: 162px 128px 0px 0px;
-    padding-bottom: 32px;
 
-    h5 {
-      font-family: Raleway;
-      font-weight: 600;
-      margin: 0;
-      padding-bottom: 24px;
-    }
   }
   .bannerMiddleContentDetails {
     span {
@@ -71,6 +62,7 @@
   }
   .bannerButton {
     padding-top: 30px;
+
   }
 }
 
@@ -92,6 +84,7 @@
   object-fit: cover;
   border-radius: 6px;
   position: relative;
+  z-index: 1;
 }
 .bannerBottom{
   padding-top: 30px;

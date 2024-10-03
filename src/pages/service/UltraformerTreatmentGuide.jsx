@@ -12,7 +12,7 @@ const UltraformerTreatmentGuide = ({
 
   return (
     <div>
-      <div className="globalServiceIncluded">
+      <div className={Ultraformerstyles.ServiceIncluded}>
         <div className="globalServiceIncludedContent">
           <div className="globalTreatment">
             <ItemList

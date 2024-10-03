@@ -1,10 +1,10 @@
 import React from "react";
-import Treatments from "./Treatments.js";
+import Treatments from "./Treatments.jsx";
 import {serviceMicroneedling, warnings} from "../../components/constants/index.js"
 import MicroneedlingStyles from "../service/Microneedling.module.css";
-import MicroneedlingTreatmentGuide from "./MicroneedlingTreatmentGuide.js";
+import MicroneedlingTreatmentGuide from "./MicroneedlingTreatmentGuide.jsx";
 import "../../shared/common.css";
-import Warning from "../../components/Warning.js";
+import Warning from "../../components/Warning.jsx";
 import Banner from "../../components/Banner.js";
 const Microneedling = () => {
 

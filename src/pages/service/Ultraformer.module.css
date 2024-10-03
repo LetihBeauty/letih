@@ -2,22 +2,29 @@
   display: none;
 }
 .titleDescription {
-  margin: 225px 80px 0px 0px!important;
+  margin: 205px 80px 0px 0px!important;
+}
 
-  h5{
-    font-family: Raleway;
-    font-weight: 600;
-    margin: 0;
-    padding-bottom: 10px;
-  }
-}
-.button{
-  transform: translateY(-80px);
-}
 .timeAndPrice {
   display: none;
 }
-
+.bannerBottom{
+  background-color: #446953;
+  height: 130px;
+  width: 100%;
+  transform: translateY(-85px);
+}
+.ServiceIncluded{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding-left: 101px;
+  transform: translateY(-85px);
+}
 .prices {
   width: 1030px;
   margin: 0 160px;

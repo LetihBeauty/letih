@@ -1,5 +1,5 @@
 import React from "react";
-import Treatments from "./Treatments.js";
+import Treatments from "./Treatments.jsx";
 import SkinCareRoutineStyles from "../service/SkinCareRoutine.module.css"
 import {serviceSkinCareRoutine} from "../../components/constants/index.js"
 import "../../shared/common.css";
