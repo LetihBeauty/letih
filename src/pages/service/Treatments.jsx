@@ -89,6 +89,7 @@ const Treatments = ({
   customBottomClass= '',
   customPhotoClass= '',
   customNavWrapperClass= '',
+  customListProp= '',
   additionalWhatIsDescriptionProp= '',
   children= '',
   packagePriceProp= ''
@@ -108,6 +109,7 @@ const Treatments = ({
             {whatIsDescription &&<p>{whatIsDescription}</p>}
             {benefits &&<h5>{benefits}</h5>}
             {benefitsDescription && <p>{benefitsDescription}</p>}
+            {customListProp}
             {additionalWhatIsDescriptionProp}
             {children}
             {benefitsRecommendations && <p className={styles.bannerMiddleRecommendation}>{benefitsRecommendations}</p>}

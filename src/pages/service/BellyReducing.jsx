@@ -5,7 +5,7 @@ import "../../shared/common.css";
 import DetoxAndReducingBenefits from "./DetoxAndReducingBenefits.jsx"
 import Warning from "../../components/Warning.jsx";
 import Banner from "../../components/Banner.js";
-import ItemList from "/home/victor/code/victorfonsecass/letih/src/components/Itemlist.js";
+import ItemList from "/home/victor/code/victorfonsecass/letih/src/components/Itemlist.jsx";
 import BellyReducingStyles from "../service//BellyReducing.module.css";
 const BellyReducing = () => {
 

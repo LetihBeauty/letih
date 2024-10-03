@@ -13,10 +13,9 @@ h1 {
 
 h3 {
   color: var(--green-100);
-
-  font-family: "Roboto Serif";
+  font-family: "Roboto Serif" serif;
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 500;
   line-height: normal;
   text-transform: math-auto;
 }

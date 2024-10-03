@@ -10,7 +10,7 @@ const MicroneedlingTreatmentGuide = ({
     <div>
       <div className="globalServiceIncluded">
         <div className="globalServiceIncludedContent">
-          <div className="globalTreatment">
+          <div className={MicroneedlingStyles.treatment}>
             {microneedlingDetails.map((item) => (
               <div key={item.id}>
                 <p>{item.includes}</p>

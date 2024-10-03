@@ -33,13 +33,14 @@ const Microneedling = () => {
         btnComponent={primaryService.btnComponent}
         imgSrc={primaryService.imgSrc}
         customBottomClass="globalBannerBottom"
-      >
-        <ul>
-          {(primaryService.benefitsItems || []).map((benefit, index) => (
-            <li key={index}>{benefit}</li>
-          ))}
-        </ul>
-      </Treatments>
+        customListProp={(
+          <ul className="globalCustom-list">
+            {(primaryService.benefitsItems || []).map((benefit, index) => (
+              <li key={index}><p className={MicroneedlingStyles.okok}>{benefit}</p></li>
+            ))}
+          </ul>
+        )}
+      />
       <MicroneedlingTreatmentGuide
         microneedlingDetails = {microneedlingDetails}
       />

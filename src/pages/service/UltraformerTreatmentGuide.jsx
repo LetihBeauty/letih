@@ -1,7 +1,7 @@
 import React from "react";
 import Ultraformerstyles from'./Ultraformer.module.css';
 import "../../shared/common.css";
-import ItemList from "/home/victor/code/victorfonsecass/letih/src/components/Itemlist.js";
+import ItemList from "/home/victor/code/victorfonsecass/letih/src/components/Itemlist.jsx";
 
 const UltraformerTreatmentGuide = ({
   supplementaryServiceInfo,
@@ -18,7 +18,7 @@ const UltraformerTreatmentGuide = ({
             <ItemList
               items={HIFUTreatmentAreasDescription}
               titleComponent={({ children }) => (
-                <h4 className="globalMainBottomTitle">{children}</h4>
+                <h3 className="globalMainBottomTitle">{children}</h3>
               )}
               descriptionComponent={({ children }) => (
                 <p className="globalMainBottomTitleDescription">{children}</p>
@@ -29,10 +29,13 @@ const UltraformerTreatmentGuide = ({
             <ItemList
               items={supplementaryServiceInfo}
               titleComponent={({ item, children }) => (
-                <h5 className={classMapping[item.id]}>{children}</h5>
+                <div style={{ display: 'flex', alignItems: 'center' }} className="globalBenefits">
+                  <h5 className={classMapping[item.id]}>{children}
+                  <span className="descriptionStyle"> {item.description}</span></h5>
+                </div>
               )}
-              descriptionComponent={({ children }) => (
-                <span>{children}</span>
+              descriptionComponent={({ children }) => ( // Does not render the description component if it has already been displayed in titleComponent
+                null
               )}
               containerClass="globalServiceSteps"
               isList={false}

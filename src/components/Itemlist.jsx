@@ -78,13 +78,13 @@ const ItemList = ({
                 {TitleComponent ? (
                   <TitleComponent item={item}>{item.title}</TitleComponent>
                 ) : (
-                  <h4>{item.title}</h4>
+                  <h3>{item.title}</h3>
                 )}
-                {item.description && ( // Verifica se item.description existe
+                {item.description && ( 
                   DescriptionComponent ? (
                     <DescriptionComponent>{item.description}</DescriptionComponent>
                   ) : (
-                    <p>{item.description}</p> // Renderiza a descrição apenas se existir
+                    <p>{item.description}</p>
                   )
                 )}
               </li>
@@ -101,13 +101,13 @@ const ItemList = ({
               {TitleComponent ? (
                 <TitleComponent item={item}>{item.title}</TitleComponent>
               ) : (
-                <h4>{item.title}</h4>
+                <h3>{item.title}</h3>
               )}
-              {item.description && ( // Verifica se item.description existe
+              {item.description && (
                 DescriptionComponent ? (
                   <DescriptionComponent>{item.description}</DescriptionComponent>
                 ) : (
-                  <p>{item.description}</p> // Renderiza a descrição apenas se existir
+                  <p>{item.description}</p>
                 )
               )}
             </div>

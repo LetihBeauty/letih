@@ -1,6 +1,7 @@
 .navbarWrapper {
   display: none;
 }
+
 .titleDescription {
   margin: 205px 80px 0px 0px!important;
 }
@@ -25,6 +26,7 @@
   padding-left: 101px;
   transform: translateY(-85px);
 }
+
 .prices {
   width: 1030px;
   margin: 0 160px;
