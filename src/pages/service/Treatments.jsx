@@ -78,6 +78,7 @@ const Treatments = ({
   benefits= '',
   benefitsDescription= '',
   benefitsRecommendations= '',
+  customMiddleRecommendationClass,
   firstTitle= '',
   firstTitleDescription= '',
   secondTitle= '',
@@ -112,10 +113,27 @@ const Treatments = ({
             {customListProp}
             {additionalWhatIsDescriptionProp}
             {children}
-            {benefitsRecommendations && <p className={styles.bannerMiddleRecommendation}>{benefitsRecommendations}</p>}
+            {benefitsRecommendations &&
+              <p className={styles.bannerMiddleRecommendation}>
+                {benefitsRecommendations}
+              </p>}
             <div className={styles.bannerMiddleContentDetails}>
-              {firstTitle &&<h5>{firstTitle}<span>{firstTitleDescription}</span></h5>}
-              {secondTitle &&<h5>{secondTitle}<span>{secondTitleDescription}</span></h5>}
+              {firstTitle &&
+              <h5>{firstTitle}
+                <span className={styles.descriptionStyle}>
+                  <p>
+                    {firstTitleDescription}
+                  </p>
+                </span>
+              </h5>}
+              {secondTitle &&
+                <h5>{secondTitle}
+                  <span className={styles.descriptionStyle}>
+                    <p>
+                      {secondTitleDescription}
+                    </p>
+                  </span>
+                </h5>}
               {packagePriceProp}
             </div>
             <div className={`${styles.bannerButton} ${customButtonClass}`}>

@@ -1,10 +1,24 @@
 .titleDescription {
-  margin: 143px 128px 0px 0px !important;
+  width: 600px;
+  margin: 162px 0px 0px 0px !important;
 }
 .treatment {
   width: 1200px;
   margin: 79px 32px 0px 101px;
 }
-.okok{
-  margin: 0;
+.firstBannerBottom {
+  background-color: #446953;
+  height: 130px;
+  width: 100%;
+  margin-top: -100px;
+}
+.bulletsDescription{
+  margin:0px;
+}
+.bannerMiddleRecommendation p{
+  margin-top: 10px;
+}
+.bannerMiddlePhoto img {
+  height: 815px;
+  width: 708px;
 }

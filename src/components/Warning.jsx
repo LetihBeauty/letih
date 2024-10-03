@@ -11,9 +11,9 @@ const Warning = ({
           <span className="material-symbols-outlined">info</span>
           {alertMessage.title}
         </div>
-        <ul>
+        <ul className="globalCustom-list">
           {alertMessage.items?.map((item, itemIndex) => (
-            <li key={itemIndex}>{item}</li>
+            <li key={itemIndex} className="globalBulletsDescription">{item}</li>
           ))}
         </ul>
       </div>

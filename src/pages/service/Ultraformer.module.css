@@ -3,17 +3,16 @@
 }
 
 .titleDescription {
-  margin: 205px 80px 0px 0px!important;
+  margin: 205px 128px 0px 0px!important;
 }
 
 .timeAndPrice {
   display: none;
 }
-.bannerBottom{
+.secongBannerBottom{
   background-color: #446953;
   height: 130px;
   width: 100%;
-  transform: translateY(-85px);
 }
 .ServiceIncluded{
   display: flex;
@@ -24,17 +23,35 @@
   max-width: 1500px;
   margin: 0 auto;
   padding-left: 101px;
-  transform: translateY(-85px);
 }
 
 .prices {
   width: 1030px;
-  margin: 0 160px;
+  margin: 0 160px 60px;
   justify-content: center;
   border: 1px solid black;
   height: 660px;
-}
 
+}
+.bannerMiddlePhoto img {
+  height: 715px;
+  width: 708px;
+  object-fit: cover;
+  border-radius: 6px;
+  position: relative;
+  z-index: 1;
+}
+.firstBannerBottom {
+  background-color: #446953;
+  height: 130px;
+  width: 100%;
+  margin-top: -85px;
+}
+.secondBannerBottom{
+  background-color: #446953;
+  height: 130px;
+  width: 100%;
+}
 .pricesContainer {
   align-items: flex-start;
   margin: 32px 24px 32px 24px;

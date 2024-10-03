@@ -77,7 +77,7 @@ const UltraformerTreatmentGuide = ({
           </div>
         </div>
       </div>
-      <div className="globalBannerBottom"></div>
+      <div className={Ultraformerstyles.secondBannerBottom}></div>
     </div>
   );
 };

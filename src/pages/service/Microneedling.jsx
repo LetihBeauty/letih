@@ -31,12 +31,13 @@ const Microneedling = () => {
         secondTitleDescription={primaryService.fullFaceSecondOptionDescription}
         priceDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
-        imgSrc={primaryService.imgSrc}
-        customBottomClass="globalBannerBottom"
+        imgSrc='/images/microneedling.jpg'
+        customPhotoClass = {MicroneedlingStyles.bannerMiddlePhoto}
+        customBottomClass={MicroneedlingStyles.firstBannerBottom}
         customListProp={(
           <ul className="globalCustom-list">
             {(primaryService.benefitsItems || []).map((benefit, index) => (
-              <li key={index}><p className={MicroneedlingStyles.okok}>{benefit}</p></li>
+              <li key={index}><p className="globalBulletsDescription">{benefit}</p></li>
             ))}
           </ul>
         )}

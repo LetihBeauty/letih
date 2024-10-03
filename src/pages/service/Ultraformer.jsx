@@ -36,15 +36,16 @@ const Ultraformer = () => {
         btnComponent={primaryService.btnComponent}
         imgSrc='/images/ultraformer.jpg'
         customClass={UltraformerStyles.bannerWrapper}
-        customBottomClass={UltraformerStyles.bannerBottom}
+        customBottomClass={UltraformerStyles.firstBannerBottom}
         customBannerMiddleContentDetailsClass = {UltraformerStyles.timeAndPrice}
         customDescriptionClass = {UltraformerStyles.titleDescription}
         customButtonClass = {UltraformerStyles.button}
+        customPhotoClass = {UltraformerStyles.bannerMiddlePhoto}
       />
 
       <UltraformerTreatmentGuide
         supplementaryServiceInfo={supplementaryServiceInfo}
-        customBottomClass="globalBannerBottom"
+        customBottomClass={UltraformerStyles.secongBannerBottom}
         HIFUTreatmentAreasDescription = {hifuTreatmentDetails}
         tariffs={tariffs}
         classMapping={classMapping}
