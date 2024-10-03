@@ -3,7 +3,7 @@ import Treatments from "./Treatments.js";
 import {serviceBodyDetox, warnings} from "../../components/constants/index.js"
 import BodyDetoxStyles from "../service/BodyDetox.module.css";
 import "../../shared/common.css";
-import BodyDetoxBenefits from "../service/BodyDetoxBenefits.js"
+import DetoxAndReducingBenefits from "../service/DetoxAndReducingBenefits.js"
 import Warning from "../../components/Warning.js";
 import Banner from "../../components/Banner.js";
 
@@ -47,12 +47,18 @@ const BodyDetox = () => {
         imgSrc={primaryService.imgSrc}
         customBottomClass="globalBannerBottom"
       />
-      <BodyDetoxBenefits
-        title={bodyDetoxDetails?.treatmentBenefits?.mainTitle || ""}
-        items={bodyDetoxDetails?.treatmentBenefits?.mainDescription || []}
-        subtitle={bodyDetoxDetails?.includesInBodyDetox?.mainTitle || ""}
-        includesItems={bodyDetoxDetails?.includesInBodyDetox?.mainDescription || []}
-      />
+      <div className="globalServiceIncluded">
+        <div className="globalServiceIncludedContent">
+          <div className="globalTreatment">
+            <DetoxAndReducingBenefits
+              title={bodyDetoxDetails?.treatmentBenefits?.mainTitle || ""}
+              items={bodyDetoxDetails?.treatmentBenefits?.mainDescription || []}
+              subtitle={bodyDetoxDetails?.includesInBodyDetox?.mainTitle || ""}
+              includesItems={bodyDetoxDetails?.includesInBodyDetox?.mainDescription || []}
+            />
+          </div>
+        </div>
+      </div>
       <Warning
         alertMessage={alertMessage}
       />

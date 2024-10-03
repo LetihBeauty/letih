@@ -1,8 +1,20 @@
 .navbarWrapper {
   display: none;
 }
+.titleDescription {
+  margin: 225px 80px 0px 0px!important;
 
-.timeAndPrice{
+  h5{
+    font-family: Raleway;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+}
+.button{
+  transform: translateY(-80px);
+}
+.timeAndPrice {
   display: none;
 }
 

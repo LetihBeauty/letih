@@ -1,0 +1,9 @@
+.bdServiceIncluded{
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding-left: 101px;
+}

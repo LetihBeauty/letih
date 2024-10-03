@@ -40,6 +40,7 @@ const Ultraformer = () => {
         customBottomClass="globalBannerBottom"
         customBannerMiddleContentDetailsClass = {UltraformerStyles.timeAndPrice}
         customDescriptionClass = {UltraformerStyles.titleDescription}
+        customButtonClass = {UltraformerStyles.button}
       />
 
       <UltraformerTreatmentGuide

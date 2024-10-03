@@ -10,7 +10,6 @@
 }
 .bannerMiddle {
   display: flex;
-  /* height: 621px; */
   justify-content: center;
   align-items: flex-start;
   flex-direction: row;
@@ -36,43 +35,49 @@
 
   h5 {
     font-family: Raleway;
+    font-weight: 600;
     margin: 0;
-    padding-bottom: 10px;
+    padding-bottom: 24px;
   }
 
   p.bannerMiddleRecommendation {
-    padding-bottom: 0px;
+    padding-bottom: 20px;
     margin: 0px;
   }
-}
+  .title {
+    grid-column: 1 / 2;
+    margin: 89px 0px 0px 0px;
+    h2 {
+      letter-spacing: 1px;
+    }
+  }
 
-.title {
-  grid-column: 1 / 2;
-  margin: 89px 0px 0px 0px;
-}
+  .titleDescription {
+    grid-column: 1 / 2;
+    margin: 162px 128px 0px 0px;
+    padding-bottom: 32px;
 
-.titleDescription {
-  grid-column: 1 / 2;
-  margin: 225px 128px 0px 0px !important;
+    h5 {
+      font-family: Raleway;
+      font-weight: 600;
+      margin: 0;
+      padding-bottom: 24px;
+    }
+  }
+  .bannerMiddleContentDetails {
+    span {
+      margin-left: 10px;
+    }
+  }
+  .bannerButton {
+    padding-top: 30px;
+  }
 }
-
-/* .bannerMiddleContentDetails{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 5px;
-} */
 
 .bannerMiddleContentDetails>div {
   display: flex;
   align-items: center;
   gap: 10px;
-
-  h5 {
-    margin: 0;
-    padding-bottom: 14px;
-  }
 
   p {
     padding-bottom: 0px;
@@ -87,10 +92,6 @@
   object-fit: cover;
   border-radius: 6px;
   position: relative;
-}
-
-.bannerButton {
-  padding-top: 30px;
 }
 .bannerBottom{
   padding-top: 30px;

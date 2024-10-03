@@ -15,7 +15,7 @@ const FacialTreatmentGuide = ({
             {supplementaryServiceInfo.map((item) => (
               <h5 key={item.id} className={`${classMapping[item.id]}`}>
                 {item.title}
-                <span class={styles.descriptionStyle}>{item.description}</span>
+                <span className={styles.descriptionStyle}>{item.description}</span>
               </h5>
             ))
             }

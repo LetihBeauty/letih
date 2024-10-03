@@ -52,12 +52,6 @@
   box-sizing: border-box;
   align-items: center;
 
-  .globalTreatment {
-    width: 1134px;
-    margin: 79px 32px 120px 101px;
-  }
-
-
   h2 {
     font-size: 32px;
     letter-spacing: 4px;
@@ -73,6 +67,11 @@
   }
 
 }
+.globalTreatment {
+  width: 1134px;
+  margin: 79px 32px 120px 101px;
+
+}
 .globalMainBottomTitle {
   margin-bottom: 24px
 }
@@ -80,7 +79,6 @@
   margin-bottom: 60px;
 }
 .globalMainBottomTreatment {
-  width: 1244px;
   padding: 0px;
   margin-top: 0px;
 }
