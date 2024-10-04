@@ -5,6 +5,7 @@ import styles from './Treatments.module.css';
 import "../../shared/common.css";
 import Warning from "../../components/Warning.jsx";
 import Banner from "../../components/Banner.js";
+import Treatments from "./Treatments.jsx";
 
 const RoseDeMer = () => {
   const primaryService = serviceRoseDeMer[0];
@@ -17,43 +18,34 @@ const RoseDeMer = () => {
       <Banner
         bannerTitle = "Rose de Mer"
       />
-      <div className={styles.bannerMiddle}>
-        <div className={styles.bannerMiddleContent}>
-          <div className={RoseDeMerStyles.title}>
-            <h2>{primaryService.title}</h2>
-          </div>
-          <div className={RoseDeMerStyles.titleDescription}>
-            <h5>{primaryService.whatIs}</h5>
-            <p>{primaryService.whatIsDescription}</p>
-            <h5>{primaryService.whatContains}</h5>
-            <ul>
-              {(primaryService.whatContainsItems || []).map((contains, index) => (
-                <li key={index}>{contains}</li>
-              ))}
-            </ul>
-
-            <div className={styles.bannerMiddleContentDetails}>
-              <h5>First Session:<span>{primaryService.firstSession}</span></h5>
-              <h5>First Session Time:<span>{primaryService.firstSessionTime}</span></h5>
-              <h5>Second Session:<span>{primaryService.secondSession}</span></h5>
-              <ul>
-                {(primaryService.secondSessionItem || []).map((include, index) => (
-                  <li key={index}>{include}</li>
-                ))}
-              </ul>
-              <h5>Second Session Time:<span>{primaryService.secondSessionTime}</span></h5>
-              <h5>Price:<span>{primaryService.price}</span></h5>
-            </div>
-            <div className={styles.bannerButton}>
-              {primaryService.btnComponent}
-            </div>
-          </div>
-          <div className={RoseDeMerStyles.bannerMiddlePhoto}>
-            <img src={primaryService.imgSrc} alt="" />
-          </div>
-        </div>
-      </div>
-      <div className="globalBannerBottom"></div>
+      <Treatments
+        customNavWrapperClass={RoseDeMerStyles.navbarWrapper}
+        title={primaryService.title}
+        whatIs={primaryService.whatIs}
+        whatIsDescription={primaryService.whatIsDescription}
+        whatContains={primaryService.whatContains}
+        whatContainsUlProps= {
+          <ul className="globalCustom-list">
+            {(primaryService.whatContainsItems || []).map((contains, index) => (
+              <li key={index}>{contains}</li>
+            ))}
+          </ul>}
+        firstSession={<h5>First Session:<span><p>{primaryService.firstSession}</p></span></h5>}
+        firstSessionTime={<h5>First Session Time:<span><p>{primaryService.firstSessionTime}</p></span></h5>}
+        secondSession={<h5>Second Session:<span><p>{primaryService.secondSession}</p></span></h5>}
+        secondSessionUlProp={
+          <ul>
+            {(primaryService.secondSessionItem || []).map((include, index) => (
+              <li key={index} className="globalBulletsDescription">{include}</li>
+            ))}
+          </ul>
+          }
+        secondSessionTime={<h5>Second Session Time:<span>{primaryService.secondSessionTime}</span></h5>}
+        priceProp={<h5>Price:<span>{primaryService.price}</span></h5>}
+        btnComponent={primaryService.btnComponent}
+        imgSrc='/images/roseDeMer.png'
+      />
+      <div className={RoseDeMerStyles.firstBannerBottom}></div>
       <div className="globalServiceIncluded">
         <div className="globalServiceIncludedContent">
           <div className={RoseDeMerStyles.serviceSteps}>
@@ -67,15 +59,15 @@ const RoseDeMer = () => {
                   )) : null
                   }
                 </h5>
-                <ul>
+                <ul className="globalCustom-list">
                   {(item.description || []).map((item, index) => (
-                    <li key={index}>{item}</li>
+                    <li key={index} className="globalBulletsDescription">{item}</li>
                   ))}
                 </ul>
               </div>
             ))}
             <div className={RoseDeMerStyles.servicePhoto}>
-              <img src={primaryService.secondPhotoimg} alt="" />
+              <img src='/images/post-peel.png' alt="img description" />
             </div>
           </div>
         </div>

@@ -26,8 +26,9 @@ const SkinCareRoutine = () => {
         secondTitle={primaryService.PriceTitle}
         secondTitleDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
-        imgSrc={primaryService.imgSrc}
-        customBottomClass="globalBannerBottom"
+        imgSrc='/images/skinCareRoutine.png'
+        customBottomClass={SkinCareRoutineStyles.firstBannerBottom}
+        customPhotoClass = {SkinCareRoutineStyles.bannerMiddlePhoto}
       />
       <div className={SkinCareRoutineStyles.emptySpace}></div>
     </div>

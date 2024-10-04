@@ -73,81 +73,105 @@ import ServiceMobileNavbar from "../../components/ServiceNavBar.js";
 
 const Treatments = ({
   title = '',
-  whatIs  = '',
-  whatIsDescription = '',
-  benefits= '',
-  benefitsDescription= '',
-  benefitsRecommendations= '',
-  customMiddleRecommendationClass,
-  firstTitle= '',
-  firstTitleDescription= '',
-  secondTitle= '',
-  secondTitleDescription= '',
-  btnComponent= '',
-  customButtonClass= '',
-  imgSrc= '',
-  customDescriptionClass= '',
-  customBottomClass= '',
-  customPhotoClass= '',
-  customNavWrapperClass= '',
-  customListProp= '',
-  additionalWhatIsDescriptionProp= '',
-  children= '',
-  packagePriceProp= ''
+  sessionDetails = {
+    firstTitle: '',
+    firstTitleDescription: '',
+    secondTitle: '',
+    secondTitleDescription: '',
+    firstSession: '',
+    firstSessionTime: '',
+    secondSession: '',
+    secondSessionUlProp: '',
+    secondSessionTime: '',
+    priceProp: ''
+  },
+  description = {
+    whatIs: '',
+    whatIsDescription: '',
+    benefits: '',
+    benefitsDescription: ''
+  },
+  recommendations = '',
+  imgSrc = '',
+  btnComponent = '',
+  customClasses = {
+    customNavWrapperClass: '',
+    customDescriptionClass: '',
+    customButtonClass: '',
+    customPhotoClass: '',
+    customBottomClass: ''
+  },
+  children = '',
+  packagePriceProp = '',
+  whatContains = '',
+  whatContainsUlProps = '',
+  customListProp = '',
+  additionalWhatIsDescriptionProp = ''
 }) => {
   return (
     <div className={styles.containerService}>
-      <div className={`${styles.mobileNavbarWrapper} ${customNavWrapperClass}`}>
+      <div className={`${styles.mobileNavbarWrapper} ${customClasses.customNavWrapperClass}`}>
         <ServiceMobileNavbar />
       </div>
       <div className={styles.bannerMiddle}>
-        <div className={styles.bannerMiddleContent}>
+        <div className={`${styles.bannerMiddleContent} ${customClasses.customBannerMiddleContentClass}`}>
           <div className={styles.title}>
-            {title &&<h2>{title}</h2>}
+            {title && <h2>{title}</h2>}
           </div>
-          <div className={`${styles.titleDescription} ${customDescriptionClass}`}>
-            {whatIs &&<h5>{whatIs}</h5>}
-            {whatIsDescription &&<p>{whatIsDescription}</p>}
-            {benefits &&<h5>{benefits}</h5>}
-            {benefitsDescription && <p>{benefitsDescription}</p>}
+          <div className={`${styles.titleDescription} ${customClasses.customDescriptionClass}`}>
+            {description.whatIs && <h5>{description.whatIs}</h5>}
+            {description.whatIsDescription && <p>{description.whatIsDescription}</p>}
+            {whatContains && <h5>{whatContains}</h5>}
+            {whatContainsUlProps}
+            {description.benefits && <h5>{description.benefits}</h5>}
+            {description.benefitsDescription && <p>{description.benefitsDescription}</p>}
             {customListProp}
             {additionalWhatIsDescriptionProp}
             {children}
-            {benefitsRecommendations &&
+            {recommendations && (
               <p className={styles.bannerMiddleRecommendation}>
-                {benefitsRecommendations}
-              </p>}
+                {recommendations}
+              </p>
+            )}
             <div className={styles.bannerMiddleContentDetails}>
-              {firstTitle &&
-              <h5>{firstTitle}
-                <span className={styles.descriptionStyle}>
-                  <p>
-                    {firstTitleDescription}
-                  </p>
-                </span>
-              </h5>}
-              {secondTitle &&
-                <h5>{secondTitle}
+              {sessionDetails.firstSession}
+              {sessionDetails.firstSessionTime}
+              {sessionDetails.secondSession}
+              {sessionDetails.secondSessionUlProp}
+              {sessionDetails.secondSessionTime}
+              {sessionDetails.priceProp}
+              {sessionDetails.firstTitle && (
+                <h5>
+                  {sessionDetails.firstTitle}
                   <span className={styles.descriptionStyle}>
-                    <p>
-                      {secondTitleDescription}
-                    </p>
+                    <p>{sessionDetails.firstTitleDescription}</p>
                   </span>
-                </h5>}
+                </h5>
+              )}
+              {sessionDetails.secondTitle && (
+                <h5>
+                  {sessionDetails.secondTitle}
+                  <span className={styles.descriptionStyle}>
+                    <p>{sessionDetails.secondTitleDescription}</p>
+                  </span>
+                </h5>
+              )}
               {packagePriceProp}
             </div>
-            <div className={`${styles.bannerButton} ${customButtonClass}`}>
+            <div className={`${styles.bannerButton} ${customClasses.customButtonClass}`}>
               {btnComponent}
             </div>
           </div>
-          <div className={`${styles.bannerMiddlePhoto}  ${customPhotoClass}`}>
+          <div className={`${styles.bannerMiddlePhoto} ${customClasses.customPhotoClass}`}>
             <img src={imgSrc} alt="" />
           </div>
         </div>
       </div>
-      <div className={`${styles.bannerBottom} ${customBottomClass}`}></div>
+      <div className={`${styles.bannerBottom} ${customClasses.customBottomClass}`}></div>
     </div>
   );
 };
+
+
 
 export default Treatments;

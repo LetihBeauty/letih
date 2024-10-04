@@ -1,4 +1,6 @@
-
+.navbarWrapper {
+  display: none;
+}
 .title  {
   margin-top: 60px;
 }
@@ -17,7 +19,12 @@
   border-radius: 6px;
   position: relative;
 }
-
+.firstBannerBottom {
+  background-color: #446953;
+  height: 130px;
+  width: 100%;
+  margin-top: -85px;
+}
 .serviceSteps{
   margin: 60px 0px 32px 101px;
 
@@ -45,7 +52,10 @@
     width: 539px;
     object-fit: cover;
     position: relative;
-    background-color: black;
     margin-left: 323px;
+  }
+  .servicePhoto img {
+    max-width: 100%;
+    height: auto;
   }
 }
