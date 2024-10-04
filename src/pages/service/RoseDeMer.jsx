@@ -1,7 +1,6 @@
 import React from "react";
 import {serviceRoseDeMer, warnings} from "../../components/constants/index.js"
 import RoseDeMerStyles from "../service/RoseDeMer.module.css";
-import styles from './Treatments.module.css';
 import "../../shared/common.css";
 import Warning from "../../components/Warning.jsx";
 import Banner from "../../components/Banner.js";
@@ -30,20 +29,26 @@ const RoseDeMer = () => {
               <li key={index}>{contains}</li>
             ))}
           </ul>}
-        firstSession={<h5>First Session:<span><p>{primaryService.firstSession}</p></span></h5>}
-        firstSessionTime={<h5>First Session Time:<span><p>{primaryService.firstSessionTime}</p></span></h5>}
-        secondSession={<h5>Second Session:<span><p>{primaryService.secondSession}</p></span></h5>}
+        firstSession= {primaryService.firstSessionTitle}
+        firstSessionDescription= {primaryService.firstSessionDescription}
+        firstSessionTime={primaryService.firstSessionTimeTitle}
+        firstSessionTimeDescription={primaryService.firstSessionTimeDescription}
+        secondSessionTitle={primaryService.secondSessionTitle}
+        secondSessionDescription={primaryService.secondSessionDescription}
         secondSessionUlProp={
-          <ul>
-            {(primaryService.secondSessionItem || []).map((include, index) => (
-              <li key={index} className="globalBulletsDescription">{include}</li>
-            ))}
+          <ul className="globalCustom-list">
+            <li className="globalBulletsDescription">
+              <p>{primaryService.secondSessionItem}</p>
+            </li>
           </ul>
-          }
-        secondSessionTime={<h5>Second Session Time:<span>{primaryService.secondSessionTime}</span></h5>}
-        priceProp={<h5>Price:<span>{primaryService.price}</span></h5>}
+        }
+        secondTitle={primaryService.secondSessionTimeTitle}
+        secondTitleDescription={primaryService.secondSessionTimeDescription}
+        priceProp={primaryService.priceTitle}
+        pricePropDescription={primaryService.price}
         btnComponent={primaryService.btnComponent}
         imgSrc='/images/roseDeMer.png'
+        customBannerMiddleContentDetailsClass = {primaryService.bannerMiddleContentDetails}
       />
       <div className={RoseDeMerStyles.firstBannerBottom}></div>
       <div className="globalServiceIncluded">

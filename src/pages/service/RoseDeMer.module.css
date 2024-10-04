@@ -19,12 +19,46 @@
   border-radius: 6px;
   position: relative;
 }
+
+
+.bannerMiddleContentDetails>div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  p {
+    padding-bottom: 0px;
+  }
+
+}
+.descriptionStyle p {
+  display: inline;
+  font-family: Raleway;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  padding-left: 10px;
+}
+.bannerMiddleContentDetails h5{
+  font-family: 'Raleway';
+  font-weight: 550;
+  font-size: 16px;
+  padding-bottom: 0!important;
+}
+.sessionTitle {
+  font-family: 'Raleway';
+  font-weight: 550;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
 .firstBannerBottom {
   background-color: #446953;
   height: 130px;
   width: 100%;
   margin-top: -85px;
 }
+/* Second Main Banner */
 .serviceSteps{
   margin: 60px 0px 32px 101px;
 

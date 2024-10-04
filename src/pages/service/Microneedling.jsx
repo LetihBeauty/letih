@@ -29,7 +29,6 @@ const Microneedling = () => {
         firstTitleDescription={primaryService.fullFaceDescription}
         secondTitle={primaryService.fullFaceSecondOption}
         secondTitleDescription={primaryService.fullFaceSecondOptionDescription}
-        priceDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
         imgSrc='/images/microneedling.jpg'
         customPhotoClass = {MicroneedlingStyles.bannerMiddlePhoto}

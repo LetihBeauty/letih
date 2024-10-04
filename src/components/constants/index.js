@@ -281,13 +281,16 @@ export const serviceRoseDeMer = [
         "Resveratrol",
         "Bio plasma FA"
     ],
-    firstSession: "Includes Rose de Mer Protocol Peel ",
-    firstSessionTime: "1 hour",
-    secondSession: "7 days after the first session",
-    secondSessionItem: [
-      "Include: Exfoliation, Microdermabrasion, High Frequency, LED Therapy"
-    ],
-    secondSessionTime: "1h 30min",
+    firstSessionTitle: "First Session:",
+    firstSessionDescription: "Includes Rose de Mer Protocol Peel ",
+    firstSessionTimeTitle: "First Session Time:",
+    firstSessionTimeDescription: "1 hour",
+    secondSessionTitle:"Second Session:",
+    secondSessionDescription: "7 days after the first session",
+    secondSessionItem: "Include: Exfoliation, Microdermabrasion, High Frequency, LED Therapy",
+    secondSessionTimeTitle:"Second Session Time:",
+    secondSessionTimeDescription:"1h 30min",
+    priceTitle:"Price:",
     price: "$350",
     btnComponent: <BtnGreen>Book Now</BtnGreen>,
     imgSrc:'images/home-about-us-bed.webp',

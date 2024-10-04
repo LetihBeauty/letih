@@ -40,7 +40,7 @@
  * - benefitsDescription
  * - benefitsRecommendations
  * - firstTitle
- * - secondTitle
+ * - secondTitle etc
  *
  * By using this method, the component remains flexible and can be easily adapted to display various
  * combinations of treatment details without cluttering the rendered output with unnecessary elements.
@@ -48,6 +48,39 @@
  * Example of Conditional Rendering:
  * {title && <h2>{title}</h2>} // Renders the title only if it exists
  * {whatIs && <h5>{whatIs}</h5>} // Renders the "what is" description only if it exists
+ *
+ * Styled Session Component:
+ *
+ * The component also utilizes a styled session wrapper for displaying specific sections of the treatment details:
+ *
+ * const StyledSession = ({ children }) => (
+ *   <h5 className={styles.sessionTitle}>
+ *     <span className={styles.descriptionStyle}>{children}</span>
+ *   </h5>
+ * );
+ *
+ * The **StyledSession** component serves as a consistent styling wrapper for various treatment detail sections.
+ * By encapsulating the content within this component, we ensure that the text maintains a uniform appearance across
+ * different parts of the UI. This enhances the overall readability and organization of the treatment information.
+ *
+ * The **StyledSession** component is particularly useful for rendering props such as:
+ * - **firstSession**
+ * - **firstSessionTime**
+ * - **secondSession**
+ * - **secondSessionUlProp**
+ * - **secondSessionTime**
+ * - **priceProp**
+ *
+ * By using **StyledSession**, we can easily apply the same styles and structure to these elements, promoting
+ * visual coherence. This approach is beneficial when additional props are passed, as it maintains the desired
+ * styling regardless of the content being rendered. It also simplifies future modifications; any style changes
+ * can be made in one place without needing to update multiple lines throughout the component.
+ *
+ * Example of Using StyledSession:
+ * <StyledSession>{firstSession}</StyledSession>
+ * <StyledSession>{firstSessionTime}</StyledSession>
+ *
+ * This pattern allows for a cleaner and more maintainable codebase while providing a consistent user experience.
  *
  * Usage:
  * This component can be utilized in various parts of the application where treatment information
@@ -67,111 +100,142 @@
  *   btnComponent={<CustomButton label="Book Now" />}
  * />
  */
+
 import React from "react";
 import styles from './Treatments.module.css';
 import ServiceMobileNavbar from "../../components/ServiceNavBar.js";
 
 const Treatments = ({
   title = '',
-  sessionDetails = {
-    firstTitle: '',
-    firstTitleDescription: '',
-    secondTitle: '',
-    secondTitleDescription: '',
-    firstSession: '',
-    firstSessionTime: '',
-    secondSession: '',
-    secondSessionUlProp: '',
-    secondSessionTime: '',
-    priceProp: ''
-  },
-  description = {
-    whatIs: '',
-    whatIsDescription: '',
-    benefits: '',
-    benefitsDescription: ''
-  },
-  recommendations = '',
-  imgSrc = '',
-  btnComponent = '',
-  customClasses = {
-    customNavWrapperClass: '',
-    customDescriptionClass: '',
-    customButtonClass: '',
-    customPhotoClass: '',
-    customBottomClass: ''
-  },
-  children = '',
-  packagePriceProp = '',
-  whatContains = '',
-  whatContainsUlProps = '',
-  customListProp = '',
-  additionalWhatIsDescriptionProp = ''
+  whatIs  = '',
+  whatIsDescription = '',
+  custombannerMiddleContentClass,
+  benefits= '',
+  benefitsDescription= '',
+  benefitsRecommendations= '',
+  whatContains,
+  whatContainsUlProps,
+  firstTitle= '',
+  firstTitleDescription= '',
+  secondTitle= '',
+  secondTitleDescription= '',
+  btnComponent= '',
+  customButtonClass= '',
+  imgSrc= '',
+  customDescriptionClass= '',
+  customBottomClass= '',
+  customPhotoClass= '',
+  customNavWrapperClass= '',
+  customListProp= '',
+  additionalWhatIsDescriptionProp= '',
+  children= '',
+  packagePriceProp= '',
+  firstSession,
+  firstSessionTime,
+  secondSessionTitle,
+  secondSessionDescription,
+  secondSessionUlProp,
+  secondSessionTime,
+  priceProp,
+  customBannerMiddleContentDetailsClass,
+  firstSessionDescription,
+  firstSessionTimeDescription,
+  pricePropDescription,
+  secondSessionTimeDescription
+
 }) => {
+  const StyledSession = ({ children }) => (
+    <h5 className={styles.sessionTitle}>
+      <span className={styles.descriptionStyle}>{children}</span>
+    </h5>
+  );
   return (
     <div className={styles.containerService}>
-      <div className={`${styles.mobileNavbarWrapper} ${customClasses.customNavWrapperClass}`}>
+      <div className={`${styles.mobileNavbarWrapper} ${customNavWrapperClass}`}>
         <ServiceMobileNavbar />
       </div>
       <div className={styles.bannerMiddle}>
-        <div className={`${styles.bannerMiddleContent} ${customClasses.customBannerMiddleContentClass}`}>
+        <div className={`${styles.bannerMiddleContent} ${custombannerMiddleContentClass}`}>
           <div className={styles.title}>
-            {title && <h2>{title}</h2>}
+            {title &&<h2>{title}</h2>}
           </div>
-          <div className={`${styles.titleDescription} ${customClasses.customDescriptionClass}`}>
-            {description.whatIs && <h5>{description.whatIs}</h5>}
-            {description.whatIsDescription && <p>{description.whatIsDescription}</p>}
-            {whatContains && <h5>{whatContains}</h5>}
+          <div className={`${styles.titleDescription} ${customDescriptionClass}`}>
+            {whatIs &&<h5>{whatIs}</h5>}
+            {whatIsDescription &&<p>{whatIsDescription}</p>}
+            {whatContains &&<h5>{whatContains}</h5>}
             {whatContainsUlProps}
-            {description.benefits && <h5>{description.benefits}</h5>}
-            {description.benefitsDescription && <p>{description.benefitsDescription}</p>}
+            {benefits &&<h5>{benefits}</h5>}
+            {benefitsDescription && <p>{benefitsDescription}</p>}
             {customListProp}
             {additionalWhatIsDescriptionProp}
             {children}
-            {recommendations && (
+            {benefitsRecommendations &&
               <p className={styles.bannerMiddleRecommendation}>
-                {recommendations}
-              </p>
-            )}
-            <div className={styles.bannerMiddleContentDetails}>
-              {sessionDetails.firstSession}
-              {sessionDetails.firstSessionTime}
-              {sessionDetails.secondSession}
-              {sessionDetails.secondSessionUlProp}
-              {sessionDetails.secondSessionTime}
-              {sessionDetails.priceProp}
-              {sessionDetails.firstTitle && (
-                <h5>
-                  {sessionDetails.firstTitle}
-                  <span className={styles.descriptionStyle}>
-                    <p>{sessionDetails.firstTitleDescription}</p>
-                  </span>
-                </h5>
+                {benefitsRecommendations}
+              </p>}
+            <div className={`${styles.bannerMiddleContentDetails}${customBannerMiddleContentDetailsClass}`}>
+              {firstSession && (
+                <StyledSession>
+                  {firstSession}
+                  <p>{firstSessionDescription}</p>
+                </StyledSession>
               )}
-              {sessionDetails.secondTitle && (
-                <h5>
-                  {sessionDetails.secondTitle}
-                  <span className={styles.descriptionStyle}>
-                    <p>{sessionDetails.secondTitleDescription}</p>
-                  </span>
-                </h5>
+              {firstSessionTime && (
+                <StyledSession>
+                  {firstSessionTime}
+                  <p>{firstSessionTimeDescription}</p>
+                </StyledSession>
+              )}
+              {secondSessionTitle && (
+                <StyledSession>
+                  {secondSessionTitle}
+                  <p>{secondSessionDescription}</p>
+                </StyledSession>
+              )}
+              {secondSessionUlProp && (
+                <StyledSession>
+                  {secondSessionUlProp}
+                  <p>{secondSessionDescription}</p>
+                </StyledSession>
+              )}
+              {secondSessionTime && (
+                <StyledSession>
+                  {secondSessionTime}
+                  <p>{secondSessionTimeDescription}</p>
+                </StyledSession>
+              )}
+              {priceProp && (
+                <StyledSession>
+                  {priceProp}
+                  <p>{pricePropDescription}</p>
+                </StyledSession>
+              )}
+              {firstTitle && (
+                <StyledSession>
+                  {firstTitle}
+                  <p>{firstTitleDescription}</p>
+                </StyledSession>
+              )}
+              {secondTitle && (
+                <StyledSession>
+                  {secondTitle}
+                  <p>{secondTitleDescription}</p>
+                </StyledSession>
               )}
               {packagePriceProp}
             </div>
-            <div className={`${styles.bannerButton} ${customClasses.customButtonClass}`}>
+            <div className={`${styles.bannerButton} ${customButtonClass}`}>
               {btnComponent}
             </div>
           </div>
-          <div className={`${styles.bannerMiddlePhoto} ${customClasses.customPhotoClass}`}>
+          <div className={`${styles.bannerMiddlePhoto}  ${customPhotoClass}`}>
             <img src={imgSrc} alt="" />
           </div>
         </div>
       </div>
-      <div className={`${styles.bannerBottom} ${customClasses.customBottomClass}`}></div>
+      <div className={`${styles.bannerBottom} ${customBottomClass}`}></div>
     </div>
   );
 };
-
-
 
 export default Treatments;

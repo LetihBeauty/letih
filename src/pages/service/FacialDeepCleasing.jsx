@@ -40,7 +40,6 @@ const DeepCleasing = () => {
         customClass={DeepCleasingStyles.bannerWrapper}
         customBottomClass="globalBannerBottom"
         customDescriptionClass={DeepCleasingStyles.titleDescription}
-
       />
       <FacialTreatmentGuide
         supplementaryServiceInfo={supplementaryServiceInfo}
