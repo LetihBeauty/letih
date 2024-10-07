@@ -56,32 +56,39 @@ p {
 .sub-title {
   margin-top: 24px;
 }
+.left-title {
+  text-align: left;
+  font-weight: bold;
+  text-transform: math-auto !important;
+}
 
-  .left-title {
-    text-align: left;
-    font-weight: bold;
-    text-transform: math-auto !important;
-  }
+.hero {
+  display: flex;
+  flex-direction: flex-start;
+  justify-content: center;
+  margin: 115px 0;
+  margin-left: 60px;
 
-  .hero {
+
+  .we-are-letih-beauty {
     display: flex;
-    flex-direction: flex-start;
-    justify-content: center;
-    margin: 115px 0;
-    margin-left: 60px;
+    flex-direction: column;
+    margin: calc(115px / 2);
+    width: 550px;
 
-
-    .we-are-letih-beauty {
-      display: flex;
-      flex-direction: column;
-      margin: calc(115px / 2);
-      width: 550px;
-
-      .mission-vision {
-        margin-top: 63px;
-      }
+    .mission-vision {
+      margin-top: 63px;
+    }
+    h3{
+      letter-spacing: 4px;
+      font-style: italic;
+      font-size:25px
+    }
+    h4{
+      font-weight:500;
     }
   }
+}
 
   .our-values {
     display: flex;
@@ -96,6 +103,9 @@ p {
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+    h4 {
+      font-weight: 500;
     }
   }
 
@@ -115,6 +125,9 @@ p {
       flex-direction: column;
       margin: 120px 129px;
     }
+                h4 {
+                  font-weight: 500;
+                }
 
     .btn-book {
       align-self: center;
@@ -129,7 +142,6 @@ p {
     gap: 50px;
     box-sizing: border-box;
     overflow-x: auto;
-    border-bottom: 15px solid var(--green-100);
     margin-bottom: 60px;
   }
   .bottom-images img {
@@ -137,7 +149,16 @@ p {
     height: auto;
   }
 
-
+.bottomLineGreen {
+  background-color: var(--green-100);
+  height: 15px;
+  width: 100%;
+  margin-top: -60px;
+}
+.bottomLineWhite {
+  background-color:white;
+  margin-top: 120px;
+}
 @media only screen and (max-width: 431px) {
 body,
 html {

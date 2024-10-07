@@ -5,6 +5,7 @@ import { behindTheScenes, ourMission, ourVision, qualityService, transparencyAnd
 
 const About = () => {
   return (
+    <div>
     <div className="container">
       <div className="hero">
         <img src="/images/about-us-2.webp" alt="women" />
@@ -52,7 +53,7 @@ const About = () => {
           alt="women"
         />
         <div className="behind-scenes-content">
-          <h3 className="left-title">Behind the scenes </h3>
+          <h4 className="left-title">Behind the scenes </h4>
           <p>
             {behindTheScenes}
           </p>
@@ -66,7 +67,11 @@ const About = () => {
         <img src="/images/about-us-5.webp" alt="women" />
         <img src="/images/about-us-6.webp" alt="women" />
       </div>
+
     </div>
+    <div className="bottomLineGreen"></div>
+    <div className="bottomLineWhite"></div>
+  </div>
   );
 };
 
