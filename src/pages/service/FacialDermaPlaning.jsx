@@ -9,18 +9,8 @@ const DermaPlanning = () => {
   const primaryService = facialDermaplaning[0];
   const supplementaryServiceInfo = primaryService.facialDermaplaningSupplementary;
   const alertMessage = warnings[0].warningDeepCleasing;
-
-    const classMapping = {
-    1: styles.id1,
-    2: styles.id2,
-    3: styles.id3,
-    4: styles.id4,
-    5: styles.id5,
-    6: styles.id6,
-    7: styles.id7,
-    8: styles.id8,
-    9: styles.id9,
-  };
+  const firstColumnItems = supplementaryServiceInfo.slice(0, 5);
+  const secondColumnItems = supplementaryServiceInfo.slice(5);
   return (
 
     <div className="containerService">
@@ -36,16 +26,16 @@ const DermaPlanning = () => {
         secondTitle={primaryService.PriceTitle}
         secondTitleDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
-        imgSrc={primaryService.imgSrc}
+        imgSrc='/images/dermaPlaning.jpg'
         customClass={styles.bannerWrapper}
         customDescriptionClass={styles.titleDescription}
-        customBottomClass="globalBannerBottom"
+        customBottomClass="globalFirstBannerBottom"
         customPhotoClass= {styles.bannerMiddlePhoto}
       />
       <FacialTreatmentGuide
-        supplementaryServiceInfo={supplementaryServiceInfo}
+        firstColumnItems= {firstColumnItems}
+        secondColumnItems= {secondColumnItems}
         warningMessage={alertMessage}
-        classMapping={classMapping}
       />
     </div>
   );

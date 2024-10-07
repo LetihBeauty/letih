@@ -49,18 +49,12 @@ const BodyDetox = () => {
         customBottomClass=  "globalFirstBannerBottom"
         customBannerMiddleContentDetailsClass = {BodyDetoxStyles.bannerMiddleContentDetails}
       />
-      <div className="globalServiceIncluded">
-        <div className="globalServiceIncludedContent">
-          <div className={BodyDetoxStyles.treatment}>
-            <BodyDetoxBenefits
-              mainTitle={bodyDetoxDetails?.treatmentBenefits?.mainTitle || ""}
-              treatmentBenefits = {bodyDetoxDetails?.treatmentBenefits.mainDescription || []}
-              secondMainTitle={bodyDetoxDetails?.includesInBodyDetox?.mainTitle || ""}
-              secondItems={bodyDetoxDetails?.includesInBodyDetox?.mainDescription || []}
-            />
-          </div>
-        </div>
-      </div>
+      <BodyDetoxBenefits
+        mainTitle={bodyDetoxDetails?.treatmentBenefits?.mainTitle || ""}
+        treatmentBenefits = {bodyDetoxDetails?.treatmentBenefits.mainDescription || []}
+        secondMainTitle={bodyDetoxDetails?.includesInBodyDetox?.mainTitle || ""}
+        secondItems={bodyDetoxDetails?.includesInBodyDetox?.mainDescription || []}
+      />
       <Warning
         alertMessage={alertMessage}
       />

@@ -13,7 +13,7 @@ const UltraformerTreatmentGuide = ({
 
   return (
     <div>
-      <div className={Ultraformerstyles.ServiceIncluded}>
+      <div className="globalServiceIncluded">
         <div className="globalServiceIncludedContent">
           <div className="globalTreatment">
             <ItemList
@@ -27,12 +27,12 @@ const UltraformerTreatmentGuide = ({
               containerClass="globalMainBottomTreatment"
               isList={false}
             />
-            <div className={Ultraformerstyles.bannerMiddle}>
-              <div className={Ultraformerstyles.bannerMiddleContent}>
+            <div className="globalBannerMiddle">
+              <div className="globalBannerMiddleContent">
                 <ItemList
                   items={firstThreeItems}
                   titleComponent={({item }) => (
-                    <div className={Ultraformerstyles.descriptionStyle}>
+                    <div className="globalDescriptionStyle">
                       <ItemComponent item={item}/>
                     </div>
                   )}
@@ -42,7 +42,7 @@ const UltraformerTreatmentGuide = ({
                 <ItemList
                   items={lastTwoItems}
                   titleComponent={({item }) => (
-                    <div className={Ultraformerstyles.descriptionStyle}>
+                    <div className="globalDescriptionStyle">
                       <ItemComponent item={item}/>
                     </div>
                   )}

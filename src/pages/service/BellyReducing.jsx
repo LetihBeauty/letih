@@ -5,7 +5,7 @@ import "../../shared/common.css";
 import BellyReducingBenefits from "./BellyReducingBenefits.jsx"
 import Warning from "../../components/Warning.jsx";
 import Banner from "../../components/Banner.js";
-import BellyReducingStyles from "../service//BellyReducing.module.css";
+import BellyReducingStyles from "../service/BellyReducing.module.css";
 
 const BellyReducing = () => {
 

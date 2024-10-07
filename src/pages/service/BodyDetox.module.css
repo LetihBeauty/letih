@@ -27,3 +27,12 @@
   width: 1134px;
   margin: 79px 32px 0px 101px;
 }
+.BdDescriptionStyle {
+  display: inline;
+}
+
+.BdDescriptionStyle p {
+  display: inline;
+  margin: 0;
+  padding-left: 10px;
+}

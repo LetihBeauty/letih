@@ -9,19 +9,10 @@ import "../../shared/common.css";
 const GlowFacial = () => {
   const primaryService = facialGlowFacial[0];
   const supplementaryServiceInfo = primaryService.facialGlowSupplementary;
+  const firstColumnItems = supplementaryServiceInfo.slice(0, 5);
+  const secondColumnItems = supplementaryServiceInfo.slice(5);
   const alertMessage = warnings[0].warningDeepCleasing;
 
-    const classMapping = {
-    1: GlowFacialStyles.id1,
-    2: GlowFacialStyles.id2,
-    3: GlowFacialStyles.id3,
-    4: GlowFacialStyles.id4,
-    5: GlowFacialStyles.id5,
-    6: GlowFacialStyles.id6,
-    7: GlowFacialStyles.id7,
-    8: GlowFacialStyles.id8,
-    9: GlowFacialStyles.id9,
-  };
   return (
 
     <div className="containerService">
@@ -37,7 +28,7 @@ const GlowFacial = () => {
         secondTitle={primaryService.PriceTitle}
         secondTitleDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
-        imgSrc={primaryService.imgSrc}
+        imgSrc='/images/glowfacial.png'
         customClass={GlowFacialStyles.bannerWrapper}
         customPhotoClass= {GlowFacialStyles.bannerMiddlePhoto}
         customBottomClass="globalBannerBottom"
@@ -45,9 +36,9 @@ const GlowFacial = () => {
 
       />
       <FacialTreatmentGuide
-        supplementaryServiceInfo={supplementaryServiceInfo}
+        firstColumnItems= {firstColumnItems}
+        secondColumnItems= {secondColumnItems}
         warningMessage={alertMessage}
-        classMapping={classMapping}
       />
     </div>
   );

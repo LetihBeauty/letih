@@ -35,11 +35,11 @@ return (
             titleComponent={({ children, item }) => (
               <h5 className="globalBenefits">{children}
                 {item.title ? (
-                  <span className={BellyReducingStyles.descriptionStyle}>
+                  <span className="globalDescriptionStyle">
                     <p>{item.description}</p>
                   </span>
                 ) : (
-                  <span className={BellyReducingStyles.withoutTitleStyle}>
+                  <span className="globalDescriptionStyle">
                     <p>{item.description}</p>
                   </span>
                 )}
@@ -51,12 +51,12 @@ return (
           />
 
           {thirdMainTitle && <h3 className="globalMainBottomTitle" style={{ marginTop: '60px' }}>{thirdMainTitle}</h3>}
-          <div className={BellyReducingStyles.bannerMiddle}>
-            <div className={BellyReducingStyles.bannerMiddleContent}>
+          <div className="globalBannerMiddle">
+            <div className="globalBannerMiddleContent">
               <ItemList
                 items={firstThreeItems}
                 titleComponent={({item }) => (
-                  <div className={BellyReducingStyles.descriptionStyle}>
+                  <div className="globalDescriptionStyle">
                     <ItemComponent item={item}/>
                   </div>
                 )}
@@ -66,7 +66,7 @@ return (
               <ItemList
                 items={lastTwoItems}
                 titleComponent={({item } ) => (
-                  <div className={BellyReducingStyles.descriptionStyle}>
+                  <div className="globalDescriptionStyle">
                     <ItemComponent item={item} />
                   </div>
                 )}

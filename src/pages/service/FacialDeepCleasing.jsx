@@ -10,17 +10,9 @@ const DeepCleasing = () => {
   const primaryService = facialDeepCleasing[0];
   const supplementaryServiceInfo = primaryService.facialDeepCleasingSupplementary;
   const alertMessage = warnings[0].warningDeepCleasing;
+  const firstColumnItems = supplementaryServiceInfo.slice(0, 5);
+  const secondColumnItems = supplementaryServiceInfo.slice(5);
 
-  const classMapping = {
-    1: DeepCleasingStyles.id1,
-    2: DeepCleasingStyles.id2,
-    3: DeepCleasingStyles.id3,
-    4: DeepCleasingStyles.id4,
-    5: DeepCleasingStyles.id5,
-    6: DeepCleasingStyles.id6,
-    7: DeepCleasingStyles.id7,
-    8: DeepCleasingStyles.id8,
-  };
   return (
 
     <div className="containerService">
@@ -36,15 +28,16 @@ const DeepCleasing = () => {
         secondTitle={primaryService.PriceTitle}
         secondTitleDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
-        imgSrc={primaryService.imgSrc}
+        imgSrc='/images/deepCleasing.png'
         customClass={DeepCleasingStyles.bannerWrapper}
-        customBottomClass="globalBannerBottom"
+        customBottomClass="globalFirstBannerBottom"
         customDescriptionClass={DeepCleasingStyles.titleDescription}
+        customPhotoClass = {DeepCleasingStyles.bannerMiddlePhoto}
       />
       <FacialTreatmentGuide
-        supplementaryServiceInfo={supplementaryServiceInfo}
+        firstColumnItems= {firstColumnItems}
+        secondColumnItems= {secondColumnItems}
         warningMessage={alertMessage}
-        classMapping={classMapping}
       />
     </div>
   );

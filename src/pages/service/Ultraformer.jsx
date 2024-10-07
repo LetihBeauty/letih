@@ -16,13 +16,6 @@ const Ultraformer = () => {
   const alertMessage = warnings[1]?.warningUltraformer[0]|| {};
   const tariffs = prices;
 
-  const classMapping = {
-    1: 'globalServiceSteps',
-    2: 'globalServiceSteps',
-    3: 'globalServiceSteps',
-    4: 'globalServiceSteps',
-    5: 'globalServiceSteps',
-  };
   return (
     <div>
       <Banner
@@ -49,7 +42,6 @@ const Ultraformer = () => {
         customBottomClass={UltraformerStyles.secongBannerBottom}
         HIFUTreatmentAreasDescription = {hifuTreatmentDetails}
         tariffs={tariffs}
-        classMapping={classMapping}
         firstThreeItems= {firstThreeItems}
         lastTwoItems= {lastTwoItems}
       />
