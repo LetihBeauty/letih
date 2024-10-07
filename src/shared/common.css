@@ -71,6 +71,7 @@
   width: 1134px;
   margin: 79px 32px 120px 101px;
 }
+
 .globalCustom-list {
   list-style-type: none;
   padding-left: 0;
@@ -84,7 +85,12 @@
   padding-left: 20px;
 
 }
-
+.globalFirstBannerBottom {
+  background-color: #446953;
+  height: 130px;
+  width: 100%;
+  margin-top: -85px;
+}
 .globalCustom-list li::before {
   content: "•";
   position: absolute;
@@ -145,18 +151,17 @@
   font-weight: 550;
   font-size: 16px;
 }
+
 .globalServiceSteps {
   display: grid;
   grid-template-areas:
-    "id1 id4"
-    "id2 id5"
-    "id3 id6";
+    "id1" "id4"
+    "id2" "id5"
+    "id3" "id6";
   grid-template-columns: 503px 537px;
-  grid-auto-rows: min-content;
   column-gap: 100px;
-  row-gap: 50px;
-  /**padding: 0px 0px 120px 101px; */
-  width: 1184px;
+  align-items: start;
+  justify-items:start;
 
   .descriptionStyle {
     display: inline;
@@ -171,20 +176,26 @@
 
 .id1 {
   grid-area: id1;
+  background: lightblue;
+
 }
 
 .id2 {
   grid-area: id2;
+  background: lightgreen;
 }
 
 .id3 {
-  grid-area: id3;
+  background: lightcoral;
 }
 
 .id4 {
-  grid-area: id4;
+  background: lightgoldenrodyellow;
 }
 
 .id5 {
-  grid-area: id5;
+  background: lightpink;
+}
+.id6 {
+  grid-area: id6;
 }

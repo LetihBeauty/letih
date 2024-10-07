@@ -80,7 +80,7 @@ const ItemList = ({
                 ) : (
                   <h3>{item.title}</h3>
                 )}
-                {item.description && ( 
+                {item.description && (
                   DescriptionComponent ? (
                     <DescriptionComponent>{item.description}</DescriptionComponent>
                   ) : (

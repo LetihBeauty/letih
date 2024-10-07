@@ -6,12 +6,7 @@
 .emptySpace {
   height: 120px;
 }
-.firstBannerBottom {
-  background-color: #446953;
-  height: 130px;
-  width: 100%;
-  margin-top: -85px;
-}
+
 .bannerMiddlePhoto img {
   height: 715px;
   width: 708px;

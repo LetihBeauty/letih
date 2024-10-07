@@ -287,7 +287,9 @@ export const serviceRoseDeMer = [
     firstSessionTimeDescription: "1 hour",
     secondSessionTitle:"Second Session:",
     secondSessionDescription: "7 days after the first session",
-    secondSessionItem: "Include: Exfoliation, Microdermabrasion, High Frequency, LED Therapy",
+    secondSessionItem: [
+      "Include: Exfoliation, Microdermabrasion, High Frequency, LED Therapy"
+    ],
     secondSessionTimeTitle:"Second Session Time:",
     secondSessionTimeDescription:"1h 30min",
     priceTitle:"Price:",

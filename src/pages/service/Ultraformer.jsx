@@ -11,6 +11,8 @@ const Ultraformer = () => {
   const primaryService = serviceUltraformer[0];
   const hifuTreatmentDetails = primaryService.HIFUTreatmentInfo;
   const supplementaryServiceInfo = primaryService.serviceUltraformerSupplementary;
+  const firstThreeItems = supplementaryServiceInfo.slice(0, 3);
+  const lastTwoItems = supplementaryServiceInfo.slice(-2);
   const alertMessage = warnings[1]?.warningUltraformer[0]|| {};
   const tariffs = prices;
 
@@ -36,7 +38,7 @@ const Ultraformer = () => {
         btnComponent={primaryService.btnComponent}
         imgSrc='/images/ultraformer.jpg'
         customClass={UltraformerStyles.bannerWrapper}
-        customBottomClass={UltraformerStyles.firstBannerBottom}
+        customBottomClass="globalFirstBannerBottom"
         customBannerMiddleContentDetailsClass = {UltraformerStyles.timeAndPrice}
         customDescriptionClass = {UltraformerStyles.titleDescription}
         customButtonClass = {UltraformerStyles.button}
@@ -44,11 +46,12 @@ const Ultraformer = () => {
       />
 
       <UltraformerTreatmentGuide
-        supplementaryServiceInfo={supplementaryServiceInfo}
         customBottomClass={UltraformerStyles.secongBannerBottom}
         HIFUTreatmentAreasDescription = {hifuTreatmentDetails}
         tariffs={tariffs}
         classMapping={classMapping}
+        firstThreeItems= {firstThreeItems}
+        lastTwoItems= {lastTwoItems}
       />
       <Warning
         alertMessage={alertMessage}

@@ -130,23 +130,26 @@ const Treatments = ({
   additionalWhatIsDescriptionProp= '',
   children= '',
   packagePriceProp= '',
-  firstSession,
-  firstSessionTime,
-  secondSessionTitle,
-  secondSessionDescription,
-  secondSessionUlProp,
-  secondSessionTime,
-  priceProp,
-  customBannerMiddleContentDetailsClass,
-  firstSessionDescription,
-  firstSessionTimeDescription,
-  pricePropDescription,
-  secondSessionTimeDescription
+  firstSession='',
+  firstSessionTime='',
+  secondSessionTitle='',
+  secondSessionDescription='',
+  secondSessionUlProp='',
+  secondSessionTime='',
+  priceProp='',
+  customBannerMiddleContentDetailsClass='',
+  firstSessionDescription='',
+  firstSessionTimeDescription='',
+  pricePropDescription='',
+  secondSessionTimeDescription='',
+  customdescriptionStyleClass='',
+  secondSessionUlDescription='',
+  packagePricePropDescription='',
 
 }) => {
   const StyledSession = ({ children }) => (
     <h5 className={styles.sessionTitle}>
-      <span className={styles.descriptionStyle}>{children}</span>
+      <span className={`${styles.descriptionStyle} ${customdescriptionStyleClass}`}>{children}</span>
     </h5>
   );
   return (
@@ -167,13 +170,13 @@ const Treatments = ({
             {benefits &&<h5>{benefits}</h5>}
             {benefitsDescription && <p>{benefitsDescription}</p>}
             {customListProp}
-            {additionalWhatIsDescriptionProp}
+            {additionalWhatIsDescriptionProp &&<p>{additionalWhatIsDescriptionProp}</p>}
             {children}
             {benefitsRecommendations &&
               <p className={styles.bannerMiddleRecommendation}>
                 {benefitsRecommendations}
               </p>}
-            <div className={`${styles.bannerMiddleContentDetails}${customBannerMiddleContentDetailsClass}`}>
+            <div className={`${styles.bannerMiddleContentDetails} ${customBannerMiddleContentDetailsClass}`}>
               {firstSession && (
                 <StyledSession>
                   {firstSession}
@@ -192,12 +195,7 @@ const Treatments = ({
                   <p>{secondSessionDescription}</p>
                 </StyledSession>
               )}
-              {secondSessionUlProp && (
-                <StyledSession>
-                  {secondSessionUlProp}
-                  <p>{secondSessionDescription}</p>
-                </StyledSession>
-              )}
+              {secondSessionUlProp &&<StyledSession>{secondSessionUlProp}</StyledSession>}
               {secondSessionTime && (
                 <StyledSession>
                   {secondSessionTime}
@@ -211,7 +209,7 @@ const Treatments = ({
                 </StyledSession>
               )}
               {firstTitle && (
-                <StyledSession>
+                <StyledSession >
                   {firstTitle}
                   <p>{firstTitleDescription}</p>
                 </StyledSession>
@@ -222,7 +220,12 @@ const Treatments = ({
                   <p>{secondTitleDescription}</p>
                 </StyledSession>
               )}
-              {packagePriceProp}
+              {packagePriceProp && (
+                <StyledSession>
+                  {packagePriceProp}
+                  <p>{packagePricePropDescription}</p>
+                </StyledSession>
+              )}
             </div>
             <div className={`${styles.bannerButton} ${customButtonClass}`}>
               {btnComponent}

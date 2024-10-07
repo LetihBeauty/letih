@@ -48,7 +48,9 @@ const RoseDeMer = () => {
         pricePropDescription={primaryService.price}
         btnComponent={primaryService.btnComponent}
         imgSrc='/images/roseDeMer.png'
-        customBannerMiddleContentDetailsClass = {primaryService.bannerMiddleContentDetails}
+        customBannerMiddleContentDetailsClass= {RoseDeMerStyles.bannerMiddleContentDetails}
+        customdescriptionStyleClass ={RoseDeMerStyles.descriptionStyle}
+        customPhotoClass={RoseDeMerStyles.bannerMiddlePhoto}
       />
       <div className={RoseDeMerStyles.firstBannerBottom}></div>
       <div className="globalServiceIncluded">
@@ -76,10 +78,10 @@ const RoseDeMer = () => {
             </div>
           </div>
         </div>
-        <Warning
-          alertMessage={alertMessage}
-        />
       </div>
+      <Warning
+        alertMessage={alertMessage}
+      />
     </div>
   );
 };

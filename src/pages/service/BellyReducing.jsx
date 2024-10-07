@@ -2,25 +2,21 @@ import React from "react";
 import Treatments from "./Treatments.jsx";
 import {serviceBellyReducing, warnings} from "../../components/constants/index.js"
 import "../../shared/common.css";
-import DetoxAndReducingBenefits from "./DetoxAndReducingBenefits.jsx"
+import BellyReducingBenefits from "./BellyReducingBenefits.jsx"
 import Warning from "../../components/Warning.jsx";
 import Banner from "../../components/Banner.js";
-import ItemList from "/home/victor/code/victorfonsecass/letih/src/components/Itemlist.jsx";
 import BellyReducingStyles from "../service//BellyReducing.module.css";
+
 const BellyReducing = () => {
 
   const primaryService = serviceBellyReducing[0];
   const bellyRedDetails = primaryService.treatmentsRecommended;
   const supplementaryServiceInfo = primaryService.beneditsOfHifu || [];
+  const firstThreeItems = supplementaryServiceInfo.slice(0, 3);
+  const lastTwoItems = supplementaryServiceInfo.slice(-2);
   const alertMessage = warnings[1]?.warningUltraformer[0]|| {};
 
-  const classMapping = {
-    1: 'globalServiceSteps',
-    2: 'globalServiceSteps',
-    3: 'globalServiceSteps',
-    4: 'globalServiceSteps',
-    5: 'globalServiceSteps',
-  };
+
   return (
     <div>
       <Banner
@@ -38,32 +34,21 @@ const BellyReducing = () => {
         secondTitle={primaryService.PriceTitle}
         secondTitleDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
-        imgSrc={primaryService.imgSrc}
-        customBottomClass="globalBannerBottom"
+        imgSrc='/images/bellyReducing.jpg'
+        customBottomClass=  "globalFirstBannerBottom"
+        customPhotoClass = {BellyReducingStyles.bannerMiddlePhoto}
+
       />
-      <div className="globalServiceIncluded">
-        <div className="globalServiceIncludedContent">
-          <div className="globalTreatment">
-            <DetoxAndReducingBenefits
-              title={bellyRedDetails?.sessionsRecomended?.mainTitle || ""}
-              items={bellyRedDetails?.sessionsRecomended?.mainDescription || []}
-              secondTitle={bellyRedDetails?.hifuTreats?.mainTitle || ""}
-              includesItems={bellyRedDetails?.hifuTreats?.mainDescription || []}
-            />
-            <ItemList
-              items={supplementaryServiceInfo}
-              titleComponent={({ item, children }) => (
-                <h5 className={classMapping[item.id]}>{children}</h5>
-              )}
-              descriptionComponent={({ children }) => (
-                <span className={""}>{children}</span>
-              )}
-              containerClass={"globalServiceSteps"}
-              isList={false}
-            />
-          </div>
-        </div>
-      </div>
+      <BellyReducingBenefits
+        mainTitle={bellyRedDetails?.sessionsRecomended?.mainTitle || ""}
+        treatmentBenefits={bellyRedDetails?.sessionsRecomended?.mainDescription || []}
+        secondMainTitle={bellyRedDetails?.hifuTreats?.mainTitle || ""}
+        secondItems={bellyRedDetails?.hifuTreats?.mainDescription || []}
+        supplementaryServiceInfo= {supplementaryServiceInfo|| ""}
+        thirdMainTitle= {primaryService?.beneditsOfHifuTitle}
+        firstThreeItems= {firstThreeItems}
+        lastTwoItems= {lastTwoItems}
+      />
       <Warning
         alertMessage={alertMessage}
       />

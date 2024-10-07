@@ -3,7 +3,7 @@ import Treatments from "./Treatments.jsx";
 import {serviceBodyDetox, warnings} from "../../components/constants/index.js"
 import BodyDetoxStyles from "../service/BodyDetox.module.css";
 import "../../shared/common.css";
-import DetoxAndReducingBenefits from "./DetoxAndReducingBenefits.jsx"
+import BodyDetoxBenefits from "./BodyDetoxBenefits.jsx"
 import Warning from "../../components/Warning.jsx";
 import Banner from "../../components/Banner.js";
 
@@ -31,30 +31,32 @@ const BodyDetox = () => {
       <Treatments
         customNavWrapperClass="globalNavbarWrapper"
         title={primaryService.title}
-        customDescriptionClass = {BodyDetoxStyles.titleDescription}
         whatIsDescription={primaryService.whatIsDescription}
-        additionalWhatIsDescriptionProp= {<p>{primaryService.additionalWhatIsDescription}</p>}
-        customBannerMiddleContentDetailsClass = {BodyDetoxStyles.bannerMiddleContentDetails}
+        additionalWhatIsDescriptionProp= {primaryService.additionalWhatIsDescription}
         firstTitle ={primaryService.timeTitle}
         firstTitleDescription={primaryService.timeDescription}
         secondTitle={primaryService.PriceTitle}
         secondTitleDescription={primaryService.priceDescription}
-        packagePriceProp={<h5>{primaryService.packagePriceTitle}:<span>{primaryService.packagePrice}</span></h5>}
+        packagePriceProp={primaryService.packagePriceTitle}
+        packagePricePropDescription={primaryService.packagePrice}
         benefits={benefitsArray}
-        benefitsDescription={primaryService.benefits.benefitsDescription}
-        benefitsRecommendations={primaryService.benefits.benefitsRecommendations}
+        benefitsDescription={primaryService.benefitsDescription}
+        benefitsRecommendations={primaryService.benefitsRecommendations}
         btnComponent={primaryService.btnComponent}
-        imgSrc={primaryService.imgSrc}
-        customBottomClass="globalBannerBottom"
+        imgSrc='/images/bodyDetox.png'
+        customDescriptionClass= {BodyDetoxStyles.titleDescription}
+        customPhotoClass = {BodyDetoxStyles.bannerMiddlePhoto}
+        customBottomClass=  "globalFirstBannerBottom"
+        customBannerMiddleContentDetailsClass = {BodyDetoxStyles.bannerMiddleContentDetails}
       />
       <div className="globalServiceIncluded">
         <div className="globalServiceIncludedContent">
-          <div className="globalTreatment">
-            <DetoxAndReducingBenefits
-              title={bodyDetoxDetails?.treatmentBenefits?.mainTitle || ""}
-              items={bodyDetoxDetails?.treatmentBenefits?.mainDescription || []}
-              subtitle={bodyDetoxDetails?.includesInBodyDetox?.mainTitle || ""}
-              includesItems={bodyDetoxDetails?.includesInBodyDetox?.mainDescription || []}
+          <div className={BodyDetoxStyles.treatment}>
+            <BodyDetoxBenefits
+              mainTitle={bodyDetoxDetails?.treatmentBenefits?.mainTitle || ""}
+              treatmentBenefits = {bodyDetoxDetails?.treatmentBenefits.mainDescription || []}
+              secondMainTitle={bodyDetoxDetails?.includesInBodyDetox?.mainTitle || ""}
+              secondItems={bodyDetoxDetails?.includesInBodyDetox?.mainDescription || []}
             />
           </div>
         </div>

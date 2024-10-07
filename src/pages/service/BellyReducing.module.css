@@ -1,9 +1,42 @@
-.bdServiceIncluded{
-  flex-direction: column;
+.bdtreatment {
+  width: 1134px;
+  margin: 79px 32px 0px 101px;
+}
+.bannerMiddlePhoto img {
+  height: 715px;
+  width: 708px;
+  object-fit: cover;
+  border-radius: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.bannerMiddle {
+  display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 100%;
   max-width: 1500px;
   margin: 0 auto;
-  padding-left: 101px;
+  height: auto;
+}
+.bannerMiddleContent {
+  display: grid;
+  grid-template-columns: 503px 550px;
+  grid-template-rows: 0px auto;
+  width: 100%;
+  column-gap: 100px;
+  height: 250px;
+
+  p {
+    margin: 0;
+  }
+  .descriptionStyle {
+    display: inline;
+  }
+
+  .descriptionStyle p {
+    display: inline;
+    margin: 0;
+    padding-left: 10px;
+  }
 }

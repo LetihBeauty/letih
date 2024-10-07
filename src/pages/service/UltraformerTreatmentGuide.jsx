@@ -1,11 +1,12 @@
 import React from "react";
 import Ultraformerstyles from'./Ultraformer.module.css';
 import "../../shared/common.css";
-import ItemList from "/home/victor/code/victorfonsecass/letih/src/components/Itemlist.jsx";
+import ItemList from "../../components/Itemlist.jsx";
+import ItemComponent from "../../components/ItemComponent.jsx";
 
 const UltraformerTreatmentGuide = ({
-  supplementaryServiceInfo,
-  classMapping,
+  firstThreeItems,
+  lastTwoItems,
   HIFUTreatmentAreasDescription,
   tariffs
 }) => {
@@ -26,20 +27,30 @@ const UltraformerTreatmentGuide = ({
               containerClass="globalMainBottomTreatment"
               isList={false}
             />
-            <ItemList
-              items={supplementaryServiceInfo}
-              titleComponent={({ item, children }) => (
-                <div style={{ display: 'flex', alignItems: 'center' }} className="globalBenefits">
-                  <h5 className={classMapping[item.id]}>{children}
-                  <span className="descriptionStyle"> {item.description}</span></h5>
-                </div>
-              )}
-              descriptionComponent={({ children }) => ( // Does not render the description component if it has already been displayed in titleComponent
-                null
-              )}
-              containerClass="globalServiceSteps"
-              isList={false}
-            />
+            <div className={Ultraformerstyles.bannerMiddle}>
+              <div className={Ultraformerstyles.bannerMiddleContent}>
+                <ItemList
+                  items={firstThreeItems}
+                  titleComponent={({item }) => (
+                    <div className={Ultraformerstyles.descriptionStyle}>
+                      <ItemComponent item={item}/>
+                    </div>
+                  )}
+                  descriptionComponent={() => null}
+                  isList={false}
+                />
+                <ItemList
+                  items={lastTwoItems}
+                  titleComponent={({item }) => (
+                    <div className={Ultraformerstyles.descriptionStyle}>
+                      <ItemComponent item={item}/>
+                    </div>
+                  )}
+                  descriptionComponent={() => null}
+                  isList={false}
+                />
+              </div>
+            </div>
           </div>
           <div className={`${Ultraformerstyles.prices}`}>
             <div className={Ultraformerstyles.pricesContainer}>
