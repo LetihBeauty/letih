@@ -10,8 +10,8 @@ function Home() {
       {/* Banner hero */}
       <div className="banner">
         <div className="content">
-          <h1>ELEVATE YOUR ELEGANCE</h1>
-          <h4>Unveil Your Beauty with Us</h4>
+          <h1 className="bannerTitle">ELEVATE YOUR ELEGANCE</h1>
+          <h5 className="bannerDescrip">Unveil Your Beauty with Us</h5>
           <BtnGreen>Our Services</BtnGreen>
         </div>
         <img src="images/hero-women-leaf.webp" alt="Women with leaf"/>
