@@ -1,3 +1,4 @@
+import React from "react";
 import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
 import BtnWhite from "../components/BtnWhite";
@@ -12,7 +13,7 @@ function Home() {
         <div className="content">
           <h1 className="bannerTitle">ELEVATE YOUR ELEGANCE</h1>
           <h5 className="bannerDescrip">Unveil Your Beauty with Us</h5>
-          <BtnGreen>Our Services</BtnGreen>
+            <BtnGreen  customButtonClass="customButtonClass">Our Services</BtnGreen>
         </div>
         <img src="images/hero-women-leaf.webp" alt="Women with leaf"/>
       </div>

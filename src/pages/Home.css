@@ -173,6 +173,7 @@ p {
   min-height: 100vh;
 }
 .about-us {
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,7 +190,7 @@ p {
 }
 
 .about-us-img-custom {
-  width: 720px;
+  width: 625px;
   height: 420px;
   flex-shrink: 0;
   border-radius: 15px;
@@ -202,6 +203,7 @@ p {
 .about-us-img-right {
   z-index: 1;
   margin-left: -80px;/* Ajuste para a sobreposição */
+
 }
 
 .about-us-top {
@@ -224,6 +226,7 @@ p {
   transform: translateY(-50px);
   /* Move o texto para cima sem usar margem negativa */
   position: relative;
+  width: 519px;
 }
 
 .about-us-bottom {
@@ -246,6 +249,7 @@ p {
   align-items: flex-start;
   margin-right: 50px;
   position: relative;
+  width: 519px;
 }
 
 
@@ -522,135 +526,48 @@ p {
 }
 
 @media (max-width: 430px) {
-body, html {
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    margin: 0;
-    padding: 0;
-  }
-
-  h1 {
-    font-family: "Roboto Serif";
-    color: var(--green-100);
-    font-size: 4.8vw;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 5.6vw;
-    text-transform: uppercase;
-  }
-
-  h2 {
-    color: var(--green-100);
-    font-family: "Roboto Serif";
-    font-size: 8vw;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 4.4vw;
-    letter-spacing: 0.8vw;
-  }
-
-  h3 {
-    color: var(--green-100);
-    text-align: center;
-    font-family: "SVN-Aire Pro";
-    font-size: 2.4vw;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 3.2vw;
-    letter-spacing: 0.6vw;
-    text-transform: uppercase;
-  }
-
-  h4 {
-    color: var(--green-100);
-    font-family: Raleway;
-    font-size: 2vw;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 0.5vw;
-  }
-
-  h5 {
-    color: var(--Black-100, #000);
-    font-family: "Roboto Serif";
-    font-size: 2vw;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.5vw;
-  }
-
-  .special-style,
-  .special-title-green,
-  .special-title-white {
-    font-family: "Roboto Serif";
-    font-size: 6vw;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 3.2vw;
-    letter-spacing: 0.4vw;
-  }
-
-  h6 {
-    color: var(--Black-100, #000);
-    font-family: "Roboto Serif";
-    font-size: 1.6vw;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-transform: uppercase;
-  }
-
-  p {
-    color: var(--Black-100, #000);
-    font-family: Raleway;
-    font-size: 1.6vw;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 2.6vw;
-  }
+    /* Remove margens padrão do body */
+}
 .banner {
-  overflow-x: hidden;
-  height: 600px;
   width: 100vw;
-  display: block;/* Empilha o conteúdo e a imagem */
-  position: relative;
-  padding: 0 20px;/*evitar ultrapassar os limites */
-  box-sizing: border-box;/* Garante que o padding seja incluído na largura total */
+  height: 742px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  h5 {
+    width: 350px;
+    text-align: center;
+    margin: 0 auto
+  }
+}
+.banner .content {
+  margin: 0;
+  margin-top: 513px;
+}
+.bannerTitle,
+.bannerDescrip,
+.customButtonClass {
+  margin: 0;
+  padding: 0;
+}
+
+.banner
+.customButtonClass{
+  margin: 0 auto;
 }
 
 .banner img {
   padding-top: 10px;
   background: linear-gradient(to bottom, #164734 20px, #164734 20px);
-  height: 410px;
+  height: 473px;
   width: 100%;
   object-fit: cover;
   clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
   object-position: 80% center;
   z-index: 0;
-}
-.banner .content {
-  position: relative;
-  z-index: 1;
-  margin-top: 420px;
-  text-align: center;
-  flex-direction: column;
-  align-items: center;
-  width: calc(100% - 20px);
-  padding: 0 20px;/* Adiciona espaçamento interno */
-  box-sizing: border-box; /* Inclui o padding dentro da largura total */
 }
 
 .banner h1 {
@@ -676,6 +593,7 @@ body, html {
   padding-top: 50px;
   margin-bottom: 20px;
   box-sizing: border-box;
+
 }
 
 .about-us-content {
@@ -702,13 +620,6 @@ body, html {
   margin-right: -290px;
 }
 
-.about-us-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  position: relative;
-}
 
 .about-us-top-right {
   display: none;
@@ -716,6 +627,8 @@ body, html {
 
 .about-us-bottom {
   flex-direction: column;
+  margin-right: 16px;
+  margin-left: 16px;
 }
 
 .about-us-bottom img {
@@ -724,20 +637,14 @@ body, html {
 }
 
 .about-us-bottom-left {
-  width: 100%;
-  text-align: left;
+  width: 350px;
   margin: 10px auto;
-  padding: 10px 20px;
-  font-size: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   top: -50px;
 
-    p {
-        margin: 0;
-        padding: 20px 0px 20px 0px;
-      }
+  p {
+    margin: 0;
+    padding: 20px 0px 20px 0px;
+  }
 }
 .our-services {
   overflow-x: hidden;
@@ -946,23 +853,30 @@ body, html {
   form {
     display: flex;
     flex-direction: column;
-    width: 90%;
     margin-top: 30px;
     padding: 20px;
     box-sizing: border-box;
+    width: 350px;
+    max-width: 400px;
+
 
     .name-email {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      gap: 24px;
       width: 100%;
+      margin-bottom: 24px;
+      width: calc(100% - 20px);
     }
     .form-group,
     .form-group-phone {
-      display: flex;
-      flex-direction: column;
       width: 100%;
+      margin-bottom: 20px;
+    }
+    .form-group-phone {
+      width: calc(100% - 20px);
     }
     .form-group input,
     .form-group-phone input,
@@ -988,11 +902,12 @@ body, html {
       border: 1px solid var(--white-200);
       background-color: var(--green-50);
       padding: 10px;
-      margin-right: 20px;
+      margin-right: 0;
       font-size: 1em;
       border: 1px solid #ccc;
       color: var(--white-200);
       border: 1px solid var(--white-200);
+      width: calc(100% - 20px);
     }
 
     textarea {
@@ -1029,29 +944,4 @@ body, html {
   height: 80px;
   background-color: var(--white-200);
 }
-}
-@media (min-width: 1300px) and (max-width: 1900px) {
-.about-us-content {
-    margin: 80px 200px 0px;
-  }
-
-  .about-us-img-custom {
-    width: 600px;
-    height: 450px;
-  }
-
-  .about-us-img-right {
-    margin-left: -60px;
-  }
-
-  .about-us-top-right {
-    transform: translateY(-30px);
-  }
-  .about-us-bottom-left {
-    transform: translateY(-110px);
-  }
-
-  .about-us-bottom img {
-    transform: translateY(-150px);
-  }
 }

@@ -63,9 +63,9 @@ const About = () => {
         </div>
       </div>
       <div className="bottom-images">
-        <img src="/images/about-us-4.webp" alt="women" />
-        <img src="/images/about-us-5.webp" alt="women" />
-        <img src="/images/about-us-6.webp" alt="women" />
+        <img src="/images/aboutFirst.png" alt="women1"/>
+        <img src="/images/aboutus-2.png" alt="women2" />
+        <img src="/images/aboutFirst.png" alt="women3" />
       </div>
 
     </div>

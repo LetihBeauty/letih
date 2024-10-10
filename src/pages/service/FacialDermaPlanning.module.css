@@ -24,10 +24,13 @@
 
   .titleDescription {
     grid-column: 1 / 2;
-    margin: 32px 0px 0px 0px;
+    margin: 32px 0px !important;
+
+    h5 {
+      padding-bottom: 0;
+    }
   }
   .bannerMiddlePhoto img {
     height: 275px;
-    width: 358px;
   }
 }

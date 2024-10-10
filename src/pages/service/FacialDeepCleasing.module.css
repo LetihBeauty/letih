@@ -5,12 +5,7 @@
   grid-column: 1 / 2;
   margin: 163px 128px 0px 0px !important;
 }
-.bannerBottom {
-  margin-top: 32px;
-  background-color: #446953;
-  height: 130px;
-  width: 100%;
-}
+
 .bannerMiddlePhoto img {
   height: 708px;
   width: 708px;
@@ -26,5 +21,9 @@
   .bannerMiddlePhoto img {
     height: 275px;
     width: 358px;
+  }
+  .titleDescription {
+    grid-column: 1 / 2;
+    margin: 32px 0px!important;
   }
 }

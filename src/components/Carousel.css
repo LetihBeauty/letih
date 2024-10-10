@@ -5,7 +5,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 757px;
   gap: 50px;
   margin: auto;
   overflow: hidden;
@@ -20,6 +19,7 @@ h1 {
 }
 
 .testimonial-image {
+
   width: 744px;
   height: 544px;
   flex-shrink: 0;
@@ -28,10 +28,12 @@ h1 {
 .carousel-item img {
   width: 50%;
   height: auto;
+  margin: 87px 0 126px 0px;
 }
 
 .testimonial-content {
   max-width: 500px;
+        margin: 87px 0 0px 0px;
 }
 
 .testimonial-content h1 {
@@ -115,113 +117,70 @@ h1 {
 
 
 @media (max-width: 430px) {
-  * {
-      box-sizing: border-box;
-    }
-  .testimonial-container {
-    display: flex;
-    width: 100%;
-    height: 425px !important;
-    padding: 0px;
-    text-align: center;
-    position: relative;
-  }
-  .testimonial-container img {
-    display: none;
-  }
-  .testimonial-container .testimonial-content {
-    text-align: center;
-    width: 100%;
-  }
-  .testimonial-content h1 {
 
-    font-family: "Angelia Devitson" ;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 70px;
-    margin-top: 32px;
-    margin: auto;
-    padding: 0;
-    text-align: center !important;
-    display: block;
-  }
+.testimonial-container {
+  display: flex;
+  width: 100%;
+  height: 425px !important;
+  padding: 0px;
+  text-align: center;
+  position: relative;
+}
+.testimonial-container img {
+  display: none;
+}
+.testimonial-content {
 
-  .testimonial-container .testimonial-content h4 {
-    font-family: "Roboto Serif";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 34px;
-    margin-top: 40px;
-    text-align: left;
-  }
-  .testimonial-container .testimonial-content p {
-    font-family: Raleway, sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 26px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: left;
-  }
+  margin-bottom: 32px;
+}
+.testimonial-content h1 {
+  font-family: "Angelia Devitson" ;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 70px;
+  margin-top: 32px;
+  margin: auto;
+  padding: 0;
+  text-align: center !important;
+  display: block;
+}
 
-  .testimonial-container .testimonial-content .carousel-caption {
-    margin: 0 15px 56px 15px;
-  }
-  .testimonial-container .testimonial-content .carousel-caption .customer-testimonial {
-    margin: 0px 0px 0px 0px;
-    text-align: flex-start;
-  }
+.testimonial-container .testimonial-content h4 {
+  font-family: "Roboto Serif";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px;
+  margin-top: 40px;
+  text-align: center;
+}
+.testimonial-container .testimonial-content p {
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 20px 35px 20px 35px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding:0;
+}
+.prev,
+.next {
+  background-size: 560px 560px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
-  .testimonial-container .testimonial-content .carousel-caption .customer-name {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 40px;
-    margin-top: 20px;
-  }
+.prev {
+  background-position: left center;
+  margin-left: 270px;
+}
 
-  .carousel-control-prev,
-  .carousel-control-next {
-    visibility: visible;
-    opacity: 1;
-    top: auto;
-    bottom: 10px;
-    transform: none;
-    right: 10px;
-    left: auto;
-    right: 10px;
-  }
-  .carousel-control-prev {
-    width: 60px;
-    height: 60px;
-    background-color: transparent;
-    left: auto;
-    right: 80px;
-  }
-
-  .carousel-control-next {
-    width: 60px;
-    height: 60px;
-    background-color: transparent;
-  }
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml,%3csvg width='31' height='8' viewBox='0 0 31 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.646444 3.64645C0.451183 3.84171 0.451183 4.15829 0.646444 4.35355L3.82842 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.73079 7.34027 4.73079 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.73079 0.976311 4.73079 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82842 0.464466L0.646444 3.64645ZM31 3.5L0.999998 3.5V4.5L31 4.5V3.5Z' fill='%23F7F7F7'/%3e%3c/svg%3e");
-    background-size: 45px 45px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  .carousel-control-prev-icon {
-    background-position: left center;
-  }
-
-  .carousel-control-next-icon {
-    background-position: right center;
-    transform: rotate(180deg);
-  }
-
+.next {
+  background-position: right center;
+  margin-left: 20px;
+}
 }

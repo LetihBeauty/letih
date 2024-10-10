@@ -39,7 +39,7 @@ const FacialTreatmentGuide = ({
       </div>
       <div className={styles.serviceIncludedWarning}>
         <div>
-          <span class="material-symbols-outlined">info</span>
+          <span className="material-symbols-outlined">info</span>
           <h6>{warningMessage}</h6>
         </div>
       </div>
