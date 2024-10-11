@@ -51,15 +51,11 @@ footer {
       a.active::after {
         content: "";
         display: block;
-        /* Assegure que o display seja block */
         width: 30px;
-        /* Ajuste conforme necessário */
         height: 5px;
-        /* Ajuste conforme necessário */
         background-size: contain;
         position: absolute;
         bottom: -5px;
-        /* Ajuste conforme necessário */
         left: 50%;
         transform: translateX(-50%);
       }
@@ -93,6 +89,7 @@ footer {
           font-style: normal;
           font-weight: 300;
           line-height: normal;
+          margin: 0;
         }
       }
     }

@@ -5,7 +5,6 @@ import data from "../data.json";
 import BtnGreen from "./BtnGreen";
 import { useMediaQuery } from "react-responsive";
 
-
 const DesktopNavbar = () => {
   const navItems = data.navbar;
   const singInItem = data.singIn;
@@ -14,7 +13,10 @@ const DesktopNavbar = () => {
   const [facialDropdownOpen, setFacialDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  const toggleServiceDropdown = () => setServiceDropdownOpen(prev => !prev);
+  const toggleServiceDropdown = () => {
+    setServiceDropdownOpen(prev => !prev);
+  };
+
   const toggleFacialDropdown = () => setFacialDropdownOpen(prev => !prev);
 
   const handleClickOutside = (event) => {
@@ -31,9 +33,15 @@ const DesktopNavbar = () => {
     };
   }, []);
 
-  const isServiceActive = navItems.some(item => item.title === "SERVICE" &&
-    item.submenu.some(subItem => location.pathname.startsWith(subItem.url))
-  );
+  const handleSubMenuClick = () => {
+    setServiceDropdownOpen(false);
+    setFacialDropdownOpen(false);
+  };
+
+  const isServiceActive = navItems.some(item => item.title === "SERVICE" && (
+    item.submenu.some(subItem => location.pathname.startsWith(subItem.url)) ||
+    location.pathname.startsWith("/service") // Para manter ativo se em qualquer página de serviço
+  ));
 
   return (
     <div className="navbar-wrapper">
@@ -46,12 +54,13 @@ const DesktopNavbar = () => {
             <li key={item.id} className="items">
               {item.title === "SERVICE" ? (
                 <>
-                  <button
+                  <Link
+                    to="#"
                     onClick={toggleServiceDropdown}
                     className={isServiceActive ? "active" : ""}
                   >
                     {item.title}
-                  </button>
+                  </Link>
                   {serviceDropdownOpen && (
                     <div className={`dropdown ${serviceDropdownOpen ? 'show' : ''}`}>
                       {item.submenu.map(subItem => (
@@ -61,14 +70,23 @@ const DesktopNavbar = () => {
                               {subItem.title}
                             </button>
                           ) : (
-                            <Link to={subItem.url} className={location.pathname === subItem.url ? "active" : ""}>
+                            <Link
+                              to={subItem.url}
+                              className={location.pathname === subItem.url ? "active" : ""}
+                              onClick={handleSubMenuClick} // Fecha o dropdown
+                            >
                               {subItem.title}
                             </Link>
                           )}
                           {subItem.submenu && facialDropdownOpen && (
                             <div className={`submenu ${facialDropdownOpen ? 'show' : ''}`}>
                               {subItem.submenu.map(subSubItem => (
-                                <Link key={subSubItem.id} to={subSubItem.url} className="submenu-link">
+                                <Link
+                                  key={subSubItem.id}
+                                  to={subSubItem.url}
+                                  className="submenu-link"
+                                  onClick={handleSubMenuClick} // Fecha o dropdown
+                                >
                                   {subSubItem.title}
                                 </Link>
                               ))}
