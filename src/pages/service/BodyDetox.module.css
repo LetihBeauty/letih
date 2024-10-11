@@ -6,7 +6,6 @@
     padding-bottom: 0 !important;
   }
 }
-
 .bannerMiddlePhoto img {
   height: 715px;
   width: 708px;
@@ -30,7 +29,10 @@
 .BdDescriptionStyle {
   display: inline;
 }
-
+.BdDescriptionStyle h5{
+  margin: 10px;
+  padding: 0;
+}
 .BdDescriptionStyle p {
   display: inline;
   margin: 0;

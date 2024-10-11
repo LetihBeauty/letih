@@ -31,11 +31,11 @@ const BodyDetoxBenefits  = ({
             titleComponent={({ children, item }) => (
               <h5 className="globalBenefits">{children}
                 {item.title ? (
-                  <span className={BodyDetoxStyles.BdDescriptionStyle}>
+                  <span className={BodyDetoxStyles.BdDescriptionStyle} >
                     <p>{item.description}</p>
                   </span>
                 ) : (
-                  <span className="globalDescriptionStyle">
+                  <span >
                     <p>{item.description}</p>
                   </span>
                 )}
