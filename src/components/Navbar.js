@@ -1,71 +1,111 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
-import "./Navbar.css"; // Importando o CSS
-import data from "../data.json";
-import BtnGreen from "./BtnGreen";
-import { useMediaQuery } from "react-responsive";
+/**
+ * Navbar Component
+ *
+ * This component renders a responsive navigation bar for the "LETIH BEAUTY" website.
+ * It provides links to various sections, including a dropdown menu for services.
+ *
+ * Key Features:
+ * - Responsive design that adapts to desktop and mobile views.
+ * - Dropdown menu for service items that allows nested submenus.
+ * - Active state management for highlighting the current page.
+ *
+ * Dependencies:
+ * - React
+ * - React Router DOM for navigation
+ * - React Responsive for media queries
+ *
+ * Usage:
+ * Simply import and include the <Navbar /> component in your application.
+ */
 
+import React, { useState, useEffect, useRef } from "react"; // Import React and hooks
+import { Link, useLocation } from "react-router-dom"; // Import Link for navigation and useLocation for current URL
+import "./Navbar.css"; // Import CSS styles for the navbar
+import data from "../data.json"; // Import navigation data from a JSON file
+import BtnGreen from "./BtnGreen"; // Import custom button component
+import { useMediaQuery } from "react-responsive"; // Import media query hook for responsive design
+
+// DesktopNavbar Component
+/**
+ * Renders the navigation bar for desktop users.
+ *
+ * Functionalities:
+ * - Displays main navigation items.
+ * - Manages dropdown states for services.
+ * - Highlights active service link based on the current URL.
+ */
 const DesktopNavbar = () => {
-  const navItems = data.navbar;
-  const singInItem = data.singIn;
-  const location = useLocation();
-  const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false);
-  const [facialDropdownOpen, setFacialDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  const navItems = data.navbar; // Get navigation items from the data
+  const singInItem = data.singIn; // Get sign-in item
+  const location = useLocation(); // Get the current URL location
+  const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false); // State for opening/closing service dropdown
+  const [facialDropdownOpen, setFacialDropdownOpen] = useState(false); // State for opening/closing facial dropdown
+  const dropdownRef = useRef(null); // Reference to the dropdown element for event handling
 
+  // Toggle the visibility of the service dropdown
   const toggleServiceDropdown = () => {
     setServiceDropdownOpen(prev => !prev);
   };
 
+  // Toggle the visibility of the facial dropdown
   const toggleFacialDropdown = () => setFacialDropdownOpen(prev => !prev);
 
+  // Close dropdowns if the user clicks outside of them
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setServiceDropdownOpen(false);
-      setFacialDropdownOpen(false);
+      setServiceDropdownOpen(false); // Close service dropdown
+      setFacialDropdownOpen(false); // Close facial dropdown
     }
   };
 
+  // Use effect to handle outside clicks for closing dropdowns
   useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
+    document.addEventListener("click", handleClickOutside); // Add event listener for clicks
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside); // Clean up event listener on unmount
     };
   }, []);
 
+  // Close dropdowns when a submenu item is clicked
   const handleSubMenuClick = () => {
-    setServiceDropdownOpen(false);
-    setFacialDropdownOpen(false);
+    setServiceDropdownOpen(false); // Close service dropdown
+    setFacialDropdownOpen(false); // Close facial dropdown
   };
 
+  // Determine if the "SERVICE" link should be highlighted as active
+  /**
+   * The `isServiceActive` variable checks if the user is on a service page.
+   * It does so by verifying if the current path matches any submenu URLs
+   * or if it starts with "/service".
+   */
   const isServiceActive = navItems.some(item => item.title === "SERVICE" && (
     item.submenu.some(subItem => location.pathname.startsWith(subItem.url)) ||
-    location.pathname.startsWith("/service") // Para manter ativo se em qualquer página de serviço
+    location.pathname.startsWith("/service") // Active if on any service page
   ));
 
   return (
     <div className="navbar-wrapper">
-      <div className="navbar-desktop" ref={dropdownRef}>
+      <div className="navbar-desktop" ref={dropdownRef}> {/* Main navbar container */}
         <div className="center-logo">
-          <h3>LETIH BEAUTY</h3>
+          <h3>LETIH BEAUTY</h3> {/* Logo */}
         </div>
         <ul>
-          {navItems.map((item) => (
+          {navItems.map((item) => ( // Map through navigation items
             <li key={item.id} className="items">
-              {item.title === "SERVICE" ? (
+              {item.title === "SERVICE" ? ( // Check if item is "SERVICE"
                 <>
                   <Link
                     to="#"
                     onClick={toggleServiceDropdown}
-                    className={isServiceActive ? "active" : ""}
+                    className={isServiceActive ? "active" : ""} // Highlight if active
                   >
-                    {item.title}
+                    {item.title} {/* Display service title */}
                   </Link>
-                  {serviceDropdownOpen && (
+                  {serviceDropdownOpen && ( // Show dropdown if open
                     <div className={`dropdown ${serviceDropdownOpen ? 'show' : ''}`}>
-                      {item.submenu.map(subItem => (
+                      {item.submenu.map(subItem => ( // Map through submenu items
                         <div key={subItem.id} className="submenu-item">
-                          {subItem.submenu ? (
+                          {subItem.submenu ? ( // Check if there is a nested submenu
                             <button onClick={toggleFacialDropdown}>
                               {subItem.title}
                             </button>
@@ -73,19 +113,19 @@ const DesktopNavbar = () => {
                             <Link
                               to={subItem.url}
                               className={location.pathname === subItem.url ? "active" : ""}
-                              onClick={handleSubMenuClick} // Fecha o dropdown
+                              onClick={handleSubMenuClick} // Close dropdown on click
                             >
                               {subItem.title}
                             </Link>
                           )}
-                          {subItem.submenu && facialDropdownOpen && (
+                          {subItem.submenu && facialDropdownOpen && ( // Show nested submenu if open
                             <div className={`submenu ${facialDropdownOpen ? 'show' : ''}`}>
-                              {subItem.submenu.map(subSubItem => (
+                              {subItem.submenu.map(subSubItem => ( // Map through nested submenu items
                                 <Link
                                   key={subSubItem.id}
                                   to={subSubItem.url}
                                   className="submenu-link"
-                                  onClick={handleSubMenuClick} // Fecha o dropdown
+                                  onClick={handleSubMenuClick} // Close dropdown on click
                                 >
                                   {subSubItem.title}
                                 </Link>
@@ -99,32 +139,42 @@ const DesktopNavbar = () => {
                 </>
               ) : (
                 <Link className={location.pathname === item.url ? "active" : ""} to={item.url}>
-                  {item.title}
+                  {item.title} {/* Display other navigation titles */}
                 </Link>
               )}
             </li>
           ))}
         </ul>
-        <div className="login-signup-buttons">
+        <div className="login-signup-buttons"> {/* Buttons for login and booking */}
           <Link className={location.pathname === singInItem.url ? "active" : ""} to={singInItem.url}>
-            {singInItem.title}
+            {singInItem.title} {/* Sign-in button */}
           </Link>
-          <BtnGreen>Book Now</BtnGreen>
+          <BtnGreen>Book Now</BtnGreen> {/* Button to book services */}
         </div>
       </div>
     </div>
   );
 };
 
+// MobileNavbar Component
+/**
+ * Renders a simplified navigation bar for mobile users.
+ *
+ * Functionalities:
+ * - Displays a hamburger icon to toggle the menu.
+ * - Closes the menu upon clicking any navigation link.
+ */
 const MobileNavbar = () => {
-  const navItems = data.navbar;
-  const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false);
+  const navItems = data.navbar; // Get navigation items
+  const location = useLocation(); // Get current URL
+  const [isOpen, setIsOpen] = useState(false); // State for opening/closing the mobile menu
 
+  // Toggle the mobile menu open/close
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Close the mobile menu
   const closeMenu = () => {
     setIsOpen(false);
   };
@@ -133,24 +183,24 @@ const MobileNavbar = () => {
     <>
       <nav className="navbar-mobile">
         <div className="logo">
-          <h3>LETIH BEAUTY</h3>
+          <h3>LETIH BEAUTY</h3> {/* Mobile logo */}
         </div>
         <div className="hamburger-icon" onClick={toggleMenu}>
-          <img src="images/hamburger.svg" alt="Menu" />
+          <img src="images/hamburger.svg" alt="Menu" /> {/* Hamburger icon for menu */}
         </div>
       </nav>
-      {isOpen && (
+      {isOpen && ( // Show mobile menu if open
         <div className="modal">
           <div className="modal-content">
             <ul>
-              {navItems.map((item) => (
+              {navItems.map((item) => ( // Map through navigation items
                 <li key={item.id} className="items">
                   <Link
-                    className={location.pathname === item.url ? "active" : ""}
+                    className={location.pathname === item.url ? "active" : ""} // Highlight if active
                     to={item.url}
-                    onClick={closeMenu}
+                    onClick={closeMenu} // Close menu on click
                   >
-                    {item.title}
+                    {item.title} {/* Display mobile navigation titles */}
                   </Link>
                 </li>
               ))}
@@ -161,6 +211,11 @@ const MobileNavbar = () => {
     </>
   );
 };
+
+// Main Navbar Component
+/**
+ * The main component that decides which navbar to render based on the screen size.
+ */
 
 const Navbar = () => {
   const isDesktop = useMediaQuery({ query: `(min-width: 768px)` });
