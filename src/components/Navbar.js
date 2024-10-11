@@ -1,25 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./Navbar.css";
+import "./Navbar.css"; // Importando o CSS
 import data from "../data.json";
 import BtnGreen from "./BtnGreen";
+import { useMediaQuery } from "react-responsive";
 
-function DesktopNavbar() {
+
+const DesktopNavbar = () => {
   const navItems = data.navbar;
   const singInItem = data.singIn;
   const location = useLocation();
-  // State to manage the visibility of the service dropdown
   const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false);
-  // State to manage the visibility of the facial dropdown
   const [facialDropdownOpen, setFacialDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Function to toggle the service dropdown
   const toggleServiceDropdown = () => setServiceDropdownOpen(prev => !prev);
-  // Function to toggle the facial dropdown
   const toggleFacialDropdown = () => setFacialDropdownOpen(prev => !prev);
 
-  // Function to close the dropdowns when clicking outside
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setServiceDropdownOpen(false);
@@ -27,7 +24,6 @@ function DesktopNavbar() {
     }
   };
 
-  // Hook to add and remove the click event outside the dropdown
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     return () => {
@@ -35,10 +31,10 @@ function DesktopNavbar() {
     };
   }, []);
 
-  // Check if the current path is part of the SERVICE submenu
   const isServiceActive = navItems.some(item => item.title === "SERVICE" &&
     item.submenu.some(subItem => location.pathname.startsWith(subItem.url))
   );
+
   return (
     <div className="navbar-wrapper">
       <div className="navbar-desktop" ref={dropdownRef}>
@@ -47,37 +43,32 @@ function DesktopNavbar() {
         </div>
         <ul>
           {navItems.map((item) => (
-            <li key={item.id} className="items"> {/* List item for each navigation link */}
-              {item.title === "SERVICE" ? ( // Check if the item is the service dropdown
+            <li key={item.id} className="items">
+              {item.title === "SERVICE" ? (
                 <>
                   <button
-                    onClick={toggleServiceDropdown}  className={isServiceActive ? "active" : ""}>
+                    onClick={toggleServiceDropdown}
+                    className={isServiceActive ? "active" : ""}
+                  >
                     {item.title}
                   </button>
-                  {serviceDropdownOpen && ( // If the dropdown is open
+                  {serviceDropdownOpen && (
                     <div className={`dropdown ${serviceDropdownOpen ? 'show' : ''}`}>
-                      {item.submenu.map(subItem => (  // Map through submenu items
+                      {item.submenu.map(subItem => (
                         <div key={subItem.id} className="submenu-item">
-                          {subItem.submenu ? (  // Check if the subitem has a submenu
+                          {subItem.submenu ? (
                             <button onClick={toggleFacialDropdown}>
                               {subItem.title}
                             </button>
                           ) : (
-                            <Link
-                              to={subItem.url} // If there are no subitems, a link is displayed that navigates to the subItem.url.
-                              className={location.pathname === subItem.url }
-                            >
+                            <Link to={subItem.url} className={location.pathname === subItem.url ? "active" : ""}>
                               {subItem.title}
                             </Link>
                           )}
-                          {subItem.submenu && facialDropdownOpen && ( // If there's a facial submenu and it's open
+                          {subItem.submenu && facialDropdownOpen && (
                             <div className={`submenu ${facialDropdownOpen ? 'show' : ''}`}>
-                              {subItem.submenu.map(subSubItem => (  // Map through sub-subitems
-                                <Link
-                                  key={subSubItem.id}
-                                  to={subSubItem.url}
-                                  className="submenu-link"
-                                >
+                              {subItem.submenu.map(subSubItem => (
+                                <Link key={subSubItem.id} to={subSubItem.url} className="submenu-link">
                                   {subSubItem.title}
                                 </Link>
                               ))}
@@ -90,13 +81,13 @@ function DesktopNavbar() {
                 </>
               ) : (
                 <Link className={location.pathname === item.url ? "active" : ""} to={item.url}>
-                  {item.title}  {/* Link to other navigation items  home / aboutus / contact */}
+                  {item.title}
                 </Link>
               )}
             </li>
           ))}
         </ul>
-        <div  className="login-signup-buttons">
+        <div className="login-signup-buttons">
           <Link className={location.pathname === singInItem.url ? "active" : ""} to={singInItem.url}>
             {singInItem.title}
           </Link>
@@ -105,6 +96,64 @@ function DesktopNavbar() {
       </div>
     </div>
   );
-}
+};
 
-export default DesktopNavbar;
+const MobileNavbar = () => {
+  const navItems = data.navbar;
+  const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  return (
+    <>
+      <nav className="navbar-mobile">
+        <div className="logo">
+          <h3>LETIH BEAUTY</h3>
+        </div>
+        <div className="hamburger-icon" onClick={toggleMenu}>
+          <img src="images/hamburger.svg" alt="Menu" />
+        </div>
+      </nav>
+      {isOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <ul>
+              {navItems.map((item) => (
+                <li key={item.id} className="items">
+                  <Link
+                    className={location.pathname === item.url ? "active" : ""}
+                    to={item.url}
+                    onClick={closeMenu}
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+const Navbar = () => {
+  const isDesktop = useMediaQuery({ query: `(min-width: 768px)` });
+  const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
+
+  return (
+    <>
+      {isDesktop && <DesktopNavbar />}
+      {isMobile && <MobileNavbar />}
+    </>
+  );
+};
+
+export default Navbar;

@@ -560,8 +560,6 @@ body {
 }
 
 .banner img {
-  padding-top: 10px;
-  background: linear-gradient(to bottom, #164734 20px, #164734 20px);
   height: 473px;
   width: 100%;
   object-fit: cover;

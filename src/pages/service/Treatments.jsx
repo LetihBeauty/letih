@@ -143,7 +143,6 @@ const Treatments = ({
   pricePropDescription='',
   secondSessionTimeDescription='',
   customdescriptionStyleClass='',
-  secondSessionUlDescription='',
   packagePricePropDescription='',
 
 }) => {
