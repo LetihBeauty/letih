@@ -20,6 +20,7 @@ export const fetchPageData = async (page) => {
         {
           homepageCollection {
             items {
+              slug
               aboutUsImageOne {
                 url
                 title
@@ -44,6 +45,22 @@ export const fetchPageData = async (page) => {
               title
               urlAboutUs
               urlHero
+              ourServicesCollection {
+                items {
+                  ... on HomePageSections {
+                    title
+                    urlLearnMore
+                    paragraphy {
+                      json
+                    }
+                    image {
+                      url
+                      title
+                      fileName
+                    }
+                  }
+                }
+              }
             }
           }
         }
