@@ -18,12 +18,12 @@
  * Simply import and include the <Navbar /> component in your application.
  */
 
-import React, { useState, useEffect, useRef } from "react"; // Import React and hooks
-import { Link, useLocation } from "react-router-dom"; // Import Link for navigation and useLocation for current URL
-import "./Navbar.css"; // Import CSS styles for the navbar
-import data from "../data.json"; // Import navigation data from a JSON file
-import BtnGreen from "./BtnGreen"; // Import custom button component
-import { useMediaQuery } from "react-responsive"; // Import media query hook for responsive design
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
+import "./Navbar.css";
+import data from "../data.json";
+import BtnGreen from "./BtnGreen";
+import { useMediaQuery } from "react-responsive"; 
 
 // DesktopNavbar Component
 /**
@@ -35,8 +35,8 @@ import { useMediaQuery } from "react-responsive"; // Import media query hook for
  * - Highlights active service link based on the current URL.
  */
 const DesktopNavbar = () => {
-  const navItems = data.navbar; // Get navigation items from the data
-  const singInItem = data.singIn; // Get sign-in item
+  const navItems = data.navbar;
+  const singInItem = data.singIn;
   const location = useLocation(); // Get the current URL location
   const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false); // State for opening/closing service dropdown
   const [facialDropdownOpen, setFacialDropdownOpen] = useState(false); // State for opening/closing facial dropdown
@@ -87,7 +87,7 @@ const DesktopNavbar = () => {
     <div className="navbar-wrapper">
       <div className="navbar-desktop" ref={dropdownRef}> {/* Main navbar container */}
         <div className="center-logo">
-          <h3>LETIH BEAUTY</h3> {/* Logo */}
+          <h3>LETIH BEAUTY</h3>
         </div>
         <ul>
           {navItems.map((item) => ( // Map through navigation items
@@ -96,10 +96,10 @@ const DesktopNavbar = () => {
                 <>
                   <Link
                     to="#"
-                    onClick={toggleServiceDropdown}
+                    onClick={toggleServiceDropdown} /* open or close dorpdown */
                     className={isServiceActive ? "active" : ""} // Highlight if active
                   >
-                    {item.title} {/* Display service title */}
+                    {item.title}
                   </Link>
                   {serviceDropdownOpen && ( // Show dropdown if open
                     <div className={`dropdown ${serviceDropdownOpen ? 'show' : ''}`}>
@@ -110,7 +110,7 @@ const DesktopNavbar = () => {
                               {subItem.title}
                             </button>
                           ) : (
-                            <Link
+                            <Link // If there is no submenu, create a link to the subItem's URL
                               to={subItem.url}
                               className={location.pathname === subItem.url ? "active" : ""}
                               onClick={handleSubMenuClick} // Close dropdown on click
@@ -118,7 +118,7 @@ const DesktopNavbar = () => {
                               {subItem.title}
                             </Link>
                           )}
-                          {subItem.submenu && facialDropdownOpen && ( // Show nested submenu if open
+                          {subItem.submenu && facialDropdownOpen && ( // Check if there is a submenu and if it is open
                             <div className={`submenu ${facialDropdownOpen ? 'show' : ''}`}>
                               {subItem.submenu.map(subSubItem => ( // Map through nested submenu items
                                 <Link
