@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { fetchPageData } from "../services/contentfulService.js"; // Importa o serviço
+
 import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
 import BtnWhite from "../components/BtnWhite";
@@ -6,16 +8,55 @@ import CarouselComponent from "../components/Carousel";
 import { aboutUsSections, advantages, services} from "../components/constants/index.js";
 
 function Home() {
+  const [data, setData] = useState(null);
+
+  const getData = async () => {
+    try {
+      const result = await fetchPageData("home");
+      console.log("dados retornados", result);
+      setData(result);
+    } catch (error) {
+      console.error(`Error fetching data:`, error.response || error.message);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  if (!data) {
+    return <p>Loading...</p>;
+  }
+
+  // Verificando se os dados existem antes de acessar
+  const homeData =
+    data &&
+    data.homepageCollection &&
+    data.homepageCollection.items &&
+    data.homepageCollection.items.length > 0
+      ? data.homepageCollection.items[0]
+      : null;
+
+  if (homeData) {
+    console.log("homeData", homeData);
+  } else {
+    console.error("homeData não encontrado ou está vazio.");
+  }
+
+  // // Supondo que o formato do `data` siga o mesmo padrão do Contentful
+  // const homeData = data?.homepageCollection?.items[0];
+  // console.log("homeData", homeData);
+
   return (
     <div>
       {/* Banner hero */}
       <div className="banner">
         <div className="content">
-          <h1 className="bannerTitle">ELEVATE YOUR ELEGANCE</h1>
-          <h5 className="bannerDescrip">Unveil Your Beauty with Us</h5>
-            <BtnGreen  customButtonClass="customButtonClass">Our Services</BtnGreen>
+          <h1 className="bannerTitle">{homeData.title}</h1>
+          <h5 className="bannerDescrip">{homeData.subtitle}</h5>
+          <BtnGreen customButtonClass="customButtonClass">Our Services</BtnGreen>
         </div>
-        <img src="images/hero-women-leaf.webp" alt="Women with leaf"/>
+        <img src={homeData.heroImage.url} alt={homeData.heroImage.title}></img>
       </div>
       {/* About US */}
       <div className="about-us">
