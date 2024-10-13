@@ -15,6 +15,8 @@ const BodyDetoxBenefits  = ({
       <div className="globalServiceIncludedContent">
         <div className="globalTreatment">
           {mainTitle && <h3 className="globalMainBottomTitle">{mainTitle}</h3>}
+
+          {/* Render secondary items using ItemList component */}
           <ItemList
             items={treatmentBenefits}
             titleComponent={({item}) => (
@@ -44,7 +46,6 @@ const BodyDetoxBenefits  = ({
             descriptionComponent={() => null}
             isList={false}
           />
-
         </div>
       </div>
     </div>
