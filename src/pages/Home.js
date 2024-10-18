@@ -5,7 +5,11 @@ import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
 import BtnWhite from "../components/BtnWhite";
 import CarouselComponent from "../components/Carousel";
-import { aboutUsSections, advantages, services} from "../components/constants/index.js";
+import {
+  aboutUsSections,
+  advantages,
+  services,
+} from "../components/constants/index.js";
 
 function Home() {
   const [data, setData] = useState(null);
@@ -54,9 +58,11 @@ function Home() {
         <div className="content">
           <h1 className="bannerTitle">{homeData.title}</h1>
           <h5 className="bannerDescrip">{homeData.subtitle}</h5>
-          <BtnGreen customButtonClass="customButtonClass">Our Services</BtnGreen>
+          <BtnGreen customButtonClass="customButtonClass">
+            Our Services
+          </BtnGreen>
         </div>
-        <img src={homeData.heroImage.url} alt={homeData.heroImage.title}></img>
+        {/* <img src={homeData.heroImage.url} alt={homeData.heroImage.title}></img> */}
       </div>
       {/* About US */}
       <div className="about-us">
@@ -72,10 +78,14 @@ function Home() {
               className={`about-us-img-custom ${section.imgClass}`}
             />
             <div className={`about-us-text ${section.textClass}`}>
-              <h5 className={`${section.h5Style} ${section.isButtonVisible ? '' : 'mobile-none'}`}>
+              <h5
+                className={`${section.h5Style} ${
+                  section.isButtonVisible ? "" : "mobile-none"
+                }`}
+              >
                 {section.title}
               </h5>
-              <p className={section.isButtonVisible ? '' : 'mobile-none'}>
+              <p className={section.isButtonVisible ? "" : "mobile-none"}>
                 {section.description}
               </p>
               {section.isButtonVisible && <BtnGreen>Learn More</BtnGreen>}

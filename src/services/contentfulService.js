@@ -1,22 +1,24 @@
-import { GraphQLClient, gql } from "graphql-request";
+import axios from "axios";
 
-const client = new GraphQLClient(
-  `https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}/environments/master`, // Ajuste conforme a URL correta
-  {
-    headers: {
-      Authorization: `Bearer ${process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN}`,
-    },
-  }
-);
+console.log("Space ID:", process.env.REACT_APP_CONTENTFUL_SPACE_ID);
+console.log("Access Token:", process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN);
 
-// Função genérica para buscar dados de qualquer página
+if (
+  !process.env.REACT_APP_CONTENTFUL_SPACE_ID ||
+  !process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN
+) {
+  throw new Error(
+    "As variáveis de ambiente SPACE_ID ou ACCESS_TOKEN não estão definidas."
+  );
+}
+
 export const fetchPageData = async (page) => {
   console.log("importando os dados");
   let query = "";
 
   switch (page) {
     case "home":
-      query = gql`
+      query = `
         {
           homepageCollection {
             items {
@@ -25,75 +27,39 @@ export const fetchPageData = async (page) => {
                 url
                 title
               }
-              aboutUsImageTwo {
-                url
-                title
-              }
-              aboutUsParagraphOne {
-                json
-              }
-              aboutUsParagraphTwo {
-                json
-              }
-              aboutUsTitleOne
-              aboutUsTitleTwo
-              heroImage {
-                url
-                title
-              }
-              subtitle
-              title
-              urlAboutUs
-              urlHero
-              ourServicesCollection {
-                items {
-                  ... on HomePageSections {
-                    title
-                    urlLearnMore
-                    paragraphy {
-                      json
-                    }
-                    image {
-                      url
-                      title
-                      fileName
-                    }
-                  }
-                }
-              }
             }
           }
         }
       `;
       break;
-
-    case "about":
-      query = gql`
-        {
-          aboutPageCollection {
-            items {
-              title
-              description
-              image {
-                url
-              }
-            }
-          }
-        }
-      `;
-      break;
-
-    // Adicione mais casos para outras páginas
 
     default:
       throw new Error(`Page ${page} is not supported`);
   }
 
   try {
-    const data = await client.request(query); // Aqui a query é enviada
-    return data;
+    const response = await axios({
+      url: `https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}/environments/master`,
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      data: {
+        query: query,
+      },
+    });
+
+    console.log("Dados retornados:", response.data);
+    return response.data; // Retorna os dados
   } catch (error) {
-    console.error(`Error fetching ${page} data:`, error);
-    throw error;
+    if (error.response) {
+      console.error("Erro ao buscar os dados:", error.response.data);
+      console.error("Status code:", error.response.status);
+    } else if (error.request) {
+      console.error("Nenhuma resposta recebida:", error.request);
+    } else {
+      console.error("Erro desconhecido:", error.message);
+    }
   }
 };
