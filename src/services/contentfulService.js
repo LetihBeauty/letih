@@ -20,16 +20,48 @@ export const fetchPageData = async (page) => {
     case "home":
       query = `
         {
-          homepageCollection {
-            items {
-              slug
-              aboutUsImageOne {
-                url
-                title
-              }
+  homepageCollection {
+    items {
+      slug
+      aboutUsImageOne {
+        url
+        title
+      }
+      aboutUsImageTwo {
+        url
+        title
+      }
+      aboutUsParagraphOne {
+        json
+      }
+      aboutUsParagraphTwo {
+        json
+      }
+      aboutUsTitleOne
+      aboutUsTitleTwo
+      heroImage {
+        url
+        title
+      }
+      subtitle
+      title
+      urlAboutUs
+      urlHero
+      ourServicesCollection {
+        items {
+          __typename
+          ... on HomePageSections {
+            title
+            urlLearnMore
+            paragraphy {
+              json
             }
           }
         }
+      }
+    }
+  }
+}
       `;
       break;
 
