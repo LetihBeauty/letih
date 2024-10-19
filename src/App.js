@@ -18,10 +18,10 @@ import SkinCareRoutine from "./pages/service/SkinCareRoutine.jsx";
 import RoseDeMer from "./pages/service/RoseDeMer.jsx";
 import BodyDetox from "./pages/service/BodyDetox.jsx";
 import BellyReducing from "./pages/service/BellyReducing.jsx";
+import { fetchPageData } from "./services/contentfulService.js";
 
 function App() {
-  // console.log("Space ID:", process.env.REACT_APP_CONTENTFUL_SPACE_ID);
-  // console.log("Access Token:", process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN);
+  // const data = fetchPageData("home");
 
   return (
     <Router>
@@ -30,12 +30,21 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/service/facial/DeepCleasing" element={<DeepCleasing />} />
-          <Route path="/service/facial/Dermaplaning" element={<Dermaplaning />} />
+          <Route
+            path="/service/facial/DeepCleasing"
+            element={<DeepCleasing />}
+          />
+          <Route
+            path="/service/facial/Dermaplaning"
+            element={<Dermaplaning />}
+          />
           <Route path="/service/facial/Glowfacial" element={<Glowfacial />} />
           <Route path="/service/Ultraformer" element={<Ultraformer />} />
           <Route path="/service/Microneedling" element={<Microneedling />} />
-          <Route path="/service/SkinCareRoutine" element={<SkinCareRoutine />} />
+          <Route
+            path="/service/SkinCareRoutine"
+            element={<SkinCareRoutine />}
+          />
           <Route path="/service/RoseDeMer" element={<RoseDeMer />} />
           <Route path="/service/BodyDetox" element={<BodyDetox />} />
           <Route path="/service/BellyReducing" element={<BellyReducing />} />

@@ -17,8 +17,8 @@ function Home() {
   const getData = async () => {
     try {
       const result = await fetchPageData("home");
-      console.log("dados retornados", result);
-      setData(result);
+      console.log("dados retornados no home", result);
+      setData(result.data);
     } catch (error) {
       console.error(`Error fetching data:`, error.response || error.message);
     }
@@ -46,10 +46,6 @@ function Home() {
   } else {
     console.error("homeData não encontrado ou está vazio.");
   }
-
-  // // Supondo que o formato do `data` siga o mesmo padrão do Contentful
-  // const homeData = data?.homepageCollection?.items[0];
-  // console.log("homeData", homeData);
 
   return (
     <div>
