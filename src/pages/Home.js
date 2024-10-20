@@ -41,11 +41,11 @@ function Home() {
       ? data.homepageCollection.items[0]
       : null;
 
-  if (homeData) {
-    console.log("homeData", homeData);
-  } else {
-    console.error("homeData não encontrado ou está vazio.");
-  }
+  // if (homeData) {
+  //   console.log("homeData", homeData);
+  // } else {
+  //   console.error("homeData não encontrado ou está vazio.");
+  // }
 
   const testimonialData = homeData.testimonialsCollection.items;
   // console.log(

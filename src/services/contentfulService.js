@@ -83,6 +83,48 @@ export const fetchPageData = async (page) => {
 }
       `;
       break;
+    case "about":
+      query = `
+      {
+        aboutUsPageCollection {
+          items {
+            title
+            subtitle
+            mission
+            vision
+            warmerApproach
+            qualityService
+            transparencyAndHonesty
+            behindTheScenes
+            imageTop {
+              url
+              title
+              description
+            }
+            imageMiddle {
+              url
+              title
+              description
+
+            }
+            imageBottomOne {
+              url
+              title
+              description
+
+            }
+              imageBottonTwo {
+              url
+              title
+              description
+
+            }
+
+          }
+        }
+      }
+      `;
+      break;
 
     default:
       throw new Error(`Page ${page} is not supported`);

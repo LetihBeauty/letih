@@ -63,16 +63,21 @@ p {
 
 .hero {
   display: flex;
-  flex-direction: flex-start;
+  flex-direction: row;
   justify-content: center;
   margin: 115px 0;
-  margin-left: 60px;
+  width: 100vw;
+
+  .images-container {
+    display: flex;
+    width: 50%;
+  }
 
   .we-are-letih-beauty {
     display: flex;
     flex-direction: column;
     margin: calc(115px / 2);
-    width: 550px;
+    width: 40%;
 
     .mission-vision {
       margin-top: 63px;
@@ -136,6 +141,38 @@ p {
   }
 }
 
+.green-box {
+  position: absolute;
+  opacity: 0; /* Inicia invisível */
+  animation: fadeIn 2s forwards;
+}
+.green-box-1 {
+  top: 200px;
+  left: 128px;
+  animation-delay: 0.5s;
+}
+
+.green-box-2 {
+  top: 487px;
+  left: 336px;
+  animation-delay: 0.5s;
+}
+
+.women-image {
+  position: absolute;
+  z-index: 1; /* Imagem por cima dos quadros */
+  width: 461px;
+  height: 528px;
+  opacity: 0; /* Começa invisível */
+  animation: fadeInImage 2s forwards 1.5s;
+  border-radius: 6px;
+}
+
+.women-top {
+  left: 191px;
+  top: 263px;
+}
+
 .bottom-images {
   display: flex;
   align-items: center;
@@ -166,6 +203,20 @@ p {
   background-color: white;
   margin-top: 120px;
 }
+
+/* Animação de fade in para os quadros verdes */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animação de fade in para a imagem */
+@keyframes fadeInImage {
+  to {
+    opacity: 1;
+  }
+}
 @media only screen and (max-width: 431px) {
   body,
   html {
@@ -195,7 +246,7 @@ p {
       }
 
       .we-are-letih-beauty {
-        width: 100vw;
+        width: 50%;
         margin: 20px 16px;
         align-items: center;
 
