@@ -145,26 +145,28 @@ function Home() {
           const buttonStyle = index % 2 === 0 ? "white" : "green";
 
           return (
-            <div className={`service-container ${colorStyle}`} key={index}>
+            <div className={`our-services ${colorStyle}`} key={index}>
               <img
                 src={service.image.url}
                 alt={service.image.title}
                 className="service-image"
               />
-              <h5>{service.title}</h5>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: service.paragraphy.json.content[0].content[0].value
-                    ? service.paragraphy.json.content[0].content[0].value
-                    : "",
-                }}
-              ></p>
-              <Btn
-                href={`/service/${service.slug}`}
-                customButtonClass={buttonStyle}
-              >
-                Learn More
-              </Btn>
+              <div className="service-content">
+                <h5>{service.title}</h5>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: service.paragraphy.json.content[0].content[0].value
+                      ? service.paragraphy.json.content[0].content[0].value
+                      : "",
+                  }}
+                ></p>
+                <Btn
+                  href={`/service/${service.slug}`}
+                  customButtonClass={buttonStyle}
+                >
+                  Learn More
+                </Btn>
+              </div>
             </div>
           );
         })}
