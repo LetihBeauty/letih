@@ -63,6 +63,21 @@ export const fetchPageData = async (page) => {
           }
         }
       }
+        testimonialsCollection (limit: 10) {
+        items {
+          __typename
+          ... on Testimonials {
+            customerName
+            quote {
+              json
+            }
+            customerImage {
+              url
+              title
+            }
+          }
+        }
+      }
     }
   }
 }

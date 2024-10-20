@@ -5,7 +5,7 @@ import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
 import Btn from "../components/Btn";
 import BtnWhite from "../components/BtnWhite";
-import CarouselComponent from "../components/Carousel";
+import Testimonials from "../components/Testimonials.js";
 import {
   aboutUsSections,
   advantages,
@@ -51,7 +51,11 @@ function Home() {
     console.error("homeData não encontrado ou está vazio.");
   }
 
-  console.log("homeData.urlAboutUs", homeData.urlAboutUs);
+  const testimonialData = homeData.testimonialsCollection.items;
+  // console.log(
+  //   "Dados retornados no testimonialsCollection:",
+  //   testimonialData.items
+  // );
 
   return (
     <>
@@ -136,9 +140,6 @@ function Home() {
       <div className="our-services">
         <h2>Our Services</h2>
         {homeData.ourServicesCollection.items.map((service, index) => {
-          console.log("service", service);
-
-          console.log("index", index);
           const colorStyle =
             index % 2 === 0 ? "green-services" : "white-services";
 
@@ -171,35 +172,36 @@ function Home() {
           );
         })}
       </div>
-    </>
 
-    //   {/* Our Advantages */}
-    //   <div className="advantages">
-    //     <h2>Our Advantages</h2>
-    //     <div className="advantages-icons">
-    //       {advantages.map((advantage, index) => (
-    //         <div className="icon-content" key={index}>
-    //           <img src={advantage.imgSrc} alt={advantage.altText} />
-    //           <h6>{advantage.title}</h6>
-    //           <p>{advantage.description}</p>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </div>
-    //   {/* Testimonials */}
-    //   <CarouselComponent />
-    //   {/* Gallery */}
-    //   <div className="our-gallery">
-    //     <h2>Our Gallery</h2>
-    //     <div className="gallery">
-    //       <img src="images/our-gallery-01.webp" alt="" id="img1" />
-    //       <img src="images/our-gallery-02.webp" alt="" id="img2" />
-    //       <img src="images/our-gallery-03.webp" alt="" id="img3" />
-    //       <img src="images/our-gallery-04.webp" alt="" id="img4" />
-    //       <img src="images/our-gallery-05.webp" alt="" id="img5" />
-    //       <img src="images/our-gallery-06.webp" alt="" id="img6" />
-    //     </div>
-    //   </div>
+      {/* Our Advantages */}
+      <div className="advantages">
+        <h2>Our Advantages</h2>
+        <div className="advantages-icons">
+          {advantages.map((advantage, index) => (
+            <div className="icon-content" key={index}>
+              <img src={advantage.imgSrc} alt={advantage.altText} />
+              <h6>{advantage.title}</h6>
+              <p>{advantage.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* Testimonials */}
+      <Testimonials testimonialData={testimonialData} />
+
+      {/* Gallery */}
+      {/* <div className="our-gallery">
+        <h2>Our Gallery</h2>
+        <div className="gallery">
+          <img src="images/our-gallery-01.webp" alt="" id="img1" />
+          <img src="images/our-gallery-02.webp" alt="" id="img2" />
+          <img src="images/our-gallery-03.webp" alt="" id="img3" />
+          <img src="images/our-gallery-04.webp" alt="" id="img4" />
+          <img src="images/our-gallery-05.webp" alt="" id="img5" />
+          <img src="images/our-gallery-06.webp" alt="" id="img6" />
+        </div>
+      </div> */}
+    </>
     //   {/* Contact Us */}
     //   <div className="contact">
     //     <h2>Contact us</h2>
