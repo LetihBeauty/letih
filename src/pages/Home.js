@@ -6,11 +6,7 @@ import BtnGreen from "../components/BtnGreen";
 import Btn from "../components/Btn";
 import BtnWhite from "../components/BtnWhite";
 import Testimonials from "../components/Testimonials.js";
-import {
-  aboutUsSections,
-  advantages,
-  services,
-} from "../components/constants/index.js";
+import { aboutUsSections, advantages } from "../components/constants/index.js";
 
 function Home() {
   const [data, setData] = useState(null);
