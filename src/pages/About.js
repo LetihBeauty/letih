@@ -81,13 +81,16 @@ const About = () => {
         </div>
 
         <div className="our-values">
-          <GreenRetangle />
+          <div className="images-container">
+            <GreenRetangle className="green-box green-box-3" />
 
-          <img
-            src={aboutData.imageMiddle.url}
-            alt={aboutData.imageMiddle.description}
-          />
-          <GreenRetangle />
+            <img
+              className="women-image women-middle"
+              src={aboutData.imageMiddle.url}
+              alt={aboutData.imageMiddle.description}
+            />
+            <GreenRetangle className="green-box green-box-4" />
+          </div>
 
           <div className="our-values-content">
             <h4>Our Values</h4>
@@ -99,18 +102,22 @@ const About = () => {
             <p>{aboutData.transparencyAndHonesty}</p>
           </div>
         </div>
+
         <div className="behind-scenes">
-          <img
-            className="image-letih"
-            src={aboutData.imageBottomOne.url}
-            alt={aboutData.imageBottomOne.description}
-          />
-          <img
-            className="image-letih"
-            src={aboutData.imageBottonTwo.url}
-            alt={aboutData.imageBottonTwo.description}
-          />
-          <GreenRetangle />
+          <div className="image-letih ">
+            <img
+              className="image-letih women-bottom-one"
+              src={aboutData.imageBottomOne.url}
+              alt={aboutData.imageBottomOne.description}
+            />
+            <GreenRetangle className="green-box green-box-5" />
+            <img
+              className="image-letih women-bottom-two"
+              src={aboutData.imageBottonTwo.url}
+              alt={aboutData.imageBottonTwo.description}
+            />
+          </div>
+
           <div className="behind-scenes-content">
             <h4 className="left-title">Behind the scenes </h4>
             <p>{aboutData.behindTheScenes}</p>

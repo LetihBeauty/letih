@@ -96,9 +96,9 @@ p {
 .our-values {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 1500px;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 100px 0;
 
   .our-values-content {
     margin-right: 140px;
@@ -107,10 +107,15 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: calc(115px / 2);
+    /* margin: calc(115px / 2); */
   }
   h4 {
     font-weight: 500;
+  }
+
+  .images-container {
+    display: flex;
+    width: 50%;
   }
 }
 
@@ -122,14 +127,16 @@ p {
   max-width: 1500px;
 
   .image-letih {
-    width: 982px;
-    height: 833px;
+    display: flex;
+    width: 576px;
+    height: 516px;
+    animation: fadeIn 2s forwards;
   }
 
   .behind-scenes-content {
     display: flex;
     flex-direction: column;
-    margin: 120px 129px;
+    margin: 370px 129px 120px;
   }
   h4 {
     font-weight: 500;
@@ -158,6 +165,27 @@ p {
   animation-delay: 0.5s;
 }
 
+.green-box-3 {
+  margin-top: calc(-100px / 2);
+  right: calc(570px / 2);
+  animation-delay: 0.5s;
+}
+
+.green-box-4 {
+  right: calc(140px / 2);
+  margin-top: 232px;
+  animation-delay: 0.5s;
+}
+
+.green-box-5 {
+  align-self: center;
+  position: relative;
+  margin-top: 344px;
+  margin-left: 156px;
+  z-index: 0;
+  animation-delay: 0.5s;
+}
+
 .women-image {
   position: absolute;
   z-index: 1; /* Imagem por cima dos quadros */
@@ -171,6 +199,25 @@ p {
 .women-top {
   left: 191px;
   top: 263px;
+}
+
+.women-middle {
+  margin-right: calc(80px / 2);
+}
+
+.women-bottom-one {
+  position: absolute;
+  margin-left: -160px;
+  z-index: 1;
+  animation: fadeInImage 2s forwards 1.5s;
+}
+
+.women-bottom-two {
+  position: absolute;
+  margin-left: 267px;
+  margin-top: 330px;
+  z-index: 2;
+  animation: fadeInImage 2s forwards 1.5s;
 }
 
 .bottom-images {
