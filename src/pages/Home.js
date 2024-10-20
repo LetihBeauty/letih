@@ -61,9 +61,7 @@ function Home() {
           <div className="content">
             <h1 className="bannerTitle">{homeData.title}</h1>
             <h5 className="bannerDescrip">{homeData.subtitle}</h5>
-            <BtnGreen customButtonClass="customButtonClass">
-              Our Services
-            </BtnGreen>
+            <Btn customButtonClass="green">Our Services</Btn>
           </div>
           {/* Hero image */}
           <img
@@ -96,7 +94,7 @@ function Home() {
                 }}
               ></p>
               {aboutUsSection.isButtonVisible && (
-                <BtnGreen>Learn More</BtnGreen>
+                <Btn customButtonClass="green">Learn More</Btn>
               )}
             </div>
           </div>
