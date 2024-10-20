@@ -159,7 +159,10 @@ function Home() {
                     : "",
                 }}
               ></p>
-              <Btn href={service.urlLearnMore} customButtonClass={buttonStyle}>
+              <Btn
+                href={`/service/${service.slug}`}
+                customButtonClass={buttonStyle}
+              >
                 Learn More
               </Btn>
             </div>

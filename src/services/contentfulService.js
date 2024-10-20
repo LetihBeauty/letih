@@ -52,7 +52,7 @@ export const fetchPageData = async (page) => {
           __typename
           ... on HomePageSections {
             title
-            urlLearnMore
+            slug
             paragraphy {
               json
             }
