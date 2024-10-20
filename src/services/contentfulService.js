@@ -47,7 +47,7 @@ export const fetchPageData = async (page) => {
       title
       urlAboutUs
       urlHero
-      ourServicesCollection {
+      ourServicesCollection (limit: 20) {
         items {
           __typename
           ... on HomePageSections {
@@ -55,6 +55,10 @@ export const fetchPageData = async (page) => {
             urlLearnMore
             paragraphy {
               json
+            }
+            image {
+              url
+              title
             }
           }
         }

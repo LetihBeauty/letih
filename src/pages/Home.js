@@ -3,6 +3,7 @@ import { fetchPageData } from "../services/contentfulService.js"; // Importa o s
 
 import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
+import Btn from "../components/Btn";
 import BtnWhite from "../components/BtnWhite";
 import CarouselComponent from "../components/Carousel";
 import {
@@ -53,91 +54,121 @@ function Home() {
   console.log("homeData.urlAboutUs", homeData.urlAboutUs);
 
   return (
-    <div>
-      {/* Banner hero */}
-      <div className="banner">
-        <div className="content">
-          <h1 className="bannerTitle">{homeData.title}</h1>
-          <h5 className="bannerDescrip">{homeData.subtitle}</h5>
-          <BtnGreen customButtonClass="customButtonClass">
-            Our Services
-          </BtnGreen>
-        </div>
-        {/* Hero image */}
-        <img src={homeData.heroImage.url} alt={homeData.heroImage.title}></img>
-      </div>{" "}
-      e{/* About US */}
-      <div className="about-us">
-        <h2>About Us</h2>
-        {/* top left */}
-        <div className={`about-us-content about-us-top`}>
+    <>
+      <div>
+        {/* Banner hero */}
+        <div className="banner">
+          <div className="content">
+            <h1 className="bannerTitle">{homeData.title}</h1>
+            <h5 className="bannerDescrip">{homeData.subtitle}</h5>
+            <BtnGreen customButtonClass="customButtonClass">
+              Our Services
+            </BtnGreen>
+          </div>
+          {/* Hero image */}
           <img
-            src={homeData.aboutUsImageOne.url}
-            alt={homeData.aboutUsImageOne.title}
+            src={homeData.heroImage.url}
+            alt={homeData.heroImage.title}
+          ></img>
+        </div>{" "}
+        {/* About Us */}
+        <div className="about-us">
+          <h2>About Us</h2>
+          {/* top left */}
+          <div className={`about-us-content about-us-top`}>
+            <img
+              src={homeData.aboutUsImageOne.url}
+              alt={homeData.aboutUsImageOne.title}
+              className={`about-us-img-custom about-us-img-left`}
+            />
+            <div className={`about-us-text about-us-top-right`}>
+              <h5 className={`special-style ${false ? "" : "mobile-none"}`}>
+                {homeData.aboutUsTitleOne ? homeData.aboutUsTitleOne : ""}
+              </h5>
+              <p
+                className={true ? "" : "mobile-none"}
+                dangerouslySetInnerHTML={{
+                  __html: homeData.aboutUsParagraphOne.json.content[0]
+                    .content[0].value
+                    ? homeData.aboutUsParagraphOne.json.content[0].content[0]
+                        .value
+                    : "",
+                }}
+              ></p>
+              {aboutUsSection.isButtonVisible && (
+                <BtnGreen>Learn More</BtnGreen>
+              )}
+            </div>
+          </div>
+        </div>
+        {/* botton right */}
+        <div className={` about-us-bottom`}>
+          <img
+            src={homeData.aboutUsImageTwo.url}
+            alt={homeData.aboutUsImageTwo.title}
             className={`about-us-img-custom about-us-img-left`}
           />
-          <div className={`about-us-text about-us-top-right`}>
+          <div className={`about-us-text about-us-bottom-left`}>
             <h5 className={`special-style ${false ? "" : "mobile-none"}`}>
-              {homeData.aboutUsTitleOne ? homeData.aboutUsTitleOne : ""}
+              {homeData.aboutUsTitleTwo ? homeData.aboutUsTitleTwo : ""}
             </h5>
             <p
               className={true ? "" : "mobile-none"}
               dangerouslySetInnerHTML={{
-                __html: homeData.aboutUsParagraphOne.json.content[0].content[0]
+                __html: homeData.aboutUsParagraphTwo.json.content[0].content[0]
                   .value
-                  ? homeData.aboutUsParagraphOne.json.content[0].content[0]
+                  ? homeData.aboutUsParagraphTwo.json.content[0].content[0]
                       .value
                   : "",
               }}
             ></p>
-            {aboutUsSection.isButtonVisible && <BtnGreen>Learn More</BtnGreen>}
+
+            <BtnGreen
+              href={homeData.urlAboutUs}
+              target="_blank"
+              customButtonClass="btn-green-learn-more"
+            >
+              Learn More
+            </BtnGreen>
           </div>
         </div>
       </div>
-      {/* botton right */}
-      <div className={` about-us-bottom`}>
-        <img
-          src={homeData.aboutUsImageTwo.url}
-          alt={homeData.aboutUsImageTwo.title}
-          className={`about-us-img-custom about-us-img-left`}
-        />
-        <div className={`about-us-text about-us-bottom-left`}>
-          <h5 className={`special-style ${false ? "" : "mobile-none"}`}>
-            {homeData.aboutUsTitleTwo ? homeData.aboutUsTitleTwo : ""}
-          </h5>
-          <p
-            className={true ? "" : "mobile-none"}
-            dangerouslySetInnerHTML={{
-              __html: homeData.aboutUsParagraphTwo.json.content[0].content[0]
-                .value
-                ? homeData.aboutUsParagraphTwo.json.content[0].content[0].value
-                : "",
-            }}
-          ></p>
 
-          <BtnGreen
-            href={homeData.urlAboutUs}
-            target="_blank"
-            customButtonClass="btn-green-learn-more"
-          >
-            Learn More
-          </BtnGreen>
-        </div>
+      {/* Our Services */}
+      <div className="our-services">
+        <h2>Our Services</h2>
+        {homeData.ourServicesCollection.items.map((service, index) => {
+          console.log("service", service);
+
+          console.log("index", index);
+          const colorStyle =
+            index % 2 === 0 ? "green-services" : "white-services";
+
+          const buttonStyle = index % 2 === 0 ? "white" : "green";
+
+          return (
+            <div className={`service-container ${colorStyle}`} key={index}>
+              <img
+                src={service.image.url}
+                alt={service.image.title}
+                className="service-image"
+              />
+              <h5>{service.title}</h5>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: service.paragraphy.json.content[0].content[0].value
+                    ? service.paragraphy.json.content[0].content[0].value
+                    : "",
+                }}
+              ></p>
+              <Btn href={service.urlLearnMore} customButtonClass={buttonStyle}>
+                Learn More
+              </Btn>
+            </div>
+          );
+        })}
       </div>
-    </div>
-
-    // {/* Our Services */}
-    // <div className="our-services">
-    //   <h2>Our Services</h2>
-    //     <div className={service.containerClass} key={index}>
-    //       <img src={service.imgSrc} alt="" />
-    //       <div className={service.contentClass}>
-    //         <h5 className={service.h5Style}>{service.title}</h5>
-    //         <p>{service.description}</p>
-    //         {service.btnComponent}
-    //       </div>
-    //     </div>
-    // </div>
+    </>
 
     //   {/* Our Advantages */}
     //   <div className="advantages">
