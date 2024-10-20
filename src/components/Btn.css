@@ -5,8 +5,9 @@
   font-family: "Poppins";
   border: none;
   border-radius: 6px;
-  width: 150px;
-  height: 40px;
+  width: 232px;
+  height: 56px;
+  padding: 12px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
