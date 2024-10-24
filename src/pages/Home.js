@@ -17,7 +17,7 @@ function Home() {
   const getData = async () => {
     try {
       const result = await fetchPageData("home");
-      console.log("dados retornados no home", result);
+      // console.log("dados retornados no home", result);
       setData(result.data);
     } catch (error) {
       console.error(`Error fetching data:`, error.response || error.message);
