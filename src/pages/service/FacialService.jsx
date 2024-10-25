@@ -77,10 +77,15 @@ const FacialService = () => {
         customDescriptionClass={styles.titleDescription}
         customPhotoClass={styles.bannerMiddlePhoto}
       />
-      <FacialTreatmentGuide
-        firstColumnItems={firstColumnItems}
-        secondColumnItems={secondColumnItems}
-      />
+      {(firstColumnItems?.length ||
+        secondColumnItems?.length ||
+        primaryService?.warning?.items) && (
+        <FacialTreatmentGuide
+          firstColumnItems={firstColumnItems}
+          secondColumnItems={secondColumnItems}
+          warningMessage={primaryService?.warning?.items || []} // Garantir que seja um array
+        />
+      )}
     </div>
   );
 };

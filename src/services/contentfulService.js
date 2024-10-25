@@ -149,6 +149,10 @@ export const fetchPageData = async (page) => {
                 description
               }
             }
+            warning {
+              title
+              items
+            }
           }
         }
       }
@@ -173,7 +177,7 @@ export const fetchPageData = async (page) => {
       },
     });
 
-    // console.log("Dados retornados:", response.data);
+    console.log("Dados retornados:", response.data);
     return response.data; // Retorna os dados
   } catch (error) {
     if (error.response) {
