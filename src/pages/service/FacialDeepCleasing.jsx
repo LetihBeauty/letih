@@ -18,13 +18,12 @@ const DeepCleasing = () => {
 
   const getData = async () => {
     try {
-      const result = await fetchPageData("serviceFacial");
-      // console.log("Resultado do fetchPageData:", result?.data);
+      const result = await fetchPageData("facialService");
+      // console.log("Resultado slug:", result?.data);
 
-      // Filtrar para encontrar o item com fetchPageData = 'DeepCleansing'
       const deepCleansingData =
         result?.data?.serviceFacialCollection?.items?.find(
-          (item) => item.fetchPageData === "DeepCleansing"
+          (item) => item.slug.toLowerCase() === "deepcleansing".toLowerCase()
         );
 
       if (deepCleansingData) {
