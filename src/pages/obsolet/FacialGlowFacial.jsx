@@ -1,9 +1,12 @@
-import React from 'react';
-import Treatments from "./Treatments.jsx";
-import FacialTreatmentGuide from  "./FacialTreatmentGuide.jsx";
+import React from "react";
+import Treatments from "../service/Treatments.jsx";
+import FacialTreatmentGuide from "../service/FacialTreatmentGuide.jsx";
 import GlowFacialStyles from "../service/FacialGlowFacial.module.css";
 import "../service/FacialTreatmentGuide.module.css";
-import {facialGlowFacial, warnings} from "../../components/constants/index.js"
+import {
+  facialGlowFacial,
+  warnings,
+} from "../../components/constants/index.js";
 import "../../shared/common.css";
 
 const GlowFacial = () => {
@@ -14,7 +17,6 @@ const GlowFacial = () => {
   const alertMessage = warnings[0].warningDeepCleasing;
 
   return (
-
     <div className="containerService">
       <Treatments
         title={primaryService.title}
@@ -23,21 +25,20 @@ const GlowFacial = () => {
         benefits={primaryService.benefits}
         benefitsDescription={primaryService.benefitsDescription}
         benefitsRecommendations={primaryService.benefitsRecommendations}
-        firstTitle ={primaryService.timeTitle}
+        firstTitle={primaryService.timeTitle}
         firstTitleDescription={primaryService.timeDescription}
         secondTitle={primaryService.PriceTitle}
         secondTitleDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
-        imgSrc='/images/glowfacial.png'
+        imgSrc="/images/glowfacial.png"
         customClass={GlowFacialStyles.bannerWrapper}
-        customPhotoClass= {GlowFacialStyles.bannerMiddlePhoto}
+        customPhotoClass={GlowFacialStyles.bannerMiddlePhoto}
         customBottomClass="globalBannerBottom"
         customDescriptionClass={GlowFacialStyles.titleDescription}
-
       />
       <FacialTreatmentGuide
-        firstColumnItems= {firstColumnItems}
-        secondColumnItems= {secondColumnItems}
+        firstColumnItems={firstColumnItems}
+        secondColumnItems={secondColumnItems}
         warningMessage={alertMessage}
       />
     </div>

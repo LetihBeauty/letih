@@ -1,35 +1,37 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"; // Para pegar o slug da URL
 import Treatments from "./Treatments.jsx";
 import FacialTreatmentGuide from "./FacialTreatmentGuide.jsx";
-import DeepCleasingStyles from "../service/FacialDeepCleasing.module.css";
+import styles from "./FacialServiceStyle.module.css";
 import "../service/FacialTreatmentGuide.module.css";
-import {
-  facialDeepCleasing,
-  warnings,
-} from "../../components/constants/index.js";
+import { fetchPageData } from "../../services/contentfulService.js";
 import "../../shared/common.css";
 
-import { fetchPageData } from "../../services/contentfulService.js";
-
-const DeepCleasing = () => {
-  // const primaryService = facialDeepCleasing[0];
-
+const FacialService = () => {
+  const { slug } = useParams(); // Pegando o slug da URL
   const [data, setData] = useState(null);
 
   const getData = async () => {
     try {
       const result = await fetchPageData("facialService");
-      // console.log("Resultado slug:", result?.data);
 
+      // Captura o slug da URL
+      const slugFromUrl = window.location.pathname
+        .split("/")
+        .pop()
+        .toLowerCase();
+      console.log("Slug atual da URL:", slugFromUrl);
+
+      // Filtra o item de acordo com o slug em minúsculas (ou ajuste conforme necessário)
       const deepCleansingData =
         result?.data?.serviceFacialCollection?.items?.find(
-          (item) => item.slug.toLowerCase() === "deepcleansing".toLowerCase()
+          (item) => item.slug.toLowerCase() === slugFromUrl
         );
 
       if (deepCleansingData) {
-        setData(deepCleansingData); // Defina o estado com o dado filtrado
+        setData(deepCleansingData);
       } else {
-        console.error("Item 'DeepCleansing' não encontrado");
+        console.error(`Item '${slugFromUrl}' não encontrado`);
       }
     } catch (error) {
       console.error(
@@ -41,17 +43,15 @@ const DeepCleasing = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [slug]); // Atualiza quando o slug mudar
 
   if (!data) {
     return <p>Loading...</p>;
   }
-  const primaryService = data;
 
+  const primaryService = data;
   const supplementaryServiceInfo =
     primaryService.supplementaryCollection?.items || [];
-
-  const alertMessage = warnings[0].warningDeepCleasing;
 
   const firstColumnItems = supplementaryServiceInfo.slice(0, 5);
   const secondColumnItems = supplementaryServiceInfo.slice(5);
@@ -70,19 +70,19 @@ const DeepCleasing = () => {
         secondTitle={primaryService.PriceTitle}
         secondTitleDescription={primaryService.priceDescription}
         btnComponent={primaryService.btnComponent}
-        imgSrc="/images/deepCleasing.png"
-        customClass={DeepCleasingStyles.bannerWrapper}
+        imgSrc={primaryService.image.url}
+        imgDescription={primaryService.image.description}
+        customClass={styles.bannerWrapper}
         customBottomClass="globalFirstBannerBottom"
-        customDescriptionClass={DeepCleasingStyles.titleDescription}
-        customPhotoClass={DeepCleasingStyles.bannerMiddlePhoto}
+        customDescriptionClass={styles.titleDescription}
+        customPhotoClass={styles.bannerMiddlePhoto}
       />
       <FacialTreatmentGuide
         firstColumnItems={firstColumnItems}
         secondColumnItems={secondColumnItems}
-        warningMessage={alertMessage}
       />
     </div>
   );
 };
 
-export default DeepCleasing;
+export default FacialService;

@@ -1,6 +1,6 @@
 import React from "react";
-import Treatments from "./Treatments.jsx";
-import FacialTreatmentGuide from "./FacialTreatmentGuide.jsx";
+import Treatments from "../service/Treatments.jsx";
+import FacialTreatmentGuide from "../service/FacialTreatmentGuide.jsx";
 import styles from "./FacialServiceStyle.module.css";
 import {
   facialDermaplaning,

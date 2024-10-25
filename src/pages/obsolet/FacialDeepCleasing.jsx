@@ -1,0 +1,88 @@
+import React, { useEffect, useState } from "react";
+import Treatments from "../service/Treatments.jsx";
+import FacialTreatmentGuide from "../service/FacialTreatmentGuide.jsx";
+import DeepCleasingStyles from "../service/FacialDeepCleasing.module.css";
+import "../service/FacialTreatmentGuide.module.css";
+import {
+  facialDeepCleasing,
+  warnings,
+} from "../../components/constants/index.js";
+import "../../shared/common.css";
+
+import { fetchPageData } from "../../services/contentfulService.js";
+
+const DeepCleasing = () => {
+  // const primaryService = facialDeepCleasing[0];
+
+  const [data, setData] = useState(null);
+
+  const getData = async () => {
+    try {
+      const result = await fetchPageData("facialService");
+      // console.log("Resultado slug:", result?.data);
+
+      const deepCleansingData =
+        result?.data?.serviceFacialCollection?.items?.find(
+          (item) => item.slug.toLowerCase() === "deepcleansing".toLowerCase()
+        );
+
+      if (deepCleansingData) {
+        setData(deepCleansingData); // Defina o estado com o dado filtrado
+      } else {
+        console.error("Item 'DeepCleansing' não encontrado");
+      }
+    } catch (error) {
+      console.error(
+        "Erro ao buscar os dados:",
+        error.response || error.message
+      );
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  if (!data) {
+    return <p>Loading...</p>;
+  }
+  const primaryService = data;
+
+  const supplementaryServiceInfo =
+    primaryService.supplementaryCollection?.items || [];
+
+  const alertMessage = warnings[0].warningDeepCleasing;
+
+  const firstColumnItems = supplementaryServiceInfo.slice(0, 5);
+  const secondColumnItems = supplementaryServiceInfo.slice(5);
+
+  return (
+    <div className="containerService">
+      <Treatments
+        title={primaryService.title}
+        whatIs={primaryService.whatIs}
+        whatIsDescription={primaryService.whatIsDescription}
+        benefits={primaryService.benefits}
+        benefitsDescription={primaryService.benefitsDescription}
+        benefitsRecommendations={primaryService.benefitsRecommendations}
+        firstTitle={primaryService.timeTitle}
+        firstTitleDescription={primaryService.timeDescription}
+        secondTitle={primaryService.PriceTitle}
+        secondTitleDescription={primaryService.priceDescription}
+        btnComponent={primaryService.btnComponent}
+        imgSrc="/images/deepCleasing.png"
+        customClass={DeepCleasingStyles.bannerWrapper}
+        customBottomClass="globalFirstBannerBottom"
+        customDescriptionClass={DeepCleasingStyles.titleDescription}
+        customPhotoClass={DeepCleasingStyles.bannerMiddlePhoto}
+      />
+      <FacialTreatmentGuide
+        firstColumnItems={firstColumnItems}
+        secondColumnItems={secondColumnItems}
+        warningMessage={alertMessage}
+      />
+    </div>
+  );
+};
+
+export default DeepCleasing;
