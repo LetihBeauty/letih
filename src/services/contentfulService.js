@@ -125,12 +125,12 @@ export const fetchPageData = async (page) => {
       }
       `;
       break;
-    case "serviceFacial":
+    case "facialService":
       query = `
       {
         serviceFacialCollection {
           items {
-            fetchPageData
+            slug
             title
             whatIs
             whatIsDescription
