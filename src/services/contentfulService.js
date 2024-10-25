@@ -125,6 +125,36 @@ export const fetchPageData = async (page) => {
       }
       `;
       break;
+    case "serviceFacial":
+      query = `
+      {
+        serviceFacialCollection {
+          items {
+            fetchPageData
+            title
+            whatIs
+            whatIsDescription
+            benefitsDescription
+            benefitsRecommendations
+            timeDescription
+            priceDescription
+            image {
+              url
+              title
+              description
+            }
+            supplementaryCollection {
+              items {
+                title
+                description
+              }
+            }
+          }
+        }
+      }
+
+      `;
+      break;
 
     default:
       throw new Error(`Page ${page} is not supported`);
@@ -143,11 +173,14 @@ export const fetchPageData = async (page) => {
       },
     });
 
-    console.log("Dados retornados:", response.data);
+    // console.log("Dados retornados:", response.data);
     return response.data; // Retorna os dados
   } catch (error) {
     if (error.response) {
-      console.error("Erro ao buscar os dados:", error.response.data);
+      console.error(
+        "Erro ao buscar os dados:",
+        JSON.stringify(error.response.data, null, 2)
+      );
       console.error("Status code:", error.response.status);
     } else if (error.request) {
       console.error("Nenhuma resposta recebida:", error.request);
