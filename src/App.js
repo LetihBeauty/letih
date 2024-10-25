@@ -9,15 +9,13 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import SingIn from "./pages/SingIn.js";
 import Layout from "./components/Layout";
-import DeepCleasing from "./pages/service/FacialDeepCleasing.jsx";
-import Dermaplaning from "./pages/service/FacialDermaPlaning.jsx";
-import Glowfacial from "./pages/service/FacialGlowFacial.jsx";
 import Ultraformer from "./pages/service/Ultraformer.jsx";
 import Microneedling from "./pages/service/Microneedling.jsx";
 import SkinCareRoutine from "./pages/service/SkinCareRoutine.jsx";
 import RoseDeMer from "./pages/service/RoseDeMer.jsx";
 import BodyDetox from "./pages/service/BodyDetox.jsx";
 import BellyReducing from "./pages/service/BellyReducing.jsx";
+import FacialService from "./pages/service/FacialService.jsx";
 import { fetchPageData } from "./services/contentfulService.js";
 
 function App() {
@@ -30,15 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route
-            path="/service/facial/DeepCleasing"
-            element={<DeepCleasing />}
-          />
-          <Route
-            path="/service/facial/Dermaplaning"
-            element={<Dermaplaning />}
-          />
-          <Route path="/service/facial/Glowfacial" element={<Glowfacial />} />
+          <Route path="/service/facial/:slug" element={<FacialService />} />
           <Route path="/service/Ultraformer" element={<Ultraformer />} />
           <Route path="/service/Microneedling" element={<Microneedling />} />
           <Route
