@@ -2,36 +2,7 @@ import React, { useState } from "react";
 import "./Testimonials.css"; // Adicione seu CSS personalizado
 
 function Testimonials({ testimonialData }) {
-  const testimonials = [
-    {
-      id: 1,
-      imgSrc: "images/testimonial1.webp",
-      title: "Testimonials",
-      subtitle: "Briefly title about the customer review",
-      testimonial:
-        "Lorem ipsum dolor sit amet consectetur. Nibh adipiscing a sit libero proin. Nec enim ornare elementum nulla in.",
-      customerName: "- Customer Name",
-    },
-    {
-      id: 2,
-      imgSrc: "images/testimonial2.webp",
-      title: "Testimonials",
-      subtitle: "Another review title",
-      testimonial:
-        "Lorem ipsum dolor sit amet consectetur. Nibh adipiscing a sit libero proin. Nec enim ornare elementum nulla in.",
-      customerName: "- Another Customer",
-    },
-    {
-      id: 3,
-      imgSrc: "images/testimonial3.webp",
-      title: "Testimonials",
-      subtitle: "Third review title",
-      testimonial:
-        "Lorem ipsum dolor sit amet consectetur. Nibh adipiscing a sit libero proin. Nec enim ornare elementum nulla in.",
-      customerName: "- Third Customer",
-    },
-  ];
-  console.log("dados recebidos no carrosel ", testimonialData);
+  // console.log("dados recebidos no carrosel ", testimonialData);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
