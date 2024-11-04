@@ -6,26 +6,9 @@ import "./ServicePage.css";
 import ServiceWarning from "../../components/ServiceWarning.jsx";
 import Banner from "../../components/Banner.js";
 import BtnGreen from "../../components/BtnGreen";
+import PricesTable from "./PricesTable.jsx";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { fetchPageData } from "../../services/contentfulService.js";
-
-const options = {
-  renderMark: {
-    bold: (text) => <strong>{text}</strong>,
-    italic: (text) => <em>{text}</em>,
-    underline: (text) => <u>{text}</u>,
-  },
-  renderNode: {
-    paragraph: (node, children) => <p>{children}</p>,
-    "heading-1": (node, children) => <h1>{children}</h1>,
-    "heading-2": (node, children) => <h2>{children}</h2>,
-    "heading-3": (node, children) => <h3>{children}</h3>,
-    "unordered-list": (node, children) => <ul>{children}</ul>,
-    "ordered-list": (node, children) => <ol>{children}</ol>,
-    "list-item": (node, children) => <li>{children}</li>,
-    blockquote: (node, children) => <blockquote>{children}</blockquote>,
-  },
-};
 
 const ServicePage = () => {
   const { slug } = useParams(); // Pegando o slug da URL
@@ -73,8 +56,8 @@ const ServicePage = () => {
   const bannerTitle = data.title;
   const aboveFoldContent = documentToHtmlString(data.aboveFoldContent.json);
   const belowFoldContent = documentToHtmlString(data.belowFoldContent.json);
-  // let htmlContent = documentToHtmlString(aboveFoldContent);
-  console.log("belowFoldContent", belowFoldContent);
+  const prices = data.pricesCollection;
+  console.log("prices", prices);
 
   return (
     <div>
@@ -100,6 +83,8 @@ const ServicePage = () => {
         className="belowFoldContent"
         dangerouslySetInnerHTML={{ __html: belowFoldContent }}
       />
+      {prices?.items?.length > 0 && <PricesTable prices={prices} />}
+
       <ServiceWarning alertMessage={warning} />
     </div>
   );
