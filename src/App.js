@@ -16,6 +16,7 @@ import RoseDeMer from "./pages/service/RoseDeMer.jsx";
 import BodyDetox from "./pages/service/BodyDetox.jsx";
 import BellyReducing from "./pages/service/BellyReducing.jsx";
 import FacialService from "./pages/service/FacialService.jsx";
+import ServicePage from "./pages/service/ServicePage.jsx";
 import { fetchPageData } from "./services/contentfulService.js";
 
 function App() {
@@ -29,8 +30,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/service/facial/:slug" element={<FacialService />} />
-          <Route path="/service/Ultraformer" element={<Ultraformer />} />
-          <Route path="/service/Microneedling" element={<Microneedling />} />
+          <Route path="/service/:slug" element={<ServicePage />} />
+          {/* <Route path="/service/Ultraformer" element={<Ultraformer />} /> */}
+
+          {/* <Route path="/service/Microneedling" element={<Microneedling />} />
           <Route
             path="/service/SkinCareRoutine"
             element={<SkinCareRoutine />}
@@ -41,7 +44,7 @@ function App() {
           <Route path="/review" element={<Review />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/singIn" element={<SingIn />} />
+          <Route path="/singIn" element={<SingIn />} /> */}
         </Routes>
       </Layout>
     </Router>

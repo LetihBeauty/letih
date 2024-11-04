@@ -159,6 +159,46 @@ export const fetchPageData = async (page) => {
 
       `;
       break;
+    case "servicePage":
+      query = `
+      {
+        servicePageCollection {
+          items {
+            slug
+            title
+            aboveFoldContent {
+              json
+            }
+            aboveFoldImage {
+              url
+              title
+              description
+            }
+            belowFoldContent {
+              json
+            }
+            belowFoldImage {
+              url
+              title
+              description
+            }
+            pricesCollection {
+              items {
+                title
+                description {
+                  json
+                }
+                price
+              }
+            }
+            warning {
+              json
+            }
+          }
+        }
+      }
+      `;
+      break;
 
     default:
       throw new Error(`Page ${page} is not supported`);
