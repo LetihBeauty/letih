@@ -1,10 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import "../../shared/common.css";
+// import "../../shared/common.css";
+import "./ServicePage.css";
 import ServiceWarning from "../../components/ServiceWarning.jsx";
 import Banner from "../../components/Banner.js";
+import BtnGreen from "../../components/BtnGreen";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { fetchPageData } from "../../services/contentfulService.js";
+
+const options = {
+  renderMark: {
+    bold: (text) => <strong>{text}</strong>,
+    italic: (text) => <em>{text}</em>,
+    underline: (text) => <u>{text}</u>,
+  },
+  renderNode: {
+    paragraph: (node, children) => <p>{children}</p>,
+    "heading-1": (node, children) => <h1>{children}</h1>,
+    "heading-2": (node, children) => <h2>{children}</h2>,
+    "heading-3": (node, children) => <h3>{children}</h3>,
+    "unordered-list": (node, children) => <ul>{children}</ul>,
+    "ordered-list": (node, children) => <ol>{children}</ol>,
+    "list-item": (node, children) => <li>{children}</li>,
+    blockquote: (node, children) => <blockquote>{children}</blockquote>,
+  },
+};
 
 const ServicePage = () => {
   const { slug } = useParams(); // Pegando o slug da URL
@@ -50,11 +71,29 @@ const ServicePage = () => {
 
   const warning = data.warning.json;
   const bannerTitle = data.title;
-  console.log("bannerTitle", bannerTitle);
+  const aboveFoldContent = documentToHtmlString(data.aboveFoldContent.json);
+  // let htmlContent = documentToHtmlString(aboveFoldContent);
+  console.log("aboveFoldContent", aboveFoldContent);
 
   return (
     <div>
       <Banner bannerTitle={bannerTitle} />
+      <div className="aboveFoldContainer">
+        <div className="aboveFoldContentLeft">
+          <div
+            className="aboveFoldContent"
+            dangerouslySetInnerHTML={{ __html: aboveFoldContent }}
+          />
+          <BtnGreen>Book Now</BtnGreen>
+        </div>
+        <div className="aboveFoldImage">
+          <img
+            src={data.aboveFoldImage.url}
+            alt={data.aboveFoldImage.description}
+            title={data.aboveFoldImage.title}
+          />
+        </div>
+      </div>
       <ServiceWarning alertMessage={warning} />
     </div>
   );
