@@ -5,7 +5,6 @@ import "../../shared/common.css";
 import ServiceWarning from "../../components/ServiceWarning.jsx";
 import Banner from "../../components/Banner.js";
 import { fetchPageData } from "../../services/contentfulService.js";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const ServicePage = () => {
   const { slug } = useParams(); // Pegando o slug da URL
@@ -50,10 +49,12 @@ const ServicePage = () => {
   }
 
   const warning = data.warning.json;
-  console.log("warning", warning);
+  const bannerTitle = data.title;
+  console.log("bannerTitle", bannerTitle);
 
   return (
     <div>
+      <Banner bannerTitle={bannerTitle} />
       <ServiceWarning alertMessage={warning} />
     </div>
   );
