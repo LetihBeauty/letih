@@ -32,7 +32,7 @@
 .markdown-style p {
   font-weight: 400;
   align-self: flex-start;
-  line-height: 0px;
+  line-height: 26px;
 }
 
 .markdown-style ul {
