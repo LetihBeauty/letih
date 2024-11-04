@@ -92,13 +92,16 @@ const ServicePage = () => {
         className="belowFoldContent"
         dangerouslySetInnerHTML={{ __html: belowFoldContent }}
       />
-      <div className="belowFoldImage">
-        <img
-          src={data.belowFoldImage.url}
-          alt={data.belowFoldImage.description}
-          title={data.belowFoldImage.title}
-        />
-      </div>
+      {data.belowFoldImage?.url && (
+        <div className="belowFoldImage">
+          <img
+            src={data.belowFoldImage.url}
+            alt={data.belowFoldImage.description}
+            title={data.belowFoldImage.title}
+          />
+        </div>
+      )}
+
       {prices?.items?.length > 0 && <PricesTable prices={prices} />}
       {warning && <ServiceWarning alertMessage={warning} />}
     </div>
