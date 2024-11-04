@@ -87,6 +87,8 @@
   background-color: var(--green-50);
   width: 100vw;
   height: 200px;
+}
+.one {
   margin-top: -120px;
 }
 

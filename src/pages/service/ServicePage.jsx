@@ -78,13 +78,13 @@ const ServicePage = () => {
           />
         </div>
       </div>
-      <div className="green-fold"></div>
+      <div className="green-fold one"></div>
       <div
         className="belowFoldContent"
         dangerouslySetInnerHTML={{ __html: belowFoldContent }}
       />
       {prices?.items?.length > 0 && <PricesTable prices={prices} />}
-
+      <div className="green-fold"></div>
       <ServiceWarning alertMessage={warning} />
     </div>
   );
