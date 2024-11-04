@@ -1,5 +1,4 @@
 import React from "react";
-// import UltraformerStyles from "./Ultraformer.module.css";
 import UltraformerStyles from "./PricesTable.module.css";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 

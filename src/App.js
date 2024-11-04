@@ -4,20 +4,13 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Review from "./pages/Review";
-import Contact from "./pages/Contact";
-import Gallery from "./pages/Gallery";
+// import Review from "./pages/Review";
+// import Contact from "./pages/Contact";
+// import Gallery from "./pages/Gallery";
 import SingIn from "./pages/SingIn.js";
 import Layout from "./components/Layout";
-import Ultraformer from "./pages/service/Ultraformer.jsx";
-import Microneedling from "./pages/service/Microneedling.jsx";
-import SkinCareRoutine from "./pages/service/SkinCareRoutine.jsx";
-import RoseDeMer from "./pages/service/RoseDeMer.jsx";
-import BodyDetox from "./pages/service/BodyDetox.jsx";
-import BellyReducing from "./pages/service/BellyReducing.jsx";
 import FacialService from "./pages/service/FacialService.jsx";
 import ServicePage from "./pages/service/ServicePage.jsx";
-import { fetchPageData } from "./services/contentfulService.js";
 
 function App() {
   // const data = fetchPageData("home");
