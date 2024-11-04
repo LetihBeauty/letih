@@ -4,8 +4,6 @@ import UltraformerStyles from "./PricesTable.module.css";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const PricesTable = ({ prices }) => {
-  console.log("preço", prices);
-
   const renderDescription = (description) => {
     return documentToHtmlString(description.json);
   };
