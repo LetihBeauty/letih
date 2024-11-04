@@ -26,13 +26,12 @@ const ServicePage = () => {
       console.log("Slug atual da URL:", slugFromUrl);
 
       // Filtra o item de acordo com o slug em minúsculas (ou ajuste conforme necessário)
-      const deepCleansingData =
-        result?.data?.servicePageCollection?.items?.find(
-          (item) => item.slug.toLowerCase() === slugFromUrl
-        );
+      const servicePage = result?.data?.servicePageCollection?.items?.find(
+        (item) => item.slug.toLowerCase() === slugFromUrl
+      );
 
-      if (deepCleansingData) {
-        setData(deepCleansingData);
+      if (servicePage) {
+        setData(servicePage);
       } else {
         console.error(`Item '${slugFromUrl}' não encontrado`);
       }
@@ -57,7 +56,6 @@ const ServicePage = () => {
   const aboveFoldContent = documentToHtmlString(data.aboveFoldContent?.json);
   const belowFoldContent = documentToHtmlString(data.belowFoldContent?.json);
   const prices = data.pricesCollection;
-  console.log("prices", prices);
 
   return (
     <div>
@@ -84,8 +82,12 @@ const ServicePage = () => {
         dangerouslySetInnerHTML={{ __html: belowFoldContent }}
       />
       {prices?.items?.length > 0 && <PricesTable prices={prices} />}
-      <div className="green-fold"></div>
-      {warning && <ServiceWarning alertMessage={warning} />}
+      {warning && (
+        <>
+          <div className="green-fold"></div>
+          <ServiceWarning alertMessage={warning} />
+        </>
+      )}
     </div>
   );
 };
