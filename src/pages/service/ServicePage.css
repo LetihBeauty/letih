@@ -81,3 +81,10 @@
   height: 703px;
   border-radius: 6px 0px 0px 6px;
 }
+
+.green-fold {
+  background-color: var(--green-50);
+  width: 100vw;
+  height: 200px;
+  margin-top: -120px;
+}

@@ -94,6 +94,7 @@ const ServicePage = () => {
           />
         </div>
       </div>
+      <div className="green-fold"></div>
       <ServiceWarning alertMessage={warning} />
     </div>
   );
