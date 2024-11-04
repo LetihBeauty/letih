@@ -50,11 +50,22 @@ const ServicePage = () => {
   if (!data) {
     return <p>Loading...</p>;
   }
+  const highlightImportantText = (htmlString) => {
+    return htmlString.replace(
+      /\b(NOT|MUST)\b/g,
+      '<span style="color: red;">$1</span>'
+    );
+  };
 
   const warning = data.warning?.json;
   const bannerTitle = data.title;
-  const aboveFoldContent = documentToHtmlString(data.aboveFoldContent?.json);
-  const belowFoldContent = documentToHtmlString(data.belowFoldContent?.json);
+  const aboveFoldContent = highlightImportantText(
+    documentToHtmlString(data.aboveFoldContent?.json)
+  );
+  const belowFoldContent = highlightImportantText(
+    documentToHtmlString(data.belowFoldContent?.json)
+  );
+  const belowFoldImage = data.belowFoldImage;
   const prices = data.pricesCollection;
 
   return (
@@ -81,13 +92,15 @@ const ServicePage = () => {
         className="belowFoldContent"
         dangerouslySetInnerHTML={{ __html: belowFoldContent }}
       />
+      <div className="belowFoldImage">
+        <img
+          src={data.belowFoldImage.url}
+          alt={data.belowFoldImage.description}
+          title={data.belowFoldImage.title}
+        />
+      </div>
       {prices?.items?.length > 0 && <PricesTable prices={prices} />}
-      {warning && (
-        <>
-          <div className="green-fold"></div>
-          <ServiceWarning alertMessage={warning} />
-        </>
-      )}
+      {warning && <ServiceWarning alertMessage={warning} />}
     </div>
   );
 };
