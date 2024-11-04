@@ -28,6 +28,7 @@
   font-family: "Georgia", serif;
   color: var(--green-100);
   line-height: 1.6;
+  margin-bottom: 40px;
 }
 
 .aboveFoldContent h1 {
@@ -46,6 +47,7 @@
   line-height: 26px; /* 162.5% */
   letter-spacing: 0px;
   text-align: start;
+  padding: 10px 0px;
 }
 
 .aboveFoldContent p {
