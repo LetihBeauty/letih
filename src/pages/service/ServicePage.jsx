@@ -72,8 +72,9 @@ const ServicePage = () => {
   const warning = data.warning.json;
   const bannerTitle = data.title;
   const aboveFoldContent = documentToHtmlString(data.aboveFoldContent.json);
+  const belowFoldContent = documentToHtmlString(data.belowFoldContent.json);
   // let htmlContent = documentToHtmlString(aboveFoldContent);
-  console.log("aboveFoldContent", aboveFoldContent);
+  console.log("belowFoldContent", belowFoldContent);
 
   return (
     <div>
@@ -95,6 +96,10 @@ const ServicePage = () => {
         </div>
       </div>
       <div className="green-fold"></div>
+      <div
+        className="belowFoldContent"
+        dangerouslySetInnerHTML={{ __html: belowFoldContent }}
+      />
       <ServiceWarning alertMessage={warning} />
     </div>
   );
