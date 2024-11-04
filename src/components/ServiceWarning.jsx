@@ -10,8 +10,8 @@ const ServiceWarning = ({ alertMessage }) => {
   }
   let htmlContent = documentToHtmlString(alertMessage);
 
-  htmlContent = htmlContent.replace(/\* (.+?)(\n|$)/g, "<li>$1</li>");
-  htmlContent = htmlContent.replace(/(<li>.*<\/li>)/g, "<ul>$1</ul>");
+  // htmlContent = htmlContent.replace(/\* (.+?)(\n|$)/g, "<li>$1</li>");
+  // htmlContent = htmlContent.replace(/(<li>.*<\/li>)/g, "<ul>$1</ul>");
 
   return (
     <div className="globalWarningWrap">
