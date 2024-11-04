@@ -29,7 +29,13 @@
 }
 
 .green:hover {
+  background-color: var(--green-50);
+  color: var(--white-200);
+}
+
+.white:hover {
   background-color: var(--green-100);
+  color: var(--white-200);
 }
 
 @media only screen and (max-width: 430px) {
