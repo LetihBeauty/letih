@@ -52,10 +52,10 @@ const ServicePage = () => {
     return <p>Loading...</p>;
   }
 
-  const warning = data.warning.json;
+  const warning = data.warning?.json;
   const bannerTitle = data.title;
-  const aboveFoldContent = documentToHtmlString(data.aboveFoldContent.json);
-  const belowFoldContent = documentToHtmlString(data.belowFoldContent.json);
+  const aboveFoldContent = documentToHtmlString(data.aboveFoldContent?.json);
+  const belowFoldContent = documentToHtmlString(data.belowFoldContent?.json);
   const prices = data.pricesCollection;
   console.log("prices", prices);
 
@@ -85,7 +85,7 @@ const ServicePage = () => {
       />
       {prices?.items?.length > 0 && <PricesTable prices={prices} />}
       <div className="green-fold"></div>
-      <ServiceWarning alertMessage={warning} />
+      {warning && <ServiceWarning alertMessage={warning} />}
     </div>
   );
 };
