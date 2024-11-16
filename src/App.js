@@ -7,7 +7,7 @@ import About from "./pages/About";
 // import Review from "./pages/Review";
 // import Contact from "./pages/Contact";
 // import Gallery from "./pages/Gallery";
-import SingIn from "./pages/SingIn.js";
+import MyAccount from "./pages/MyAccount.js";
 import Layout from "./components/Layout";
 import FacialService from "./pages/service/FacialService.jsx";
 import ServicePage from "./pages/service/ServicePage.jsx";
@@ -25,7 +25,6 @@ function App() {
           <Route path="/service/facial/:slug" element={<FacialService />} />
           <Route path="/service/:slug" element={<ServicePage />} />
           {/* <Route path="/service/Ultraformer" element={<Ultraformer />} /> */}
-
           {/* <Route path="/service/Microneedling" element={<Microneedling />} />
           <Route
             path="/service/SkinCareRoutine"
@@ -37,7 +36,8 @@ function App() {
           <Route path="/review" element={<Review />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/singIn" element={<SingIn />} /> */}
+          */}
+          <Route path="/singIn" element={<MyAccount />} />
         </Routes>
       </Layout>
     </Router>
