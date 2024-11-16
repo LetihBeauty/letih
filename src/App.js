@@ -11,6 +11,7 @@ import MyAccount from "./pages/MyAccount.js";
 import Layout from "./components/Layout";
 import FacialService from "./pages/service/FacialService.jsx";
 import ServicePage from "./pages/service/ServicePage.jsx";
+import Booking from "./pages/Booking.js";
 
 function App() {
   // const data = fetchPageData("home");
@@ -24,19 +25,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/service/facial/:slug" element={<FacialService />} />
           <Route path="/service/:slug" element={<ServicePage />} />
-          {/* <Route path="/service/Ultraformer" element={<Ultraformer />} /> */}
-          {/* <Route path="/service/Microneedling" element={<Microneedling />} />
-          <Route
-            path="/service/SkinCareRoutine"
-            element={<SkinCareRoutine />}
-          />
-          <Route path="/service/RoseDeMer" element={<RoseDeMer />} />
-          <Route path="/service/BodyDetox" element={<BodyDetox />} />
-          <Route path="/service/BellyReducing" element={<BellyReducing />} />
-          <Route path="/review" element={<Review />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/gallery" element={<Gallery />} />
-          */}
+          <Route path="/booking" element={<Booking />} />
           <Route path="/myAccount" element={<MyAccount />} />
         </Routes>
       </Layout>

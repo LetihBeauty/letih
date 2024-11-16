@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import data from "../data.json";
-import BtnGreen from "./BtnGreen";
+import Btn from "../components/Btn";
+
 import { useMediaQuery } from "react-responsive";
 
 const DesktopNavbar = () => {
@@ -156,7 +157,10 @@ const DesktopNavbar = () => {
           >
             {myAccount.title} {/* Sign-in button */}
           </Link>
-          <BtnGreen>Book Now</BtnGreen> {/* Button to book services */}
+          <Btn href={`/booking`} customButtonClass="green">
+            Book Now
+          </Btn>
+          {/* Button to book services */}
         </div>
       </div>
     </div>
