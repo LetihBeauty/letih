@@ -120,11 +120,7 @@ function Home() {
                 }}
               ></p>
 
-              <Btn
-                customButtonClass="green"
-                href={homeData.urlAboutUs}
-                target="_blank"
-              >
+              <Btn customButtonClass="green" href={homeData.urlAboutUs}>
                 Learn More
               </Btn>
             </div>
