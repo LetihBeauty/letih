@@ -20,67 +20,67 @@ export const fetchPageData = async (page) => {
     case "home":
       query = `
         {
-  homepageCollection {
-    items {
-      slug
-      aboutUsImageOne {
-        url
-        title
-      }
-      aboutUsImageTwo {
-        url
-        title
-      }
-      aboutUsParagraphOne {
-        json
-      }
-      aboutUsParagraphTwo {
-        json
-      }
-      aboutUsTitleOne
-      aboutUsTitleTwo
-      heroImage {
-        url
-        title
-      }
-      subtitle
-      title
-      urlAboutUs
-      urlHero
-      ourServicesCollection (limit: 20) {
-        items {
-          __typename
-          ... on HomePageSections {
-            title
-            slug
-            paragraphy {
-              json
-            }
-            image {
-              url
+          homepageCollection {
+            items {
+              slug
+              aboutUsImageOne {
+                url
+                title
+              }
+              aboutUsImageTwo {
+                url
+                title
+              }
+              aboutUsParagraphOne {
+                json
+              }
+              aboutUsParagraphTwo {
+                json
+              }
+              aboutUsTitleOne
+              aboutUsTitleTwo
+              heroImage {
+                url
+                title
+              }
+              subtitle
               title
+              urlAboutUs
+              urlHero
+              ourServicesCollection (limit: 20) {
+                items {
+                  __typename
+                  ... on HomePageSections {
+                    title
+                    slug
+                    paragraphy {
+                      json
+                    }
+                    image {
+                      url
+                      title
+                    }
+                  }
+                }
+              }
+                testimonialsCollection (limit: 10) {
+                items {
+                  __typename
+                  ... on Testimonials {
+                    customerName
+                    quote {
+                      json
+                    }
+                    customerImage {
+                      url
+                      title
+                    }
+                  }
+                }
+              }
             }
           }
         }
-      }
-        testimonialsCollection (limit: 10) {
-        items {
-          __typename
-          ... on Testimonials {
-            customerName
-            quote {
-              json
-            }
-            customerImage {
-              url
-              title
-            }
-          }
-        }
-      }
-    }
-  }
-}
       `;
       break;
     case "about":
@@ -197,6 +197,37 @@ export const fetchPageData = async (page) => {
           }
         }
       }
+      `;
+      break;
+
+    case "booking":
+      query = `
+      {
+        bookingCollection {
+          items {
+            title
+            treatmentListCollection {
+              items {
+                __typename
+                ... on ServicePage  {
+                  title
+                }
+                ... on ServiceFacial {
+                  title
+                }
+
+              }
+            }
+            image {
+              url
+              title
+              description
+            }
+          }
+        }
+      }
+
+
       `;
       break;
 
