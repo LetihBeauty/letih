@@ -1,0 +1,65 @@
+@import "../style.css";
+
+.booking-container {
+  height: 820px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .booking-steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  select {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid var(--grey-300);
+    border-radius: 8px;
+    background-color: var(--white-200);
+    font-size: 16px;
+    font-family: "Arial", sans-serif;
+    color: var(--black-200);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px; /* Tamanho máximo */
+  }
+
+  /* Adiciona um ícone de seta no canto direito */
+  select::-ms-expand {
+    display: none;
+    color: var(--black-200);
+  }
+
+  select:focus {
+    outline: none; /* Remove a borda azul de foco */
+    border: 1px solid var(--green-50); /* Altera a borda no foco */
+  }
+
+  /* Adiciona uma seta usando pseudo-elementos */
+  select::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--green-50); /* Cor da seta */
+    pointer-events: none;
+  }
+}
+@media (max-width: 992px) {
+}
