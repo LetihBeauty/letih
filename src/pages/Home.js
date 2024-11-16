@@ -98,36 +98,36 @@ function Home() {
               )}
             </div>
           </div>
-        </div>
-        {/* botton right */}
-        <div className={` about-us-bottom`}>
-          <img
-            src={homeData.aboutUsImageTwo.url}
-            alt={homeData.aboutUsImageTwo.title}
-            className={`about-us-img-custom about-us-img-left`}
-          />
-          <div className={`about-us-text about-us-bottom-left`}>
-            <h5 className={`special-style ${false ? "" : "mobile-none"}`}>
-              {homeData.aboutUsTitleTwo ? homeData.aboutUsTitleTwo : ""}
-            </h5>
-            <p
-              className={true ? "" : "mobile-none"}
-              dangerouslySetInnerHTML={{
-                __html: homeData.aboutUsParagraphTwo.json.content[0].content[0]
-                  .value
-                  ? homeData.aboutUsParagraphTwo.json.content[0].content[0]
-                      .value
-                  : "",
-              }}
-            ></p>
+          {/* botton right */}
+          <div className={` about-us-bottom`}>
+            <img
+              src={homeData.aboutUsImageTwo.url}
+              alt={homeData.aboutUsImageTwo.title}
+              className={`about-us-img-custom about-us-img-left`}
+            />
+            <div className={`about-us-text about-us-bottom-left`}>
+              <h5 className={`special-style ${false ? "" : "mobile-none"}`}>
+                {homeData.aboutUsTitleTwo ? homeData.aboutUsTitleTwo : ""}
+              </h5>
+              <p
+                className={true ? "" : "mobile-none"}
+                dangerouslySetInnerHTML={{
+                  __html: homeData.aboutUsParagraphTwo.json.content[0]
+                    .content[0].value
+                    ? homeData.aboutUsParagraphTwo.json.content[0].content[0]
+                        .value
+                    : "",
+                }}
+              ></p>
 
-            <Btn
-              customButtonClass="green"
-              href={homeData.urlAboutUs}
-              target="_blank"
-            >
-              Learn More
-            </Btn>
+              <Btn
+                customButtonClass="green"
+                href={homeData.urlAboutUs}
+                target="_blank"
+              >
+                Learn More
+              </Btn>
+            </div>
           </div>
         </div>
       </div>
