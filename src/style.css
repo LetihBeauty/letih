@@ -14,10 +14,9 @@
   --white-200: #ffffff;
   --white-170: #f7f7f7;
 
-  --media-mobile: 430px;
-  --media-tablet: 768px;
-
-  --max-width: 432px;
+  --media-desktop: 1400px;
+  --media-tablet: 992px;
+  --media-mobile: 768px;
 
   .material-symbols-outlined {
     font-variation-settings: "FILL" 1, "wght" 350, "GRAD" 0, "opsz" 24;

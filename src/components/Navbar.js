@@ -1,23 +1,3 @@
-/**
- * Navbar Component
- *
- * This component renders a responsive navigation bar for the "LETIH BEAUTY" website.
- * It provides links to various sections, including a dropdown menu for services.
- *
- * Key Features:
- * - Responsive design that adapts to desktop and mobile views.
- * - Dropdown menu for service items that allows nested submenus.
- * - Active state management for highlighting the current page.
- *
- * Dependencies:
- * - React
- * - React Router DOM for navigation
- * - React Responsive for media queries
- *
- * Usage:
- * Simply import and include the <Navbar /> component in your application.
- */
-
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
@@ -25,15 +5,6 @@ import data from "../data.json";
 import BtnGreen from "./BtnGreen";
 import { useMediaQuery } from "react-responsive";
 
-// DesktopNavbar Component
-/**
- * Renders the navigation bar for desktop users.
- *
- * Functionalities:
- * - Displays main navigation items.
- * - Manages dropdown states for services.
- * - Highlights active service link based on the current URL.
- */
 const DesktopNavbar = () => {
   const navItems = data.navbar;
   const myAccount = data.myAccount;
@@ -72,12 +43,6 @@ const DesktopNavbar = () => {
     setFacialDropdownOpen(false); // Close facial dropdown
   };
 
-  // Determine if the "SERVICE" link should be highlighted as active
-  /**
-   * The `isServiceActive` variable checks if the user is on a service page.
-   * It does so by verifying if the current path matches any submenu URLs
-   * or if it starts with "/service".
-   */
   const isServiceActive = navItems.some(
     (item) =>
       item.title === "SERVICE" &&
@@ -198,14 +163,6 @@ const DesktopNavbar = () => {
   );
 };
 
-// MobileNavbar Component
-/**
- * Renders a simplified navigation bar for mobile users.
- *
- * Functionalities:
- * - Displays a hamburger icon to toggle the menu.
- * - Closes the menu upon clicking any navigation link.
- */
 const MobileNavbar = () => {
   const navItems = data.navbar; // Get navigation items
   const location = useLocation(); // Get current URL
@@ -259,18 +216,13 @@ const MobileNavbar = () => {
   );
 };
 
-// Main Navbar Component
-/**
- * The main component that decides which navbar to render based on the screen size.
- */
-
 const Navbar = () => {
-  const isDesktop = useMediaQuery({ query: `(min-width: 768px)` });
-  const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
+  const isDesktop = useMediaQuery({ query: `(max-width: 1400px)` });
+  const isMobile = useMediaQuery({ query: `(max-width: 992px)` });
 
   return (
     <>
-      {isDesktop && <DesktopNavbar />}
+      {isDesktop && !isMobile && <DesktopNavbar />}
       {isMobile && <MobileNavbar />}
     </>
   );
