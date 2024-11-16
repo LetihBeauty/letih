@@ -181,10 +181,11 @@ const DesktopNavbar = () => {
             )
           )}
         </ul>
-        <div className="login-signup-buttons">
+        <div className="myAccount-buttons">
           {" "}
           {/* Buttons for login and booking */}
           <Link
+            id="myAccount-btn"
             className={location.pathname === myAccount.url ? "active" : ""}
             to={myAccount.url}
           >
