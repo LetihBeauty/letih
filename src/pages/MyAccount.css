@@ -3,7 +3,7 @@
 .myAccount-container {
   background-image: url("../../public/images/flower.svg");
   background-size: repeat;
-  height: 60vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
