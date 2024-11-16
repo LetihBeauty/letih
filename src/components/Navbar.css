@@ -22,12 +22,12 @@ body {
   color: var(--green-100);
   font-size: 16px;
   font-weight: 400;
-  margin: 0;
   position: relative;
 }
 
 #myAccount-btn {
-  width: 120px !important;
+  white-space: nowrap;
+  margin-bottom: 8px;
 }
 
 button {
@@ -44,14 +44,13 @@ button {
   display: flex;
   justify-content: space-between;
   list-style: none;
-  padding: 0;
-  width: 448px;
   height: 27px;
   flex-shrink: 0;
 }
 
 .navbar-desktop .items {
   position: relative;
+  margin-left: 20px;
 }
 .navbar-desktop .service-toggle {
   cursor: pointer;
@@ -132,7 +131,7 @@ button {
 }
 
 .navbar-desktop .center-logo {
-  padding-left: 150px;
+  padding-left: 128px;
 }
 
 .navbar-desktop .center-logo h3 {
