@@ -37,7 +37,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
           */}
-          <Route path="/singIn" element={<MyAccount />} />
+          <Route path="/myAccount" element={<MyAccount />} />
         </Routes>
       </Layout>
     </Router>
