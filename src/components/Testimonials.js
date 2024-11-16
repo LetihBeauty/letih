@@ -28,10 +28,12 @@ function Testimonials({ testimonialData }) {
     <div className="testimonial-container">
       <div className="carousel">
         <div className="carousel-item">
-          <img
-            src={testimonialData[currentIndex]?.customerImage?.url}
-            alt={testimonialData[currentIndex]?.customerImage?.title}
-          />
+          <div>
+            <img
+              src={testimonialData[currentIndex]?.customerImage?.url}
+              alt={testimonialData[currentIndex]?.customerImage?.title}
+            />
+          </div>
           <div className="testimonial-content">
             <h1 id="title">Testimonials</h1>
             <h4>Briefly title about the customer review </h4>
