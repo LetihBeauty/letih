@@ -217,7 +217,7 @@ const MobileNavbar = () => {
 };
 
 const Navbar = () => {
-  const isDesktop = useMediaQuery({ query: `(max-width: 1400px)` });
+  const isDesktop = useMediaQuery({ query: `(min-width: 993px)` });
   const isMobile = useMediaQuery({ query: `(max-width: 992px)` });
 
   return (
