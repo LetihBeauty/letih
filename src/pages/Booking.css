@@ -4,14 +4,97 @@
   height: 820px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
 
+  img {
+    width: 45%;
+  }
+
+  /* Container para os passos */
+  /* Container principal da barra de progresso */
+  .progress-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px; /* Ajuste conforme necessário */
+    margin: 20px auto;
+    position: relative;
+
+    /* Cada item de etapa */
+    .step-item {
+      display: flex;
+      align-items: center;
+      position: relative;
+      flex: 1;
+      text-align: center;
+    }
+
+    /* Círculo de cada etapa */
+    .step-circle {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: 2px solid var(--green-100);
+      z-index: 1;
+    }
+
+    /* Linha entre os círculos */
+    .step-line {
+      position: absolute;
+      top: 50%;
+      left: 16px; /* Começa do lado do círculo */
+      width: calc(100% - 10px); /* Ajusta para não ultrapassar os círculos */
+      height: 2px;
+      background-color: var(--green-100);
+      z-index: 0;
+      transform: translateY(-50%);
+    }
+
+    /* Adiciona a linha apenas entre os itens */
+    .step-item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 12px);
+      height: 2px;
+      background-color: var(--grey-200);
+      z-index: 0;
+    }
+
+    /* Etapas completadas */
+    .step-item.completed .step-circle {
+      background-color: var(--green-100);
+      border-color: var(--green-100);
+    }
+
+    .step-item.completed::after {
+      background-color: var(--green-100);
+    }
+
+    h4 {
+      font-size: 16px;
+      font-weight: 100;
+      margin-bottom: 40px;
+      margin-left: -30px;
+      color: var(--green-50);
+    }
+  }
+
+  h1 {
+    margin-top: 60px;
+  }
   .booking-steps {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 55%;
+    padding: 40px;
+    margin-left: 60px;
+    justify-content: flex-start;
   }
 
   select {
@@ -35,7 +118,8 @@
     position: relative;
     display: inline-block;
     width: 100%;
-    max-width: 400px; /* Tamanho máximo */
+    width: 604px;
+    height: 50px;
   }
 
   /* Adiciona um ícone de seta no canto direito */

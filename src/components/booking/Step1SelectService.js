@@ -15,7 +15,7 @@ const Step1SelectService = ({
       value={bookingData.service}
       onChange={(e) => updateBookingData("service", e.target.value)}
     >
-      <option value=""></option>
+      <option value="">Select treatment</option>
       {bookData?.treatmentListCollection?.items?.map((item) => (
         <option key={item.title} value={item.title}>
           {item.title}

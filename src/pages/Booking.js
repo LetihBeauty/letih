@@ -4,8 +4,11 @@ import { fetchPageData } from "../services/contentfulService.js";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Step1SelectService from "../components/booking/Step1SelectService";
+import Step2SelectTime from "../components/booking/Step2SelectTime";
+import Step3Details from "../components/booking/Step3Details";
+import Step4Confirmation from "../components/booking/Step4Confirmation";
+import ProgressBar from "../components/booking/ProgressBar.js";
 
-// Booking Component
 const Booking = () => {
   const [data, setData] = useState(null); // Stores data from Contentful
   const [step, setStep] = useState(1); // Tracks current step in booking process
@@ -19,6 +22,10 @@ const Booking = () => {
     notes: "",
   });
   const [bookingId, setBookingId] = useState(""); // Stores confirmed booking ID
+
+  // Steps for progress bar
+  const steps = ["Service", "Time", "Details", "Done"];
+  const currentStep = step;
 
   // Fetch Contentful data
   const getData = async () => {
@@ -87,7 +94,11 @@ const Booking = () => {
   return (
     <div className="booking-container">
       <div className="booking-steps">
-        <h1>{bookData?.title || "Booking Page"}</h1>
+        <h1>{bookData?.title || "Booking Appointment"}</h1>
+        {/* Render ProgressBar */}
+        <ProgressBar steps={steps} currentStep={currentStep} />
+
+        {/* Booking Steps */}
         {step === 1 && (
           <Step1SelectService
             bookingData={bookingData}
@@ -116,105 +127,12 @@ const Booking = () => {
           <Step4Confirmation bookingData={bookingData} bookingId={bookingId} />
         )}
       </div>
-      <img src={bookData.image.url} alt={bookData.image.description} />
+      <img
+        src={bookData?.image?.url}
+        alt={bookData?.image?.description || ""}
+      />
     </div>
   );
 };
-
-// Step 2: Select Time
-const Step2SelectTime = ({
-  bookingData,
-  updateBookingData,
-  nextStep,
-  prevStep,
-}) => (
-  <div>
-    <p>Select a date and time:</p>
-    <input
-      type="date"
-      value={bookingData.date}
-      onChange={(e) => updateBookingData("date", e.target.value)}
-    />
-    <select
-      value={bookingData.time}
-      onChange={(e) => updateBookingData("time", e.target.value)}
-    >
-      <option value="">Select time</option>
-      <option value="10:00">10:00 AM</option>
-      <option value="13:00">1:00 PM</option>
-      <option value="16:00">4:00 PM</option>
-    </select>
-    <button onClick={prevStep}>Back</button>
-    <button
-      onClick={nextStep}
-      disabled={!bookingData.date || !bookingData.time}
-    >
-      Next
-    </button>
-  </div>
-);
-
-// Step 3: Booking Details
-const Step3Details = ({
-  bookingData,
-  updateBookingData,
-  submitBooking,
-  prevStep,
-}) => (
-  <div>
-    <p>Please provide your details:</p>
-    <input
-      type="text"
-      placeholder="Name"
-      value={bookingData.name}
-      onChange={(e) => updateBookingData("name", e.target.value)}
-    />
-    <input
-      type="email"
-      placeholder="Email"
-      value={bookingData.email}
-      onChange={(e) => updateBookingData("email", e.target.value)}
-    />
-    <input
-      type="text"
-      placeholder="Phone"
-      value={bookingData.phone}
-      onChange={(e) => updateBookingData("phone", e.target.value)}
-    />
-    <textarea
-      placeholder="Notes (optional)"
-      value={bookingData.notes}
-      onChange={(e) => updateBookingData("notes", e.target.value)}
-    />
-    <button onClick={prevStep}>Back</button>
-    <button onClick={submitBooking}>Submit</button>
-  </div>
-);
-
-// Step 4: Confirmation
-const Step4Confirmation = ({ bookingData, bookingId }) => (
-  <div>
-    <h2>Booking confirmed!</h2>
-    <p>Thank you for booking with us. Here are your details:</p>
-    <ul>
-      <li>
-        <strong>Booking ID:</strong> {bookingId}
-      </li>
-      <li>
-        <strong>Service:</strong> {bookingData.service}
-      </li>
-      <li>
-        <strong>Date:</strong> {bookingData.date}
-      </li>
-      <li>
-        <strong>Time:</strong> {bookingData.time}
-      </li>
-      <li>
-        <strong>Name:</strong> {bookingData.name}
-      </li>
-    </ul>
-    <button onClick={() => (window.location.href = "/")}>Back to Home</button>
-  </div>
-);
 
 export default Booking;
