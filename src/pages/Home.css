@@ -542,8 +542,7 @@ p {
 
 @media (max-width: 992px) {
   .banner {
-    height: 500px;
-
+    height: 50vh;
     img {
       height: auto;
     }
