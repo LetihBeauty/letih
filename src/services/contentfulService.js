@@ -1,7 +1,7 @@
 import axios from "axios";
 
-console.log("Space ID:", process.env.REACT_APP_CONTENTFUL_SPACE_ID);
-console.log("Access Token:", process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN);
+// console.log("Space ID:", process.env.REACT_APP_CONTENTFUL_SPACE_ID);
+// console.log("Access Token:", process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN);
 
 if (
   !process.env.REACT_APP_CONTENTFUL_SPACE_ID ||

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../pages/Booking.css";
 import Btn from "../Btn";
-import { fetchRecords } from "../../services/airtableService";
+import { fetchAvailableSlots } from "../../services/airtableService"; // Função para buscar dados do Airtable
 
 const Step2SelectTime = ({
   bookingData,
@@ -14,17 +14,12 @@ const Step2SelectTime = ({
   const [selectedDate, setSelectedDate] = useState(null);
   const [currentMonth, setCurrentMonth] = useState(new Date());
 
-  // Fetch data from Airtable
+  // Fetch data from Airtable quando o componente monta
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const records = await fetchRecords("AvailableSlots");
-        setDatesAndTimes(
-          records.map((record) => ({
-            date: record.fields.date,
-            time: record.fields.time,
-          }))
-        );
+        const slots = await fetchAvailableSlots(); // Busca os horários disponíveis
+        setDatesAndTimes(slots);
       } catch (error) {
         console.error("Error fetching available slots:", error);
       }
@@ -33,11 +28,13 @@ const Step2SelectTime = ({
     fetchData();
   }, []);
 
-  // Atualizar os horários disponíveis quando a data é selecionada
+  // Atualiza os horários disponíveis com base na data selecionada
   useEffect(() => {
     if (selectedDate) {
       const timesForDate = datesAndTimes
-        .filter((slot) => slot.date === selectedDate)
+        .filter(
+          (slot) => slot.date === selectedDate && slot.status === "Available"
+        )
         .map((slot) => slot.time);
       setAvailableTimes(timesForDate);
     } else {
@@ -63,17 +60,22 @@ const Step2SelectTime = ({
         new Date(currentMonth.getFullYear(), currentMonth.getMonth(), i + 1)
     );
 
-    return daysInMonth.map((day) => (
-      <div
-        key={day.toISOString()}
-        className={`calendar-day ${
-          selectedDate === day.toISOString().split("T")[0] ? "selected" : ""
-        }`}
-        onClick={() => handleDateClick(day)}
-      >
-        {day.getDate()}
-      </div>
-    ));
+    return daysInMonth.map((day) => {
+      const isAvailable = datesAndTimes.some(
+        (slot) => slot.date === day.toISOString().split("T")[0]
+      );
+      return (
+        <div
+          key={day.toISOString()}
+          className={`calendar-day ${
+            selectedDate === day.toISOString().split("T")[0] ? "selected" : ""
+          } ${isAvailable ? "available" : ""}`}
+          onClick={() => handleDateClick(day)}
+        >
+          {day.getDate()}
+        </div>
+      );
+    });
   };
 
   const handleDateClick = (day) => {
@@ -116,7 +118,8 @@ const Step2SelectTime = ({
       <div className="time-slots">
         <p id="title">
           {selectedDate
-            ? `Thursday, ${new Date(selectedDate).toLocaleDateString("en-US", {
+            ? `${new Date(selectedDate).toLocaleDateString("en-US", {
+                weekday: "long",
                 day: "numeric",
                 month: "long",
                 year: "numeric",
@@ -145,7 +148,6 @@ const Step2SelectTime = ({
         <Btn
           customButtonClass="white white-step-2-select-time"
           onClick={prevStep}
-          disabled={!bookingData.date || !bookingData.time}
         >
           Back
         </Btn>

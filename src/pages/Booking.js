@@ -46,7 +46,7 @@ const Booking = () => {
 
   // Extract data for the current booking
   const bookData = data?.bookingCollection?.items?.[0];
-  console.log("bookData", bookData);
+  // console.log("bookData", bookData);
 
   if (!data) {
     return <p>Loading...</p>;

@@ -1,42 +1,123 @@
 import "../../pages/Booking.css";
 import Btn from "../Btn";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { addRecordToAirtable } from "../../services/airtableService";
 
-// Step 3: Booking Details
 const Step3Details = ({
   bookingData,
   updateBookingData,
-  submitBooking,
   prevStep,
-}) => (
-  <div>
-    <p>Please provide your details:</p>
-    <input
-      type="text"
-      placeholder="Name"
-      value={bookingData.name}
-      onChange={(e) => updateBookingData("name", e.target.value)}
-    />
-    <input
-      type="email"
-      placeholder="Email"
-      value={bookingData.email}
-      onChange={(e) => updateBookingData("email", e.target.value)}
-    />
-    <input
-      type="text"
-      placeholder="Phone"
-      value={bookingData.phone}
-      onChange={(e) => updateBookingData("phone", e.target.value)}
-    />
-    <textarea
-      placeholder="Notes (optional)"
-      value={bookingData.notes}
-      onChange={(e) => updateBookingData("notes", e.target.value)}
-    />
-    <button onClick={prevStep}>Back</button>
-    <button onClick={submitBooking}>Submit</button>
-  </div>
-);
+  nextStep,
+}) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  console.log("bookingData", bookingData);
+
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+
+    try {
+      // Dados do formulário que serão enviados ao Airtable
+      const record = {
+        "Full name": bookingData.name,
+        Phone: bookingData.phone,
+        Email: bookingData.email,
+        Note: bookingData.notes,
+        Treatment: bookingData.service,
+        "Date & Time": `${bookingData.date} ${bookingData.time}`,
+      };
+
+      // Chamada para enviar os dados à tabela do Airtable
+      await addRecordToAirtable(record);
+
+      alert("Booking successfully submitted!");
+      nextStep(); // Avançar para o próximo passo
+    } catch (error) {
+      console.error("Error submitting booking:", error);
+      alert("Failed to submit booking. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="user-details-container">
+      <p className="booking-summary">
+        You selected a booking for <strong>{bookingData.service}</strong> by{" "}
+        <strong>{bookingData.provider}</strong>, at{" "}
+        <strong>{bookingData.time}</strong> on{" "}
+        <strong>
+          {new Date(bookingData.date).toLocaleDateString("en-US", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })}
+        </strong>
+        .
+      </p>
+      <p>
+        Please provide your details in the form below to proceed with booking.
+      </p>
+
+      <form className="booking-form">
+        <label htmlFor="name">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Type your name"
+          value={bookingData.name}
+          onChange={(e) => updateBookingData("name", e.target.value)}
+        />
+
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="phone">Phone</label>
+            <input
+              type="text"
+              id="phone"
+              placeholder="Phone number"
+              value={bookingData.phone}
+              onChange={(e) => updateBookingData("phone", e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Your Email"
+              value={bookingData.email}
+              onChange={(e) => updateBookingData("email", e.target.value)}
+            />
+          </div>
+        </div>
+
+        <label htmlFor="notes">Note</label>
+        <textarea
+          id="notes"
+          placeholder="Add any important information"
+          value={bookingData.notes}
+          onChange={(e) => updateBookingData("notes", e.target.value)}
+        />
+
+        <div className="button-container">
+          <Btn
+            customButtonClass="white white-step-3-details"
+            onClick={prevStep}
+          >
+            Back
+          </Btn>
+          <Btn
+            customButtonClass="green green-step-3-details"
+            onClick={handleSubmit}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : "Next"}
+          </Btn>
+        </div>
+      </form>
+    </div>
+  );
+};
 
 export default Step3Details;
