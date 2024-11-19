@@ -1,11 +1,9 @@
 import React from "react";
 import "../../pages/Booking.css";
-import Btn from "../Btn";
 
-// Step 4: Confirmation
 const Step4Confirmation = ({ bookingData, bookingId }) => (
-  <div>
-    <h2>Booking confirmed!</h2>
+  <div className="confirmation-container">
+    <h2>Booking Confirmed!</h2>
     <p>Thank you for booking with us. Here are your details:</p>
     <ul>
       <li>
@@ -15,7 +13,12 @@ const Step4Confirmation = ({ bookingData, bookingId }) => (
         <strong>Service:</strong> {bookingData.service}
       </li>
       <li>
-        <strong>Date:</strong> {bookingData.date}
+        <strong>Date:</strong>{" "}
+        {new Date(bookingData.date).toLocaleDateString("en-US", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        })}
       </li>
       <li>
         <strong>Time:</strong> {bookingData.time}

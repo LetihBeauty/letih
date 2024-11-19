@@ -18,16 +18,15 @@ const REACT_APP_AIRTABLE_TABLE_BOOKED =
   process.env.REACT_APP_AIRTABLE_TABLE_BOOKED;
 
 // Função para adicionar um registro ao Airtable
-export const addRecordToAirtable = async (record) => {
-  try {
-    const createdRecord = await base(REACT_APP_AIRTABLE_TABLE_BOOKED).create([
-      {
-        fields: record, // Dados a serem enviados ao Airtable
-      },
-    ]);
 
-    console.log("Record added:", createdRecord);
-    return createdRecord;
+export const addRecordToAirtable = async (record) => {
+  console.log("Data being sent to Airtable:", record);
+
+  try {
+    const createdRecord = await base(REACT_APP_AIRTABLE_TABLE_BOOKED).create(
+      record
+    ); // Certifique-se de usar o nome correto da tabela
+    return createdRecord; // Retorna o registro criado
   } catch (error) {
     console.error("Error adding record to Airtable:", error);
     throw error;

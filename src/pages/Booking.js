@@ -61,33 +61,30 @@ const Booking = () => {
   const submitBooking = async () => {
     try {
       const response = await axios.post(
-        "https://connect.squareup.com/v2/bookings",
+        `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_AIRTABLE_TABLE_BOOKED}`,
         {
-          booking: {
-            locationId: "YOUR_LOCATION_ID",
-            startAt: `${bookingData.date}T${bookingData.time}:00Z`,
-            customerId: "CUSTOMER_ID",
-            appointmentSegments: [
-              {
-                durationMinutes: 60,
-                serviceVariationId: "YOUR_SERVICE_ID",
-                teamMemberId: "TEAM_MEMBER_ID",
-              },
-            ],
+          fields: {
+            "Full Name": bookingData.name,
+            Email: bookingData.email,
+            Phone: bookingData.phone,
+            Notes: bookingData.notes,
+            Service: bookingData.service,
+            "Date & Time": `${bookingData.date}T${bookingData.time}`,
           },
         },
         {
           headers: {
-            Authorization: `Bearer YOUR_ACCESS_TOKEN`,
+            Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
             "Content-Type": "application/json",
           },
         }
       );
-      setBookingId(response.data.booking.id);
-      setStep(4); // Move to confirmation step
+
+      setBookingId(response.data.id); // Salvar o ID da reserva retornado pelo Airtable
+      setStep(4); // Avançar para a página de confirmação
     } catch (error) {
-      console.error("Error creating booking:", error);
-      alert("There was an issue creating your booking. Please try again.");
+      console.error("Error submitting booking to Airtable:", error);
+      alert("There was an issue submitting your booking. Please try again.");
     }
   };
 
