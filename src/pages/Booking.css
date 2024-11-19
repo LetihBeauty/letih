@@ -216,7 +216,7 @@
   font-family: Arial, sans-serif;
   background-color: var(--white-200);
   border-radius: 8px;
-  border: 1px solid var(--grey-500);
+  /* border: 1px solid var(--grey-300); */
   padding: 16px;
 }
 
@@ -225,6 +225,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: none;
 }
 
 .calendar-header {
@@ -264,6 +265,24 @@
 .time-slots {
   #title {
     font-weight: bold;
+  }
+
+  .time-slot {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--white-200);
+    transition: background-color 0.3s;
+  }
+
+  .time-slot:active {
+    background-color: var(--green-100);
+    color: var(--white-200);
+  }
+
+  .time-slot.selected {
+    background-color: var(--green-100);
+    color: var(--white-200);
   }
 }
 

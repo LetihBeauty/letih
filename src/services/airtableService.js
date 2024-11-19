@@ -54,3 +54,19 @@ export const fetchAvailableSlots = async () => {
     throw error;
   }
 };
+
+// Função para salvar um agendamento na tabela Booked
+export const saveBooking = async (bookingData) => {
+  try {
+    const record = await base(REACT_APP_AIRTABLE_TABLE_BOOKED).create([
+      {
+        fields: bookingData,
+      },
+    ]);
+    console.log("Booking saved successfully:", record);
+    return record;
+  } catch (error) {
+    console.error("Error saving booking to Airtable:", error);
+    throw error;
+  }
+};
