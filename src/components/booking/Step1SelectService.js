@@ -22,7 +22,11 @@ const Step1SelectService = ({
         </option>
       ))}
     </select>
-    <Btn className="green" onClick={nextStep} disabled={!bookingData.service}>
+    <Btn
+      customButtonClass="green step-1-select-service "
+      onClick={nextStep}
+      disabled={!bookingData.service}
+    >
       Next
     </Btn>
   </div>

@@ -1,47 +1,8 @@
-// import React from "react";
-// import "../../pages/Booking.css";
-// import Btn from "../Btn";
-
-// // Step 2: Select Time
-// const Step2SelectTime = ({
-//   bookingData,
-//   updateBookingData,
-//   nextStep,
-//   prevStep,
-// }) => (
-//   <div>
-//     <p>Select a date and time:</p>
-//     <input
-//       type="date"
-//       value={bookingData.date}
-//       onChange={(e) => updateBookingData("date", e.target.value)}
-//     />
-//     <select
-//       value={bookingData.time}
-//       onChange={(e) => updateBookingData("time", e.target.value)}
-//     >
-//       <option value="">Select time</option>
-//       <option value="10:00">10:00 AM</option>
-//       <option value="13:00">1:00 PM</option>
-//       <option value="16:00">4:00 PM</option>
-//     </select>
-//     <button onClick={prevStep}>Back</button>
-//     <button
-//       onClick={nextStep}
-//       disabled={!bookingData.date || !bookingData.time}
-//     >
-//       Next
-//     </button>
-//   </div>
-// );
-
-// export default Step2SelectTime;
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../pages/Booking.css";
 import Btn from "../Btn";
-import { fetchRecords } from "../../services/airtableService"; // Supondo que você tenha configurado o AirtableService.js
+import { fetchRecords } from "../../services/airtableService";
 
-// Step 2: Select Time
 const Step2SelectTime = ({
   bookingData,
   updateBookingData,
@@ -50,66 +11,152 @@ const Step2SelectTime = ({
 }) => {
   const [datesAndTimes, setDatesAndTimes] = useState([]);
   const [availableTimes, setAvailableTimes] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [currentMonth, setCurrentMonth] = useState(new Date());
 
   // Fetch data from Airtable
   useEffect(() => {
-    const getData = async () => {
+    const fetchData = async () => {
       try {
-        const records = await fetchRecords("AvailableSlots"); // Substitua "AvailableSlots" pelo nome da tabela no Airtable
+        const records = await fetchRecords("AvailableSlots");
         setDatesAndTimes(
           records.map((record) => ({
-            date: record.fields.date, // Certifique-se de que o nome do campo no Airtable é "date"
-            time: record.fields.time, // Certifique-se de que o nome do campo no Airtable é "time"
+            date: record.fields.date,
+            time: record.fields.time,
           }))
         );
       } catch (error) {
         console.error("Error fetching available slots:", error);
       }
     };
-    getData();
+
+    fetchData();
   }, []);
 
-  // Filter available times based on selected date
+  // Atualizar os horários disponíveis quando a data é selecionada
   useEffect(() => {
-    if (bookingData.date) {
-      const times = datesAndTimes
-        .filter((slot) => slot.date === bookingData.date)
+    if (selectedDate) {
+      const timesForDate = datesAndTimes
+        .filter((slot) => slot.date === selectedDate)
         .map((slot) => slot.time);
-      setAvailableTimes(times);
+      setAvailableTimes(timesForDate);
     } else {
       setAvailableTimes([]);
     }
-  }, [bookingData.date, datesAndTimes]);
+  }, [selectedDate, datesAndTimes]);
+
+  // Função para renderizar o calendário
+  const generateCalendar = () => {
+    const firstDay = new Date(
+      currentMonth.getFullYear(),
+      currentMonth.getMonth(),
+      1
+    );
+    const lastDay = new Date(
+      currentMonth.getFullYear(),
+      currentMonth.getMonth() + 1,
+      0
+    );
+    const daysInMonth = Array.from(
+      { length: lastDay.getDate() },
+      (_, i) =>
+        new Date(currentMonth.getFullYear(), currentMonth.getMonth(), i + 1)
+    );
+
+    return daysInMonth.map((day) => (
+      <div
+        key={day.toISOString()}
+        className={`calendar-day ${
+          selectedDate === day.toISOString().split("T")[0] ? "selected" : ""
+        }`}
+        onClick={() => handleDateClick(day)}
+      >
+        {day.getDate()}
+      </div>
+    ));
+  };
+
+  const handleDateClick = (day) => {
+    const selected = day.toISOString().split("T")[0];
+    setSelectedDate(selected);
+    updateBookingData("date", selected);
+  };
+
+  const handleTimeClick = (time) => {
+    updateBookingData("time", time);
+  };
+
+  const handlePrevMonth = () => {
+    setCurrentMonth(
+      new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1)
+    );
+  };
+
+  const handleNextMonth = () => {
+    setCurrentMonth(
+      new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1)
+    );
+  };
 
   return (
-    <div>
-      <p>Select a date and time:</p>
-      {/* Date Selector */}
-      <input
-        type="date"
-        value={bookingData.date}
-        onChange={(e) => updateBookingData("date", e.target.value)}
-      />
-      {/* Time Selector */}
-      <select
-        value={bookingData.time}
-        onChange={(e) => updateBookingData("time", e.target.value)}
-        disabled={!availableTimes.length}
-      >
-        <option value="">Select time</option>
-        {availableTimes.map((time, index) => (
-          <option key={index} value={time}>
-            {time}
-          </option>
-        ))}
-      </select>
-      <button onClick={prevStep}>Back</button>
-      <button
-        onClick={nextStep}
-        disabled={!bookingData.date || !bookingData.time}
-      >
-        Next
-      </button>
+    <div className="calendar-container">
+      <div className="calendar">
+        <div className="calendar-header">
+          <button onClick={handlePrevMonth}>&lt;</button>
+          <span>
+            {currentMonth.toLocaleString("default", { month: "long" })}{" "}
+            {currentMonth.getFullYear()}
+          </span>
+          <button onClick={handleNextMonth}>&gt;</button>
+        </div>
+        <div className="calendar-days">{generateCalendar()}</div>
+      </div>
+
+      {/* Horários disponíveis */}
+      <div className="time-slots">
+        <p id="title">
+          {selectedDate
+            ? `Thursday, ${new Date(selectedDate).toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}`
+            : "Please select a date"}
+        </p>
+        {availableTimes.length > 0 ? (
+          availableTimes.map((time, index) => (
+            <div
+              key={index}
+              className={`time-slot ${
+                bookingData.time === time ? "selected" : ""
+              }`}
+              onClick={() => handleTimeClick(time)}
+            >
+              {time}
+            </div>
+          ))
+        ) : (
+          <p>No available times</p>
+        )}
+      </div>
+
+      {/* Botões */}
+      <div className="button-container">
+        <Btn
+          customButtonClass="white white-step-2-select-time"
+          onClick={prevStep}
+          disabled={!bookingData.date || !bookingData.time}
+        >
+          Back
+        </Btn>
+        <Btn
+          customButtonClass="green green-step-2-select-time"
+          onClick={nextStep}
+          disabled={!bookingData.date || !bookingData.time}
+        >
+          Next
+        </Btn>
+      </div>
     </div>
   );
 };
