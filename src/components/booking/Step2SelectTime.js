@@ -1,126 +1,3 @@
-// import React, { useState, useEffect } from "react";
-// import "../../pages/Booking.css";
-// import Btn from "../Btn";
-// import Calendar from "react-calendar"; // Importa o componente React-Calendar
-// import { fetchAvailableSlots } from "../../services/airtableService"; // Função para buscar dados do Airtable
-// import "react-calendar/dist/Calendar.css"; // Estilos padrão do React-Calendar
-
-// const Step2SelectTime = ({
-//   bookingData,
-//   updateBookingData,
-//   nextStep,
-//   prevStep,
-// }) => {
-//   const [datesAndTimes, setDatesAndTimes] = useState([]);
-//   const [availableTimes, setAvailableTimes] = useState([]);
-//   const [selectedDate, setSelectedDate] = useState(null);
-
-//   // Fetch data from Airtable ao montar o componente
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const slots = await fetchAvailableSlots(); // Busca os horários disponíveis
-//         setDatesAndTimes(slots);
-//       } catch (error) {
-//         console.error("Error fetching available slots:", error);
-//       }
-//     };
-
-//     fetchData();
-//   }, []);
-
-//   // Atualiza os horários disponíveis com base na data selecionada
-//   useEffect(() => {
-//     if (selectedDate) {
-//       const timesForDate = datesAndTimes
-//         .filter(
-//           (slot) => slot.date === selectedDate && slot.status === "Available"
-//         )
-//         .map((slot) => slot.time);
-//       setAvailableTimes(timesForDate);
-//     } else {
-//       setAvailableTimes([]);
-//     }
-//   }, [selectedDate, datesAndTimes]);
-
-//   // Manipula a seleção de uma data no calendário
-//   const handleDateChange = (date) => {
-//     const formattedDate = date.toISOString().split("T")[0]; // Formato YYYY-MM-DD
-//     setSelectedDate(formattedDate);
-//     updateBookingData("date", formattedDate);
-//   };
-
-//   // Manipula a seleção de um horário
-//   const handleTimeClick = (time) => {
-//     updateBookingData("time", time);
-//   };
-
-//   return (
-//     <div className="calendar-container">
-//       {/* Componente React-Calendar */}
-//       <div className="calendar">
-//         <Calendar
-//           onChange={handleDateChange}
-//           value={selectedDate ? new Date(selectedDate) : null}
-//           tileClassName={({ date }) => {
-//             const formattedDate = date.toISOString().split("T")[0];
-//             return datesAndTimes.some((slot) => slot.date === formattedDate)
-//               ? "available"
-//               : null;
-//           }}
-//           minDate={new Date()} // Evita datas passadas
-//         />
-//       </div>
-
-//       {/* Horários disponíveis */}
-//       <div className="time-slots">
-//         <p id="title">
-//           {selectedDate
-//             ? `${new Date(selectedDate).toLocaleDateString("en-US", {
-//                 weekday: "long",
-//                 day: "numeric",
-//                 month: "long",
-//                 year: "numeric",
-//               })}`
-//             : "Please select a date"}
-//         </p>
-//         {availableTimes.length > 0 ? (
-//           availableTimes.map((time, index) => (
-//             <div
-//               key={index}
-//               className={`time-slot ${
-//                 bookingData.time === time ? "selected" : ""
-//               }`}
-//               onClick={() => handleTimeClick(time)}
-//             >
-//               {time}
-//             </div>
-//           ))
-//         ) : (
-//           <p>No available times</p>
-//         )}
-//       </div>
-
-//       {/* Botões */}
-//       <div className="button-container">
-//         <Btn
-//           customButtonClass="white white-step-2-select-time"
-//           onClick={prevStep}
-//         >
-//           Back
-//         </Btn>
-//         <Btn
-//           customButtonClass="green green-step-2-select-time"
-//           onClick={nextStep}
-//           disabled={!bookingData.date || !bookingData.time}
-//         >
-//           Next
-//         </Btn>
-//       </div>
-//     </div>
-//   );
-// };
-
 // export default Step2SelectTime;
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
@@ -131,6 +8,8 @@ import {
   saveBooking,
 } from "../../services/airtableService";
 import "react-calendar/dist/Calendar.css";
+// import addBookingToSquare from "../../services/squareupService";
+// console.log(addBookingToSquare);
 
 const Step2SelectTime = ({
   bookingData,
@@ -203,7 +82,7 @@ const Step2SelectTime = ({
     <div className="booking-container">
       <div className="calendar-container">
         {/* React Calendar */}
-        <div className="calendar">
+        {/* <div className="calendar">
           <Calendar
             onChange={handleDateChange}
             value={selectedDate ? new Date(selectedDate) : null}
@@ -215,7 +94,8 @@ const Step2SelectTime = ({
             }}
             minDate={new Date()} // Prevent past dates
           />
-        </div>
+        </div> */}
+        <script src="https://square.site/appointments/buyer/widget/0wazyatxey61b7/L48D6RF065D1S.js"></script>
 
         {/* Available Times */}
         <div className="time-slots">
