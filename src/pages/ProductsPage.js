@@ -18,8 +18,9 @@ const ProductsPage = () => {
     const fetchData = async () => {
       try {
         const data = await fetchClientAndProducts(clientLogin);
-
-        // console.log("Products:", data.products);
+        console.log("Client data:", data.client);
+        console.log("Products data:", data.products);
+        console.log("howToUse data:", data.products.howToUse);
 
         setProducts(data.products);
         setClient(data.client);
@@ -55,7 +56,6 @@ const ProductsPage = () => {
   // console.log("products", products);
 
   const content = pageData?.skinCareRoutineCollection?.items?.[0];
-  // console.log("content", content);
 
   if (!client || !client.name) {
     return <p>Loading...</p>;

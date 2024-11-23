@@ -54,15 +54,22 @@ export const fetchProductsByClient = async (productIds) => {
       })
       .all();
 
-    // Mapeia os produtos encontrados
-    return records.map((record) => ({
+    const products = records.map((record) => ({
       id: record.id,
-      productName: record.fields["Product Name"],
-      howToUse: record.fields["How to Use"],
-      whereToBuy: record.fields["Where to Buy"],
-      morningRoutine: record.fields["Morning Routine"] || [],
-      nightRoutine: record.fields["Night Routine"] || [],
+      productName: record.fields["Product Name"] || "No product name", // Verifique o nome da coluna
+      howToUse: record.fields["How to Use"] || "No instructions available",
+      whereToBuy: record.fields["Where to Buy"] || "No link available",
+      morningRoutine: Array.isArray(record.fields["Morning Routine"])
+        ? record.fields["Morning Routine"]
+        : [], // Verifica se é um array
+      nightRoutine: Array.isArray(record.fields["Night Routine"])
+        ? record.fields["Night Routine"]
+        : [], // Verifica se é um array
     }));
+
+    console.log("Products found:", products); // Log para verificar os dados retornados
+
+    return products;
   } catch (error) {
     console.error("Error fetching products by client:", error);
     throw error;
@@ -77,6 +84,7 @@ export const fetchClientAndProducts = async (clientLogin) => {
     // console.log("Client airtable service:", client);
     // Busca os produtos associados ao cliente
     const products = await fetchProductsByClient(client.products);
+    //buscar todos os dados da tabela de produtos
 
     return { client, products };
   } catch (error) {
