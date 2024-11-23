@@ -12,8 +12,6 @@ const ProgressBar = ({ steps, currentStep }) => {
           }`}
         >
           <div className="step-circle"></div>
-          <h4 className="step-label">{step}</h4>
-          {index !== steps.length && <div className="step-line"></div>}
         </div>
       ))}
     </div>
