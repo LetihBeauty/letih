@@ -1,15 +1,12 @@
-// export default Step2SelectTime;
 import React, { useState, useEffect } from "react";
-import Calendar from "react-calendar";
+// import Calendar from "react-calendar";
 import "../../pages/Booking.css";
 import Btn from "../Btn";
 import {
-  fetchAvailableSlots,
-  saveBooking,
-} from "../../services/airtableService";
+  fetchAvailableSlotsFromSquare,
+  saveBookingToSquare,
+} from "../../services/squareupService";
 import "react-calendar/dist/Calendar.css";
-// import addBookingToSquare from "../../services/squareupService";
-// console.log(addBookingToSquare);
 
 const Step2SelectTime = ({
   bookingData,
@@ -21,11 +18,11 @@ const Step2SelectTime = ({
   const [availableTimes, setAvailableTimes] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
 
-  // Fetch slots from Airtable
+  // Fetch slots from Square
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const slots = await fetchAvailableSlots();
+        const slots = await fetchAvailableSlotsFromSquare("YOUR_LOCATION_ID");
         setDatesAndTimes(slots);
       } catch (error) {
         console.error("Error fetching available slots:", error);
@@ -38,10 +35,13 @@ const Step2SelectTime = ({
   useEffect(() => {
     if (selectedDate) {
       const timesForDate = datesAndTimes
-        .filter(
-          (slot) => slot.date === selectedDate && slot.status === "Available"
-        )
-        .map((slot) => slot.time);
+        .filter((slot) => slot.start_at.split("T")[0] === selectedDate)
+        .map((slot) =>
+          new Date(slot.start_at).toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          })
+        );
       setAvailableTimes(timesForDate);
     } else {
       setAvailableTimes([]);
@@ -63,13 +63,19 @@ const Step2SelectTime = ({
   const handleSave = async () => {
     try {
       const bookingDataToSave = {
-        Date: bookingData.date,
-        Time: bookingData.time,
-        Service: bookingData.service,
-        Status: "Booked", // Define o status como reservado
+        location_id: "YOUR_LOCATION_ID",
+        customer_id: bookingData.customer_id,
+        start_at: `${bookingData.date}T${bookingData.time}:00Z`,
+        appointment_segments: [
+          {
+            service_variation_id: bookingData.service_id,
+            team_member_id: bookingData.team_member_id,
+            duration_minutes: bookingData.duration_minutes || 60,
+          },
+        ],
       };
 
-      await saveBooking(bookingDataToSave); // Função para salvar na tabela Booked
+      await saveBookingToSquare(bookingDataToSave);
       alert("Booking successfully saved!");
       nextStep();
     } catch (error) {
@@ -81,23 +87,20 @@ const Step2SelectTime = ({
   return (
     <div className="booking-container">
       <div className="calendar-container">
-        {/* React Calendar */}
-        {/* <div className="calendar">
-          <Calendar
-            onChange={handleDateChange}
-            value={selectedDate ? new Date(selectedDate) : null}
-            tileClassName={({ date }) => {
-              const formattedDate = date.toISOString().split("T")[0];
-              return datesAndTimes.some((slot) => slot.date === formattedDate)
-                ? "calendar-day available"
-                : null;
-            }}
-            minDate={new Date()} // Prevent past dates
-          />
-        </div> */}
-        <script src="https://square.site/appointments/buyer/widget/0wazyatxey61b7/L48D6RF065D1S.js"></script>
+        {/* <Calendar
+          onChange={handleDateChange}
+          value={selectedDate ? new Date(selectedDate) : null}
+          tileClassName={({ date }) => {
+            const formattedDate = date.toISOString().split("T")[0];
+            return datesAndTimes.some(
+              (slot) => slot.start_at.split("T")[0] === formattedDate
+            )
+              ? "calendar-day available"
+              : null;
+          }}
+          minDate={new Date()}
+        /> */}
 
-        {/* Available Times */}
         <div className="time-slots">
           <p id="title">
             {selectedDate
@@ -127,7 +130,6 @@ const Step2SelectTime = ({
         </div>
       </div>
 
-      {/* Buttons */}
       <div className="button-container">
         <Btn
           customButtonClass="white white-step-2-select-time"
@@ -137,7 +139,7 @@ const Step2SelectTime = ({
         </Btn>
         <Btn
           customButtonClass="green green-step-2-select-time"
-          onClick={nextStep}
+          onClick={handleSave}
           disabled={!bookingData.date || !bookingData.time}
         >
           Next
