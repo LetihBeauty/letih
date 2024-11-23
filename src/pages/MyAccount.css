@@ -59,6 +59,11 @@
       font-size: 24px;
       padding-left: 10px;
     }
+
+    .white:hover {
+      background-color: var(--green-50);
+      color: var(--white-200);
+    }
   }
 }
 

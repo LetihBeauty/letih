@@ -25,7 +25,7 @@ export const fetchClientByLogin = async (clientLogin) => {
       throw new Error("Client not found");
     }
 
-    console.log("Client found:", records);
+    // console.log("Client found:", records);
     // Retorna o primeiro cliente encontrado
     return {
       id: records[0].id,
@@ -74,7 +74,7 @@ export const fetchClientAndProducts = async (clientLogin) => {
   try {
     // Busca o cliente pelo nome
     const client = await fetchClientByLogin(clientLogin);
-    console.log("Client airtable service:", client);
+    // console.log("Client airtable service:", client);
     // Busca os produtos associados ao cliente
     const products = await fetchProductsByClient(client.products);
 

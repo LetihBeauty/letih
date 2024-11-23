@@ -230,6 +230,30 @@ export const fetchPageData = async (page) => {
 
       `;
       break;
+    case "skinCareRoutine":
+      query = `
+        {
+          skinCareRoutineCollection {
+            items {
+              slug
+              description {
+                json
+              }
+              image {
+                url
+                title
+                description
+              }
+              pdf {
+                url
+                title
+                description
+              }
+            }
+          }
+        }
+        `;
+      break;
 
     default:
       throw new Error(`Page ${page} is not supported`);

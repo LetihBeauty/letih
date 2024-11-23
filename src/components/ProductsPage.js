@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchClientAndProducts } from "../services/airtableService";
+import { fetchPageData } from "../services/contentfulService.js";
 
 const ProductsPage = () => {
   const { clientLogin } = useParams();
   const [products, setProducts] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
   const [client, setClient] = useState([]);
+  const [pageData, setPageData] = useState(null);
 
-  console.log("useParams:", useParams());
+  // console.log("useParams:", useParams());
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Busca os dados do cliente e produtos pelo clientLogin
         const data = await fetchClientAndProducts(clientLogin);
 
-        console.log("Data:", data);
-        console.log("Client:", data.client);
-        console.log("Products:", data.products);
+        // console.log("Products:", data.products);
 
-        // Atualiza os estados
         setProducts(data.products);
         setClient(data.client);
       } catch (error) {
@@ -29,10 +27,26 @@ const ProductsPage = () => {
       }
     };
 
+    const getData = async () => {
+      try {
+        const result = await fetchPageData("skinCareRoutine");
+        console.log("Result from fetchPageData:", result);
+        setPageData(result);
+      } catch (error) {
+        console.error(`Error fetching data:`, error.response || error.message);
+      }
+    };
+
     fetchData();
+    getData();
   }, [clientLogin]);
 
-  console.log("Client:", client);
+  // console.log("pageData:", pageData);
+
+  if (!client || !client.name) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <div className="products-page">
       <h1>Welcome, {client.name}!</h1>
