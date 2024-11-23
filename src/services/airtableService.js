@@ -1,8 +1,8 @@
 import Airtable from "airtable";
 
-console.log("API Key:", process.env.REACT_APP_AIRTABLE_API_KEY);
-console.log("Base ID:", process.env.REACT_APP_AIRTABLE_BASE_ID);
-console.log("Table Name:", process.env.REACT_APP_AIRTABLE_TABLE_AVAILABLESLOTS);
+// console.log("API Key:", process.env.REACT_APP_AIRTABLE_API_KEY);
+// console.log("Base ID:", process.env.REACT_APP_AIRTABLE_BASE_ID);
+// console.log("Table Name:", process.env.REACT_APP_AIRTABLE_TABLE_AVAILABLESLOTS);
 
 Airtable.configure({
   endpointUrl: "https://api.airtable.com",
