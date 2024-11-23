@@ -1,0 +1,45 @@
+.routine-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.routine-table th,
+.routine-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.routine-section h2 {
+  background-color: #eaf4e6;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.days-container {
+  display: flex;
+  gap: 5px;
+}
+
+.day {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.day.active {
+  color: green;
+}
+
+.routine-section.morning {
+  background-color: #f9fdf8;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.routine-section.night {
+  background-color: #f4f4f8;
+  padding: 10px;
+  border-radius: 8px;
+}

@@ -12,7 +12,7 @@ import Layout from "./components/Layout";
 import FacialService from "./pages/service/FacialService.jsx";
 import ServicePage from "./pages/service/ServicePage.jsx";
 import Booking from "./pages/Booking.js";
-import ProductsPage from "./components/ProductsPage";
+import ProductsPage from "./pages/ProductsPage";
 
 function App() {
   // const data = fetchPageData("home");
