@@ -1,71 +1,103 @@
 import Airtable from "airtable";
 
-// console.log("API Key:", process.env.REACT_APP_AIRTABLE_API_KEY);
-// console.log("Base ID:", process.env.REACT_APP_AIRTABLE_BASE_ID);
-// console.log("Table Name:", process.env.REACT_APP_AIRTABLE_TABLE_AVAILABLESLOTS);
-
+// Configuração do Airtable
 Airtable.configure({
   endpointUrl: "https://api.airtable.com",
   apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
 });
-var base = Airtable.base(process.env.REACT_APP_AIRTABLE_BASE_ID);
+const base = Airtable.base(process.env.REACT_APP_AIRTABLE_BASE_ID);
 
-// Nome da tabela
-const REACT_APP_AIRTABLE_TABLE_AVAILABLESLOTS =
-  process.env.REACT_APP_AIRTABLE_TABLE_AVAILABLESLOTS;
+// Nome das tabelas
+const REACT_APP_AIRTABLE_TABLE_CLIENTS = "Clients"; // Tabela de Clientes
+const REACT_APP_AIRTABLE_TABLE_PRODUCTS = "Products"; // Tabela de Produtos
 
-const REACT_APP_AIRTABLE_TABLE_BOOKED =
-  process.env.REACT_APP_AIRTABLE_TABLE_BOOKED;
+// Função para buscar os dados do cliente pelo nome
+export const fetchClientByLogin = async (clientLogin) => {
+  console.log("Fetching client by clientLogin:", clientLogin);
+  try {
+    const records = await base(REACT_APP_AIRTABLE_TABLE_CLIENTS)
+      .select({
+        filterByFormula: `{Login} = '${clientLogin}'`,
+      })
+      .all();
 
-// Função para adicionar um registro ao Airtable
+    if (records.length === 0) {
+      throw new Error("Client not found");
+    }
+
+    console.log("Client found:", records);
+    // Retorna o primeiro cliente encontrado
+    return {
+      id: records[0].id,
+      name: records[0].fields.Name,
+      login: records[0].fields.Login,
+      products: records[0].fields.Products, // IDs dos produtos relacionados
+    };
+  } catch (error) {
+    console.error("Error fetching client by name:", error);
+    throw error;
+  }
+};
+
+// Função para buscar produtos associados a um cliente
+export const fetchProductsByClient = async (productIds) => {
+  try {
+    if (!productIds || productIds.length === 0) {
+      throw new Error("No products found for this client.");
+    }
+
+    const records = await base(REACT_APP_AIRTABLE_TABLE_PRODUCTS)
+      .select({
+        filterByFormula: `OR(${productIds
+          .map((id) => `RECORD_ID() = '${id}'`)
+          .join(",")})`, // Filtra os produtos pelos IDs
+      })
+      .all();
+
+    // Mapeia os produtos encontrados
+    return records.map((record) => ({
+      id: record.id,
+      productName: record.fields["Product Name"],
+      howToUse: record.fields["How to Use"],
+      whereToBuy: record.fields["Where to Buy"],
+      morningRoutine: record.fields["Morning Routine"] || [],
+      nightRoutine: record.fields["Night Routine"] || [],
+    }));
+  } catch (error) {
+    console.error("Error fetching products by client:", error);
+    throw error;
+  }
+};
+
+// Função para buscar dados completos (cliente e produtos)
+export const fetchClientAndProducts = async (clientLogin) => {
+  try {
+    // Busca o cliente pelo nome
+    const client = await fetchClientByLogin(clientLogin);
+    console.log("Client airtable service:", client);
+    // Busca os produtos associados ao cliente
+    const products = await fetchProductsByClient(client.products);
+
+    return { client, products };
+  } catch (error) {
+    console.error("Error fetching client and products:", error);
+    throw error;
+  }
+};
 
 export const addRecordToAirtable = async (record) => {
   console.log("Data being sent to Airtable:", record);
 
   try {
-    const createdRecord = await base(REACT_APP_AIRTABLE_TABLE_BOOKED).create(
-      record
-    ); // Certifique-se de usar o nome correto da tabela
-    return createdRecord; // Retorna o registro criado
-  } catch (error) {
-    console.error("Error adding record to Airtable:", error);
-    throw error;
-  }
-};
-
-// Função para buscar horários disponíveis
-export const fetchAvailableSlots = async () => {
-  try {
-    const records = await base(REACT_APP_AIRTABLE_TABLE_AVAILABLESLOTS)
-      .select({
-        filterByFormula: `{Status} = 'Available'`, // Filtro para horários disponíveis
-      })
-      .all();
-
-    return records.map((record) => ({
-      id: record.id,
-      date: record.fields.Date,
-      time: record.fields.Time,
-      status: record.fields.Status,
-    }));
-  } catch (error) {
-    console.error("Error fetching available slots:", error);
-    throw error;
-  }
-};
-
-// Função para salvar um agendamento na tabela Booked
-export const saveBooking = async (bookingData) => {
-  try {
-    const record = await base(REACT_APP_AIRTABLE_TABLE_BOOKED).create([
+    const createdRecord = await base(REACT_APP_AIRTABLE_TABLE_PRODUCTS).create([
       {
-        fields: bookingData,
+        fields: record,
       },
     ]);
-    console.log("Booking saved successfully:", record);
-    return record;
+    console.log("Record added successfully:", createdRecord);
+    return createdRecord;
   } catch (error) {
-    console.error("Error saving booking to Airtable:", error);
+    console.error("Error adding record to Airtable:", error);
     throw error;
   }
 };

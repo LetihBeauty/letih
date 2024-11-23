@@ -12,6 +12,7 @@ import Layout from "./components/Layout";
 import FacialService from "./pages/service/FacialService.jsx";
 import ServicePage from "./pages/service/ServicePage.jsx";
 import Booking from "./pages/Booking.js";
+import ProductsPage from "./components/ProductsPage";
 
 function App() {
   // const data = fetchPageData("home");
@@ -27,6 +28,7 @@ function App() {
           <Route path="/service/:slug" element={<ServicePage />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/myAccount" element={<MyAccount />} />
+          <Route path="/products/:clientLogin" element={<ProductsPage />} />
         </Routes>
       </Layout>
     </Router>
