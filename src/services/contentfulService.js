@@ -257,9 +257,11 @@ export const fetchPageData = async (page) => {
       throw new Error(`Page ${page} is not supported`);
   }
 
+  const environment = process.env.REACT_APP_CONTENTFUL_ENVIRONMENT || "master";
+
   try {
     const response = await axios({
-      url: `https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}/environments/master`,
+      url: `https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}/environments/${environment}`,
       method: "POST",
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN}`,
