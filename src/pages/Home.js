@@ -7,6 +7,7 @@ import Btn from "../components/Btn";
 import BtnWhite from "../components/BtnWhite";
 import Testimonials from "../components/Testimonials.js";
 import { aboutUsSections, advantages } from "../components/constants/index.js";
+import { sendContactFormToAirtable } from "../services/airtableService.js";
 
 function Home() {
   const [data, setData] = useState(null);
@@ -24,8 +25,37 @@ function Home() {
     }
   };
 
+  const handleFormSubmit = async (event) => {
+    event.preventDefault(); // Evita o recarregamento da página
+
+    // Coleta os dados do formulário
+    const form = event.target; // Referência ao formulário enviado
+    const formData = new FormData(form); // Extrai os dados do formulário
+    const record = Object.fromEntries(formData.entries()); // Converte para objeto
+
+    console.log("Record to send:", record);
+
+    // Verifica se os campos obrigatórios estão preenchidos
+    if (!record.name || !record.email || !record.message) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    // Envia os dados para o Airtable
+    try {
+      const response = await sendContactFormToAirtable(record);
+      console.log("Record added successfully:", response);
+      alert("Your message has been sent successfully!");
+      form.reset(); // Limpa o formulário após o envio bem-sucedido
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("There was an error sending your message. Please try again later.");
+    }
+  };
+
   useEffect(() => {
     getData();
+    // handleFormSubmit();
   }, []);
 
   if (!data) {
@@ -197,30 +227,46 @@ function Home() {
       <div className="contact">
         <h2>Contact us</h2>
         <p>Fill out the form and we will contact you as soon as possible!</p>
-        <form>
+        <form onSubmit={handleFormSubmit}>
           <div className="name-email">
             <div className="form-group">
-              <label for="name">Name</label>
-              <input type="text" placeholder="Name" />
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                required
+              />
             </div>
-
             <div className="form-group">
-              <label for="name">Email</label>
-              <input type="email" placeholder="Email" />
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
             </div>
           </div>
-
-          <div className="form-group-phone">
-            <label for="name">Phone</label>
-            <input type="phones" placeholder="Phone" />
-          </div>
-
           <div className="form-group">
-            <label for="name">Message</label>
-            <textarea placeholder="How can we help you today?"></textarea>
+            <label htmlFor="phone">Phone</label>
+            <input type="text" id="phone" name="phone" placeholder="Phone" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="How can we help you today?"
+              required
+            ></textarea>
           </div>
           <div className="btn-send">
-            <Btn customButtonClass="white">Send</Btn>
+            <Btn type="submit" className="white-btn">
+              Send
+            </Btn>
           </div>
         </form>
       </div>

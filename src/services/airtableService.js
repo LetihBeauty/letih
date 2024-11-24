@@ -10,6 +10,7 @@ const base = Airtable.base(process.env.REACT_APP_AIRTABLE_BASE_ID);
 // Nome das tabelas
 const REACT_APP_AIRTABLE_TABLE_CLIENTS = "Clients"; // Tabela de Clientes
 const REACT_APP_AIRTABLE_TABLE_PRODUCTS = "Products"; // Tabela de Produtos
+const REACT_APP_AIRTABLE_TABLE_CONTACT = "Contact"; // Tabela de Contato
 
 // Função para buscar os dados do cliente pelo nome
 export const fetchClientByLogin = async (clientLogin) => {
@@ -100,6 +101,31 @@ export const addRecordToAirtable = async (record) => {
     const createdRecord = await base(REACT_APP_AIRTABLE_TABLE_PRODUCTS).create([
       {
         fields: record,
+      },
+    ]);
+    console.log("Record added successfully:", createdRecord);
+    return createdRecord;
+  } catch (error) {
+    console.error("Error adding record to Airtable:", error);
+    throw error;
+  }
+};
+
+export const sendContactFormToAirtable = async (record) => {
+  console.log("Data being sent to Airtable:", record);
+  console.log("Table name:", process.env.REACT_APP_AIRTABLE_TABLE_CONTACT);
+
+  try {
+    const createdRecord = await base(
+      process.env.REACT_APP_AIRTABLE_TABLE_CONTACT
+    ).create([
+      {
+        fields: {
+          Name: record.name,
+          Email: record.email,
+          Phone: record.phone,
+          Message: record.message,
+        },
       },
     ]);
     console.log("Record added successfully:", createdRecord);
