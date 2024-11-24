@@ -264,7 +264,7 @@ function Home() {
             ></textarea>
           </div>
           <div className="btn-send">
-            <Btn type="submit" className="white-btn">
+            <Btn type="submit" customButtonClass="white">
               Send
             </Btn>
           </div>
