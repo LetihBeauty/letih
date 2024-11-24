@@ -3,6 +3,7 @@ import "./Layout.css";
 import data from "../data.json";
 import { Link, useLocation } from "react-router-dom";
 import { footerLinks } from "../components/constants/index.js";
+import Navbar from "./Navbar.js";
 
 // import { Link } from "react-router-dom";
 
@@ -16,7 +17,8 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      <header></header>
+      <Navbar />
+
       <main>{children}</main>
       <footer>
         <div>
