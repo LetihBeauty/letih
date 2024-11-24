@@ -104,8 +104,10 @@
     ],
     "developed": {
       "title": " Developed by",
-      "name": "Karen Honorio",
-      "url": "https://karenhb.com/"
+      "karen": "Karen Honorio",
+      "karenUrl": "https://karenhb.com/",
+      "victor": "Victor Fonseca",
+      "victorUrl": "https://www.linkedin.com/in/victorfonsecas/"
     }
   },
   "service": [

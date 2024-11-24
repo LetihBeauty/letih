@@ -121,10 +121,14 @@ footer {
 
     a {
       color: var(--white-200);
-      text-decoration: none;
+      text-align: center;
+      font-family: Montserrat;
       font-size: 12px;
-      font-weight: 400;
-      position: relative;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      margin: 12px 5px 15px 5px;
+      text-decoration: none;
     }
   }
 }

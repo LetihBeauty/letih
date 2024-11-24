@@ -61,10 +61,14 @@ const Layout = ({ children }) => {
         <p id="copyright">
           COPYRIGHT © <span>{year}</span> {copyright}
           <br></br>
-          {/* <span>{developedBy.title}</span>{" "} */}
-          {/* <a href={developedBy.url} target="_blank" rel="noreferrer">
-            {developedBy.name}
-          </a> */}
+          <span>{developedBy.title}</span>{" "}
+          <a href={developedBy.karenUrl} target="_blank" rel="noreferrer">
+            {developedBy.karen}
+          </a>{" "}
+          &
+          <a href={developedBy.victorUrl} target="_blank" rel="noreferrer">
+            {developedBy.victor}
+          </a>
         </p>
       </footer>
     </div>
