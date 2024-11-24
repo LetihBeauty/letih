@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
 import Btn from "../components/Btn";
+import Gallery from "../components/Gallery";
 import BtnWhite from "../components/BtnWhite";
 import Testimonials from "../components/Testimonials.js";
 import { aboutUsSections, advantages } from "../components/constants/index.js";
@@ -211,17 +212,9 @@ function Home() {
       <Testimonials testimonialData={testimonialData} />
 
       {/* Gallery */}
-      <div className="our-gallery">
-        <h2>Our Gallery</h2>
-        <div className="gallery">
-          <img src="images/our-gallery-01.webp" alt="" id="img1" />
-          <img src="images/our-gallery-02.webp" alt="" id="img2" />
-          <img src="images/our-gallery-03.webp" alt="" id="img3" />
-          <img src="images/our-gallery-04.webp" alt="" id="img4" />
-          <img src="images/our-gallery-05.webp" alt="" id="img5" />
-          <img src="images/our-gallery-06.webp" alt="" id="img6" />
-        </div>
-      </div>
+
+      <Gallery />
+
       {/* Contact Us */}
       <div className="contact" id="contact">
         <h2>Contact us</h2>
