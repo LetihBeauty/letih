@@ -14,6 +14,7 @@ a {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  border: 1px solid var(--green-50);
 
   thead {
     background-color: var(--green-100);
@@ -31,6 +32,16 @@ a {
   padding: 10px 30px;
 }
 
+th {
+  padding: auto 0px !important;
+}
+
+td {
+  border-right: transparent;
+  border-left: transparent;
+  border-top: 1px solid var(--green-50);
+}
+
 .top-morning,
 .top-night {
   background-color: var(--green-50);
@@ -41,8 +52,8 @@ a {
 
 .routine-section h2 {
   color: var(--white-200);
-  padding: 10px 20px;
   text-transform: capitalize !important;
+  letter-spacing: 1px;
 }
 
 .days-container {
@@ -62,10 +73,6 @@ a {
     color: var(--green-100);
   }
 }
-
-/* .instructions {
-  margin-top: 20px;
-} */
 
 .product {
   width: 20%;
@@ -88,16 +95,20 @@ a {
   color: var(--green-100);
 }
 
+.routine-section {
+  margin: 20px 60px;
+
+  img {
+    margin-right: 20px;
+  }
+}
+
 .routine-section.morning {
-  margin-bottom: 20px;
-  padding: 10px;
   border-radius: 8px;
   border-color: var(--green-100);
 }
 
 .routine-section.night {
   background-color: var(--white-200);
-
-  padding: 10px;
-  border-radius: 8px;
+  margin-top: -20px;
 }
