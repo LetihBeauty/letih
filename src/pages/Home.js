@@ -3,10 +3,8 @@ import { fetchPageData } from "../services/contentfulService.js"; // Importa o s
 import { useLocation } from "react-router-dom";
 
 import "./Home.css";
-import BtnGreen from "../components/BtnGreen";
 import Btn from "../components/Btn";
 import Gallery from "../components/Gallery";
-import BtnWhite from "../components/BtnWhite";
 import Testimonials from "../components/Testimonials.js";
 import { aboutUsSections, advantages } from "../components/constants/index.js";
 import { sendContactFormToAirtable } from "../services/airtableService.js";
@@ -91,7 +89,9 @@ function Home() {
           <div className="content">
             <h1 className="bannerTitle">{homeData.title}</h1>
             <h5 className="bannerDescrip">{homeData.subtitle}</h5>
-            <Btn customButtonClass="green">Our Services</Btn>
+            <Btn customButtonClass="green" href="#our-services">
+              Our Services
+            </Btn>
           </div>
           {/* Hero image */}
           <img
@@ -159,7 +159,7 @@ function Home() {
       </div>
 
       {/* Our Services */}
-      <div className="our-services">
+      <div className="our-services" id="our-services">
         <h2>Our Services</h2>
         {homeData.ourServicesCollection.items.map((service, index) => {
           const colorStyle =
