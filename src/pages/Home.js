@@ -150,7 +150,7 @@ function Home() {
                 }}
               ></p>
 
-              <Btn customButtonClass="green" href={homeData.urlAboutUs}>
+              <Btn customButtonClass="green" href="/about">
                 Learn More
               </Btn>
             </div>

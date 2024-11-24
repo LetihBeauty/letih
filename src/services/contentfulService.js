@@ -45,8 +45,6 @@ export const fetchPageData = async (page) => {
               }
               subtitle
               title
-              urlAboutUs
-              urlHero
               ourServicesCollection (limit: 20) {
                 items {
                   __typename
