@@ -1,45 +1,103 @@
+@import "../style.css";
+
+a {
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--green-100);
+  margin: -3px;
+}
+
 .routine-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+
+  thead {
+    background-color: var(--green-100);
+    color: var(--white-200);
+  }
 }
 
 .routine-table th,
 .routine-table td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: left;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  padding: 10px 30px;
+}
+
+.top-morning,
+.top-night {
+  background-color: var(--green-50);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .routine-section h2 {
-  background-color: #eaf4e6;
-  padding: 10px;
-  border-radius: 8px;
+  color: var(--white-200);
+  padding: 10px 20px;
+  text-transform: capitalize !important;
 }
 
 .days-container {
   display: flex;
+  justify-content: space-around;
   gap: 5px;
+  margin: 20px 0px;
+  width: 100%;
+}
+
+.how-to-use-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  td {
+    color: var(--green-100);
+  }
+}
+
+/* .instructions {
+  margin-top: 20px;
+} */
+
+.product {
+  width: 20%;
+}
+
+.how-to-use {
+  width: 50%;
+}
+
+.where-to-buy {
+  width: 20%;
 }
 
 .day {
   display: inline-block;
-  font-size: 16px;
+  font-size: 40px;
 }
 
 .day.active {
-  color: green;
+  color: var(--green-100);
 }
 
 .routine-section.morning {
-  background-color: #f9fdf8;
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 8px;
+  border-color: var(--green-100);
 }
 
 .routine-section.night {
-  background-color: #f4f4f8;
+  background-color: var(--white-200);
+
   padding: 10px;
   border-radius: 8px;
 }

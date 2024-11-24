@@ -66,7 +66,7 @@ export const fetchProductsByClient = async (productIds) => {
         ? record.fields["Night Routine"]
         : [], // Verifica se é um array
     }));
-
+    console.log("records", records);
     console.log("Products found:", products); // Log para verificar os dados retornados
 
     return products;
