@@ -61,7 +61,7 @@ const RoutineTable = ({ routineData }) => {
   );
 
   return (
-    <div>
+    <div className="container">
       {/* Morning Routine */}
       {morningRoutineProducts.length > 0 ? (
         <div className="routine-section morning">

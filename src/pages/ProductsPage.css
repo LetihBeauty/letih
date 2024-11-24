@@ -12,6 +12,7 @@
 
   .top-container {
     display: flex;
+    flex-direction: row;
 
     img {
       height: 345px;
@@ -20,6 +21,8 @@
     .description {
       display: flex;
       flex-direction: column;
+      width: 50%;
+      margin-left: 70px;
 
       p {
         line-height: 24px;
@@ -31,6 +34,7 @@
       }
     }
     .image-link {
+      margin-left: 50px;
       display: flex;
       flex-direction: column;
       justify-content: center;

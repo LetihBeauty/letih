@@ -4,6 +4,7 @@ import { fetchClientAndProducts } from "../services/airtableService.js";
 import { fetchPageData } from "../services/contentfulService.js";
 import "./ProductsPage.css";
 import RoutineTable from "../components/RoutineTable";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const ProductsPage = () => {
   const { clientLogin } = useParams();
@@ -56,6 +57,8 @@ const ProductsPage = () => {
   // console.log("products", products);
 
   const content = pageData?.skinCareRoutineCollection?.items?.[0];
+  console.log("Content:", pageData?.skinCareRoutineCollection);
+  console.log("Content:", content);
 
   if (!client || !client.name) {
     return <p>Loading...</p>;
@@ -63,16 +66,17 @@ const ProductsPage = () => {
 
   return (
     <div className="products-page">
-      <h1>Hello, {client.name || "Guest"}!</h1>
-      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-
       <div className="top-container">
         <div className="description">
+          <h1>Hello, {client.name || "Guest"}!</h1>
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
           <p
             dangerouslySetInnerHTML={{
               __html:
-                content?.description?.json?.content?.[0]?.content?.[0]?.value ||
+                documentToHtmlString(content?.description?.json) ||
                 "No description available",
+              // content?.description?.json?.content?.[0]?.content?.[0]?.value ||
+              // "No description available",
             }}
           ></p>
 
