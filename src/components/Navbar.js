@@ -157,7 +157,10 @@ const DesktopNavbar = () => {
           >
             {myAccount.title} {/* Sign-in button */}
           </Link>
-          <Btn href={`/booking`} customButtonClass="green">
+          <Btn
+            href="https://beauty-by-cica.square.site/"
+            customButtonClass="green"
+          >
             Book Now
           </Btn>
           {/* Button to book services */}
