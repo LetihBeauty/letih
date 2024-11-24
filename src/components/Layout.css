@@ -69,6 +69,9 @@ footer {
       padding: 0;
       height: 27px;
       flex-shrink: 0;
+      img {
+        margin: auto 10px;
+      }
     }
 
     .footer-contact {
@@ -86,7 +89,7 @@ footer {
         img {
           width: 20px;
           height: 20px;
-          margin: 0 10px;
+          margin: auto 10px;
         }
 
         a,

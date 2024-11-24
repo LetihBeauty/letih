@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchPageData } from "../services/contentfulService.js"; // Importa o serviço
+import { useLocation } from "react-router-dom";
 
 import "./Home.css";
 import BtnGreen from "../components/BtnGreen";
@@ -53,10 +54,22 @@ function Home() {
     }
   };
 
+  const checkHash = () => {
+    setTimeout(() => {
+      if (window.location.hash) {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }, 100);
+  };
+  const location = useLocation();
+
   useEffect(() => {
     getData();
-    // handleFormSubmit();
-  }, []);
+    checkHash();
+  }, [location]);
 
   if (!data) {
     return <p>Loading...</p>;
@@ -71,17 +84,7 @@ function Home() {
       ? data.homepageCollection.items[0]
       : null;
 
-  // if (homeData) {
-  //   console.log("homeData", homeData);
-  // } else {
-  //   console.error("homeData não encontrado ou está vazio.");
-  // }
-
   const testimonialData = homeData.testimonialsCollection.items;
-  // console.log(
-  //   "Dados retornados no testimonialsCollection:",
-  //   testimonialData.items
-  // );
 
   return (
     <>
@@ -224,7 +227,7 @@ function Home() {
         </div>
       </div>
       {/* Contact Us */}
-      <div className="contact">
+      <div className="contact" id="contact">
         <h2>Contact us</h2>
         <p>Fill out the form and we will contact you as soon as possible!</p>
         <form onSubmit={handleFormSubmit}>
