@@ -27,7 +27,7 @@ body {
 
 #myAccount-btn {
   white-space: nowrap;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
 }
 
 button {
@@ -46,11 +46,13 @@ button {
   list-style: none;
   height: 27px;
   flex-shrink: 0;
+  width: 500px;
 }
 
 .navbar-desktop .items {
   position: relative;
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  width: 80px;
 }
 .navbar-desktop .service-toggle {
   cursor: pointer;
@@ -132,6 +134,7 @@ button {
 
 .navbar-desktop .center-logo {
   padding-left: 128px;
+  width: 600px;
 }
 
 .navbar-desktop .center-logo h3 {
