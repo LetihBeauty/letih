@@ -20,7 +20,6 @@ const FacialService = () => {
         .split("/")
         .pop()
         .toLowerCase();
-      console.log("Slug atual da URL:", slugFromUrl);
 
       // Filtra o item de acordo com o slug em minúsculas (ou ajuste conforme necessário)
       const deepCleansingData =

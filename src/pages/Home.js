@@ -14,12 +14,10 @@ function Home() {
   const [data, setData] = useState(null);
 
   const aboutUsSection = aboutUsSections;
-  // console.log("aboutUsSections", aboutUsSections);
 
   const getData = async () => {
     try {
       const result = await fetchPageData("home");
-      // console.log("dados retornados no home", result);
       setData(result.data);
     } catch (error) {
       console.error(`Error fetching data:`, error.response || error.message);
@@ -33,8 +31,6 @@ function Home() {
     const form = event.target; // Referência ao formulário enviado
     const formData = new FormData(form); // Extrai os dados do formulário
     const record = Object.fromEntries(formData.entries()); // Converte para objeto
-
-    console.log("Record to send:", record);
 
     // Verifica se os campos obrigatórios estão preenchidos
     if (!record.name || !record.email || !record.message) {

@@ -4,9 +4,6 @@ const RoutineTable = ({ routineData }) => {
   if (!routineData || routineData.length === 0) {
     return <p>Loading routines...</p>;
   }
-
-  // console.log("Routine Data:", routineData);
-
   // Function to filter morning routines
   const getMorningRoutineData = (routineData) => {
     return routineData.filter(
@@ -23,8 +20,6 @@ const RoutineTable = ({ routineData }) => {
   // Fetch morning routines
   const morningRoutineProducts = getMorningRoutineData(routineData);
   const nightRoutineProducts = getNightRoutineData(routineData);
-
-  // console.log("Morning Routine Products:", morningRoutineProducts);
 
   // Function to render a table row
   const renderRoutineRow = (routine, days) => (

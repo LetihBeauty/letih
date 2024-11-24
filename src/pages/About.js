@@ -2,14 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./About.css";
 import BtnGreen from "../components/BtnGreen";
 import GreenRetangle from "../components/GreenRetangle";
-import {
-  behindTheScenes,
-  ourMission,
-  ourVision,
-  qualityService,
-  transparencyAndHonesty,
-  warmerApproach,
-} from "../components/constants";
 import { fetchPageData } from "../services/contentfulService.js";
 
 const About = () => {
@@ -18,7 +10,6 @@ const About = () => {
   const getData = async () => {
     try {
       const result = await fetchPageData("about");
-      console.log("Resultado do fetchPageData:", result);
       setData(result?.data); // Verifique se result.data realmente existe
     } catch (error) {
       console.error(
@@ -43,12 +34,6 @@ const About = () => {
     data.aboutUsPageCollection.items.length > 0
       ? data.aboutUsPageCollection.items[0]
       : null;
-
-  if (aboutData) {
-    console.log("aboutData", aboutData);
-  } else {
-    console.error("aboutData não encontrado ou está vazio.");
-  }
 
   return (
     <div>

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "./Testimonials.css"; // Adicione seu CSS personalizado
 
 function Testimonials({ testimonialData }) {
-  // console.log("dados recebidos no carrosel ", testimonialData);
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const next = () => {
@@ -21,8 +19,6 @@ function Testimonials({ testimonialData }) {
   if (!testimonialData || testimonialData.length === 0) {
     return <div>Loading Testimonials...</div>;
   }
-
-  console.log("currentIndex", currentIndex);
 
   return (
     <div className="testimonial-container">

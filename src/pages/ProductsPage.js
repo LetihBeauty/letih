@@ -13,16 +13,10 @@ const ProductsPage = () => {
   const [client, setClient] = useState([]);
   const [pageData, setPageData] = useState(null);
 
-  // console.log("useParams:", useParams());
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await fetchClientAndProducts(clientLogin);
-        console.log("Client data:", data.client);
-        console.log("Products data:", data.products);
-        console.log("howToUse data:", data.products.howToUse);
-
         setProducts(data.products);
         setClient(data.client);
       } catch (error) {
@@ -34,7 +28,6 @@ const ProductsPage = () => {
     const getData = async () => {
       try {
         const result = await fetchPageData("skinCareRoutine");
-        // console.log("Result from fetchPageData:", result);
 
         if (
           result?.data?.skinCareRoutineCollection?.items &&
@@ -54,11 +47,7 @@ const ProductsPage = () => {
     getData();
   }, [clientLogin]);
 
-  // console.log("products", products);
-
   const content = pageData?.skinCareRoutineCollection?.items?.[0];
-  console.log("Content:", pageData?.skinCareRoutineCollection);
-  console.log("Content:", content);
 
   if (!client || !client.name) {
     return <p>Loading...</p>;
