@@ -6,7 +6,7 @@ body {
   width: 100%;
   border-bottom: 10px solid var(--green-100);
 }
-.navbar-desktop {
+.navbar-desktop {quer
   display: flex;
   width: 100vw;
   height: 80px;
