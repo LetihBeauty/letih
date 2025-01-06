@@ -202,7 +202,10 @@ p {
 }
 
 .women-middle {
-  margin-right: calc(80px / 2);
+  /* margin-left: calc(500px / 2); */
+  /* margin-left: 15%; */
+  right: 130px;
+  margin-top: 20px;
 }
 
 .women-bottom-one {
@@ -315,8 +318,8 @@ p {
       }
 
       .women-middle {
-        top: 170%;
-        right: 10%;
+        top: 165%;
+        right: 16%;
       }
 
       .green-box-3 {
