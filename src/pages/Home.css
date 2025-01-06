@@ -639,7 +639,7 @@ p {
 
   .about-us-img-left {
     z-index: 2;
-    margin-left: -80px;
+    /* margin-left: -80px; */
   }
 
   .about-us-img-right {
@@ -658,14 +658,20 @@ p {
     margin-left: 16px;
   }
 
+  .about-us-top img {
+    transform: translateY(-80px) translateX(40px);
+    width: 69%;
+    margin-right: 34%;
+  }
+
   .about-us-bottom img {
     transform: translateY(-80px) translateX(40px);
-    /* Ajuste conforme necessário */
+    width: 69%;
+    margin-top: 17px;
   }
 
   .about-us-bottom-left {
-    width: 350px;
-    margin: 10px auto;
+    width: 90%;
     top: -50px;
 
     p {
