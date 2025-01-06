@@ -1,5 +1,9 @@
 @import "../style.css";
 
+body {
+  z-index: 0;
+}
+
 h1 {
   font-family: "Roboto Serif";
   font-size: 40px;
