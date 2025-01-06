@@ -41,7 +41,7 @@ function Testimonials({ testimonialData }) {
             </p>
 
             <p className="customer name">
-              <span className="quote">- </span>
+              <span className="customer-name">- </span>
               {testimonialData[currentIndex]?.customerName || "Anonymous"}
             </p>
             <button className="carousel-control prev" onClick={prev}>
