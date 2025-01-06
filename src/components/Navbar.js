@@ -171,50 +171,50 @@ const DesktopNavbar = () => {
 };
 
 const MobileNavbar = () => {
-  const navItems = data.navbar; // Get navigation items
-  const location = useLocation(); // Get current URL
-  const [isOpen, setIsOpen] = useState(false); // State for opening/closing the mobile menu
+  const navItems = data.navbar; // Obter itens do menu de navegação
+  const location = useLocation(); // Obter URL atual
+  const [isOpen, setIsOpen] = useState(false); // Estado para abrir/fechar o menu móvel
 
-  // Toggle the mobile menu open/close
+  // Alternar o menu aberto/fechado
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // Close the mobile menu
+  // Fechar o menu
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  // Prevenir fechamento ao clicar no conteúdo do modal
+  const preventClose = (e) => {
+    e.stopPropagation();
   };
 
   return (
     <>
       <nav className="navbar-mobile">
         <div className="logo">
-          <h3>LETIH BEAUTY</h3> {/* Mobile logo */}
+          <h3>LETIH BEAUTY</h3> {/* Logo móvel */}
         </div>
         <div className="hamburger-icon" onClick={toggleMenu}>
-          <img src="images/hamburger.svg" alt="Menu" />{" "}
-          {/* Hamburger icon for menu */}
+          <img src="images/hamburger.svg" alt="Menu" /> {/* Ícone do menu */}
         </div>
       </nav>
-      {isOpen && ( // Show mobile menu if open
-        <div className="modal">
-          <div className="modal-content">
+      {isOpen && ( // Mostrar o menu móvel se estiver aberto
+        <div className="modal" onClick={closeMenu}>
+          <div className="modal-content" onClick={preventClose}>
             <ul>
-              {navItems.map(
-                (
-                  item // Map through navigation items
-                ) => (
-                  <li key={item.id} className="items">
-                    <Link
-                      className={location.pathname === item.url ? "active" : ""} // Highlight if active
-                      to={item.url}
-                      onClick={closeMenu} // Close menu on click
-                    >
-                      {item.title} {/* Display mobile navigation titles */}
-                    </Link>
-                  </li>
-                )
-              )}
+              {navItems.map((item) => (
+                <li key={item.id} className="items">
+                  <Link
+                    className={location.pathname === item.url ? "active" : ""} // Destacar se ativo
+                    to={item.url}
+                    onClick={closeMenu} // Fechar menu ao clicar
+                  >
+                    {item.title} {/* Exibir títulos de navegação móvel */}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
