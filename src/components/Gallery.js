@@ -9,7 +9,7 @@ function Gallery() {
   return (
     <div className={isGalleryPage ? "default-page" : "our-gallery"}>
       <h2>Our Gallery</h2>
-      <div className="gallery">
+      <div className="gallery" id="gallery">
         <img src="images/our-gallery-01.webp" alt="" id="img1" />
         <img src="images/our-gallery-02.webp" alt="" id="img2" />
         <img src="images/our-gallery-03.webp" alt="" id="img3" />

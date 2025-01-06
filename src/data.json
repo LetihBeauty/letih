@@ -16,6 +16,7 @@
     {
       "id": 3,
       "title": "SERVICE",
+      "url": "#our-services",
       "submenu": [
         {
           "id": 1,
@@ -73,12 +74,12 @@
     {
       "id": 5,
       "title": "CONTACT",
-      "url": "/contact"
+      "url": "#contact"
     },
     {
       "id": 6,
       "title": "GALLERY",
-      "url": "/gallery"
+      "url": "#gallery"
     }
   ],
   "footer": {
