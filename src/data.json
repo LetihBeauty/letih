@@ -131,10 +131,5 @@
       "title": "GLOW FACIAL",
       "url": "/service/facial/glowfacial"
     }
-  ],
-  "myAccount": {
-    "id": 1,
-    "title": "MY ACCOUNT",
-    "url": "/myAccount"
-  }
+  ]
 }

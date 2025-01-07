@@ -8,7 +8,6 @@ import { useMediaQuery } from "react-responsive";
 
 const DesktopNavbar = () => {
   const navItems = data.navbar;
-  const myAccount = data.myAccount;
   const location = useLocation(); // Get the current URL location
   const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false); // State for opening/closing service dropdown
   const [facialDropdownOpen, setFacialDropdownOpen] = useState(false); // State for opening/closing facial dropdown
@@ -147,24 +146,12 @@ const DesktopNavbar = () => {
             )
           )}
         </ul>
-        <div className="myAccount-buttons">
-          {" "}
-          {/* Buttons for login and booking */}
-          <Link
-            id="myAccount-btn"
-            className={location.pathname === myAccount.url ? "active" : ""}
-            to={myAccount.url}
-          >
-            {myAccount.title} {/* Sign-in button */}
-          </Link>
-          <Btn
-            href="https://beauty-by-cica.square.site/"
-            customButtonClass="green"
-          >
-            Book Now
-          </Btn>
-          {/* Button to book services */}
-        </div>
+        <Btn
+          href="https://beauty-by-cica.square.site/"
+          customButtonClass="green"
+        >
+          Book Now
+        </Btn>
       </div>
     </div>
   );

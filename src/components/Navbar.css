@@ -10,7 +10,7 @@ body {
   display: flex;
   width: 100vw;
   height: 80px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   z-index: 1000;
   position: relative;
@@ -23,11 +23,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   position: relative;
-}
-
-#myAccount-btn {
   white-space: nowrap;
-  /* margin-bottom: 8px; */
 }
 
 button {
@@ -46,13 +42,13 @@ button {
   list-style: none;
   height: 27px;
   flex-shrink: 0;
-  width: 500px;
+  width: 800px;
 }
 
 .navbar-desktop .items {
   position: relative;
-  /* margin-left: 20px; */
-  width: 80px;
+  margin-left: 20px;
+  width: 115px;
 }
 .navbar-desktop .service-toggle {
   cursor: pointer;
@@ -133,8 +129,7 @@ button {
 }
 
 .navbar-desktop .center-logo {
-  padding-left: 128px;
-  width: 600px;
+  width: 300px;
 }
 
 .navbar-desktop .center-logo h3 {
