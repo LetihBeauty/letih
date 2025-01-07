@@ -504,38 +504,13 @@ p {
   }
 
   .banner-mobile {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-
-    h5 {
-      width: 350px;
-      text-align: center;
-      margin: 0 auto;
-    }
-  }
-
-  .bannerTitle {
-    font-size: 40px !important;
-    line-height: 50px !important;
-    padding: 0px !important;
-  }
-
-  .bannerTitle,
-  .bannerDescrip,
-  .customButtonClass {
-    margin: 0;
-    padding: 0;
-  }
-
-  .banner-mobile .customButtonClass {
-    margin: 0 auto;
   }
 
   .banner-mobile img {
-    height: 473px;
     width: 100%;
     object-fit: cover;
     clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
@@ -545,12 +520,10 @@ p {
 
   .banner-mobile h1 {
     width: 350px;
+    margin: 20px 0px;
     text-align: center;
-    margin: 10px 0;
-    word-wrap: break-word;
-    font-size: 30px;
   }
-  .banner-mobile h4 {
+  .banner-mobile h5 {
     margin: 10px 10px 20px 10px;
     word-wrap: break-word;
     font-size: 20px;
