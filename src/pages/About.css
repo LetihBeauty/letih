@@ -283,33 +283,33 @@ p {
     .images-container {
       .green-box-1 {
         top: 10%;
-        left: 5%;
+        left: 3%;
       }
 
       .green-box-2 {
-        top: 44%;
-        left: 30%;
+        top: 22%;
+        left: 12%;
       }
 
       .women-image {
         width: 70%;
-        height: 70%;
+        height: auto;
       }
 
       .women-top {
-        left: 16%;
-        top: 20%;
+        left: 13%;
+        top: 15%;
       }
     }
 
     .we-are-letih-beauty {
       width: 90%;
-      margin-top: 100vh;
+      margin-top: 110%;
       margin-left: 10px;
       align-items: center;
 
       .mission-vision {
-        margin-top: 46px;
+        margin-top: 25px;
       }
     }
   }
@@ -318,28 +318,29 @@ p {
     .images-container {
       .women-image {
         width: 70%;
-        height: 70%;
+        height: auto;
       }
 
       .women-middle {
-        top: 165%;
-        right: 16%;
+        top: 110%;
+        right: 18%;
       }
 
       .green-box-3 {
         margin-top: -30%;
-        right: 30%;
+        right: 20%;
       }
 
       .green-box-4 {
-        margin-top: 12%;
-        right: 8%;
+        margin-top: -5%;
+        right: 10%;
       }
     }
 
     .our-values-content {
       margin-left: 21px;
       margin-top: 85%;
+      width: 88vw;
     }
   }
 
@@ -348,7 +349,7 @@ p {
 
     .image-letih {
       width: 60%;
-      height: 45%;
+      height: auto;
 
       .women-bottom-one {
         margin-left: -15%;
@@ -365,7 +366,8 @@ p {
       }
     }
     .behind-scenes-content {
-      margin: 30% 1% 10%;
+      margin: 18% 1% 10%;
+      width: 88vw;
     }
   }
 
