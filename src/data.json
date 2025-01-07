@@ -79,6 +79,11 @@
       "id": 6,
       "title": "GALLERY",
       "url": "/gallerypage"
+    },
+    {
+      "id": 7,
+      "title": "MY ACCOUNT",
+      "url": "/myAccount"
     }
   ],
   "footer": {
