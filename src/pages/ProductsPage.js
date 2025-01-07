@@ -76,7 +76,12 @@ const ProductsPage = () => {
             <img src={content.image.url} alt="Content Image" />
           )}
           {content?.pdf?.url && (
-            <a href={content.pdf.url} target="_blank" rel="noopener noreferrer">
+            <a
+              id="link"
+              href={content.pdf.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               DOWNLOAD PDF
             </a>
           )}

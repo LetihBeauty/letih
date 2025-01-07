@@ -116,3 +116,68 @@ td {
   background-color: var(--white-200);
   margin-top: -20px;
 }
+
+/* Versão Mobile */
+@media (max-width: 768px) {
+  .product-name {
+    font-size: 18px !important;
+    text-align: center !important;
+  }
+
+  .how-to-use {
+    margin-bottom: 170px !important;
+  }
+  .routine-table {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .routine-section {
+    margin: 20px;
+  }
+
+  thead {
+    /* padding: 0px 30px; */
+
+    tr {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px;
+      width: 100%;
+      height: 60vh;
+      border-bottom: 1px solid var(--green-50);
+
+      th {
+        font-weight: bold !important;
+        white-space: nowrap; /* Impede a quebra de linha */
+        text-align: center;
+        padding: 10px 0px;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0px 5px;
+      height: 60vh;
+      width: 99%;
+      border-bottom: 1px solid var(--green-50);
+    }
+  }
+
+  .routine-table th {
+    display: inline-block; /* Garante que os elementos fiquem em linha */
+    width: auto; /* Ajusta automaticamente a largura */
+  }
+
+  .routine-table td {
+    border-color: transparent;
+    padding: 10px 0px;
+    margin: 0px 10px;
+  }
+}

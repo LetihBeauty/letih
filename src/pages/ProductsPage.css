@@ -69,3 +69,40 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .products-page {
+    margin: 0px;
+
+    .top-container {
+      display: flex;
+      flex-direction: column-reverse;
+
+      img {
+        height: 50%;
+      }
+    }
+    .description {
+      margin-left: 20px !important;
+      margin-top: -100px;
+      width: 100% !important;
+
+      p {
+        width: 95% !important;
+      }
+
+      .image-link {
+        img {
+          padding-top: 20px !important;
+          width: 147px;
+          height: 50px;
+          justify-content: flex-start;
+        }
+      }
+    }
+    #link {
+      right: 425px !important;
+      top: 530px !important;
+    }
+  }
+}
