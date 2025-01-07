@@ -85,7 +85,7 @@ function Home() {
     <>
       <div>
         {/* Banner hero */}
-        <div className="banner">
+        <div className="banner-desktop">
           <div className="content">
             <h1 className="bannerTitle">{homeData.title}</h1>
             <h5 className="bannerDescrip">{homeData.subtitle}</h5>
@@ -98,7 +98,20 @@ function Home() {
             src={homeData.heroImage.url}
             alt={homeData.heroImage.title}
           ></img>
-        </div>{" "}
+        </div>
+
+        <div className="banner-mobile">
+          <img
+            src={homeData.heroImage.url}
+            alt={homeData.heroImage.title}
+          ></img>
+          <h1 className="bannerTitle">{homeData.title}</h1>
+          <h5 className="bannerDescrip">{homeData.subtitle}</h5>
+          <Btn customButtonClass="green" href="#our-services">
+            Our Services
+          </Btn>
+        </div>
+
         {/* About Us */}
         <div className="about-us">
           <h2>About Us</h2>
