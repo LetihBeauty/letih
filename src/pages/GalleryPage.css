@@ -44,3 +44,26 @@
     margin-left: 0px;
   }
 }
+
+@media (max-width: 768px) {
+  .gallery-container {
+    .gallery-header {
+      height: 200px;
+      margin-top: 53px;
+
+      h1 {
+        margin: 0px;
+      }
+    }
+
+    .carousel {
+      height: 100%;
+      width: 100%;
+      margin: 20px 0px;
+    }
+    img {
+      width: auto;
+      height: 400px;
+    }
+  }
+}
