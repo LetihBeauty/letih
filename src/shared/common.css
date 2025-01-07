@@ -211,6 +211,19 @@
       margin-bottom: 10px;
     }
   }
+
+  .globalBanner {
+    margin-top: 45px;
+    height: 200px;
+  }
+
+  .globalCenterLogo {
+    h1 {
+      font-size: 30px;
+      margin: 0;
+    }
+  }
+
   .globalBannerMiddleContent {
     display: grid;
     grid-template-columns: 1fr;
@@ -234,11 +247,7 @@
     margin: 0px 16px 120px 16px;
 
     div {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      margin: 28px;
-      margin-left: 26px;
+      margin: 57px 0px 0px -40px;
     }
 
     ul {

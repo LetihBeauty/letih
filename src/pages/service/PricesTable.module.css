@@ -57,7 +57,12 @@ p {
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 768px) {
+  .prices {
+    width: 96%;
+    margin: 10px;
+  }
+
   .serviceIncluded {
     display: flex;
     flex-direction: column;

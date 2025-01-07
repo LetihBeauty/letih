@@ -133,3 +133,33 @@ a:hover {
   justify-content: center;
   padding: 60px 0;
 }
+
+@media (max-width: 768px) {
+  .aboveFoldContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 5px 20px;
+    height: 200vh;
+  }
+
+  .aboveFoldContent h1 {
+    margin-top: -440px;
+    margin-bottom: 500px;
+    margin-left: 52px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .aboveFoldImage img {
+    width: 90%;
+    height: 86%;
+    top: 193px;
+    z-index: 0;
+    position: relative;
+    left: 18%;
+  }
+
+  .belowFoldContent {
+    padding: 0px 16px;
+  }
+}
