@@ -215,7 +215,6 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: none;
-    width: 380px;
     height: auto;
     gap: 0;
   }
