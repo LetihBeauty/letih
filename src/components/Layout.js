@@ -21,43 +21,41 @@ const Layout = ({ children }) => {
 
       <main>{children}</main>
       <footer>
-        <div>
-          <img id="logo" src="images/Logo.svg" alt="" />
-          <div className="footer-menu">
-            <ul>
-              {navItems.slice(0, 6).map((item) => (
-                <li key={item.id} className="items">
-                  <Link
-                    className={location.pathname === item.url ? "active" : ""}
-                    to={item.url}
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <img id="line-footer" src="images/Linefooter.svg" alt="" />
-          </div>
-          <div className="footer-contact">
-            <div className="email-phone">
-              <img src="images/icon-email.svg" alt="" />
-              <a href="mailto:letihbeauty@gmail.com">letihbeauty@gmail.com</a>
-            </div>
-            <div className="email-phone">
-              <img src="images/icon-phone.svg" alt="" />
-              <p>{phone}</p>
-            </div>
-          </div>
-          <ul className=" footer-social">
-            {footerLinks.map((item) => (
-              <li key={item.id}>
-                <a href={item.url} target="_blank" rel="noreferrer">
-                  <img src={item.icon} alt={item.title} />
-                </a>
+        <img id="logo" src="images/Logo.svg" alt="" />
+        <div className="footer-menu">
+          <ul className="footer-menu-list">
+            {navItems.slice(0, 6).map((item) => (
+              <li key={item.id} className="items">
+                <Link
+                  className={location.pathname === item.url ? "active" : ""}
+                  to={item.url}
+                >
+                  {item.title}
+                </Link>
               </li>
             ))}
           </ul>
+          <img id="line-footer" src="images/Linefooter.svg" alt="" />
         </div>
+        <div className="footer-contact">
+          <div className="email-phone">
+            <img src="images/icon-email.svg" alt="" />
+            <a href="mailto:letihbeauty@gmail.com">letihbeauty@gmail.com</a>
+          </div>
+          <div className="email-phone">
+            <img src="images/icon-phone.svg" alt="" />
+            <p>{phone}</p>
+          </div>
+        </div>
+        <ul className=" footer-social">
+          {footerLinks.map((item) => (
+            <li key={item.id}>
+              <a href={item.url} target="_blank" rel="noreferrer">
+                <img src={item.icon} alt={item.title} />
+              </a>
+            </li>
+          ))}
+        </ul>
         <p id="copyright">
           COPYRIGHT © <span>{year}</span> {copyright}
           <br></br>

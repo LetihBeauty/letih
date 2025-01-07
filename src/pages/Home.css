@@ -494,9 +494,9 @@ p {
 }
 
 @media (max-width: 768px) {
-  * {
+  /* * {
     border: 1px solid red;
-  }
+  } */
   body {
     margin: 0;
     /* Remove margens padrão do body */
