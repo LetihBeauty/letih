@@ -197,6 +197,24 @@ export const fetchPageData = async (page) => {
       }
       `;
       break;
+    case "galleryPage":
+      query = `
+        {
+          galleryPageCollection {
+            items {
+              title
+              imagesCollection {
+                items {
+                  url
+                  title
+                  description
+                }
+              }
+            }
+          }
+        }
+        `;
+      break;
 
     case "booking":
       query = `

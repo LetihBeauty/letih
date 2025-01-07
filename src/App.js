@@ -10,7 +10,7 @@ import FacialService from "./pages/service/FacialService.jsx";
 import ServicePage from "./pages/service/ServicePage.jsx";
 import Booking from "./pages/Booking.js";
 import ProductsPage from "./pages/ProductsPage";
-import Gallery from "./components/Gallery";
+import GalleryPage from "./pages/GalleryPage.js";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
           <Route path="/booking" element={<Booking />} />
           <Route path="/myAccount" element={<MyAccount />} />
           <Route path="/products/:clientLogin" element={<ProductsPage />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallerypage" element={<GalleryPage />} />
         </Routes>
       </Layout>
     </Router>
