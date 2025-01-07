@@ -8,8 +8,14 @@
   justify-content: center;
   align-items: center;
 
-  h2 {
+  .link {
     margin: 80px 0;
+    text-decoration: none;
+    font-family: "Roboto Serif";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
   .gallery {
@@ -55,7 +61,7 @@
 }
 
 .default-page {
-  h2 {
+  .link {
     background-color: var(--green-50);
     height: 299px;
     width: 100%;
@@ -80,7 +86,7 @@
     justify-content: center;
     align-items: center;
 
-    h2 {
+    .link {
       margin: 40px 0;
     }
 

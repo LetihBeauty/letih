@@ -8,7 +8,9 @@ function Gallery() {
 
   return (
     <div className={isGalleryPage ? "default-page" : "our-gallery"}>
-      <h2>Our Gallery</h2>
+      <a className="link" href="/gallerypage">
+        Our Gallery
+      </a>
       <div className="gallery" id="gallery">
         <img src="images/our-gallery-01.webp" alt="" id="img1" />
         <img src="images/our-gallery-02.webp" alt="" id="img2" />
