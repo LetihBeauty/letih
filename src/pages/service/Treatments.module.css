@@ -111,7 +111,7 @@
   line-height: 28px;
   margin-left: 10px;
 }
-@media (max-width: 430px) {
+@media (max-width: 768px) {
   .mobileNavbarWrapper {
     padding-bottom: 50px;
   }
@@ -142,13 +142,18 @@
 
     .title {
       margin: 0px;
-      letter-spacing: 1;
-      padding-bottom: 0;
+      padding-bottom: 15px;
     }
     h2 {
       letter-spacing: 1px;
       font-size: 27px;
     }
+  }
+
+  .titleDescription {
+    order: 3 !important;
+    grid-column: 1 / 2;
+    margin: 10px !important;
   }
 
   .title {
@@ -158,30 +163,24 @@
     text-align: center;
   }
 
-  .titleDescription {
-    order: 3 !important;
-    margin: 32px 0px 0px 0px;
-  }
-
   .bannerMiddlePhoto {
     order: 2 !important;
     display: flex;
     justify-content: center;
-    width: 100%;
     margin: 0px;
+    height: 500px;
+    overflow: hidden;
   }
 
   .bannerMiddlePhoto img {
     display: flex;
-    height: 275px;
     object-fit: cover;
     margin-top: 0;
     border-radius: 6px;
     position: relative;
   }
 
-  .bannerButton {
-    padding-top: 30px;
-    padding-bottom: 32px;
+  .globalFirstBannerBottom {
+    margin-top: 20px !important;
   }
 }

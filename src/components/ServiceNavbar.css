@@ -71,21 +71,18 @@ a.active::after {
   left: 50%;
   transform: translateX(-50%);
 }
-@media (max-width: 430px) {
+@media (max-width: 768px) {
   .service-navbar-mobile {
     width: 100%;
-    height: 200px;
+    height: 170px;
     justify-content: center;
     align-items: center;
     margin: 0px;
     padding-left: 0px;
-    background-color: var(--green-100);
+    background-color: var(--green-50);
   }
   .service-navbar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0px;
+    margin-top: 50px;
   }
   .mobile-center-logo {
     h1 {
@@ -98,14 +95,8 @@ a.active::after {
     }
   }
   .mobile-main-nav-items {
-    display: flex;
-    flex-wrap: wrap;
-    height: 94px;
-    padding: 0;
-    margin: 0px 16px;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
+    text-align: center;
+    width: 100%;
 
     .mobile-items {
       display: inline-block;
@@ -114,16 +105,15 @@ a.active::after {
 
       a {
         font-size: 14px;
+        color: var(--white-200);
+        text-decoration: none;
       }
     }
 
-    .mobile-items:nth-child(1) {
-      margin-right: 50px;
-    }
-
-    .mobile-items:nth-child(3) {
-      flex-basis: 100%;
+    .mobile-items {
       text-align: center;
+      padding: 0;
+      width: 45%;
     }
   }
 }

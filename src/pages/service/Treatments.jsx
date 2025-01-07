@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Treatments.module.css";
 import ServiceMobileNavbar from "../../components/ServiceNavBar.js";
+import Btn from "../../components/Btn.js";
 
 const StyledSession = ({ children, descriptionClass }) => (
   <h5 className={styles.sessionTitle}>
@@ -81,7 +82,12 @@ const Treatments = ({
                 {benefitsRecommendations}
               </p>
             )}
-
+            <Btn
+              href="https://beauty-by-cica.square.site/"
+              customButtonClass="green"
+            >
+              Book Now
+            </Btn>
             <div
               className={`${styles.bannerMiddleContentDetails} ${customBannerMiddleContentDetailsClass}`}
             >

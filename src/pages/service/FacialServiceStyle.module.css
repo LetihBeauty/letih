@@ -7,10 +7,6 @@
   align-items: center;
   width: 100vw;
 }
-.titleDescription {
-  grid-column: 1 / 2;
-  margin: 163px 128px 0px 0px !important;
-}
 
 .bannerMiddlePhoto img {
   height: 708px;
@@ -26,14 +22,6 @@
     height: auto;
   }
 
-  .titleDescription {
-    grid-column: 1 / 2;
-    margin: 32px 0px !important;
-
-    h5 {
-      padding-bottom: 0;
-    }
-  }
   .bannerMiddlePhoto img {
     height: 275px;
   }

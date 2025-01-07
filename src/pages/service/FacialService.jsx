@@ -76,6 +76,7 @@ const FacialService = () => {
         customDescriptionClass={styles.titleDescription}
         customPhotoClass={styles.bannerMiddlePhoto}
       />
+
       {(firstColumnItems?.length ||
         secondColumnItems?.length ||
         primaryService?.warning?.items) && (
