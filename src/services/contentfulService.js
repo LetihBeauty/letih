@@ -1,8 +1,5 @@
 import axios from "axios";
 
-// console.log("Space ID:", process.env.REACT_APP_CONTENTFUL_SPACE_ID);
-// console.log("Access Token:", process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN);
-
 if (
   !process.env.REACT_APP_CONTENTFUL_SPACE_ID ||
   !process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN
@@ -13,7 +10,6 @@ if (
 }
 
 export const fetchPageData = async (page) => {
-  console.log("importando os dados");
   let query = "";
 
   switch (page) {
@@ -130,6 +126,7 @@ export const fetchPageData = async (page) => {
           items {
             slug
             title
+            description
             whatIs
             whatIsDescription
             benefitsDescription
@@ -290,7 +287,6 @@ export const fetchPageData = async (page) => {
       },
     });
 
-    console.log("Dados retornados:", response.data);
     return response.data; // Retorna os dados
   } catch (error) {
     if (error.response) {
