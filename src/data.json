@@ -89,24 +89,8 @@
   "footer": {
     "title": "Blue Duck Co. All Rights Reserved.",
     "email": "letihbeauty@gmail.com",
-    "phone": "+1 (571) 525-4059",
-    "social": [
-      {
-        "id": 1,
-        "title": "Facebook",
-        "url": "https://www.facebook.com/"
-      },
-      {
-        "id": 2,
-        "title": "Twitter",
-        "url": "https://twitter.com/"
-      },
-      {
-        "id": 3,
-        "title": "Instagram",
-        "url": "https://www.instagram.com/"
-      }
-    ],
+    "phone": "+1 (571) 567-2664",
+    "instagram": "https://www.instagram.com/letihbeauty/",
     "developed": {
       "title": " Developed by",
       "karen": "Karen Honorio",
