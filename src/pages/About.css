@@ -242,6 +242,7 @@ p {
   max-width: 570px;
   height: 480px;
   object-fit: cover;
+  border-radius: 6px 6px 0px 0px;
 }
 .bottom-images img:nth-child(2) {
   margin-left: 0;
