@@ -2,12 +2,8 @@
 const BASE_URL = "https://connect.squareup.com/v2";
 const SQUARE_ACCESS_TOKEN = process.env.REACT_APP_SQUARE_ACCESS_TOKEN;
 
-console.log("Square Access Token:", SQUARE_ACCESS_TOKEN);
-
 // Função para adicionar um agendamento (Booking) no Square
 export const addBookingToSquare = async (bookingData) => {
-  console.log("Data being sent to Square:", bookingData);
-
   try {
     const response = await fetch(`${BASE_URL}/bookings`, {
       method: "POST",
