@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 
 import "./Home.css";
 import Btn from "../components/Btn";
+import WhatsAppButton from "../components/WhatsAppButton";
 import Gallery from "../components/Gallery";
 import Testimonials from "../components/Testimonials.js";
 import { aboutUsSections, advantages } from "../components/constants/index.js";
@@ -83,6 +84,8 @@ function Home() {
 
   return (
     <>
+      <WhatsAppButton />
+
       <div>
         {/* Banner hero */}
         <div className="banner-desktop">
