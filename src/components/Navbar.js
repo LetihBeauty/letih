@@ -147,8 +147,10 @@ const DesktopNavbar = () => {
           )}
         </ul>
         <Btn
-          href="https://beauty-by-cica.square.site/"
+          href="https://linktr.ee/letihbeauty?fbclid=PAZXh0bgNhZW0CMTEAAaZFH8U8o3AKmjeYzclFsrxCiOww4n79CtIQURzxz6uY3hKgtG0KfPOEJ_8_aem_rRU86kn6hJ7eEReWGb7xKg"
           customButtonClass="green"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Book Now
         </Btn>
