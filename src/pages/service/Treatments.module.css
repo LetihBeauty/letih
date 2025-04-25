@@ -107,8 +107,12 @@
   margin-left: 10px;
 }
 @media (max-width: 768px) {
+  .containerService {
+    height: 115vh;
+  }
+
   .mobileNavbarWrapper {
-    padding-bottom: 50px;
+    padding-bottom: 0px;
   }
   .bannerWrapper {
     height: auto;
@@ -134,14 +138,25 @@
     position: relative;
     padding: 0px 16px 0px 16px;
     margin: 0;
+    height: auto;
 
     .title {
       margin: 0px;
       padding-bottom: 15px;
+      margin-top: -60rem;
     }
     h2 {
       letter-spacing: 1px;
       font-size: 27px;
+    }
+
+    h5 {
+      padding: 8px 0px;
+    }
+
+    a {
+      margin-top: 60rem !important;
+      margin-left: 1rem;
     }
   }
 
@@ -171,8 +186,9 @@
     display: flex;
     object-fit: cover;
     margin-top: 0;
-    border-radius: 6px;
+    border-radius: 1.5px;
     position: relative;
+    width: 90vw;
   }
 
   .globalFirstBannerBottom {

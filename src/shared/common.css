@@ -239,7 +239,7 @@
     flex-direction: column;
     position: relative;
     width: calc(100% - 32px);
-    margin: 60px 16px 40px 16px;
+    padding: 0rem 2rem;
 
     h5 {
       margin-bottom: 10px;
@@ -264,6 +264,7 @@
     grid-template-rows: none;
     height: auto;
     gap: 0;
+    margin-right: 0px;
   }
   .globalWarningWrap {
     width: 100%;
