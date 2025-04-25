@@ -27,6 +27,11 @@ const FacialService = () => {
           (item) => item.slug.toLowerCase() === slugFromUrl
         );
 
+      console.log(
+        "whatIsDescription",
+        deepCleansingData.whatIsDescription?.json
+      );
+
       if (deepCleansingData) {
         setData(deepCleansingData);
       } else {
@@ -59,15 +64,7 @@ const FacialService = () => {
     <div className="containerService">
       <Treatments
         title={primaryService.title}
-        whatIs={primaryService.whatIs}
-        whatIsDescription={primaryService.whatIsDescription}
-        benefits={primaryService.benefits}
-        benefitsDescription={primaryService.benefitsDescription}
-        benefitsRecommendations={primaryService.benefitsRecommendations}
-        firstTitle={primaryService.timeTitle}
-        firstTitleDescription={primaryService.timeDescription}
-        secondTitle={primaryService.PriceTitle}
-        secondTitleDescription={primaryService.priceDescription}
+        whatIsDescription={primaryService.whatIsDescription || { json: null }}
         btnComponent={primaryService.btnComponent}
         imgSrc={primaryService.image.url}
         imgDescription={primaryService.image.description}

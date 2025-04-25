@@ -21,21 +21,20 @@
   z-index: 1;
   max-width: 1500px;
   margin: 0 auto;
-  padding-left: 101px;
+  /* padding-left: 101px; */
 }
 
 .bannerMiddleContent {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0px auto;
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-template-rows: 0px auto; */
   width: 100%;
-  margin: 0px 0px 32px 101px;
+  margin-left: 128px;
 
   h2 {
     font-size: 32px;
     letter-spacing: 4px;
-    padding-bottom: 35px;
-    margin: 0;
+    /* padding-bottom: 35px; */
     letter-spacing: 1px;
     color: var(--green-100);
   }
@@ -49,13 +48,13 @@
   }
 
   .title {
-    grid-column: 1 / 2;
-    margin: 89px 0px 0px 0px;
+    /* grid-column: 1 / 2; */
+    margin: 80px 0px 0px 0px;
   }
 
   .titleDescription {
-    grid-column: 1 / 2;
-    margin: 162px 128px 0px 0px;
+    /* grid-column: 1 / 2; */
+    margin: 40px 0px;
   }
 
   .bannerButton {

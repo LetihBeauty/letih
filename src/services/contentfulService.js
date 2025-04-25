@@ -126,13 +126,9 @@ export const fetchPageData = async (page) => {
           items {
             slug
             title
-            description
-            whatIs
-            whatIsDescription
-            benefitsDescription
-            benefitsRecommendations
-            timeDescription
-            priceDescription
+            whatIsDescription{
+                json
+              }
             image {
               url
               title
@@ -177,15 +173,7 @@ export const fetchPageData = async (page) => {
               title
               description
             }
-            pricesCollection {
-              items {
-                title
-                description {
-                  json
-                }
-                price
-              }
-            }
+
             warning {
               json
             }

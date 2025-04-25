@@ -61,6 +61,7 @@ const ServicePage = () => {
   const aboveFoldContent = highlightImportantText(
     documentToHtmlString(data.aboveFoldContent?.json)
   );
+
   const belowFoldContent = highlightImportantText(
     documentToHtmlString(data.belowFoldContent?.json)
   );
