@@ -35,7 +35,6 @@
 }
 .globalBannerBottom {
   background-color: var(--green-50);
-
   height: 130px;
   width: 100%;
 }
@@ -56,7 +55,7 @@
   align-items: flex-start;
   height: auto;
   width: 100%;
-  margin: 5vw;
+  margin: 4vw;
 }
 
 .globalServiceIncludedContent {
