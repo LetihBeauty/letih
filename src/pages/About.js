@@ -3,6 +3,7 @@ import "./About.css";
 import BtnGreen from "../components/BtnGreen";
 import GreenRetangle from "../components/GreenRetangle";
 import { fetchPageData } from "../services/contentfulService.js";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const About = () => {
   const [data, setData] = useState(null);
@@ -37,6 +38,8 @@ const About = () => {
 
   return (
     <div>
+      <WhatsAppButton />
+
       <div className="container">
         <div className="hero">
           <div className="images-container">

@@ -9,6 +9,7 @@ import BtnGreen from "../../components/BtnGreen";
 import PricesTable from "./PricesTable.jsx";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { fetchPageData } from "../../services/contentfulService.js";
+import WhatsAppButton from "../../components/WhatsAppButton";
 
 const ServicePage = () => {
   const { slug } = useParams(); // Pegando o slug da URL
@@ -70,6 +71,8 @@ const ServicePage = () => {
 
   return (
     <div>
+      <WhatsAppButton />
+
       <Banner bannerTitle={bannerTitle} />
       <div className="aboveFoldContainer">
         <div className="aboveFoldContentLeft">

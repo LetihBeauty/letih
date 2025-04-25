@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchPageData } from "../services/contentfulService.js"; // Importa o serviço
 
 import "./GalleryPage.css";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const GalleryPage = () => {
   const [data, setData] = useState(null);
@@ -43,6 +44,8 @@ const GalleryPage = () => {
 
   return (
     <div className="gallery-container">
+      <WhatsAppButton />
+
       <div className="gallery-header">
         <h1 className="gallery-title">{title}</h1>
       </div>

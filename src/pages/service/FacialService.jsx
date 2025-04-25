@@ -6,6 +6,7 @@ import styles from "./FacialServiceStyle.module.css";
 import "../service/FacialTreatmentGuide.module.css";
 import { fetchPageData } from "../../services/contentfulService.js";
 import "../../shared/common.css";
+import WhatsAppButton from "../../components/WhatsAppButton.jsx";
 
 const FacialService = () => {
   const { slug } = useParams(); // Pegando o slug da URL
@@ -58,38 +59,42 @@ const FacialService = () => {
   const secondColumnItems = supplementaryServiceInfo.slice(5);
 
   return (
-    <div className="containerService">
-      <Treatments
-        title={primaryService.title}
-        whatIsDescription={primaryService.whatIsDescription?.json}
-        btnComponent={primaryService.btnComponent}
-        imgSrc={primaryService.image.url}
-        imgDescription={primaryService.image.description}
-        customClass={styles.bannerWrapper}
-        customBottomClass="globalFirstBannerBottom"
-        customDescriptionClass={styles.titleDescription}
-        customPhotoClass={styles.bannerMiddlePhoto}
-      />
+    <>
+      <WhatsAppButton />
 
-      {(firstColumnItems?.length ||
-        secondColumnItems?.length ||
-        primaryService?.warning?.items) && (
-        <FacialTreatmentGuide
-          firstColumnItems={firstColumnItems}
-          secondColumnItems={secondColumnItems}
-          warningMessage={primaryService?.warning?.items || []} // Garantir que seja um array
+      <div className="containerService">
+        <Treatments
+          title={primaryService.title}
+          whatIsDescription={primaryService.whatIsDescription?.json}
+          btnComponent={primaryService.btnComponent}
+          imgSrc={primaryService.image.url}
+          imgDescription={primaryService.image.description}
+          customClass={styles.bannerWrapper}
+          customBottomClass="globalFirstBannerBottom"
+          customDescriptionClass={styles.titleDescription}
+          customPhotoClass={styles.bannerMiddlePhoto}
         />
-      )}
 
-      <div className="videoContainer">
-        {primaryService.videoEmbed && (
-          <div
-            className="videoContent"
-            dangerouslySetInnerHTML={{ __html: primaryService.videoEmbed }}
+        {(firstColumnItems?.length ||
+          secondColumnItems?.length ||
+          primaryService?.warning?.items) && (
+          <FacialTreatmentGuide
+            firstColumnItems={firstColumnItems}
+            secondColumnItems={secondColumnItems}
+            warningMessage={primaryService?.warning?.items || []} // Garantir que seja um array
           />
         )}
+
+        <div className="videoContainer">
+          {primaryService.videoEmbed && (
+            <div
+              className="videoContent"
+              dangerouslySetInnerHTML={{ __html: primaryService.videoEmbed }}
+            />
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

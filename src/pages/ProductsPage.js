@@ -5,6 +5,7 @@ import { fetchPageData } from "../services/contentfulService.js";
 import "./ProductsPage.css";
 import RoutineTable from "../components/RoutineTable";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const ProductsPage = () => {
   const { clientLogin } = useParams();
@@ -55,6 +56,8 @@ const ProductsPage = () => {
 
   return (
     <div className="products-page">
+      <WhatsAppButton />
+
       <div className="top-container">
         <div className="description">
           <h1>Hello, {client.name || "Guest"}!</h1>
