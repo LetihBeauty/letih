@@ -530,6 +530,54 @@ p {
     font-size: 20px;
   }
 
+  .about-us {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--white-200);
+    padding-top: 80px;
+    margin-bottom: 20px;
+
+    .about-us-content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin: 1rem;
+      position: relative;
+    }
+  }
+
+  .about-us-images {
+    margin: 0px;
+
+    #about-us-image-one {
+      margin-left: 0vw;
+    }
+
+    svg {
+      margin-left: -80vw;
+      margin-top: 35vw;
+    }
+
+    #about-us-image-two {
+      margin-left: 15vw;
+      margin-top: -40vw;
+    }
+  }
+
+  .about-us-text {
+    margin: 2vw;
+
+    h5 {
+      margin: 20px 0px;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+  }
+
   .our-services {
     width: 100vw;
 
