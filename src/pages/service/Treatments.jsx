@@ -1,5 +1,5 @@
 import React from "react";
-// import DOMPurify from "dompurify";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import styles from "./Treatments.module.css";
 import ServiceMobileNavbar from "../../components/ServiceNavBar.js";
 import Btn from "../../components/Btn.js";
@@ -15,6 +15,7 @@ const Treatments = ({
   customNavWrapperClass,
 }) => {
   const bookNowUrl = booknow.bookNow;
+  const htmlString = documentToHtmlString(whatIsDescription);
 
   return (
     <>
@@ -32,7 +33,7 @@ const Treatments = ({
 
             <div
               className={`${styles.titleDescription}`}
-              dangerouslySetInnerHTML={{ __html: whatIsDescription }}
+              dangerouslySetInnerHTML={{ __html: htmlString }}
             ></div>
 
             <Btn href={bookNowUrl} customButtonClass="green" target="_blank">
@@ -56,7 +57,6 @@ const Treatments = ({
           )}
         </div>
       </div>
-      <div className={`${styles.bannerBottom} ${customBottomClass}`}></div>
     </>
   );
 };

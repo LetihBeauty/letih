@@ -26,11 +26,8 @@ const FacialService = () => {
         result?.data?.serviceFacialCollection?.items?.find(
           (item) => item.slug.toLowerCase() === slugFromUrl
         );
-
-      console.log(
-        "whatIsDescription",
-        deepCleansingData.whatIsDescription?.json
-      );
+      console.log("Deep Cleansing Data", deepCleansingData);
+      console.log("videoEmbed", deepCleansingData.videoEmbed);
 
       if (deepCleansingData) {
         setData(deepCleansingData);
@@ -64,7 +61,7 @@ const FacialService = () => {
     <div className="containerService">
       <Treatments
         title={primaryService.title}
-        whatIsDescription={primaryService.whatIsDescription || { json: null }}
+        whatIsDescription={primaryService.whatIsDescription?.json}
         btnComponent={primaryService.btnComponent}
         imgSrc={primaryService.image.url}
         imgDescription={primaryService.image.description}
@@ -83,6 +80,15 @@ const FacialService = () => {
           warningMessage={primaryService?.warning?.items || []} // Garantir que seja um array
         />
       )}
+
+      <div className="videoContainer">
+        {primaryService.videoEmbed && (
+          <div
+            className="videoContent"
+            dangerouslySetInnerHTML={{ __html: primaryService.videoEmbed }}
+          />
+        )}
+      </div>
     </div>
   );
 };

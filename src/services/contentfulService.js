@@ -144,6 +144,8 @@ export const fetchPageData = async (page) => {
               title
               items
             }
+            videoEmbed
+
           }
         }
       }

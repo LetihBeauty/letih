@@ -15,26 +15,22 @@
 }
 .bannerMiddle {
   display: flex;
+  height: auto;
   justify-content: center;
   align-items: flex-start;
   flex-direction: row;
   z-index: 1;
   max-width: 1500px;
   margin: 0 auto;
-  /* padding-left: 101px; */
 }
 
 .bannerMiddleContent {
-  /* display: grid; */
-  /* grid-template-columns: 1fr 1fr; */
-  /* grid-template-rows: 0px auto; */
   width: 100%;
-  margin-left: 128px;
+  margin-right: 4vw;
 
   h2 {
     font-size: 32px;
     letter-spacing: 4px;
-    /* padding-bottom: 35px; */
     letter-spacing: 1px;
     color: var(--green-100);
   }
@@ -54,7 +50,7 @@
 
   .titleDescription {
     /* grid-column: 1 / 2; */
-    margin: 40px 0px;
+    margin: 0px 0px 40px;
   }
 
   .bannerButton {

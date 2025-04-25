@@ -33,7 +33,6 @@ const FacialTreatmentGuide = ({
           {renderItemList(secondColumnItems)}
         </div>
       </div>
-
       {/* Renderiza o aviso de forma condicional */}
       {warningMessage && warningMessage.length > 0 && (
         <div className={styles.serviceIncludedWarning}>

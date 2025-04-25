@@ -3,10 +3,12 @@
   flex: column;
   justify-content: center;
   justify-content: space-between;
+  margin: 10vw;
 }
 .globalNavbarWrapper {
   display: none;
 }
+
 .globalBanner {
   display: flex;
   width: 100%;
@@ -38,16 +40,25 @@
   width: 100%;
 }
 
+.sectionServiceINcluded {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+}
+
 .globalServiceIncluded {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  height: auto;
   width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  padding-left: 101px;
+  margin: 5vw;
 }
+
 .globalServiceIncludedContent {
   width: 100%;
   box-sizing: border-box;
@@ -67,9 +78,7 @@
   }
 }
 .globalTreatment {
-  margin: 79px 32px 120px 101px;
-  width: 100%;
-  max-width: 1134px;
+  width: 95%;
 }
 
 .globalCustom-list {
@@ -90,15 +99,21 @@
   align-items: flex-start;
   max-width: 1500px;
   margin: 0 auto;
-  height: auto;
+}
+
+.container {
+  display: flex;
+  margin-right: 20px;
+  width: 100%;
 }
 .globalBannerMiddleContent {
-  display: grid;
-  grid-template-columns: 503px 550px;
-  grid-template-rows: 0px auto;
-  width: 100%;
-  column-gap: 100px;
-  height: 250px;
+  display: flex;
+  margin-bottom: 50px;
+  margin-right: 128px;
+
+  .description {
+    display: flex;
+  }
 
   p {
     margin: 0;
@@ -179,6 +194,25 @@
   font-family: "Raleway";
   font-weight: 550;
   font-size: 16px;
+}
+
+.videoContainer {
+  margin: 8vw;
+
+  .videoContent {
+    position: relative;
+    padding-bottom: 56.25%; /* Para vídeo 16:9 */
+    height: 0;
+    overflow: hidden;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 @media (max-width: 768px) {
