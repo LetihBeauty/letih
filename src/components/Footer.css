@@ -114,7 +114,7 @@ footer {
   }
 
   #copyright {
-    margin-top: 80px;
+    margin-top: 20px;
     color: var(--white-200);
     text-align: center;
     font-size: 12px;
@@ -138,42 +138,13 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   footer {
     width: 100vw;
-    background-color: var(--green-100);
-    height: auto;
-    padding: 15px 0px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .footer div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #line-footer {
-    margin-top: 30px;
-  }
-
-  #logo {
-    width: 80px;
-    height: 88px;
   }
 
   .footer-menu {
-    margin-top: 15px;
-    white-space: nowrap;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 60%;
+    width: 90%;
 
     a {
       color: var(--white-200) !important;
@@ -202,16 +173,12 @@ footer {
     display: flex;
     flex-direction: column !important;
     align-items: center !important;
-    margin-top: 20px;
+    margin-top: 0px;
   }
   .footer-contact {
     margin-top: 15px;
 
     a {
-      margin: 15px !important;
-    }
-
-    p {
       margin: 15px !important;
     }
   }
