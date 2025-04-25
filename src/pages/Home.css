@@ -196,14 +196,14 @@ p {
   background-color: var(--white-200);
   padding-top: 80px;
   margin-bottom: 20px;
-}
 
-.about-us-content {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin: 80px 120px 0px;
-  position: relative;
+  .about-us-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 80px 120px 0px;
+    position: relative;
+  }
 }
 
 .about-us-images {
@@ -258,71 +258,6 @@ p {
   p {
     margin-bottom: 30px;
   }
-}
-
-.about-us-img-custom {
-  /* width: 625px; */
-  /* height: 420px; */
-  flex-shrink: 0;
-  border-radius: 15px;
-}
-
-.about-us-img-left {
-  z-index: 2;
-  width: 331px;
-}
-
-.about-us-img-right {
-  z-index: 1;
-  width: 625px;
-  margin-left: -80px; /* Ajuste para a sobreposição */
-}
-
-.about-us-top {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  z-index: 1;
-}
-
-.about-us-top-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-left: 50px;
-  /* Ajuste conforme necessário */
-  transform: translateY(-50px);
-  /* Move o texto para cima sem usar margem negativa */
-  position: relative;
-  width: 519px;
-}
-
-.about-us-bottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row-reverse;
-  margin-top: 0;
-  z-index: 0;
-  position: relative;
-  transform: translateY(-50px);
-}
-
-/* .about-us-bottom img {
-  /* transform: translateY(-50px); */
-/* Ajuste conforme necessário */
-
-.about-us-bottom-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  margin-right: 50px;
-  position: relative;
-  width: 519px;
 }
 
 .our-services {
@@ -595,79 +530,6 @@ p {
     font-size: 20px;
   }
 
-  .about-us {
-    overflow-x: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: var(--white-200);
-    padding-top: 50px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-
-    h2 {
-      margin-bottom: 50px;
-    }
-  }
-
-  .about-us-content {
-    margin: 40px 0px 0px;
-    position: relative;
-    overflow: visible;
-  }
-
-  .about-us-img-custom {
-    width: 300px;
-    height: 250px;
-    flex-shrink: 0;
-    border-radius: 15px;
-  }
-
-  .about-us-img-left {
-    z-index: 2;
-    /* margin-left: -80px; */
-  }
-
-  .about-us-img-right {
-    position: relative;
-    z-index: 1;
-    margin-right: -290px;
-  }
-
-  .about-us-top-right {
-    display: none;
-  }
-
-  .about-us-bottom {
-    flex-direction: column;
-    margin-right: 16px;
-    margin-left: 16px;
-  }
-
-  .about-us-top img {
-    transform: translateY(-80px) translateX(40px);
-    width: 69%;
-    height: auto;
-    margin-right: 34%;
-  }
-
-  .about-us-bottom img {
-    transform: translateY(-80px) translateX(40px);
-    width: 69%;
-    height: auto;
-    margin-top: 17px;
-  }
-
-  .about-us-bottom-left {
-    width: 90%;
-    top: -50px;
-
-    p {
-      margin: 0;
-      padding: 20px 0px 20px 0px;
-    }
-  }
   .our-services {
     width: 100vw;
 

@@ -152,59 +152,6 @@ function Home() {
               </Btn>
             </div>
           </div>
-          {/* top left */}
-          {/* <div className={`about-us-content about-us-top`}>
-            <img
-              src={homeData.aboutUsImageOne.url}
-              alt={homeData.aboutUsImageOne.title}
-              className={`about-us-img-custom about-us-img-left`}
-            />
-            <div className={`about-us-text about-us-top-right`}>
-              <h5 className={`special-style ${false ? "" : "mobile-none"}`}>
-                {homeData.aboutUsTitleOne ? homeData.aboutUsTitleOne : ""}
-              </h5>
-              <p
-                className={true ? "" : "mobile-none"}
-                dangerouslySetInnerHTML={{
-                  __html: homeData.aboutUsParagraphOne.json.content[0]
-                    .content[0].value
-                    ? homeData.aboutUsParagraphOne.json.content[0].content[0]
-                        .value
-                    : "",
-                }}
-              ></p>
-              {aboutUsSection.isButtonVisible && (
-                <Btn customButtonClass="green">Learn More</Btn>
-              )}
-            </div>
-          </div> */}
-          {/* botton right */}
-          {/* <div className={` about-us-bottom`}>
-            <img
-              src={homeData.aboutUsImageTwo.url}
-              alt={homeData.aboutUsImageTwo.title}
-              className={`about-us-img-custom about-us-img-right`}
-            />
-            <div className={`about-us-text about-us-bottom-right`}>
-              <h5 className={`special-style ${false ? "" : "mobile-none"}`}>
-                {homeData.aboutUsTitleTwo ? homeData.aboutUsTitleTwo : ""}
-              </h5>
-              <p
-                className={true ? "" : "mobile-none"}
-                dangerouslySetInnerHTML={{
-                  __html: homeData.aboutUsParagraphTwo.json.content[0]
-                    .content[0].value
-                    ? homeData.aboutUsParagraphTwo.json.content[0].content[0]
-                        .value
-                    : "",
-                }}
-              ></p>
-
-              <Btn customButtonClass="green" href="/about">
-                Learn More
-              </Btn>
-            </div>
-          </div> */}
         </div>
       </div>
 
