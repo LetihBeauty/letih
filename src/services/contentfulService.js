@@ -30,11 +30,9 @@ export const fetchPageData = async (page) => {
               aboutUsParagraphOne {
                 json
               }
-              aboutUsParagraphTwo {
-                json
-              }
+
               aboutUsTitleOne
-              aboutUsTitleTwo
+
               heroImage {
                 url
                 title
