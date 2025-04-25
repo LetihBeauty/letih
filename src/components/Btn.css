@@ -5,16 +5,15 @@
   font-family: "Poppins";
   border: none;
   border-radius: 6px;
-  width: 232px;
-  height: 56px;
-  padding: 12px;
+  width: 150px;
+  height: 45px;
+  padding: 10px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 28px;
   cursor: pointer;
   text-decoration: none;
 }
