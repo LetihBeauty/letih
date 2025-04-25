@@ -36,6 +36,8 @@ const About = () => {
       ? data.aboutUsPageCollection.items[0]
       : null;
 
+  console.log(aboutData);
+
   return (
     <div>
       <WhatsAppButton />
@@ -115,9 +117,9 @@ const About = () => {
           </div>
         </div>
         <div className="bottom-images">
-          <img src="/images/aboutFirst.png" alt="women1" />
-          <img src="/images/aboutus-2.png" alt="women2" />
-          <img src="/images/aboutFirst.png" alt="women3" />
+          {aboutData?.bottomGalleryCollection?.items?.map((image, index) => (
+            <img key={index} src={image.url} alt={image.title} />
+          ))}
         </div>
       </div>
       <div className="bottomLineGreen"></div>

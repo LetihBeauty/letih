@@ -111,6 +111,13 @@ export const fetchPageData = async (page) => {
               description
 
             }
+            bottomGalleryCollection {
+              items {
+                url
+                title
+                description
+              }
+            }
 
           }
         }
