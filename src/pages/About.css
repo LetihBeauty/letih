@@ -77,8 +77,9 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 115px 0;
+  margin: 50px 0 0 0;
   width: 100vw;
+  height: 90vh;
 
   .images-container {
     display: flex;
@@ -88,11 +89,16 @@ p {
   .we-are-letih-beauty {
     display: flex;
     flex-direction: column;
-    margin: calc(115px / 2);
+    padding: 10rem calc(4rem / 2) 0;
     width: 40%;
 
     .mission-vision {
-      margin-top: 63px;
+      margin-top: 2rem;
+      max-width: 30rem;
+
+      .vision {
+        margin-top: 2rem;
+      }
     }
     h3 {
       letter-spacing: 4px;
@@ -110,7 +116,7 @@ p {
   flex-direction: row-reverse;
   justify-content: space-between;
   width: 100vw;
-  padding: 100px 0;
+  height: 70vh;
 
   .our-values-content {
     margin-right: 140px;
@@ -284,6 +290,7 @@ p {
   .hero {
     flex-direction: column;
     margin: 50px 0;
+    height: auto;
 
     h1 {
       margin-bottom: 5px;
@@ -291,30 +298,28 @@ p {
 
     .images-container {
       .green-box-1 {
-        top: 10%;
-        left: 3%;
+        top: 5rem;
+        left: 2rem;
       }
 
       .green-box-2 {
-        top: 22%;
-        left: 12%;
+        top: 20rem;
+        left: 13rem;
       }
 
       .women-image {
         width: 70%;
         height: auto;
-      }
-
-      .women-top {
-        left: 13%;
-        top: 15%;
+        left: 6rem;
+        top: 9rem;
       }
     }
 
     .we-are-letih-beauty {
       width: 90%;
-      margin-top: 110%;
-      margin-left: 10px;
+      height: auto;
+      margin-top: 30rem;
+      margin-left: 1rem;
       align-items: center;
 
       .mission-vision {
@@ -324,32 +329,42 @@ p {
   }
   .our-values {
     flex-direction: column;
+    align-items: center;
+    height: auto;
+
     .images-container {
+      display: grid;
+      grid-template-columns: 1fr 0fr;
+      height: 12rem;
+
       .women-image {
         width: 70%;
         height: auto;
       }
 
       .women-middle {
-        top: 110%;
-        right: 18%;
+        margin-top: 3rem;
+        margin-right: -3rem;
       }
 
       .green-box-3 {
-        margin-top: -30%;
-        right: 20%;
+        margin-top: 0rem;
+        margin-right: -7rem;
       }
 
       .green-box-4 {
-        margin-top: -5%;
-        right: 10%;
+        margin-top: 13rem;
+        margin-right: -2rem;
       }
     }
 
     .our-values-content {
-      margin-left: 21px;
-      margin-top: 85%;
-      width: 88vw;
+      margin-left: 10rem;
+      margin-top: 25rem;
+
+      h4 {
+        margin-bottom: 0px;
+      }
     }
   }
 
@@ -375,8 +390,7 @@ p {
       }
     }
     .behind-scenes-content {
-      margin: 18% 1% 10%;
-      width: 88vw;
+      margin: 10rem 2rem 3rem;
     }
   }
 
