@@ -1,4 +1,12 @@
 @import "../style.css";
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), local("Roboto"),
+    url("../../public/fonts/Roboto-VariableFont_wdth,wght.ttf")
+      format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
 
 body {
   overflow-x: hidden;
@@ -56,15 +64,7 @@ h5 {
   letter-spacing: 4.8px;
   margin: 0;
 }
-.special-style {
-  color: var(--Black-100);
-  font-family: "Roboto Serif";
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 50px;
-  letter-spacing: 2px;
-}
+
 .special-title-green {
   color: var(--green-100);
   font-family: "Roboto Serif";
@@ -199,24 +199,82 @@ p {
 }
 
 .about-us-content {
-  width: 99vw;
-  margin: 80px 300px 0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 80px 120px 0px;
   position: relative;
 }
 
+.about-us-images {
+  display: grid;
+  grid-template-columns: 1fr 0fr;
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  aspect-ratio: 1.5;
+  margin-left: -5vw;
+
+  #about-us-image-one {
+    width: 331px;
+    height: 441px;
+    margin-left: 5vw;
+    z-index: 3;
+  }
+
+  svg {
+    width: 400px;
+    height: 413px;
+    margin-left: -40vw;
+    margin-top: 17vw;
+    z-index: 0;
+  }
+
+  #about-us-image-two {
+    width: 482px;
+    height: 347px;
+    margin-left: 15vw;
+    margin-top: -18vw;
+    z-index: 2;
+  }
+}
+
+.about-us-text {
+  margin-left: 10vw;
+
+  h5 {
+    /* margin-left: 20px; */
+    /* width: 18vw; */
+    color: var(--green-100);
+    font-family: "Roboto Serif ";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 30px;
+  }
+}
+
 .about-us-img-custom {
-  width: 625px;
-  height: 420px;
+  /* width: 625px; */
+  /* height: 420px; */
   flex-shrink: 0;
   border-radius: 15px;
 }
 
 .about-us-img-left {
   z-index: 2;
+  width: 331px;
 }
 
 .about-us-img-right {
   z-index: 1;
+  width: 625px;
   margin-left: -80px; /* Ajuste para a sobreposição */
 }
 
@@ -590,12 +648,14 @@ p {
   .about-us-top img {
     transform: translateY(-80px) translateX(40px);
     width: 69%;
+    height: auto;
     margin-right: 34%;
   }
 
   .about-us-bottom img {
     transform: translateY(-80px) translateX(40px);
     width: 69%;
+    height: auto;
     margin-top: 17px;
   }
 

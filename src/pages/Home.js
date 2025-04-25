@@ -9,6 +9,7 @@ import Gallery from "../components/Gallery";
 import Testimonials from "../components/Testimonials.js";
 import { aboutUsSections, advantages } from "../components/constants/index.js";
 import { sendContactFormToAirtable } from "../services/airtableService.js";
+import GreenRetangle from "../components/GreenRetangle";
 
 function Home() {
   const [data, setData] = useState(null);
@@ -118,8 +119,41 @@ function Home() {
         {/* About Us */}
         <div className="about-us">
           <h2>About Us</h2>
+          <div className="about-us-content">
+            <div className="about-us-images">
+              <img
+                src={homeData.aboutUsImageOne.url}
+                alt={homeData.aboutUsImageOne.title}
+                id="about-us-image-one"
+              />
+              <GreenRetangle />
+              <img
+                src={homeData.aboutUsImageTwo.url}
+                alt={homeData.aboutUsImageTwo.title}
+                id="about-us-image-two"
+              />
+            </div>
+            <div className="about-us-text">
+              <h5 className={`special-style ${false ? "" : "mobile-none"}`}>
+                {homeData.aboutUsTitleOne ? homeData.aboutUsTitleOne : ""}
+              </h5>
+              <p
+                className={true ? "" : "mobile-none"}
+                dangerouslySetInnerHTML={{
+                  __html: homeData.aboutUsParagraphOne.json.content[0]
+                    .content[0].value
+                    ? homeData.aboutUsParagraphOne.json.content[0].content[0]
+                        .value
+                    : "",
+                }}
+              ></p>
+              <Btn customButtonClass="green" href="/about">
+                Learn More
+              </Btn>
+            </div>
+          </div>
           {/* top left */}
-          <div className={`about-us-content about-us-top`}>
+          {/* <div className={`about-us-content about-us-top`}>
             <img
               src={homeData.aboutUsImageOne.url}
               alt={homeData.aboutUsImageOne.title}
@@ -143,15 +177,15 @@ function Home() {
                 <Btn customButtonClass="green">Learn More</Btn>
               )}
             </div>
-          </div>
+          </div> */}
           {/* botton right */}
-          <div className={` about-us-bottom`}>
+          {/* <div className={` about-us-bottom`}>
             <img
               src={homeData.aboutUsImageTwo.url}
               alt={homeData.aboutUsImageTwo.title}
-              className={`about-us-img-custom about-us-img-left`}
+              className={`about-us-img-custom about-us-img-right`}
             />
-            <div className={`about-us-text about-us-bottom-left`}>
+            <div className={`about-us-text about-us-bottom-right`}>
               <h5 className={`special-style ${false ? "" : "mobile-none"}`}>
                 {homeData.aboutUsTitleTwo ? homeData.aboutUsTitleTwo : ""}
               </h5>
@@ -170,7 +204,7 @@ function Home() {
                 Learn More
               </Btn>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
