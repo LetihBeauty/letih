@@ -50,3 +50,8 @@
 .markdown-style strong {
   font-weight: bold;
 }
+
+@media (max-width: 768px) {
+  .markdown-style {
+  }
+}
