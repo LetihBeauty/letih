@@ -15,7 +15,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 60px 0 60px 180px;
+  margin: 10vw 0px 0px 10vw;
   gap: 20px;
 }
 
@@ -109,7 +109,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px 180px;
+  margin: 5vw 0px 0px 10vw;
   gap: 20px;
 }
 

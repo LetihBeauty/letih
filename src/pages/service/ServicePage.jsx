@@ -90,7 +90,6 @@ const ServicePage = () => {
           />
         </div>
       </div>
-      <div className="green-fold one"></div>
       <div
         className="belowFoldContent"
         dangerouslySetInnerHTML={{ __html: belowFoldContent }}
@@ -107,6 +106,14 @@ const ServicePage = () => {
 
       {prices?.items?.length > 0 && <PricesTable prices={prices} />}
       {warning && <ServiceWarning alertMessage={warning} />}
+      <div className="videoContainer">
+        {data.videoEmbed && (
+          <div
+            className="videoContent"
+            dangerouslySetInnerHTML={{ __html: data.videoEmbed }}
+          />
+        )}
+      </div>
     </div>
   );
 };

@@ -184,6 +184,8 @@ export const fetchPageData = async (page) => {
             warning {
               json
             }
+            videoEmbed
+
           }
         }
       }

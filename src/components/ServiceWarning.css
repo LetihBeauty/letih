@@ -7,6 +7,7 @@
   display: flex;
   align-items: flex-start; /* Alinha o conteúdo ao topo */
   width: 100%;
+  margin: 0vw 5vw;
 }
 
 .material-symbols-outlined {
