@@ -48,6 +48,7 @@
 @media (max-width: 768px) {
   .gallery-container {
     .gallery-header {
+      width: 100vw;
       height: 200px;
       margin-top: 53px;
 
@@ -62,8 +63,16 @@
       margin: 20px 0px;
     }
     img {
-      width: auto;
-      height: 400px;
+      width: 70vw;
+      height: auto;
+    }
+
+    .prev {
+      margin: 0rem !important;
+    }
+
+    .next {
+      margin: 0rem !important;
     }
   }
 }
