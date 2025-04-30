@@ -156,10 +156,15 @@ footer {
     .footer-menu-list {
       flex-wrap: wrap !important;
       margin: 0 10px 15px;
+      justify-content: center;
 
       li {
         margin-top: 10px;
       }
+    }
+
+    #line-footer {
+      margin-top: 2rem;
     }
   }
 

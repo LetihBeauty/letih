@@ -177,7 +177,7 @@
   }
 
   .customer-name {
-    padding-left: 100px;
+    padding-left: 15rem;
   }
 
   .testimonial-content h1 {
@@ -200,8 +200,10 @@
     line-height: 34px;
     margin-top: 40px;
     text-align: center;
+    margin-left: -1rem;
   }
   .testimonial-container .testimonial-content p {
+    width: 100%;
     font-family: Raleway, sans-serif;
     font-size: 14px;
     font-style: normal;
@@ -222,11 +224,11 @@
 
   .prev {
     background-position: left center;
-    margin-left: 180px;
+    margin-left: 15rem;
   }
 
   .next {
     background-position: right center;
-    margin-left: 5px;
+    margin-left: 2rem;
   }
 }
