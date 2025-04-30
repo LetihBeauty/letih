@@ -323,6 +323,16 @@ p {
       margin-top: 30rem;
       margin-left: 1rem;
       align-items: center;
+      padding: 8rem 0rem 0rem 0rem;
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h3 {
+        font-size: 18px;
+        text-transform: capitalize;
+      }
 
       .mission-vision {
         margin-top: 25px;
@@ -364,20 +374,20 @@ p {
     }
 
     .our-values-content {
-      margin-left: 10rem;
       margin-top: 25rem;
+      width: 100vw;
 
       h4 {
         margin: 1rem;
       }
 
       h5 {
-        margin: 25px 10px 0px 10px;
+        margin: 0.5rem 1rem;
       }
 
       p {
         width: 90vw;
-        margin: 10px;
+        margin: 0.5rem 1rem 1.5rem;
       }
     }
   }
