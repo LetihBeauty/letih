@@ -164,6 +164,7 @@ p {
     display: inline-block;
     text-align: left;
     font-style: italic;
+    font-size: 24px;
   }
   .bannerTitle {
     font-family: "Roboto Serif";
