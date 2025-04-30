@@ -553,17 +553,23 @@ p {
     margin: 0px;
 
     #about-us-image-one {
-      margin-left: 0vw;
+      margin-left: 8vw;
+      width: 182px;
+      height: auto;
     }
 
     svg {
-      margin-left: -80vw;
-      margin-top: 35vw;
+      margin-left: -72vw;
+      margin-top: 29vw;
+      width: 220px;
+      height: auto;
     }
 
     #about-us-image-two {
-      margin-left: 15vw;
-      margin-top: -40vw;
+      margin-left: 26vw;
+      margin-top: -2vw;
+      width: 265px;
+      height: auto;
     }
   }
 
