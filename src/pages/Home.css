@@ -587,6 +587,7 @@ p {
 
   .our-services {
     width: 100vw;
+    padding-top: 10px;
 
     h2 {
       margin-bottom: 30px;
