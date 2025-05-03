@@ -67,12 +67,20 @@ const ProductsPage = () => {
               __html:
                 documentToHtmlString(content?.description?.json) ||
                 "No description available",
-              // content?.description?.json?.content?.[0]?.content?.[0]?.value ||
-              // "No description available",
             }}
           ></p>
 
           <img src="/images/Leticia-Martins-sign.svg" alt="" />
+          {content?.pdf?.url && (
+            <a
+              className="link-mobile"
+              href={content.pdf.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DOWNLOAD PDF
+            </a>
+          )}
         </div>
         <div className="image-link">
           <a href="/myAccount" className="back-button">
@@ -94,7 +102,7 @@ const ProductsPage = () => {
           )}
           {content?.pdf?.url && (
             <a
-              id="link"
+              className="link-desktop"
               href={content.pdf.url}
               target="_blank"
               rel="noopener noreferrer"
