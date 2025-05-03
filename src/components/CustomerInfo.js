@@ -13,8 +13,6 @@ const REACT_APP_AIRTABLE_TABLE_PRODUCTS =
 
 // Função para adicionar um produto ao Airtable
 export const addProductToAirtable = async (productData) => {
-  console.log("Product being sent to Airtable:", productData);
-
   try {
     const createdProduct = await base(REACT_APP_AIRTABLE_TABLE_PRODUCTS).create(
       [
@@ -23,7 +21,6 @@ export const addProductToAirtable = async (productData) => {
         },
       ]
     );
-    console.log("Product added successfully:", createdProduct);
     return createdProduct; // Retorna o produto criado
   } catch (error) {
     console.error("Error adding product to Airtable:", error);
@@ -56,8 +53,6 @@ export const fetchProductsByClient = async (clientName) => {
 
 // Função para atualizar um produto no Airtable
 export const updateProductInAirtable = async (productId, updatedData) => {
-  console.log("Updating product in Airtable:", updatedData);
-
   try {
     const updatedProduct = await base(REACT_APP_AIRTABLE_TABLE_PRODUCTS).update(
       [
@@ -67,7 +62,6 @@ export const updateProductInAirtable = async (productId, updatedData) => {
         },
       ]
     );
-    console.log("Product updated successfully:", updatedProduct);
     return updatedProduct; // Retorna o produto atualizado
   } catch (error) {
     console.error("Error updating product in Airtable:", error);
@@ -77,8 +71,6 @@ export const updateProductInAirtable = async (productId, updatedData) => {
 
 // Função para deletar um produto no Airtable
 export const deleteProductFromAirtable = async (productId) => {
-  console.log("Deleting product from Airtable:", productId);
-
   try {
     const deletedProduct = await base(
       REACT_APP_AIRTABLE_TABLE_PRODUCTS
