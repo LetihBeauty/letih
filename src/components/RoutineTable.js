@@ -107,43 +107,7 @@ const RoutineTable = ({ routineData }) => {
                 console.log("Routine:", routine);
                 const days = routine.morningRoutine;
 
-                return (
-                  <div key={routine.id} className="routine-row">
-                    {/* F */}
-                    <div className="mobile">Product</div>
-                    {/* A */}
-                    <div className="product-name">
-                      <p>{routine.productName || "No product name"}</p>
-                    </div>
-                    <div className="mobile">Where to Buy</div>
-                    {/* D */}
-                    {whereToBuyLink(routine, false)}
-                    {/* B */}
-                    <div className="how-to-use-container">
-                      <div className="days-container">
-                        {["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].map(
-                          (day) => (
-                            <div key={day} className="day-wrapper">
-                              <div className="day-name">{day}</div>
-                              <div
-                                className={`day ${
-                                  days?.includes(day) ? "active" : ""
-                                }`}
-                              >
-                                {days?.includes(day) ? "●" : "○"}
-                              </div>
-                            </div>
-                          )
-                        )}
-                      </div>
-                      <div className="instructions">
-                        {routine.howToUse || "No instructions"}
-                      </div>
-                    </div>
-                    {/* C */}
-                    {whereToBuyLink(routine, true)}
-                  </div>
-                );
+                return showRoutineContents(routine, days);
               })}
             </div>
           </div>
@@ -168,43 +132,7 @@ const RoutineTable = ({ routineData }) => {
                 console.log("Routine:", routine);
                 const days = routine.nightRoutine;
 
-                return (
-                  <div key={routine.id} className="routine-row">
-                    <div className="product-name">
-                      {routine.productName || "No product name"}
-                    </div>
-                    <div className="how-to-use-container">
-                      <div className="days-container">
-                        {["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].map(
-                          (day) => (
-                            <div key={day} className="day-wrapper">
-                              <div className="day-name">{day}</div>
-                              <div
-                                className={`day ${
-                                  days?.includes(day) ? "active" : ""
-                                }`}
-                              >
-                                {days?.includes(day) ? "●" : "○"}
-                              </div>
-                            </div>
-                          )
-                        )}
-                      </div>
-                      <div className="instructions">
-                        {routine.howToUse || "No instructions"}
-                      </div>
-                    </div>
-                    <div className="where-to-buy-container">
-                      <a
-                        href={routine.whereToBuy || "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {routine.whereToBuy || "No link"}
-                      </a>
-                    </div>
-                  </div>
-                );
+                return showRoutineContents(routine, days);
               })}
             </div>
           </div>
