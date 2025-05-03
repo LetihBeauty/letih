@@ -75,12 +75,22 @@ const ProductsPage = () => {
           <img src="/images/Leticia-Martins-sign.svg" alt="" />
         </div>
         <div className="image-link">
-          <a href="/myAccount" id="back-button">
-            {<img src="../images/back-button.svg" alt="Back" className="≈" />}
+          <a href="/myAccount" className="back-button">
+            {
+              <img
+                src="../images/back-button.svg"
+                alt="Back"
+                className="back-icon"
+              />
+            }
             Back
           </a>
           {content?.image?.url && (
-            <img src={content.image.url} alt="Content Image" />
+            <img
+              src={content.image.url}
+              alt="Content Image"
+              className="treatment-image-mobile"
+            />
           )}
           {content?.pdf?.url && (
             <a
