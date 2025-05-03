@@ -75,6 +75,10 @@ const ProductsPage = () => {
           <img src="/images/Leticia-Martins-sign.svg" alt="" />
         </div>
         <div className="image-link">
+          <a href="/myAccount" id="back-button">
+            {<img src="../images/back-button.svg" alt="Back" className="≈" />}
+            Back
+          </a>
           {content?.image?.url && (
             <img src={content.image.url} alt="Content Image" />
           )}
