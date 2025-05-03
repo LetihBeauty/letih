@@ -12,12 +12,12 @@ function Gallery() {
         Our Gallery
       </a>
       <div className="gallery" id="gallery">
-        <img src="images/our-gallery-01.webp" alt="" id="img1" />
-        <img src="images/our-gallery-02.webp" alt="" id="img2" />
-        <img src="images/our-gallery-03.webp" alt="" id="img3" />
-        <img src="images/our-gallery-04.webp" alt="" id="img4" />
-        <img src="images/our-gallery-05.webp" alt="" id="img5" />
-        <img src="images/our-gallery-06.webp" alt="" id="img6" />
+        <img src="/images/our-gallery-01.webp" alt="" id="img1" />
+        <img src="/images/our-gallery-02.webp" alt="" id="img2" />
+        <img src="/images/our-gallery-03.webp" alt="" id="img3" />
+        <img src="/images/our-gallery-04.webp" alt="" id="img4" />
+        <img src="/images/our-gallery-05.webp" alt="" id="img5" />
+        <img src="/images/our-gallery-06.webp" alt="" id="img6" />
       </div>
     </div>
   );

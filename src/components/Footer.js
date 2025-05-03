@@ -15,7 +15,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <img id="logo" src="images/Logo.svg" alt="" />
+      <img id="logo" src="/images/Logo.svg" alt="" />
       <div className="footer-menu">
         <ul className="footer-menu-list">
           {navItems.slice(0, 6).map((item) => (
@@ -29,19 +29,19 @@ const Footer = () => {
             </li>
           ))}
         </ul>
-        <img id="line-footer" src="images/Linefooter.svg" alt="" />
+        <img id="line-footer" src="/images/Linefooter.svg" alt="" />
       </div>
       <div className="footer-contact">
         <div className="email-phone">
-          <img src="images/icon-email.svg" alt="" />
+          <img src="/images/icon-email.svg" alt="" />
           <a href="mailto:letihbeauty@gmail.com">letihbeauty@gmail.com</a>
         </div>
         <div className="email-phone">
-          <img src="images/icon-phone.svg" alt="" />
+          <img src="/images/icon-phone.svg" alt="" />
           <p>{phone}</p>
         </div>
         <div className="email-phone">
-          <img src="images/icon-instagram.svg" alt="" />
+          <img src="/images/icon-instagram.svg" alt="" />
           <a
             href="https://www.instagram.com/letihbeauty/"
             target="_blank"

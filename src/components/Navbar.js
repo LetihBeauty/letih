@@ -186,7 +186,7 @@ const MobileNavbar = () => {
           <h3>LETIH BEAUTY</h3> {/* Logo móvel */}
         </div>
         <div className="hamburger-icon" onClick={toggleMenu}>
-          <img src="images/hamburger.svg" alt="Menu" /> {/* Ícone do menu */}
+          <img src="/images/hamburger.svg" alt="Menu" /> {/* Ícone do menu */}
         </div>
       </nav>
       {isOpen && ( // Mostrar o menu móvel se estiver aberto
