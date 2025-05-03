@@ -109,18 +109,6 @@ const ProductsPage = () => {
         <h2>Skin Care Routine - Letih Beauty</h2>
         <RoutineTable routineData={products} />
       </div>
-
-      {/* {products.length > 0 ? (
-        <ul>
-          {products.map((product) => (
-            <li key={product.id}>
-              <strong>{product.productName}</strong> - {product.howToUse}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No products found for this client.</p>
-      )} */}
     </div>
   );
 };

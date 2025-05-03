@@ -35,12 +35,35 @@ const RoutineTable = ({ routineData }) => {
   const morningRoutineProducts = getMorningRoutineData(routineData);
   const nightRoutineProducts = getNightRoutineData(routineData);
 
-  const renderRoutineRow = (routine, days) => (
-    <tr key={routine.id}>
-      <td className="product-name">
-        {routine.productName || "No product name"}
-      </td>
-      <td data-label="How to Use">
+  const whereToBuyLink = (routine, isDesktop) => {
+    return (
+      <div
+        className={`where-to-buy-container ${isDesktop ? "desktop" : "mobile"}`}
+      >
+        <a
+          href={routine.whereToBuy || "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {routine.whereToBuy || "No link"}
+        </a>
+      </div>
+    );
+  };
+
+  const showRoutineContents = (routine, days) => {
+    return (
+      <div key={routine.id} className="routine-row">
+        {/* F */}
+        <div className="mobile">Product</div>
+        {/* A */}
+        <div className="product-name">
+          <p>{routine.productName || "No product name"}</p>
+        </div>
+        <div className="mobile">Where to Buy</div>
+        {/* D */}
+        {whereToBuyLink(routine, false)}
+        {/* B */}
         <div className="how-to-use-container">
           <div className="days-container">
             {["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].map((day) => (
@@ -56,86 +79,139 @@ const RoutineTable = ({ routineData }) => {
             {routine.howToUse || "No instructions"}
           </div>
         </div>
-      </td>
-      <td>
-        <a
-          href={routine.whereToBuy || "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {routine.whereToBuy || "No link"}
-        </a>
-      </td>
-    </tr>
-  );
-
+        {/* C */}
+        {whereToBuyLink(routine, true)}
+      </div>
+    );
+  };
   return (
     <div className="container">
       {/* Morning Routine */}
+      {/* Karen Test */}
       {morningRoutineProducts.length > 0 && (
         <div className="routine-section morning">
           <div className="top-morning">
             <img src="../images/mage_sun.svg" alt="sun" />
             <h2>Morning Routine</h2>
           </div>
-          <table className="routine-table">
-            <thead>
-              <tr>
-                <th className="product">Product</th>
-                <th className="how-to-use">How to Use</th>
-                <th className="where-to-buy">Where to Buy</th>
-              </tr>
-              {/* Adiciona cabeçalhos extras somente para mobile */}
-              {isMobile &&
-                morningRoutineProducts.map((_, index) => (
-                  <tr key={index}>
-                    <th className="product">Product</th>
-                    <th className="how-to-use">How to Use</th>
-                    <th className="where-to-buy">Where to Buy</th>
-                  </tr>
-                ))}
-            </thead>
-            <tbody>
-              {morningRoutineProducts.map((routine) =>
-                renderRoutineRow(routine, routine.morningRoutine)
-              )}
-            </tbody>
-          </table>
+
+          <div className="routine-container">
+            {/* E */}
+            <div className="routine-table-header desktop">
+              <div className="product">Product</div>
+              <div className="how-to-use">How to Use</div>
+              <div className="where-to-buy">Where to Buy</div>
+            </div>
+            <div className="routine-table-content ">
+              {morningRoutineProducts.map((routine) => {
+                console.log("Routine:", routine);
+                const days = routine.morningRoutine;
+
+                return (
+                  <div key={routine.id} className="routine-row">
+                    {/* F */}
+                    <div className="mobile">Product</div>
+                    {/* A */}
+                    <div className="product-name">
+                      <p>{routine.productName || "No product name"}</p>
+                    </div>
+                    <div className="mobile">Where to Buy</div>
+                    {/* D */}
+                    {whereToBuyLink(routine, false)}
+                    {/* B */}
+                    <div className="how-to-use-container">
+                      <div className="days-container">
+                        {["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].map(
+                          (day) => (
+                            <div key={day} className="day-wrapper">
+                              <div className="day-name">{day}</div>
+                              <div
+                                className={`day ${
+                                  days?.includes(day) ? "active" : ""
+                                }`}
+                              >
+                                {days?.includes(day) ? "●" : "○"}
+                              </div>
+                            </div>
+                          )
+                        )}
+                      </div>
+                      <div className="instructions">
+                        {routine.howToUse || "No instructions"}
+                      </div>
+                    </div>
+                    {/* C */}
+                    {whereToBuyLink(routine, true)}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       )}
-
       {/* Night Routine */}
       {nightRoutineProducts.length > 0 && (
         <div className="routine-section night">
           <div className="top-night">
-            <img src="../images/solar_moon-linear.svg" alt="moon" />
+            <img src="../images/mage_moon.svg" alt="moon" />
             <h2>Night Routine</h2>
           </div>
-          <table className="routine-table">
-            <thead>
-              <tr>
-                <th className="product">Product</th>
-                <th className="how-to-use">How to Use</th>
-                <th className="where-to-buy">Where to Buy</th>
-              </tr>
-              {isMobile &&
-                nightRoutineProducts.map((_, index) => (
-                  <tr key={index}>
-                    <th className="product">Product</th>
-                    <th className="how-to-use">How to Use</th>
-                    <th className="where-to-buy">Where to Buy</th>
-                  </tr>
-                ))}
-            </thead>
-            <tbody>
-              {nightRoutineProducts.map((routine) =>
-                renderRoutineRow(routine, routine.nightRoutine)
-              )}
-            </tbody>
-          </table>
+
+          <div className="routine-container">
+            <div className="routine-table-header desktop">
+              <div className="product">Product</div>
+              <div className="how-to-use">How to Use</div>
+              <div className="where-to-buy">Where to Buy</div>
+            </div>
+            <div className="routine-table-content ">
+              {nightRoutineProducts.map((routine) => {
+                console.log("Routine:", routine);
+                const days = routine.nightRoutine;
+
+                return (
+                  <div key={routine.id} className="routine-row">
+                    <div className="product-name">
+                      {routine.productName || "No product name"}
+                    </div>
+                    <div className="how-to-use-container">
+                      <div className="days-container">
+                        {["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].map(
+                          (day) => (
+                            <div key={day} className="day-wrapper">
+                              <div className="day-name">{day}</div>
+                              <div
+                                className={`day ${
+                                  days?.includes(day) ? "active" : ""
+                                }`}
+                              >
+                                {days?.includes(day) ? "●" : "○"}
+                              </div>
+                            </div>
+                          )
+                        )}
+                      </div>
+                      <div className="instructions">
+                        {routine.howToUse || "No instructions"}
+                      </div>
+                    </div>
+                    <div className="where-to-buy-container">
+                      <a
+                        href={routine.whereToBuy || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {routine.whereToBuy || "No link"}
+                      </a>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       )}
     </div>
   );
 };
+
 export default RoutineTable;
