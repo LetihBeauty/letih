@@ -76,7 +76,9 @@ const RoutineTable = ({ routineData }) => {
             ))}
           </div>
           <div className="instructions">
-            {routine.howToUse || "No instructions"}
+            <p className="instructions-paragraph">
+              {routine.howToUse || "No instructions"}
+            </p>
           </div>
         </div>
         {/* C */}
@@ -115,7 +117,7 @@ const RoutineTable = ({ routineData }) => {
           </div>
         </div>
       </div>
-      )}
+
       {/* Night Routine */}
       {nightRoutineProducts.length > 0 && (
         <div className="routine-section night">

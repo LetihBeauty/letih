@@ -136,11 +136,6 @@ a {
   }
 }
 
-.routine-section.morning {
-  border-radius: 8px;
-  border-color: var(--green-100);
-}
-
 .routine-section.night {
   background-color: var(--white-200);
   margin-top: -20px;
@@ -177,6 +172,15 @@ a {
     line-height: 26px;
   }
 
+  .routine-section.night {
+    margin-bottom: 6rem;
+  }
+
+  .routine-section {
+    margin: 1rem;
+    width: 95vw;
+  }
+
   .routine-row {
     display: flex;
     flex-direction: column;
@@ -190,5 +194,9 @@ a {
     a {
       padding: 1rem 0 0 1rem;
     }
+  }
+
+  .instructions-paragraph {
+    margin: 1rem !important;
   }
 }
