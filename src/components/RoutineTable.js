@@ -84,6 +84,17 @@ const RoutineTable = ({ routineData }) => {
       </div>
     );
   };
+
+  const headerDesktop = () => {
+    return (
+      <div className="routine-table-header desktop">
+        <div className="product">Product</div>
+        <div className="how-to-use">How to Use</div>
+        <div className="where-to-buy">Where to Buy</div>
+      </div>
+    );
+  };
+
   return (
     <div className="container">
       {/* Morning Routine */}
@@ -96,12 +107,7 @@ const RoutineTable = ({ routineData }) => {
           </div>
 
           <div className="routine-container">
-            {/* E */}
-            <div className="routine-table-header desktop">
-              <div className="product">Product</div>
-              <div className="how-to-use">How to Use</div>
-              <div className="where-to-buy">Where to Buy</div>
-            </div>
+            {headerDesktop()}
             <div className="routine-table-content ">
               {morningRoutineProducts.map((routine) => {
                 console.log("Routine:", routine);
@@ -122,11 +128,8 @@ const RoutineTable = ({ routineData }) => {
           </div>
 
           <div className="routine-container">
-            <div className="routine-table-header desktop">
-              <div className="product">Product</div>
-              <div className="how-to-use">How to Use</div>
-              <div className="where-to-buy">Where to Buy</div>
-            </div>
+            {headerDesktop()}
+
             <div className="routine-table-content ">
               {nightRoutineProducts.map((routine) => {
                 console.log("Routine:", routine);
