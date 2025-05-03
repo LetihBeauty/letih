@@ -67,11 +67,6 @@ a {
   border-collapse: collapse;
   margin-bottom: 20px;
   border: 1px solid var(--green-50);
-
-  thead {
-    background-color: var(--green-100);
-    color: var(--white-200);
-  }
 }
 
 .routine-table,
@@ -159,6 +154,10 @@ a {
   display: none;
 }
 
+.instructions {
+  margin: 0 0 1rem;
+}
+
 /* Versão Mobile */
 @media (max-width: 768px) {
   .desktop {
@@ -191,9 +190,5 @@ a {
     a {
       padding: 1rem 0 0 1rem;
     }
-  }
-
-  .instructions {
-    margin: 1rem;
   }
 }

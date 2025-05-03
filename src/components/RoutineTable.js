@@ -98,26 +98,23 @@ const RoutineTable = ({ routineData }) => {
   return (
     <div className="container">
       {/* Morning Routine */}
-      {/* Karen Test */}
-      {morningRoutineProducts.length > 0 && (
-        <div className="routine-section morning">
-          <div className="top-morning">
-            <img src="../images/mage_sun.svg" alt="sun" />
-            <h2>Morning Routine</h2>
-          </div>
+      <div className="routine-section morning">
+        <div className="top-morning">
+          <img src="../images/mage_sun.svg" alt="sun" />
+          <h2>Morning Routine</h2>
+        </div>
 
-          <div className="routine-container">
-            {headerDesktop()}
-            <div className="routine-table-content ">
-              {morningRoutineProducts.map((routine) => {
-                console.log("Routine:", routine);
-                const days = routine.morningRoutine;
+        <div className="routine-container">
+          {headerDesktop()}
+          <div className="routine-table-content ">
+            {morningRoutineProducts.map((routine) => {
+              const days = routine.morningRoutine;
 
-                return showRoutineContents(routine, days);
-              })}
-            </div>
+              return showRoutineContents(routine, days);
+            })}
           </div>
         </div>
+      </div>
       )}
       {/* Night Routine */}
       {nightRoutineProducts.length > 0 && (
@@ -132,9 +129,7 @@ const RoutineTable = ({ routineData }) => {
 
             <div className="routine-table-content ">
               {nightRoutineProducts.map((routine) => {
-                console.log("Routine:", routine);
                 const days = routine.nightRoutine;
-
                 return showRoutineContents(routine, days);
               })}
             </div>
