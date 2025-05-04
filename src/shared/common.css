@@ -254,6 +254,8 @@
     h1 {
       font-size: 30px;
       margin: 0;
+      white-space: pre-wrap;
+      text-align: center;
     }
   }
 
