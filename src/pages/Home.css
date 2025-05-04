@@ -283,7 +283,7 @@ p {
 
   .green-services,
   .white-services {
-    width: 100%; /* Garante que o background cubra toda a tela */
+    width: 80vw; /* Garante que o background cubra toda a tela */
     padding: 60px 170px; /* Ajuste o padding conforme necessário */
     display: flex;
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
@@ -586,7 +586,7 @@ p {
   }
 
   .our-services {
-    width: 100vw;
+    width: 95vw;
     padding-top: 10px;
 
     h2 {
