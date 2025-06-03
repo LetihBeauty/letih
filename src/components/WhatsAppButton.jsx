@@ -2,7 +2,6 @@ import React from "react";
 import "./WhatsAppButton.css";
 
 export default function WhatsAppButton() {
-  console.log("WhatsAppButton rendered");
   return (
     <div className="whatsapp-button">
       <a
