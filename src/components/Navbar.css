@@ -2,6 +2,13 @@ body {
   margin: 0;
   padding: 0;
 }
+
+@media print {
+  .navbar-desktop,
+  .navbar-mobile {
+    display: none !important;
+  }
+}
 .navbar-wrapper {
   width: 100%;
   border-bottom: 10px solid var(--green-100);

@@ -7,6 +7,11 @@
   font-style: normal;
 }
 
+@media print {
+  footer {
+    display: none !important;
+  }
+}
 footer {
   width: 100vw;
   height: auto;

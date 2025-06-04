@@ -1,5 +1,11 @@
 @import "../style.css";
 
+@media print {
+  .float {
+    display: none !important;
+  }
+}
+
 .whatsapp-button {
   display: flex;
   flex-direction: row-reverse;

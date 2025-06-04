@@ -71,16 +71,14 @@ const ProductsPage = () => {
           ></p>
 
           <img src="/images/Leticia-Martins-sign.svg" alt="" />
-          {content?.pdf?.url && (
-            <a
-              className="link-mobile"
-              href={content.pdf.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              DOWNLOAD PDF
-            </a>
-          )}
+          <button
+            className="link-mobile"
+            onClick={() => window.print()}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            DOWNLOAD PDF
+          </button>
         </div>
         <div className="image-link">
           <a href="/myAccount" className="back-button">
@@ -100,16 +98,14 @@ const ProductsPage = () => {
               className="treatment-image-mobile"
             />
           )}
-          {content?.pdf?.url && (
-            <a
-              className="link-desktop"
-              href={content.pdf.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              DOWNLOAD PDF
-            </a>
-          )}
+          <button
+            className="link-desktop"
+            onClick={() => window.print()}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            DOWNLOAD PDF
+          </button>
         </div>
       </div>
 
