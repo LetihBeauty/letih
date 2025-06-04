@@ -120,13 +120,13 @@ const DesktopNavbar = () => {
                               subItem // Map through submenu items
                             ) => (
                               <div key={subItem.id} className="submenu-item">
-                                {subItem.title === "FACIALS" ? ( // Check if there is a nested submenu
+                                {subItem.title === "FACIALS" ? (
                                   <button onClick={toggleFacialDropdown}>
                                     {subItem.title}
                                   </button>
                                 ) : (
                                   <Link // If there is no submenu, create a link to the subItem's URL
-                                    to={subItem.url}
+                                    to={`/service/${subItem.slug}`}
                                     className={
                                       location.pathname === subItem.url
                                         ? "active"
