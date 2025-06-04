@@ -17,26 +17,32 @@ const DesktopNavbar = () => {
 
   // fetch data from Facial Service
   const [serviceFacialData, setServiceFacialData] = useState(null);
+  const [servicePageData, setServicePageData] = useState(null);
 
   const getData = async () => {
     try {
-      const result = await fetchPageData("facialService");
-      console.log("result", result);
-      console.log("result.data", result.data.serviceFacialCollection.items);
+      const facialData = await fetchPageData("facialService");
+      setServiceFacialData(facialData.data.serviceFacialCollection.items);
 
-      setServiceFacialData(result.data.serviceFacialCollection.items); // Set the fetched data to state
+      const serviceData = await fetchPageData("servicePage");
+      console.log("serviceData", serviceData);
+      let updatedServiceDataItems = [
+        { title: "FACIALS", navbarTitle: "FACIALS" },
+        ...serviceData.data.servicePageCollection.items,
+      ];
+      console.log("updatedServiceDataItems", updatedServiceDataItems);
+
+      setServicePageData(updatedServiceDataItems);
     } catch (error) {
       console.error(`Error fetching data:`, error.response || error.message);
     }
   };
 
+  console.log("serviceFacialPageData", servicePageData);
+
   useEffect(() => {
     getData();
   }, []);
-
-  console.log("serviceFacialData", serviceFacialData);
-
-  // console.log("serviceData", serviceData.serviceFacialCollection);
 
   // Toggle the visibility of the service dropdown
   const toggleServiceDropdown = () => {
@@ -108,56 +114,57 @@ const DesktopNavbar = () => {
                           serviceDropdownOpen ? "show" : ""
                         }`}
                       >
-                        {item.submenu.map(
-                          (
-                            subItem // Map through submenu items
-                          ) => (
-                            <div key={subItem.id} className="submenu-item">
-                              {subItem.submenu ? ( // Check if there is a nested submenu
-                                <button onClick={toggleFacialDropdown}>
-                                  {subItem.title}
-                                </button>
-                              ) : (
-                                <Link // If there is no submenu, create a link to the subItem's URL
-                                  to={subItem.url}
-                                  className={
-                                    location.pathname === subItem.url
-                                      ? "active"
-                                      : ""
-                                  }
-                                  onClick={handleSubMenuClick} // Close dropdown on click
-                                >
-                                  {subItem.title}
-                                </Link>
-                              )}
-
-                              {subItem.title === "FACIALS" &&
-                                serviceFacialData &&
-                                facialDropdownOpen && ( // Check if there is a submenu and if it is open
-                                  <div
-                                    className={`submenu ${
-                                      facialDropdownOpen ? "show" : ""
-                                    }`}
+                        {servicePageData &&
+                          servicePageData.map(
+                            (
+                              subItem // Map through submenu items
+                            ) => (
+                              <div key={subItem.id} className="submenu-item">
+                                {subItem.submenu ? ( // Check if there is a nested submenu
+                                  <button onClick={toggleFacialDropdown}>
+                                    {subItem.title}
+                                  </button>
+                                ) : (
+                                  <Link // If there is no submenu, create a link to the subItem's URL
+                                    to={subItem.url}
+                                    className={
+                                      location.pathname === subItem.url
+                                        ? "active"
+                                        : ""
+                                    }
+                                    onClick={handleSubMenuClick} // Close dropdown on click
                                   >
-                                    {serviceFacialData.map(
-                                      (
-                                        subSubItem // Map through nested submenu items
-                                      ) => (
-                                        <Link
-                                          key={subSubItem.id}
-                                          to={`/service/facial/${subSubItem.slug}`}
-                                          className="submenu-link"
-                                          onClick={handleSubMenuClick} // Close dropdown on click
-                                        >
-                                          {subSubItem.navbarTitle}
-                                        </Link>
-                                      )
-                                    )}
-                                  </div>
+                                    {subItem.navbarTitle}
+                                  </Link>
                                 )}
-                            </div>
-                          )
-                        )}
+
+                                {subItem.title === "FACIALS" &&
+                                  serviceFacialData &&
+                                  facialDropdownOpen && ( // Check if there is a submenu and if it is open
+                                    <div
+                                      className={`submenu ${
+                                        facialDropdownOpen ? "show" : ""
+                                      }`}
+                                    >
+                                      {serviceFacialData.map(
+                                        (
+                                          subSubItem // Map through nested submenu items
+                                        ) => (
+                                          <Link
+                                            key={subSubItem.id}
+                                            to={`/service/facial/${subSubItem.slug}`}
+                                            className="submenu-link"
+                                            onClick={handleSubMenuClick} // Close dropdown on click
+                                          >
+                                            {subSubItem.navbarTitle}
+                                          </Link>
+                                        )
+                                      )}
+                                    </div>
+                                  )}
+                              </div>
+                            )
+                          )}
                       </div>
                     )}
                   </>

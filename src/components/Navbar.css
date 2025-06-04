@@ -83,6 +83,7 @@ button {
 }
 
 .navbar-desktop .submenu-item {
+  text-transform: uppercase;
   position: relative;
 }
 

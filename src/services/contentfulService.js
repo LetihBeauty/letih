@@ -164,6 +164,7 @@ export const fetchPageData = async (page) => {
         servicePageCollection {
           items {
             slug
+            navbarTitle
             title
             aboveFoldContent {
               json
