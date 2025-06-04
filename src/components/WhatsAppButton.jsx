@@ -5,7 +5,8 @@ export default function WhatsAppButton() {
   return (
     <div className="whatsapp-button">
       <a
-        href="https://api.whatsapp.com/send?phone=15715672664&text=Welcome%21%20Letih%20Beauty."
+        href="https://api.whatsapp.com/send?phone=15715672664&text=Hello%2C%20%40letihbeauty%20%E2%9C%A8%0A%0AI%20would%20like%20to%20know%20more%20about%20the%20services%20and%20schedule%20an%20appointment!%C2%A0%0A%0AThank%20you!%20🤍
+"
         class="float whatsapp-button"
         target="_blank"
         rel="noopener noreferrer"
