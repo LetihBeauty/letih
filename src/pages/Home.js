@@ -13,7 +13,6 @@ import GreenRetangle from "../components/GreenRetangle";
 
 function Home() {
   const [data, setData] = useState(null);
-
   const aboutUsSection = aboutUsSections;
 
   const getData = async () => {
