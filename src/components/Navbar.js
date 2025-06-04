@@ -25,20 +25,16 @@ const DesktopNavbar = () => {
       setServiceFacialData(facialData.data.serviceFacialCollection.items);
 
       const serviceData = await fetchPageData("servicePage");
-      console.log("serviceData", serviceData);
       let updatedServiceDataItems = [
         { title: "FACIALS", navbarTitle: "FACIALS" },
         ...serviceData.data.servicePageCollection.items,
       ];
-      console.log("updatedServiceDataItems", updatedServiceDataItems);
 
       setServicePageData(updatedServiceDataItems);
     } catch (error) {
       console.error(`Error fetching data:`, error.response || error.message);
     }
   };
-
-  console.log("serviceFacialPageData", servicePageData);
 
   useEffect(() => {
     getData();

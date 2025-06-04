@@ -1,15 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import "./Navbar.css";
 import "./ServiceNavbar.css";
 import data from "../data.json";
+import { fetchPageData } from "../services/contentfulService.js";
 
 // Componente para Navbar em Desktop
 function DesktopServiceNavbar() {
   const navItems = data.service; // Retrieve service items from data
   const location = useLocation(); // Get the current location for active link highlighting
   // const treatmentId = data.treatmentId; // Retrieve treatment ID if needed
+  const [serviceFacialData, setServiceFacialData] = useState(null);
+
+  const getData = async () => {
+    try {
+      const facialData = await fetchPageData("facialService");
+      setServiceFacialData(facialData.data.serviceFacialCollection.items);
+
+      if (serviceFacialData) {
+        setServiceFacialData(
+          [...serviceFacialData].sort((a, b) => a.order - b.order)
+        );
+      }
+    } catch (error) {
+      console.error(`Error fetching data:`, error.response || error.message);
+    }
+  };
+  console.log("serviceFacialData", serviceFacialData);
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <div className="service-navbar-desktop">
@@ -18,15 +40,14 @@ function DesktopServiceNavbar() {
           <h1>FACIALS</h1>
         </div>
         <ul className="main-nav-items">
-          {navItems
-            .filter((item) => item.fromContentful !== false)
-            .map((item) => (
-              <li key={item.id} className="items">
+          {serviceFacialData &&
+            serviceFacialData.map((item) => (
+              <li key={item.order} className="items">
                 <Link
                   className={location.pathname === item.url ? "active" : ""}
-                  to={item.url}
+                  to={`/service/facial/${item.slug}`}
                 >
-                  {item.title}
+                  {item.navbarTitle}
                 </Link>
               </li>
             ))}

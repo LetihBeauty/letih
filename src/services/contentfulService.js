@@ -131,6 +131,7 @@ export const fetchPageData = async (page) => {
           items {
             slug
             navbarTitle
+            order
             title
             whatIsDescription{
                 json
