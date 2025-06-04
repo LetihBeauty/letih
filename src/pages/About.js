@@ -25,7 +25,7 @@ const About = () => {
   }, []);
 
   if (!data) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
   // verificar se os dados existem antes de acessar
   const aboutData =

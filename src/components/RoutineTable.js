@@ -17,7 +17,7 @@ const RoutineTable = ({ routineData }) => {
   }, []);
 
   if (!routineData || routineData.length === 0) {
-    return <p>Loading routines...</p>;
+    return <p className="loading">Loading routines...</p>;
   }
 
   const getMorningRoutineData = (routineData) => {

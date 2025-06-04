@@ -27,7 +27,7 @@ const GalleryPage = () => {
   const title = data?.galleryPageCollection?.items[0]?.title;
 
   if (!images || images.length === 0) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   // Navigate to the next image

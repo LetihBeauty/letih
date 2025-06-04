@@ -17,7 +17,7 @@ function Testimonials({ testimonialData }) {
 
   // Verifica se testimonialData está definido antes de tentar renderizar
   if (!testimonialData || testimonialData.length === 0) {
-    return <div>Loading Testimonials...</div>;
+    return <div className="loading">Loading Testimonials...</div>;
   }
 
   return (

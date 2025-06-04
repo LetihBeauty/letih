@@ -68,7 +68,7 @@ function Home() {
   }, [location]);
 
   if (!data) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   // Verificando se os dados existem antes de acessar

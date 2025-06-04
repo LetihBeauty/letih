@@ -48,7 +48,7 @@ const FacialService = () => {
   }, [slug]); // Atualiza quando o slug mudar
 
   if (!data) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   const primaryService = data;

@@ -23,5 +23,8 @@
 
     color: red;
   }
-  /* Define font-face globally */
+
+  .loading {
+    height: 100vh;
+  }
 }

@@ -49,7 +49,7 @@ const Booking = () => {
   // console.log("bookData", bookData);
 
   if (!data) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   // Handle update to booking data

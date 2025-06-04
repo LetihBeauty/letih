@@ -51,7 +51,7 @@ const ProductsPage = () => {
   const content = pageData?.skinCareRoutineCollection?.items?.[0];
 
   if (!client || !client.name) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   return (
