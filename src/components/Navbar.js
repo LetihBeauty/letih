@@ -120,7 +120,7 @@ const DesktopNavbar = () => {
                               subItem // Map through submenu items
                             ) => (
                               <div key={subItem.id} className="submenu-item">
-                                {subItem.submenu ? ( // Check if there is a nested submenu
+                                {subItem.title === "FACIALS" ? ( // Check if there is a nested submenu
                                   <button onClick={toggleFacialDropdown}>
                                     {subItem.title}
                                   </button>
