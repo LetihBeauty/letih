@@ -130,6 +130,7 @@ export const fetchPageData = async (page) => {
         serviceFacialCollection {
           items {
             slug
+            navbarTitle
             title
             whatIsDescription{
                 json

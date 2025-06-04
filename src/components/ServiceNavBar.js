@@ -9,6 +9,7 @@ import data from "../data.json";
 function DesktopServiceNavbar() {
   const navItems = data.service; // Retrieve service items from data
   const location = useLocation(); // Get the current location for active link highlighting
+  // const treatmentId = data.treatmentId; // Retrieve treatment ID if needed
 
   return (
     <div className="service-navbar-desktop">
@@ -17,16 +18,18 @@ function DesktopServiceNavbar() {
           <h1>FACIALS</h1>
         </div>
         <ul className="main-nav-items">
-          {navItems.map((item) => (
-            <li key={item.id} className="items">
-              <Link
-                className={location.pathname === item.url ? "active" : ""} // Highlight active link
-                to={item.url}
-              >
-                {item.title}
-              </Link>
-            </li>
-          ))}
+          {navItems
+            .filter((item) => item.fromContentful !== false)
+            .map((item) => (
+              <li key={item.id} className="items">
+                <Link
+                  className={location.pathname === item.url ? "active" : ""}
+                  to={item.url}
+                >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
         </ul>
       </div>
     </div>

@@ -117,6 +117,7 @@ button {
     padding: 10px;
     text-decoration: none;
     color: var(--black-300);
+    text-transform: uppercase;
   }
   .submenu-link:hover {
     background-color: var(--green-100);
