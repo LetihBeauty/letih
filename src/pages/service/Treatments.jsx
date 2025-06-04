@@ -2,7 +2,8 @@ import React from "react";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import styles from "./Treatments.module.css";
 import ServiceMobileNavbar from "../../components/ServiceNavBar.js";
-import Btn from "../../components/Btn.js";
+import BtnGreen from "../../components/BtnGreen";
+
 import booknow from "../../data.json";
 
 const Treatments = ({
@@ -14,7 +15,6 @@ const Treatments = ({
   customBottomClass,
   customNavWrapperClass,
 }) => {
-  const bookNowUrl = booknow.bookNow;
   const htmlString = documentToHtmlString(whatIsDescription);
 
   return (
@@ -36,9 +36,14 @@ const Treatments = ({
               dangerouslySetInnerHTML={{ __html: htmlString }}
             ></div>
 
-            <Btn href={bookNowUrl} customButtonClass="green" target="_blank">
+            <BtnGreen
+              href="https://linktr.ee/letihbeauty?fbclid=PAZXh0bgNhZW0CMTEAAaZFH8U8o3AKmjeYzclFsrxCiOww4n79CtIQURzxz6uY3hKgtG0KfPOEJ_8_aem_rRU86kn6hJ7eEReWGb7xKg"
+              customButtonClass="green"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Book Now
-            </Btn>
+            </BtnGreen>
           </div>
 
           {imgSrc && (

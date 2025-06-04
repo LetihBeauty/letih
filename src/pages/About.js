@@ -112,7 +112,14 @@ const About = () => {
             <h4 className="left-title">Behind the scenes </h4>
             <p>{aboutData.behindTheScenes}</p>
             <div className="btn-book">
-              <BtnGreen>Book Now</BtnGreen>
+              <BtnGreen
+                href="https://linktr.ee/letihbeauty?fbclid=PAZXh0bgNhZW0CMTEAAaZFH8U8o3AKmjeYzclFsrxCiOww4n79CtIQURzxz6uY3hKgtG0KfPOEJ_8_aem_rRU86kn6hJ7eEReWGb7xKg"
+                customButtonClass="green"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book Now
+              </BtnGreen>
             </div>
           </div>
         </div>

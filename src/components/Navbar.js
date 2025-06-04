@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import data from "../data.json";
-import Btn from "../components/Btn";
+import BtnGreen from "../components/BtnGreen.js";
 import { fetchPageData } from "../services/contentfulService.js";
 
 import { useMediaQuery } from "react-responsive";
@@ -176,14 +176,14 @@ const DesktopNavbar = () => {
             )
           )}
         </ul>
-        <Btn
+        <BtnGreen
           href="https://linktr.ee/letihbeauty?fbclid=PAZXh0bgNhZW0CMTEAAaZFH8U8o3AKmjeYzclFsrxCiOww4n79CtIQURzxz6uY3hKgtG0KfPOEJ_8_aem_rRU86kn6hJ7eEReWGb7xKg"
           customButtonClass="green"
           target="_blank"
           rel="noopener noreferrer"
         >
           Book Now
-        </Btn>
+        </BtnGreen>
       </div>
     </div>
   );
