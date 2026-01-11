@@ -1,7 +1,13 @@
 body {
   margin: 0;
   padding: 0;
+}
 
+@media print {
+  .navbar-desktop,
+  .navbar-mobile {
+    display: none !important;
+  }
 }
 .navbar-wrapper {
   width: 100%;
@@ -9,12 +15,10 @@ body {
 }
 .navbar-desktop {
   display: flex;
-  width: 100%;
-  max-width: 1500px;
+  width: 100vw;
   height: 80px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-
   z-index: 1000;
   position: relative;
   margin: 0 auto;
@@ -25,9 +29,10 @@ body {
   color: var(--green-100);
   font-size: 16px;
   font-weight: 400;
-  margin: 0;
   position: relative;
+  white-space: nowrap;
 }
+
 button {
   background: none;
   border: none;
@@ -42,15 +47,15 @@ button {
   display: flex;
   justify-content: space-between;
   list-style: none;
-  margin-bottom: 9px;
-  padding: 0;
-  width: 448px;
   height: 27px;
   flex-shrink: 0;
+  width: 800px;
 }
 
 .navbar-desktop .items {
   position: relative;
+  margin-left: 20px;
+  width: 115px;
 }
 .navbar-desktop .service-toggle {
   cursor: pointer;
@@ -59,9 +64,8 @@ button {
 .navbar-desktop .dropdown {
   display: none;
   position: absolute;
-  background: white;
-  border: 1px solid #ccc;
-
+  background: var(--white-200);
+  border: 1px solid var(--grey-300);
   width: 200px;
   margin-top: 5px;
 }
@@ -73,8 +77,8 @@ button {
 .navbar-desktop .submenu {
   display: none;
   position: absolute;
-  background: white;
-  border: 1px solid #ccc;
+  background: var(--white-200);
+  border: 1px solid var(--grey-300);
   width: 200px;
   top: 0;
   left: 100%;
@@ -86,6 +90,7 @@ button {
 }
 
 .navbar-desktop .submenu-item {
+  text-transform: uppercase;
   position: relative;
 }
 
@@ -93,14 +98,14 @@ button {
   display: block;
   padding: 10px;
   text-decoration: none;
-  color: black;
+  color: var(--black-300);
 }
 .navbar-desktop .submenu-item button {
   display: block;
   width: 100%;
   padding: 10px;
   text-decoration: none;
-  color: black;
+  color: var(--black-300);
   background: transparent;
   border: none;
   text-align: left;
@@ -108,8 +113,8 @@ button {
 
 .navbar-desktop .submenu-item button:hover,
 .navbar-desktop .submenu-item .submenu-link:hover {
-  background-color: #154734;
-  color: white;
+  background-color: var(--green-100);
+  color: var(--white-200);
 }
 
 .navbar-desktop .dropdown .submenu-item {
@@ -119,20 +124,21 @@ button {
     display: block;
     padding: 10px;
     text-decoration: none;
-    color: black;
+    color: var(--black-300);
+    text-transform: uppercase;
   }
   .submenu-link:hover {
-    background-color: #154734;
-    color: white;
+    background-color: var(--green-100);
+    color: var(--white-200);
   }
   a:hover {
-    background-color: #154734;
-    color: white;
+    background-color: var(--green-100);
+    color: var(--white-200);
   }
 }
 
 .navbar-desktop .center-logo {
-  padding-left: 150px;
+  width: 300px;
 }
 
 .navbar-desktop .center-logo h3 {
@@ -146,7 +152,7 @@ button {
   margin-right: 10px;
 }
 
-.navbar-desktop  a.active::after {
+.navbar-desktop a.active::after {
   content: "";
   display: block;
   width: 30px;
@@ -158,90 +164,121 @@ button {
   left: 50%;
   transform: translateX(-50%);
 }
-.login-signup-buttons{
-  width: 239px;
+
+.myAccount-buttons {
+  width: 385px;
   display: flex;
   align-items: center;
   gap: 24px;
   margin-right: 127px;
 }
 
-
-
-@media (max-width: 430px) {
-.navbar-desktop .center-logo{
-  padding-left: 16px;
-  h3 {
+@media (max-width: 768px) {
+  .navbar-desktop .center-logo {
+    padding-left: 16px;
+    h3 {
       display: inline-block;
       letter-spacing: 2px !important;
       white-space: nowrap;
       font-size: 16px;
     }
   }
-}
-.navbar-mobile {
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
-  border-bottom: 10px solid var(--green-100);
 
-  h3 {
-    font-family: "SVN-Aire Pro";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px;
-    /* 250% */
-    letter-spacing: 3.2px;
-    text-transform: uppercase;
-    margin-left: 16px;
+  .navbar-mobile {
+    background: var(--white-200);
+    z-index: 1000;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    top: 0;
+    border-bottom: 10px solid var(--green-100);
+    position: fixed;
+
+    h3 {
+      font-family: "SVN-Aire Pro";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 40px;
+      /* 250% */
+      letter-spacing: 3.2px;
+      text-transform: uppercase;
+      margin-left: 16px;
+    }
+
+    .hamburger-icon {
+      cursor: pointer;
+      margin-right: 24px;
+    }
+  }
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: auto;
+    padding-top: 42px;
+  }
+  .modal-content {
+    background: var(--white-200);
+    width: 170px;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .modal-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
 
-  .hamburger-icon {
-    cursor: pointer;
-    margin-right: 24px;
+  .modal-content li {
+    margin: 10px 0;
   }
-}
-.modal {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  overflow: auto;
-  padding: 50px 24px 0px 0px;
-}
-.modal-content {
-  background: #fff
-}
-.modal-content ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
 
-.modal-content li {
-  margin: 10px 0;
-}
+  .modal-content li a {
+    color: var(--black-300);
+    text-decoration: none;
+    color: var(--green-100);
+    font-size: 18px;
+    display: block;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+  }
 
-.modal-content li a {
-  color: black;
-}
+  .modal-content li:hover {
+    background-color: var(--green-100);
+  }
 
-.modal-content li:hover {
-  background-color: #154734;
-}
+  .modal-content li:hover a {
+    color: var(--white-200);
+  }
 
-.modal-content li:hover a {
-  color: white;
-}
+  .modal-content li a:hover {
+    color: var(--white-200);
+  }
 
-.modal-content li a:hover {
-  color: white;
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .modal-content {
+    animation: slideIn 0.5s ease-out;
+  }
 }

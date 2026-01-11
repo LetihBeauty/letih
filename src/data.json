@@ -1,7 +1,7 @@
 {
-  "mobile": "490",
+  "bookNow": "https://linktr.ee/letihbeauty?fbclid=PAZXh0bgNhZW0CMTEAAaZFH8U8o3AKmjeYzclFsrxCiOww4n79CtIQURzxz6uY3hKgtG0KfPOEJ_8_aem_rRU86kn6hJ7eEReWGb7xKg",
+  "mobile": "768",
   "desktop": "992",
-  "tablet": "768",
   "navbar": [
     {
       "id": 1,
@@ -16,8 +16,10 @@
     {
       "id": 3,
       "title": "SERVICE",
+      "url": "/#our-services",
       "submenu": [
-        { "id": 1,
+        {
+          "id": 1,
           "title": "FACIALS",
           "submenu": [
             {
@@ -39,7 +41,7 @@
         },
         {
           "id": 2,
-          "title": "ULTRAFORMER",
+          "title": "HIFU",
           "url": "/service/Ultraformer"
         },
         {
@@ -69,41 +71,36 @@
         }
       ]
     },
-
     {
       "id": 5,
       "title": "CONTACT",
-      "url": "/contact"
+      "url": "/#contact"
+    },
+    {
+      "id": 6,
+      "title": "GALLERY",
+      "url": "/gallerypage"
+    },
+    {
+      "id": 7,
+      "title": "MY ACCOUNT",
+      "url": "/myAccount"
     }
   ],
   "footer": {
     "title": "Blue Duck Co. All Rights Reserved.",
     "email": "letihbeauty@gmail.com",
-    "phone": "+1 (123) 456-7890",
-    "social": [
-      {
-        "id": 1,
-        "title": "Facebook",
-        "url": "https://www.facebook.com/"
-      },
-      {
-        "id": 2,
-        "title": "Twitter",
-        "url": "https://twitter.com/"
-      },
-      {
-        "id": 3,
-        "title": "Instagram",
-        "url": "https://www.instagram.com/"
-      }
-    ],
+    "phone": "+1 (571) 567-2664",
+    "instagram": "https://www.instagram.com/letihbeauty/",
     "developed": {
       "title": " Developed by",
-      "name": "Karen Honorio",
-      "url": "https://karenhb.com/"
+      "karen": "Karen Honorio",
+      "karenUrl": "https://karenhb.com/",
+      "victor": "Victor Fonseca",
+      "victorUrl": "https://www.linkedin.com/in/victorfonsecas/"
     }
   },
-  "service":[
+  "service": [
     {
       "id": 1,
       "title": "DEEP CLEASING",
@@ -119,11 +116,5 @@
       "title": "GLOW FACIAL",
       "url": "/service/facial/glowfacial"
     }
-  ],
-  "singIn":
-  {
-      "id": 1,
-      "title": "SING IN",
-      "url": "/singIn"
-    }
+  ]
 }

@@ -1,0 +1,32 @@
+@import "../style.css";
+
+@media print {
+  .float {
+    display: none !important;
+  }
+}
+
+.whatsapp-button {
+  display: flex;
+  flex-direction: row-reverse;
+  border: 1px solid #fff;
+}
+
+.float {
+  position: fixed;
+  width: 85px;
+  height: 88px;
+  bottom: 40px;
+  /* right: 40px; */
+  background-color: #446953;
+  color: #fff;
+  border-radius: 16px 0px 0px 16px;
+  text-align: center;
+  font-size: 30px;
+  right: 0;
+  z-index: 100;
+}
+
+.whatsapp-icon {
+  margin: 24px;
+}

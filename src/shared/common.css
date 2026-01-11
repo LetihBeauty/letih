@@ -3,10 +3,12 @@
   flex: column;
   justify-content: center;
   justify-content: space-between;
+  margin: 10vw;
 }
 .globalNavbarWrapper {
   display: none;
 }
+
 .globalBanner {
   display: flex;
   width: 100%;
@@ -15,7 +17,7 @@
   align-items: center;
   margin: 0px;
   padding-left: 0px;
-  background-color: #446953;
+  background-color: var(--green-50);
 }
 .globalCenterLogo {
   h1 {
@@ -32,9 +34,18 @@
   }
 }
 .globalBannerBottom {
-  background-color: #446953;
+  background-color: var(--green-50);
   height: 130px;
   width: 100%;
+}
+
+.sectionServiceINcluded {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
 }
 
 .globalServiceIncluded {
@@ -42,11 +53,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  height: auto;
   width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  padding-left: 101px;
+  margin: 4vw;
 }
+
 .globalServiceIncludedContent {
   width: 100%;
   box-sizing: border-box;
@@ -64,12 +75,9 @@
     padding-bottom: 10px;
     display: inline-block;
   }
-
 }
 .globalTreatment {
-  margin: 79px 32px 120px 101px;
-  width: 100%;
-  max-width: 1134px;
+  width: 95%;
 }
 
 .globalCustom-list {
@@ -83,7 +91,6 @@
 .globalCustom-list li {
   position: relative;
   padding-left: 20px;
-
 }
 .globalBannerMiddle {
   display: flex;
@@ -91,15 +98,21 @@
   align-items: flex-start;
   max-width: 1500px;
   margin: 0 auto;
-  height: auto;
+}
+
+.container {
+  display: flex;
+  margin-right: 20px;
+  width: 100%;
 }
 .globalBannerMiddleContent {
-  display: grid;
-  grid-template-columns: 503px 550px;
-  grid-template-rows: 0px auto;
-  width: 100%;
-  column-gap: 100px;
-  height: 250px;
+  display: flex;
+  margin-bottom: 50px;
+  margin-right: 128px;
+
+  .description {
+    display: flex;
+  }
 
   p {
     margin: 0;
@@ -107,7 +120,9 @@
 
   .globalDescriptionStyle {
     display: inline;
-    h5{margin: 10px 0px;}
+    h5 {
+      margin: 10px 0px;
+    }
   }
 
   .globalDescriptionStyle p {
@@ -117,7 +132,8 @@
   }
 }
 .globalFirstBannerBottom {
-  background-color: #446953;
+  background-color: var(--green-50);
+
   height: 130px;
   width: 100%;
   margin-top: -85px;
@@ -154,7 +170,6 @@
   align-items: center;
   margin: 60px 32px 120px 0px;
 
-
   div {
     display: flex;
     align-items: center;
@@ -175,80 +190,109 @@
 
 .globalBenefits h5 {
   display: inline-block;
-  font-family: 'Raleway';
+  font-family: "Raleway";
   font-weight: 550;
   font-size: 16px;
 }
 
-@media (max-width: 430px) {
+.videoContainer {
+  margin: 8vw;
+
+  .videoContent {
+    position: relative;
+    padding-bottom: 56.25%; /* Para vídeo 16:9 */
+    height: 0;
+    overflow: hidden;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
   * {
-      box-sizing: border-box;
-    }
-.globalFirstBannerBottom {
-  background-color: #446953;
-  height: 130px;
-  width: 100%;
-  margin-top: 0px;
-  padding-top: 0px;
-}
-
-.globalServiceIncluded {
-  width: 100%;
-  margin: 0;
-  padding-left: 0px;
-}
-
-.globalTreatment {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: calc(100% - 32px);
-  margin: 60px 16px 40px 16px;
-
-  h5 {
-    margin-bottom: 10px;
+    box-sizing: border-box;
   }
-}
-.globalBannerMiddleContent {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: none;
-  width: 380px;
-  height: auto;
-  gap: 0;
+  .globalFirstBannerBottom {
+    background-color: var(--green-50);
 
-}
-.globalWarningWrap {
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
+    height: 130px;
+    width: 100%;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
 
-.globalServiceIncludedWarning {
-  max-width: 1500px;
-  width: 1134px;
-  border: 1px solid black;
-  align-items: center;
-  margin: 0px 16px 120px 16px;
+  .globalServiceIncluded {
+    width: 100%;
+    margin: 0;
+    padding-left: 0px;
+  }
 
-
-  div {
+  .globalTreatment {
     display: flex;
-    align-items: center;
-    gap: 24px;
-    margin: 28px;
-    margin-left: 26px;
-  }
+    flex-direction: column;
+    position: relative;
+    width: calc(100% - 32px);
+    padding: 0rem 2rem;
 
-  ul {
-    padding-left: 75px;
-    padding-bottom: 25px;
-
-    li {
-      width: 900px;
+    h5 {
+      margin-bottom: 10px;
     }
   }
-}
+
+  .globalBanner {
+    margin-top: 5rem;
+    height: 200px;
+  }
+
+  .globalCenterLogo {
+    h1 {
+      font-size: 30px;
+      margin: 0;
+      white-space: pre-wrap;
+      text-align: center;
+    }
+  }
+
+  .globalBannerMiddleContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    height: auto;
+    gap: 0;
+    margin-right: 0px;
+  }
+  .globalWarningWrap {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .globalServiceIncludedWarning {
+    max-width: 1500px;
+    width: 1134px;
+    border: 1px solid black;
+    align-items: center;
+    margin: 0px 16px 120px 16px;
+
+    div {
+      margin: 57px 0px 0px -40px;
+    }
+
+    ul {
+      padding-left: 75px;
+      padding-bottom: 25px;
+
+      li {
+        width: 75vw;
+      }
+    }
+  }
 }

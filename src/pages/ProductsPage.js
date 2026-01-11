@@ -1,0 +1,120 @@
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { fetchClientAndProducts } from "../services/airtableService.js";
+import { fetchPageData } from "../services/contentfulService.js";
+import "./ProductsPage.css";
+import RoutineTable from "../components/RoutineTable";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import WhatsAppButton from "../components/WhatsAppButton";
+
+const ProductsPage = () => {
+  const { clientLogin } = useParams();
+  const [products, setProducts] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [client, setClient] = useState([]);
+  const [pageData, setPageData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchClientAndProducts(clientLogin);
+        setProducts(data.products);
+        setClient(data.client);
+      } catch (error) {
+        console.error("Error fetching client products:", error);
+        setErrorMessage("Failed to fetch client products.");
+      }
+    };
+
+    const getData = async () => {
+      try {
+        const result = await fetchPageData("skinCareRoutine");
+
+        if (
+          result?.data?.skinCareRoutineCollection?.items &&
+          result.data.skinCareRoutineCollection.items.length > 0
+        ) {
+          const pageDataContent = result.data.skinCareRoutineCollection.items;
+          setPageData(result.data); // Armazena os dados brutos
+        } else {
+          console.warn("No items found in skinCareRoutineCollection");
+        }
+      } catch (error) {
+        console.error(`Error fetching data:`, error.response || error.message);
+      }
+    };
+
+    fetchData();
+    getData();
+  }, [clientLogin]);
+
+  const content = pageData?.skinCareRoutineCollection?.items?.[0];
+
+  if (!client || !client.name) {
+    return <p className="loading">Loading...</p>;
+  }
+
+  return (
+    <div className="products-page">
+      <WhatsAppButton />
+
+      <div className="top-container">
+        <div className="description">
+          <h1>Hello, {client.name || "Guest"}!</h1>
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+          <p
+            dangerouslySetInnerHTML={{
+              __html:
+                documentToHtmlString(content?.description?.json) ||
+                "No description available",
+            }}
+          ></p>
+
+          <img src="/images/Leticia-Martins-sign.svg" alt="" />
+          <button
+            className="link-mobile"
+            onClick={() => window.print()}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            DOWNLOAD PDF
+          </button>
+        </div>
+        <div className="image-link">
+          <a href="/myAccount" className="back-button">
+            {
+              <img
+                src="../images/back-button.svg"
+                alt="Back"
+                className="back-icon"
+              />
+            }
+            Back
+          </a>
+          {content?.image?.url && (
+            <img
+              src={content.image.url}
+              alt="Content Image"
+              className="treatment-image-mobile"
+            />
+          )}
+          <button
+            className="link-desktop"
+            onClick={() => window.print()}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            DOWNLOAD PDF
+          </button>
+        </div>
+      </div>
+
+      <div className="bottom-container">
+        <h2>Skin Care Routine - Letih Beauty</h2>
+        <RoutineTable routineData={products} />
+      </div>
+    </div>
+  );
+};
+
+export default ProductsPage;

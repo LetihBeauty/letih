@@ -15,27 +15,22 @@
 }
 .bannerMiddle {
   display: flex;
+  height: auto;
   justify-content: center;
   align-items: flex-start;
   flex-direction: row;
   z-index: 1;
   max-width: 1500px;
   margin: 0 auto;
-  padding-left: 101px;
 }
 
 .bannerMiddleContent {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0px auto;
   width: 100%;
-  margin: 0px 0px 32px 101px;
+  margin: 4vw;
 
   h2 {
     font-size: 32px;
     letter-spacing: 4px;
-    padding-bottom: 35px;
-    margin: 0;
     letter-spacing: 1px;
     color: var(--green-100);
   }
@@ -45,16 +40,17 @@
     font-size: 18px;
     font-weight: 600;
     padding-bottom: 24px;
+    padding-top: 35px;
   }
 
   .title {
-    grid-column: 1 / 2;
-    margin: 89px 0px 0px 0px;
+    /* grid-column: 1 / 2; */
+    margin: 80px 0px 0px 0px;
   }
 
   .titleDescription {
-    grid-column: 1 / 2;
-    margin: 162px 128px 0px 0px;
+    /* grid-column: 1 / 2; */
+    margin: 0px 0px 40px;
   }
 
   .bannerButton {
@@ -62,21 +58,21 @@
     padding-bottom: 43px;
   }
 }
-.bannerMiddleRecommendation{
+.bannerMiddleRecommendation {
   margin-top: 10px;
 }
-.sessionTitle{
-  font-family: 'Raleway';
+.sessionTitle {
+  font-family: "Raleway";
   font-weight: 550;
   font-size: 16px;
-  padding-bottom: 10px!important;;
+  padding-bottom: 10px !important;
 }
-.bannerMiddleContentDetails h5{
-  font-family: 'Raleway';
+.bannerMiddleContentDetails h5 {
+  font-family: "Raleway";
   font-weight: 550;
   font-size: 16px;
 }
-.bannerMiddleContentDetails>div {
+.bannerMiddleContentDetails > div {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -86,7 +82,7 @@
   }
 }
 
-.bannerMiddlePhoto{
+.bannerMiddlePhoto {
   margin-top: 80px;
 }
 .bannerMiddlePhoto img {
@@ -97,7 +93,7 @@
   position: relative;
   z-index: 1;
 }
-.bannerBottom{
+.bannerBottom {
   padding-top: 30px;
 }
 
@@ -110,9 +106,13 @@
   line-height: 28px;
   margin-left: 10px;
 }
-@media (max-width: 430px) {
+@media (max-width: 768px) {
+  .containerService {
+    height: 115vh;
+  }
+
   .mobileNavbarWrapper {
-    padding-bottom: 50px;
+    padding-bottom: 0px;
   }
   .bannerWrapper {
     height: auto;
@@ -130,7 +130,6 @@
       letter-spacing: 2px;
       padding-bottom: 40px;
     }
-
   }
 
   .bannerMiddleContent {
@@ -139,16 +138,32 @@
     position: relative;
     padding: 0px 16px 0px 16px;
     margin: 0;
+    height: auto;
 
     .title {
       margin: 0px;
-      letter-spacing: 1;
-      padding-bottom: 0;
+      padding-bottom: 15px;
+      margin-top: -60rem;
     }
-    h2{
+    h2 {
       letter-spacing: 1px;
       font-size: 27px;
     }
+
+    h5 {
+      padding: 8px 0px;
+    }
+
+    a {
+      margin-top: 60rem !important;
+      margin-left: 1rem;
+    }
+  }
+
+  .titleDescription {
+    order: 3 !important;
+    grid-column: 1 / 2;
+    margin: 10px !important;
   }
 
   .title {
@@ -158,30 +173,25 @@
     text-align: center;
   }
 
-  .titleDescription {
-    order: 3 !important;
-    margin: 32px 0px 0px 0px;
-  }
-
   .bannerMiddlePhoto {
     order: 2 !important;
     display: flex;
     justify-content: center;
-    width: 100%;
     margin: 0px;
+    height: 500px;
+    overflow: hidden;
   }
 
   .bannerMiddlePhoto img {
     display: flex;
-    height: 275px;
     object-fit: cover;
     margin-top: 0;
-    border-radius: 6px;
+    border-radius: 1.5px;
     position: relative;
+    width: 90vw;
   }
 
-  .bannerButton {
-    padding-top: 30px;
-    padding-bottom: 32px;
+  .globalFirstBannerBottom {
+    margin-top: 20px !important;
   }
 }

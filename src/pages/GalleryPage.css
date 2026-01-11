@@ -1,0 +1,78 @@
+@import "../style.css";
+
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+
+  .gallery-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green-50);
+    width: 100vw;
+    height: 299px;
+
+    h1 {
+      color: var(--white-200);
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 300;
+    }
+  }
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+  }
+
+  img {
+    width: auto;
+    height: 800px;
+  }
+
+  .carousel-control {
+    background-position: right center;
+    margin-right: 0px;
+  }
+  .prev {
+    background-position: left center;
+    margin-right: 20px;
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-container {
+    .gallery-header {
+      width: 100vw;
+      height: 200px;
+      margin-top: 53px;
+
+      h1 {
+        margin: 0px;
+      }
+    }
+
+    .carousel {
+      height: 100%;
+      width: 100%;
+      margin: 20px 0px;
+    }
+    img {
+      width: 70vw;
+      height: auto;
+    }
+
+    .prev {
+      margin: 0rem !important;
+    }
+
+    .next {
+      margin: 0rem !important;
+    }
+  }
+}

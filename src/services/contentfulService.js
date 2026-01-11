@@ -1,22 +1,20 @@
-import { GraphQLClient, gql } from "graphql-request";
+import axios from "axios";
 
-const client = new GraphQLClient(
-  `https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}/environments/master`, // Ajuste conforme a URL correta
-  {
-    headers: {
-      Authorization: `Bearer ${process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN}`,
-    },
-  }
-);
+if (
+  !process.env.REACT_APP_CONTENTFUL_SPACE_ID ||
+  !process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN
+) {
+  throw new Error(
+    "As variáveis de ambiente SPACE_ID ou ACCESS_TOKEN não estão definidas."
+  );
+}
 
-// Função genérica para buscar dados de qualquer página
 export const fetchPageData = async (page) => {
-  console.log("importando os dados");
   let query = "";
 
   switch (page) {
     case "home":
-      query = gql`
+      query = `
         {
           homepageCollection {
             items {
@@ -32,31 +30,42 @@ export const fetchPageData = async (page) => {
               aboutUsParagraphOne {
                 json
               }
-              aboutUsParagraphTwo {
-                json
-              }
+
               aboutUsTitleOne
-              aboutUsTitleTwo
+
               heroImage {
                 url
                 title
               }
               subtitle
               title
-              urlAboutUs
-              urlHero
-              ourServicesCollection {
+              ourServicesCollection (limit: 20) {
                 items {
+                  __typename
                   ... on HomePageSections {
                     title
-                    urlLearnMore
+                    slug
                     paragraphy {
                       json
                     }
                     image {
                       url
                       title
-                      fileName
+                    }
+                  }
+                }
+              }
+                testimonialsCollection (limit: 10) {
+                items {
+                  __typename
+                  ... on Testimonials {
+                    customerName
+                    quote {
+                      json
+                    }
+                    customerImage {
+                      url
+                      title
                     }
                   }
                 }
@@ -66,34 +75,230 @@ export const fetchPageData = async (page) => {
         }
       `;
       break;
-
     case "about":
-      query = gql`
-        {
-          aboutPageCollection {
-            items {
+      query = `
+      {
+        aboutUsPageCollection {
+          items {
+            title
+            subtitle
+            mission
+            vision
+            warmerApproach
+            qualityService
+            transparencyAndHonesty
+            behindTheScenes
+            imageTop {
+              url
               title
               description
-              image {
+            }
+            imageMiddle {
+              url
+              title
+              description
+
+            }
+            imageBottomOne {
+              url
+              title
+              description
+
+            }
+              imageBottonTwo {
+              url
+              title
+              description
+
+            }
+            bottomGalleryCollection {
+              items {
                 url
+                title
+                description
+              }
+            }
+
+          }
+        }
+      }
+      `;
+      break;
+    case "facialService":
+      query = `
+      {
+        serviceFacialCollection {
+          items {
+            slug
+            navbarTitle
+            order
+            title
+            whatIsDescription{
+                json
+              }
+            image {
+              url
+              title
+              description
+            }
+            supplementaryCollection {
+              items {
+                title
+                description
+              }
+            }
+            warning {
+              title
+              items
+            }
+            videoEmbed
+
+          }
+        }
+      }
+
+      `;
+      break;
+    case "servicePage":
+      query = `
+      {
+        servicePageCollection {
+          items {
+            slug
+            navbarTitle
+            title
+            aboveFoldContent {
+              json
+            }
+            aboveFoldImage {
+              url
+              title
+              description
+            }
+            belowFoldContent {
+              json
+            }
+            belowFoldImage {
+              url
+              title
+              description
+            }
+
+            warning {
+              json
+            }
+            videoEmbed
+
+          }
+        }
+      }
+      `;
+      break;
+    case "galleryPage":
+      query = `
+        {
+          galleryPageCollection {
+            items {
+              title
+              imagesCollection {
+                items {
+                  url
+                  title
+                  description
+                }
               }
             }
           }
         }
-      `;
+        `;
       break;
 
-    // Adicione mais casos para outras páginas
+    case "booking":
+      query = `
+      {
+        bookingCollection {
+          items {
+            title
+            treatmentListCollection {
+              items {
+                __typename
+                ... on ServicePage  {
+                  title
+                }
+                ... on ServiceFacial {
+                  title
+                }
+
+              }
+            }
+            image {
+              url
+              title
+              description
+            }
+          }
+        }
+      }
+
+
+      `;
+      break;
+    case "skinCareRoutine":
+      query = `
+        {
+          skinCareRoutineCollection {
+            items {
+              slug
+              description {
+                json
+              }
+              image {
+                url
+                title
+                description
+              }
+              pdf {
+                url
+                title
+                description
+              }
+            }
+          }
+        }
+        `;
+      break;
 
     default:
       throw new Error(`Page ${page} is not supported`);
   }
 
+  const environment = process.env.REACT_APP_CONTENTFUL_ENVIRONMENT || "master";
+
   try {
-    const data = await client.request(query); // Aqui a query é enviada
-    return data;
+    const response = await axios({
+      url: `https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}/environments/${environment}`,
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      data: {
+        query: query,
+      },
+    });
+
+    return response.data; // Retorna os dados
   } catch (error) {
-    console.error(`Error fetching ${page} data:`, error);
-    throw error;
+    if (error.response) {
+      console.error(
+        "Erro ao buscar os dados:",
+        JSON.stringify(error.response.data, null, 2)
+      );
+      console.error("Status code:", error.response.status);
+    } else if (error.request) {
+      console.error("Nenhuma resposta recebida:", error.request);
+    } else {
+      console.error("Erro desconhecido:", error.message);
+    }
   }
 };
